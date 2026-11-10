@@ -1,0 +1,73 @@
+# EAD 2002 (FSA.A.04) → CIDOC CRM 7.1.3 + CRMdig + mbs:
+# Paths use EAD local names. CRM names use the official hyphenated OWL encoding.
+
+namespaces:
+  kg: https://w3id.org/sova/fsa_a_04#
+  crm: http://www.cidoc-crm.org/cidoc-crm/
+  crmdig: http://www.ics.forth.gr/isl/CRMdig/
+  mbs: https://w3id.org/sova/fsa_a_04/ontology#
+  lang: http://id.loc.gov/vocabulary/iso639-2/
+  skos: http://www.w3.org/2004/02/skos/core#
+
+component:
+  ead: "c | archdesc"
+  produces:
+    - class: mbs:ArchivalComponent
+      also: [crm:E73_Information_Object]
+      fragment: intellectual
+    - class: mbs:PhysicalComponent
+      also: [crm:E22_Human-Made_Object]
+      fragment: physical
+  links:
+    - "intellectual mbs:hasPhysicalUnit physical"
+    - "parent P106_forms_part_of / mbs:hasParentComponent"
+    - "parent P46_is_composed_of physical children"
+
+fields:
+  - ead: unittitle
+    crm: "P1_is_identified_by → E33_E41_Linguistic_Appellation / rdfs:label"
+  - ead: unitid[@type=ark]
+    crm: "P48_has_preferred_identifier → E42_Identifier"
+  - ead: unitid
+    crm: "P1_is_identified_by → E42_Identifier"
+  - ead: unitdate/@normal
+    crm: "E12_Production P4_has_time-span E52_Time-Span P82_at_some_time_within"
+  - ead: origination[label=Creator]/persname
+    crm: "E12_Production P14_carried_out_by E21_Person"
+  - ead: origination/persname[@role contains pht]
+    crm: "E12_Production P14_carried_out_by E21_Person ; P14.1_in_the_role_of E55 photographer"
+  - ead: origination/persname[@role contains col]
+    crm: "E10_Transfer_of_Custody P29_custody_received_by"
+  - ead: origination/persname[@role contains fmo]
+    crm: "E8_Acquisition P23_transferred_title_from"
+  - ead: geogname (about)
+    crm: "P67_refers_to E53_Place"
+  - ead: subject
+    crm: "P129_is_about E55_Type | E28_Conceptual_Object"
+  - ead: genreform
+    crm: "P2_has_type E55_Type (AAT)"
+  - ead: physdesc/extent
+    crm: "P43_has_dimension E54_Dimension"
+  - ead: container[@type=Box]
+    crm: "mbs:Box ; physical mbs:housedIn box"
+  - ead: container[@type=Folder]
+    crm: "mbs:Folder ; physical mbs:housedIn folder ; folder mbs:housedIn box"
+  - ead: dao
+    crm: "mbs:digitized true ; crmdig:D2_Digitization_Process P16 D1_Digital_Object"
+  - ead: "dao ids.si.edu (item)"
+    crm: "mbs:JpegSurrogate ; viewerUrl deliveryService?id= ; iiifManifest ids/manifest/{ID}"
+  - ead: "dao edan slideshow (file)"
+    crm: "mbs:PdfSurrogate ; viewerUrl slideshow/?eadrefid= ; hasPage PdfPage each with its own iiifManifest"
+  - ead: '@level=file'
+    crm: "mbs:FileUnit + mbs:DocumentaryFile + aat:300027182 (documentary grouping)"
+  - ead: '@level=item'
+    crm: "mbs:ItemUnit + mbs:DiscreteItem; mbs:mediaType from genreform/extent/title"
+  - ead: scopecontent | bioghist | abstract | arrangement | accessrestrict | userestrict | custodhist | acqinfo | prefercite | processinfo | relatedmaterial | altformavail | odd | note | bibliography | otherfindaid | originalsloc | phystech | fileplan
+    crm: "E33_Linguistic_Object via mbs:hasLinguisticObject; rdf:value; mbs:noteType; P148 paragraphs"
+  - ead: langmaterial/language
+    crm: "P72_has_language E56_Language (lang:eng, …); dct:language on the component"
+
+finding_aid:
+  ead: ead
+  crm: mbs:FindingAid / crm:E31_Document
+  describes: collection intellectual component

@@ -1,0 +1,7 @@
+1- The "Corporate Name" field with the value of "Islamic Archives" is actually pointing to a very big collection that should be emphesized somehow in this repository. From this point of view the current repository can be considered one of sub categories of that collection.
+2- The "Glass negatives" value in "Genre Form" field should refer to standalone conceps like dry collodion negatives(300241140) or wet collodion negatives(300134674).
+3- The "controlaccess" in EAD file has carious type of concepts that should be distinguished in our repository. The subject, persname, geoname even corpname are among them. the corpname field is directly related to first item in our todo list.
+4- In SOVA accessing the Images and Files are from two different ways:
+  A: Accessing to Slide Show with (https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref6601)
+  B: Accessing the image viewer with (https://ids.si.edu/ids/deliveryService?id=FS-FSA_A.4_2.12.GN.07.05)
+  Both of them should be presented in our RDF Data and both of them have IIIF Manifests each in its own way.  

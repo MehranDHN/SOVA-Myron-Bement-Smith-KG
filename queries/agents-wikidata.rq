@@ -1,0 +1,22 @@
+# Agents linked to Wikidata, with how many components mention them.
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+SELECT ?agent ?label ?wd (COUNT(DISTINCT ?component) AS ?mentions)
+WHERE {
+  ?agent rdfs:label ?label .
+  ?agent owl:sameAs ?wd .
+  FILTER(STRSTARTS(STR(?wd), "http://www.wikidata.org/entity/"))
+  OPTIONAL {
+    { ?component crm:P67_refers_to ?agent }
+    UNION
+    { ?event crm:P14_carried_out_by ?agent . ?event crm:P108_has_produced ?phys .
+      ?component mbs:hasPhysicalUnit ?phys }
+  }
+}
+GROUP BY ?agent ?label ?wd
+ORDER BY DESC(?mentions)
+LIMIT 50

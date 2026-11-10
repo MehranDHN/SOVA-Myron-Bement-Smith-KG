@@ -1,0 +1,104 @@
+@prefix mbs:   <https://w3id.org/sova/fsa_a_04/ontology#> .
+@prefix crm:   <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+mbs:ArchivalComponentShape a sh:NodeShape ;
+    sh:targetClass mbs:ArchivalComponent ;
+    sh:property [
+        sh:path mbs:archivalLevel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "collection" "series" "subseries" "file" "item" ) ;
+        sh:name "archival level" ;
+    ] ;
+    sh:property [
+        sh:path mbs:eadRef ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:path mbs:digitized ;
+        sh:minCount 1 ;
+        sh:datatype xsd:boolean ;
+    ] ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path mbs:hasPhysicalUnit ;
+        sh:minCount 1 ;
+        sh:class mbs:PhysicalComponent ;
+    ] .
+
+mbs:DigitizedImpliesDigital a sh:NodeShape ;
+    sh:targetClass mbs:ArchivalComponent ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        sh:message "digitized true should have at least one mbs:hasDigitalObject" ;
+        sh:select """
+            PREFIX mbs: <https://w3id.org/sova/fsa_a_04/ontology#>
+            SELECT $this WHERE {
+                $this mbs:digitized true .
+                FILTER NOT EXISTS { $this mbs:hasDigitalObject ?d }
+            }
+        """ ;
+    ] .
+
+mbs:PhysicalComponentShape a sh:NodeShape ;
+    sh:targetClass mbs:PhysicalComponent ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+    ] .
+
+mbs:BoxShape a sh:NodeShape ;
+    sh:targetClass mbs:Box ;
+    sh:property [
+        sh:path mbs:boxNumber ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+    ] .
+
+mbs:FileUnitShape a sh:NodeShape ;
+    sh:targetClass mbs:FileUnit ;
+    sh:property [
+        sh:path mbs:archivalLevel ;
+        sh:hasValue "file" ;
+    ] ;
+    sh:property [
+        sh:path mbs:hasPhysicalUnit ;
+        sh:class mbs:DocumentaryFile ;
+        sh:minCount 1 ;
+    ] .
+
+mbs:ItemUnitShape a sh:NodeShape ;
+    sh:targetClass mbs:ItemUnit ;
+    sh:property [
+        sh:path mbs:archivalLevel ;
+        sh:hasValue "item" ;
+    ] ;
+    sh:property [
+        sh:path mbs:hasPhysicalUnit ;
+        sh:class mbs:DiscreteItem ;
+        sh:minCount 1 ;
+    ] .
+
+mbs:LinguisticNoteShape a sh:NodeShape ;
+    sh:targetClass crm:E33_Linguistic_Object ;
+    sh:property [
+        sh:path rdf:value ;
+        sh:datatype xsd:string ;
+    ] .
+
+mbs:FolderShape a sh:NodeShape ;
+    sh:targetClass mbs:Folder ;
+    sh:property [
+        sh:path mbs:folderNumber ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+    ] .

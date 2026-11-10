@@ -1,0 +1,18 @@
+# Digitized components that refer to a place, with IIIF when present.
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+
+SELECT ?component ?title ?place ?placeLabel ?manifest ?sova
+WHERE {
+  ?component a mbs:ArchivalComponent ;
+             mbs:digitized true ;
+             rdfs:label ?title ;
+             mbs:sovaUrl ?sova ;
+             crm:P67_refers_to ?place .
+  ?place a crm:E53_Place ; rdfs:label ?placeLabel .
+  OPTIONAL { ?component mbs:hasDigitalObject ?d . ?d mbs:iiifManifest ?manifest }
+}
+ORDER BY ?placeLabel ?title
+LIMIT 100

@@ -1,0 +1,22 @@
+# Boxes and folders that house architectural drawings or related types.
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aat:  <http://vocab.getty.edu/aat/>
+
+SELECT ?box ?boxLabel ?folder ?title ?component
+WHERE {
+  ?component a mbs:ArchivalComponent ;
+             rdfs:label ?title ;
+             mbs:hasPhysicalUnit ?phys .
+  ?phys mbs:housedIn ?folder .
+  ?folder a mbs:Folder .
+  OPTIONAL { ?folder mbs:housedIn ?box . ?box a mbs:Box ; rdfs:label ?boxLabel }
+  FILTER(
+    CONTAINS(LCASE(STR(?title)), "plan") ||
+    CONTAINS(LCASE(STR(?title)), "drawing") ||
+    CONTAINS(LCASE(STR(?title)), "sketch")
+  )
+}
+ORDER BY ?boxLabel ?title
+LIMIT 100

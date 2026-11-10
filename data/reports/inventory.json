@@ -1,0 +1,90 @@
+{
+  "eadid": "FSA.A.04",
+  "title": "Myron Bement Smith Collection",
+  "components": 4131,
+  "levels": {
+    "collection": 1,
+    "series": 3,
+    "subseries": 132,
+    "item": 3370,
+    "file": 625
+  },
+  "digitized_components": 1195,
+  "undigitized_components": 2936,
+  "digitization_kinds": {
+    "ids-image": 861,
+    "dao:representative-image": 1,
+    "none": 2936,
+    "edan-slideshow": 334,
+    "dao:edan-slideshow": 334,
+    "dao:ids-image": 895
+  },
+  "with_ark": 4131,
+  "with_controlaccess": 871,
+  "container_types": {
+    "Box": 3021,
+    "Folder": 2691,
+    "Oversize": 63,
+    "Item": 4,
+    "Roll": 320,
+    "Map-rolled": 10
+  },
+  "distinct_boxes": 234,
+  "folder_mentions": 2691,
+  "authority_sources": {
+    "wikidata": 2647,
+    "lcsh": 3738,
+    "aat": 1298,
+    "local": 203,
+    "lcshac": 1,
+    "naf": 35,
+    "source_not_specified": 1
+  },
+  "named_elements": {
+    "persname": 4110,
+    "subject": 1998,
+    "corpname": 1274,
+    "geogname": 4407,
+    "genreform": 1117,
+    "title": 866
+  },
+  "named_with_uri": 6692,
+  "named_without_uri": 7080,
+  "series": [
+    {
+      "id": "ref6171",
+      "title": "Papers",
+      "unitid": "Series 1",
+      "children": 8,
+      "digitized": false
+    },
+    {
+      "id": "ref7426",
+      "title": "The Islamic Archives",
+      "unitid": "Series 2",
+      "children": 12,
+      "digitized": false
+    },
+    {
+      "id": "ref9049",
+      "title": "Outsize and Miscellaneous Items",
+      "unitid": "Series 3",
+      "children": 4,
+      "digitized": false
+    }
+  ],
+  "header": {
+    "eadid": "FSA.A.04",
+    "eadid_url": "https://n2t.net/ark:/65665/dc3c8c950fe-250b-40df-b8c7-bcf788073968",
+    "countrycode": "US",
+    "mainagencycode": "US-DSI-NMAAA",
+    "titleproper": [
+      "Smith, Myron Bement, Collection",
+      "Myron Bement Smith Collection"
+    ],
+    "author": "Dr. Elizabeth Graves",
+    "publisher": "National Museum of Asian Art Archives",
+    "creation": "This finding aid was produced using ArchivesSpace on 2026-10-15 22:09:24 -0400.",
+    "descrules": "Describing Archives: A Content Standard"
+  }
+}

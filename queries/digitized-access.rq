@@ -1,0 +1,19 @@
+# Digitized files (PDF slideshow) and items (JPEG + IIIF Manifest).
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?component ?level ?title ?viewer ?manifest ?pageCount ?pending
+WHERE {
+  ?component a mbs:ArchivalComponent ;
+             mbs:digitized true ;
+             mbs:archivalLevel ?level ;
+             rdfs:label ?title ;
+             mbs:hasDigitalObject ?d .
+  OPTIONAL { ?d mbs:viewerUrl ?viewer }
+  OPTIONAL { ?d mbs:iiifManifest ?manifest }
+  OPTIONAL { ?d mbs:pageCount ?pageCount }
+  OPTIONAL { ?d mbs:pageManifestsPending ?pending }
+}
+ORDER BY ?level ?title
+LIMIT 100

@@ -1,0 +1,5 @@
+lxml>=5.0.0
+rdflib>=7.0.0
+requests>=2.31.0
+pyyaml>=6.0.0
+# Optional SHACL (Python 3.9+): pyshacl>=0.26.0

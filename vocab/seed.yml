@@ -1,0 +1,190 @@
+# High-confidence seed reconciliations for FSA.A.04.
+# Used before live AAT / TGN / LCSH / Wikidata lookups.
+# Each entry: source_label (lowercase key), kind, matches.
+
+agents:
+  - label: "Smith, Myron Bement, 1897-1970"
+    wikidata: Q98396885
+    kind: person
+  - label: "Sevruguin, Antoin, 1851-1933"
+    wikidata: Q382319
+    kind: person
+  - label: "Blake, Marion Elizabeth"
+    wikidata: Q6765187
+    kind: person
+  - label: "Pope, Arthur Upham, 1881-1969"
+    wikidata: Q958788
+    kind: person
+  - label: "Herzfeld, Ernst, 1879-1948"
+    wikidata: Q62933
+    kind: person
+  - label: "Ettinghausen, Richard"
+    wikidata: Q216041
+    kind: person
+  - label: "Bonfils, Félix, 1831-1885"
+    wikidata: Q2915801
+    kind: person
+  - label: "Field, Henry"
+    wikidata: Q15130478
+    kind: person
+  - label: "Nāsir al-Dīn Shāh, Shah of Iran, 1831-1896"
+    wikidata: Q159416
+    kind: person
+  - label: "Reza Shah Pahlavi, Shah of Iran, 1878-1944"
+    wikidata: Q182921
+    kind: person
+
+places:
+  - label: Iran
+    tgn: "7000231"
+    wikidata: Q794
+    lcnaf: n79039880
+  - label: Persia
+    tgn: "7000231"
+    wikidata: Q794
+    note: Historical English name; same TGN as Iran
+  - label: Isfahan
+    tgn: "7001374"
+    wikidata: Q42053
+    lcnaf: n79061284
+  - label: "Iṣfahān (Iran)"
+    tgn: "7001374"
+    wikidata: Q42053
+  - label: "Isfahan city"
+    tgn: "7001374"
+    wikidata: Q42053
+  - label: Tehran
+    tgn: "7014497"
+    wikidata: Q3616
+    lcnaf: n79039626
+  - label: "Tehran (Iran)"
+    tgn: "7014497"
+    wikidata: Q3616
+  - label: Palmyra
+    tgn: "7002161"
+    wikidata: Q5747
+  - label: "Palmyra (Syria)"
+    tgn: "7002161"
+    wikidata: Q5747
+  - label: Syria
+    tgn: "1000146"
+    wikidata: Q858
+    lcnaf: n80061798
+  - label: Italy
+    tgn: "1000080"
+    wikidata: Q38
+  - label: Iraq
+    tgn: "1000118"
+    wikidata: Q796
+  - label: India
+    tgn: "7000198"
+    wikidata: Q668
+  - label: France
+    tgn: "1000070"
+    wikidata: Q142
+  - label: Asia
+    tgn: "1000004"
+    lcsh: sh85008606
+    wikidata: Q48
+  - label: "New York City"
+    tgn: "7007567"
+    wikidata: Q60
+  - label: "Rochester, New York"
+    tgn: "7014449"
+    wikidata: Q49218
+  - label: "Washington D.C."
+    tgn: "7013962"
+    wikidata: Q61
+  - label: Persepolis
+    tgn: "7002229"
+    wikidata: Q129072
+    lcnaf: n80063345
+  - label: "Persepolis (Iran)"
+    tgn: "7002229"
+    wikidata: Q129072
+  - label: "Naqsh-i Rustam (Iran)"
+    tgn: "7001657"
+    wikidata: Q733613
+  - label: Lebanon
+    tgn: "1000126"
+    wikidata: Q822
+  - label: Cyprus
+    tgn: "1000112"
+    wikidata: Q229
+  - label: Turkey
+    tgn: "1000144"
+    wikidata: Q43
+
+monuments:
+  - labels:
+      - "Masjid-i Jomeh"
+      - "Isfahan Masjid-i Jomeh"
+      - "Masjild-i Jomeh"
+      - "Jameh Mosque of Isfahan"
+      - "Masjid-i Jum'a"
+    wikidata: Q1227533
+    aat: "300007691"  # mosques (buildings)
+    tgn_place: "7001374"
+    lcsh: sh85087470
+
+genres:
+  - label: Correspondence
+    aat: "300026877"
+  - label: Notes
+    aat: "300027200"
+  - label: "Photographic prints"
+    aat: "300127104"
+  - label: "Albumen prints"
+    aat: "300127121"
+  - label: "Gelatin silver prints"
+    aat: "300128695"
+  - label: "Glass negatives"
+    aat: "300134674"  # wet collodion negatives (this collection's Genre Form)
+    aat_broader: "300010898"  # glass negatives (generic)
+    aat_related:
+      - "300241140"  # dry collodion negatives
+    note: "EAD Genre Form 'Glass negatives' maps to wet collodion, not generic glass negatives."
+  - label: "Wet collodion negatives"
+    aat: "300134674"
+  - label: "Dry collodion negatives"
+    aat: "300241140"
+  - label: "Studio portraits"
+    aat: "300223022"
+  - label: Photographs
+    aat: "300046300"
+  - label: "Lantern slides"
+    aat: "300127024"
+  - label: "Color slides"
+    aat: "300128377"
+  - label: "Architectural drawings"
+    aat: "300034787"
+  - label: Notebooks
+    aat: "300264354"
+  - label: Negatives
+    aat: "300127173"
+  - label: Maps
+    aat: "300028094"
+  - label: "Religious buildings"
+    aat: "300007391"
+  - label: "Royalty (Nobility)"
+    aat: "300188750"
+
+subjects:
+  - label: "Islamic architecture"
+    lcsh: sh85006804
+    aat: "300000996"
+    wikidata: Q839805
+  - label: Mosques
+    lcsh: sh85087470
+    aat: "300007691"
+    wikidata: Q32815
+  - label: "Architecture -- Iran"
+    lcsh: sh85006660
+  - label: Architecture
+    lcsh: sh85006611
+    aat: "300263552"
+  - label: Antiquities
+    lcsh: sh85005757
+  - label: "Portrait photography"
+    lcsh: sh85101240
+    aat: "300015524"

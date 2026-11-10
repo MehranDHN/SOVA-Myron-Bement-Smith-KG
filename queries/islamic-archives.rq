@@ -1,0 +1,14 @@
+# Parent Islamic Archives holding and its sub-collections (FSA.A.04 today).
+PREFIX kg:   <https://w3id.org/sova/fsa_a_04#>
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?holding ?holdingLabel ?sub ?subLabel
+WHERE {
+  ?holding a mbs:HoldingCollection ;
+           rdfs:label ?holdingLabel ;
+           mbs:hasSubCollection ?sub .
+  ?sub rdfs:label ?subLabel .
+}
+ORDER BY ?holdingLabel ?subLabel

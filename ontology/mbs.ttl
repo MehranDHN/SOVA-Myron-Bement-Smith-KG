@@ -1,0 +1,342 @@
+@prefix mbs:   <https://w3id.org/sova/fsa_a_04/ontology#> .
+@prefix crm:   <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix crmdig: <http://www.ics.forth.gr/isl/CRMdig/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix rico:  <https://www.ica.org/standards/RiC/ontology#> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+
+mbs: a owl:Ontology ;
+    dct:title "Myron Bement Smith Collection application ontology"@en ;
+    dct:description "Thin OWL application profile over CIDOC CRM 7.1.3 and CRMdig for the Smithsonian SOVA finding aid FSA.A.04. Adds archival level, physical housing (box/folder), digitization flag, and IIIF convenience properties that CRM does not name directly."@en ;
+    dct:creator "SOVA-Myron-Bement-Smith-KG" ;
+    vann:preferredNamespacePrefix "mbs" ;
+    vann:preferredNamespaceUri "https://w3id.org/sova/fsa_a_04/ontology#" ;
+    owl:imports <http://www.cidoc-crm.org/cidoc-crm/> ;
+    owl:versionInfo "0.1.0" .
+
+#################################################################
+# Mixins and archival structure
+#################################################################
+
+mbs:ArchivalComponent a owl:Class ;
+    rdfs:label "Archival component"@en ;
+    rdfs:comment "Mixin for an EAD component (collection, series, subseries, file, or item) as documented in FSA.A.04."@en ;
+    rdfs:subClassOf crm:E73_Information_Object ;
+    owl:equivalentClass rico:RecordSet .
+
+mbs:HoldingCollection a owl:Class ;
+    rdfs:label "Holding collection"@en ;
+    rdfs:subClassOf crm:E78_Curated_Holding ;
+    rdfs:comment "A named collection that may contain other collections. The Islamic Archives is the parent holding of FSA.A.04; further sub-collections will be added as siblings."@en .
+
+mbs:hasSubCollection a owl:ObjectProperty ;
+    rdfs:label "has sub-collection"@en ;
+    rdfs:domain mbs:HoldingCollection ;
+    rdfs:subPropertyOf crm:P106_is_composed_of ;
+    rdfs:comment "Links a parent holding (Islamic Archives) to a constituent collection such as FSA.A.04."@en .
+
+mbs:isPartOfCollection a owl:ObjectProperty ;
+    rdfs:label "is part of collection"@en ;
+    owl:inverseOf mbs:hasSubCollection ;
+    rdfs:subPropertyOf crm:P106i_forms_part_of ;
+    rdfs:comment "The Myron Bement Smith Collection is part of the Islamic Archives. Other sub-collections will use the same property."@en .
+
+mbs:FileUnit a owl:Class ;
+    rdfs:label "EAD file unit"@en ;
+    rdfs:subClassOf mbs:ArchivalComponent ;
+    rdfs:comment "EAD @level='file'. A grouping of documents that functions as one unit of description, typically a folder of correspondence, notes, or mixed papers. This level signals an aggregating documentary media type, not a single photograph or drawing."@en .
+
+mbs:ItemUnit a owl:Class ;
+    rdfs:label "EAD item unit"@en ;
+    rdfs:subClassOf mbs:ArchivalComponent ;
+    rdfs:comment "EAD @level='item'. A discrete intellectual resource: a photograph, glass negative, lantern slide, architectural drawing, notebook, map, or similarly individual object."@en .
+
+mbs:PhysicalComponent a owl:Class ;
+    rdfs:label "Physical archival unit"@en ;
+    rdfs:comment "The physical manifestation of an EAD component: papers, prints, negatives, drawings, or a container of them."@en ;
+    rdfs:subClassOf crm:E22_Human-Made_Object .
+
+mbs:DocumentaryFile a owl:Class ;
+    rdfs:label "Documentary file (physical)"@en ;
+    rdfs:subClassOf mbs:PhysicalComponent ;
+    rdfs:comment "Physical counterpart of an EAD file: an aggregation of documents housed together."@en .
+
+mbs:DiscreteItem a owl:Class ;
+    rdfs:label "Discrete item (physical)"@en ;
+    rdfs:subClassOf mbs:PhysicalComponent ;
+    rdfs:comment "Physical counterpart of an EAD item: a single object or a tightly bound set treated as one item in the finding aid."@en .
+
+mbs:mediaType a owl:ObjectProperty ;
+    rdfs:label "media type"@en ;
+    rdfs:domain mbs:PhysicalComponent ;
+    rdfs:range crm:E55_Type ;
+    rdfs:subPropertyOf crm:P2_has_type ;
+    rdfs:comment "Primary resource media, taken from EAD level (file vs item), genreform, and physdesc/extent type."@en .
+
+mbs:FindingAid a owl:Class ;
+    rdfs:label "Finding aid"@en ;
+    rdfs:subClassOf crm:E31_Document ;
+    rdfs:comment "The EAD document that describes the collection."@en .
+
+mbs:archivalLevel a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "archival level"@en ;
+    rdfs:domain mbs:ArchivalComponent ;
+    rdfs:range xsd:string ;
+    rdfs:comment "EAD @level value: collection | series | subseries | file | item."@en .
+
+mbs:eadRef a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "EAD reference id"@en ;
+    rdfs:domain mbs:ArchivalComponent ;
+    rdfs:range xsd:string ;
+    rdfs:comment "ArchivesSpace component id, e.g. ref7856."@en .
+
+mbs:sovaUrl a owl:DatatypeProperty ;
+    rdfs:label "SOVA URL"@en ;
+    rdfs:range xsd:anyURI .
+
+mbs:hasPhysicalUnit a owl:ObjectProperty ;
+    rdfs:label "has physical unit"@en ;
+    rdfs:domain mbs:ArchivalComponent ;
+    rdfs:range mbs:PhysicalComponent ;
+    rdfs:subPropertyOf crm:P128_carries .
+
+mbs:hasParentComponent a owl:ObjectProperty ;
+    rdfs:label "has parent component"@en ;
+    rdfs:domain mbs:ArchivalComponent ;
+    rdfs:range mbs:ArchivalComponent ;
+    rdfs:comment "Immediate EAD parent. Complements crm:P106_is_composed_of / crm:P46_is_composed_of on the physical side."@en ;
+    owl:inverseOf mbs:hasChildComponent .
+
+mbs:hasChildComponent a owl:ObjectProperty ;
+    rdfs:label "has child component"@en ;
+    rdfs:domain mbs:ArchivalComponent ;
+    rdfs:range mbs:ArchivalComponent .
+
+#################################################################
+# Storage: box / folder / map case
+#################################################################
+
+mbs:StorageUnit a owl:Class ;
+    rdfs:label "Storage unit"@en ;
+    rdfs:subClassOf crm:E22_Human-Made_Object ;
+    rdfs:comment "A physical housing unit in the National Museum of Asian Art Archives stacks."@en .
+
+mbs:Box a owl:Class ;
+    rdfs:label "Box"@en ;
+    rdfs:subClassOf mbs:StorageUnit .
+
+mbs:Folder a owl:Class ;
+    rdfs:label "Folder"@en ;
+    rdfs:subClassOf mbs:StorageUnit .
+
+mbs:MapCase a owl:Class ;
+    rdfs:label "Map case"@en ;
+    rdfs:subClassOf mbs:StorageUnit .
+
+mbs:StorageItem a owl:Class ;
+    rdfs:label "Storage item location"@en ;
+    rdfs:subClassOf mbs:StorageUnit ;
+    rdfs:comment "EAD container type=Item, used for map-case and rolled holdings in Series 3."@en .
+
+mbs:Oversize a owl:Class ;
+    rdfs:label "Oversize housing"@en ;
+    rdfs:subClassOf mbs:StorageUnit .
+
+mbs:Roll a owl:Class ;
+    rdfs:label "Rolled item"@en ;
+    rdfs:subClassOf mbs:StorageUnit .
+
+mbs:housedIn a owl:ObjectProperty ;
+    rdfs:label "housed in"@en ;
+    rdfs:domain crm:E18_Physical_Thing ;
+    rdfs:range mbs:StorageUnit ;
+    rdfs:subPropertyOf crm:P46i_forms_part_of .
+
+mbs:boxNumber a owl:DatatypeProperty ;
+    rdfs:label "box number"@en ;
+    rdfs:domain mbs:Box ;
+    rdfs:range xsd:string .
+
+mbs:folderNumber a owl:DatatypeProperty ;
+    rdfs:label "folder number"@en ;
+    rdfs:domain mbs:Folder ;
+    rdfs:range xsd:string .
+
+#################################################################
+# Digitization and IIIF
+#################################################################
+
+mbs:digitized a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "digitized"@en ;
+    rdfs:domain mbs:ArchivalComponent ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "True when the EAD component has one or more dao elements pointing at Smithsonian digital surrogates."@en .
+
+mbs:digitizationKind a owl:ObjectProperty ;
+    rdfs:label "digitization kind"@en ;
+    rdfs:domain mbs:ArchivalComponent ;
+    rdfs:range mbs:DigitizationKind .
+
+mbs:DigitizationKind a owl:Class ;
+    rdfs:label "Digitization kind"@en ;
+    rdfs:subClassOf skos:Concept .
+
+mbs:ids_image a mbs:DigitizationKind, skos:Concept ;
+    skos:prefLabel "Smithsonian IDS image"@en ;
+    skos:definition "Direct JPEG on ids.si.edu for an EAD item: viewer deliveryService?id={ID} and IIIF Manifest ids/manifest/{ID}."@en .
+
+mbs:edan_slideshow a mbs:DigitizationKind, skos:Concept ;
+    skos:prefLabel "EDAN slideshow"@en ;
+    skos:definition "PDF (EAD file) or multi-image set delivered through edan.si.edu/slideshow keyed by eadrefid. Each page is a separate IDS image with its own IIIF Manifest."@en .
+
+mbs:JpegSurrogate a owl:Class ;
+    rdfs:label "JPEG digital surrogate"@en ;
+    rdfs:subClassOf crmdig:D1_Digital_Object ;
+    rdfs:comment "Single JPEG for a digitized EAD item. Viewer: https://ids.si.edu/ids/deliveryService?id={ID}."@en .
+
+mbs:PdfSurrogate a owl:Class ;
+    rdfs:label "PDF digital surrogate"@en ;
+    rdfs:subClassOf crmdig:D1_Digital_Object ;
+    rdfs:comment "PDF for a digitized EAD file, accessed via the EDAN slideshow. Composed of PdfPage individuals, each with its own IIIF Manifest."@en .
+
+mbs:PdfPage a owl:Class ;
+    rdfs:label "PDF page image"@en ;
+    rdfs:subClassOf crmdig:D1_Digital_Object ;
+    rdfs:comment "One page of a digitized file PDF. Smithsonian mints a distinct IIIF Manifest per page at https://ids.si.edu/ids/manifest/{page-IDS-ID}."@en .
+
+mbs:ImageSet a owl:Class ;
+    rdfs:label "Multi-image digital set"@en ;
+    rdfs:subClassOf crmdig:D1_Digital_Object ;
+    rdfs:comment "Slideshow of multiple JPEGs on an EAD item (exception to the single-JPEG item pattern)."@en .
+
+mbs:viewerUrl a owl:DatatypeProperty ;
+    rdfs:label "media viewer URL"@en ;
+    rdfs:domain crmdig:D1_Digital_Object ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "Human-facing viewer: IDS deliveryService for JPEGs, EDAN slideshow for PDFs."@en .
+
+mbs:pdfRequestUrl a owl:DatatypeProperty ;
+    rdfs:label "PDF render request URL"@en ;
+    rdfs:domain mbs:PdfSurrogate ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "EDAN endpoint that renders/downloads the PDF (slideshow/viewer/pdf?eadrefid=…)."@en .
+
+mbs:hasPage a owl:ObjectProperty ;
+    rdfs:label "has page"@en ;
+    rdfs:domain crmdig:D1_Digital_Object ;
+    rdfs:range mbs:PdfPage ;
+    rdfs:subPropertyOf crm:P106_is_composed_of .
+
+mbs:pageNumber a owl:DatatypeProperty ;
+    rdfs:label "page number"@en ;
+    rdfs:domain crmdig:D1_Digital_Object ;
+    rdfs:range xsd:integer .
+
+mbs:pageCount a owl:DatatypeProperty ;
+    rdfs:label "page count"@en ;
+    rdfs:domain crmdig:D1_Digital_Object ;
+    rdfs:range xsd:integer .
+
+mbs:pageManifestsPending a owl:DatatypeProperty ;
+    rdfs:label "page manifests pending"@en ;
+    rdfs:domain crmdig:D1_Digital_Object ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "True when the PDF/slideshow page list (and therefore per-page IIIF Manifests) has not yet been harvested or supplied in data/iiif-pages.yml."@en .
+
+mbs:mixed a mbs:DigitizationKind, skos:Concept ;
+    skos:prefLabel "Mixed digital surrogates"@en .
+
+mbs:none a mbs:DigitizationKind, skos:Concept ;
+    skos:prefLabel "Not digitized"@en .
+
+mbs:iiifManifest a owl:DatatypeProperty ;
+    rdfs:label "IIIF Presentation API manifest"@en ;
+    rdfs:domain crmdig:D1_Digital_Object ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "URI of a IIIF Manifest. Only asserted after a successful HTTP probe, or recorded as candidate with mbs:iiifResolved false."@en .
+
+mbs:iiifImageService a owl:DatatypeProperty ;
+    rdfs:label "IIIF Image API service"@en ;
+    rdfs:domain crmdig:D1_Digital_Object ;
+    rdfs:range xsd:anyURI .
+
+mbs:iiifResolved a owl:DatatypeProperty ;
+    rdfs:label "IIIF URI resolved"@en ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "True when the derived IIIF URL returned a successful HTTP response at build time."@en .
+
+mbs:hasDigitalObject a owl:ObjectProperty ;
+    rdfs:label "has digital object"@en ;
+    rdfs:domain mbs:ArchivalComponent ;
+    rdfs:range crmdig:D1_Digital_Object ;
+    rdfs:subPropertyOf crm:P130_shows_features_of .
+
+#################################################################
+# Reconciliation
+#################################################################
+
+mbs:reconciledTo a owl:ObjectProperty ;
+    rdfs:label "reconciled to"@en ;
+    rdfs:subPropertyOf skos:exactMatch ;
+    rdfs:comment "Authoritative concept or entity chosen during reconciliation (AAT, TGN, LCSH, Wikidata)."@en .
+
+mbs:matchConfidence a owl:DatatypeProperty ;
+    rdfs:label "match confidence"@en ;
+    rdfs:range xsd:decimal .
+
+mbs:sourceString a owl:DatatypeProperty ;
+    rdfs:label "source string"@en ;
+    rdfs:range xsd:string .
+
+#################################################################
+# Linguistic descriptions (scopecontent, bioghist, languages, …)
+#################################################################
+
+mbs:hasLinguisticObject a owl:ObjectProperty ;
+    rdfs:label "has linguistic object"@en ;
+    rdfs:domain mbs:ArchivalComponent ;
+    rdfs:range crm:E33_Linguistic_Object ;
+    rdfs:subPropertyOf crm:P67_refers_to ;
+    rdfs:comment "Structured EAD prose (scopecontent, bioghist, abstract, restrictions, odd notes, and other descriptive fields) modelled as CRM E33."@en .
+
+mbs:noteType a owl:ObjectProperty ;
+    rdfs:label "note type"@en ;
+    rdfs:domain crm:E33_Linguistic_Object ;
+    rdfs:range mbs:NoteType .
+
+mbs:NoteType a owl:Class ;
+    rdfs:label "EAD note type"@en ;
+    rdfs:subClassOf skos:Concept, crm:E55_Type .
+
+mbs:ScopeContent a mbs:NoteType, skos:Concept ; skos:prefLabel "scopecontent"@en .
+mbs:BiogHist a mbs:NoteType, skos:Concept ; skos:prefLabel "bioghist"@en .
+mbs:Abstract a mbs:NoteType, skos:Concept ; skos:prefLabel "abstract"@en .
+mbs:Arrangement a mbs:NoteType, skos:Concept ; skos:prefLabel "arrangement"@en .
+mbs:AccessRestrict a mbs:NoteType, skos:Concept ; skos:prefLabel "accessrestrict"@en .
+mbs:UseRestrict a mbs:NoteType, skos:Concept ; skos:prefLabel "userestrict"@en .
+mbs:CustodHist a mbs:NoteType, skos:Concept ; skos:prefLabel "custodhist"@en .
+mbs:AcqInfo a mbs:NoteType, skos:Concept ; skos:prefLabel "acqinfo"@en .
+mbs:PreferCite a mbs:NoteType, skos:Concept ; skos:prefLabel "prefercite"@en .
+mbs:ProcessInfo a mbs:NoteType, skos:Concept ; skos:prefLabel "processinfo"@en .
+mbs:RelatedMaterial a mbs:NoteType, skos:Concept ; skos:prefLabel "relatedmaterial"@en .
+mbs:AltFormAvail a mbs:NoteType, skos:Concept ; skos:prefLabel "altformavail"@en .
+mbs:OddNote a mbs:NoteType, skos:Concept ; skos:prefLabel "odd"@en .
+mbs:GeneralNote a mbs:NoteType, skos:Concept ; skos:prefLabel "note"@en .
+mbs:Bibliography a mbs:NoteType, skos:Concept ; skos:prefLabel "bibliography"@en .
+mbs:OtherFindAid a mbs:NoteType, skos:Concept ; skos:prefLabel "otherfindaid"@en .
+mbs:OriginalsLoc a mbs:NoteType, skos:Concept ; skos:prefLabel "originalsloc"@en .
+mbs:PhysTech a mbs:NoteType, skos:Concept ; skos:prefLabel "phystech"@en .
+mbs:FilePlan a mbs:NoteType, skos:Concept ; skos:prefLabel "fileplan"@en .
+
+#################################################################
+# Alignment notes (not asserted as equivalent on instance data)
+#################################################################
+
+mbs:Box rdfs:seeAlso rico:Instantiation .
+mbs:ArchivalComponent rdfs:seeAlso rico:RecordSet .
+crm:E22_Human-Made_Object rdfs:seeAlso rico:Thing .

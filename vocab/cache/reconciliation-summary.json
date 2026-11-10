@@ -1,0 +1,34 @@
+{
+  "agents": {
+    "total": 1053,
+    "with_match": 18,
+    "wikidata": 17,
+    "aat": 0,
+    "tgn": 0,
+    "lcsh_or_lcnaf": 1
+  },
+  "places": {
+    "total": 452,
+    "with_match": 37,
+    "wikidata": 32,
+    "aat": 3,
+    "tgn": 32,
+    "lcsh_or_lcnaf": 21
+  },
+  "subjects": {
+    "total": 59,
+    "with_match": 38,
+    "wikidata": 2,
+    "aat": 6,
+    "tgn": 0,
+    "lcsh_or_lcnaf": 35
+  },
+  "genres": {
+    "total": 8,
+    "with_match": 7,
+    "wikidata": 0,
+    "aat": 7,
+    "tgn": 0,
+    "lcsh_or_lcnaf": 0
+  }
+}

@@ -1,0 +1,15 @@
+# Manual per-page IDS identifiers for EDAN slideshows / PDFs.
+# Keys are eadrefid values from
+#   https://edan.si.edu/slideshow/viewer/?eadrefid={KEY}
+# Each page is a JPEG on ids.si.edu with IIIF Manifest
+#   https://ids.si.edu/ids/manifest/{IDS-ID}
+#
+# Harvested lists live in vocab/cache/slideshow-pages.json
+# (python -m pipeline.cli slideshow). Entries here override the cache.
+#
+# Example:
+# FSA.A.04_ref6601:
+#   ids_ids:
+#     - FS-FSA-2025-017794
+#     - FS-FSA-2025-017795
+{}

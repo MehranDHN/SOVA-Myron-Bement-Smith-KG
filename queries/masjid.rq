@@ -1,0 +1,17 @@
+# Components about Masjid / mosque monuments, digitized flag and IIIF.
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+
+SELECT ?component ?title ?digitized ?kind ?manifest ?sova
+WHERE {
+  ?component a mbs:ArchivalComponent ;
+             rdfs:label ?title ;
+             mbs:digitized ?digitized ;
+             mbs:digitizationKind ?kind ;
+             mbs:sovaUrl ?sova .
+  FILTER(CONTAINS(LCASE(STR(?title)), "masjid") || CONTAINS(LCASE(STR(?title)), "mosque"))
+  OPTIONAL { ?component mbs:hasDigitalObject ?d . ?d mbs:iiifManifest ?manifest }
+}
+ORDER BY ?title
