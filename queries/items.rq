@@ -1,0 +1,19 @@
+
+prefix mbs: <https://w3id.org/sova/fsa_a_04/ontology#> 
+prefix owl: <http://www.w3.org/2002/07/owl#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+prefix aat: <http://vocab.getty.edu/aat/> 
+prefix crm: <http://www.cidoc-crm.org/cidoc-crm/>
+
+SELECT *
+WHERE {
+	?s a mbs:ItemUnit;
+       mbs:digitized true ; 
+	   rdfs:label ?title ;
+    crm:P67_refers_to ?p .	
+       ?p a crm:E53_Place ; 
+	   rdfs:label ?placeLabel .	
+    OPTIONAL { ?s mbs:hasDigitalObject ?d . ?d mbs:iiifManifest ?manifest }	   
+}
+LIMIT 1000

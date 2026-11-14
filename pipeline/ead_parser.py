@@ -1,4 +1,8 @@
-"""Parse FSA.A.04 EAD XML into a nested Python structure."""
+"""Parse Smithsonian NMAA Archives EAD XML into a nested Python structure.
+
+Works for FSA.A.04 (Myron Bement Smith) and sibling finding aids such as
+FSA.A.06 (Ernst Herzfeld Papers). Collection ``id`` is the EAD ``eadid``.
+"""
 
 from __future__ import annotations
 
@@ -341,9 +345,11 @@ def parse_ead(path=None) -> dict:
     path = path or SRCDATA
     tree = etree.parse(str(path))
     root = tree.getroot()
+    header = parse_header(root)
+    eadid = (header.get("eadid") or "").strip() or "collection"
     archdesc = root.find(q("archdesc"))
     collection = parse_component(archdesc, parent_id=None, depth=0)
-    collection["id"] = "FSA.A.04"
+    collection["id"] = eadid
     collection["level"] = "collection"
     dsc = archdesc.find(q("dsc"))
     if dsc is not None:
@@ -351,8 +357,9 @@ def parse_ead(path=None) -> dict:
             parse_component(c, parent_id=collection["id"], depth=1) for c in dsc.findall(q("c"))
         ]
     return {
-        "header": parse_header(root),
+        "header": header,
         "collection": collection,
+        "path": str(path),
     }
 
 

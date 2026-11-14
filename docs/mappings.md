@@ -1,6 +1,6 @@
 # EAD to CIDOC CRM mapping
 
-This document is the human-readable form of `mappings/ead-to-crm.yml`. It records how `srcdata/FSA.A.04-ead.xml` becomes RDF.
+This document is the human-readable form of `mappings/ead-to-crm.yml`. It records how `srcdata/FSA.A.04-ead.xml` (and later `srcdata/FSA.A.06-ead.xml`) becomes RDF. Prefixed local names replace `.` and `-` with `_` so Turtle imports into Ontotext GraphDB.
 
 ## Namespaces
 
@@ -21,7 +21,7 @@ Every EAD `<c>` (and the collection `<archdesc>`) is two CRM things:
 | Individual | Class | CURIE |
 | --- | --- | --- |
 | Intellectual | `mbs:ArchivalComponent` subclass of `crm:E73_Information_Object` | `kg:component_{ref}` |
-| Physical | `mbs:PhysicalComponent` subclass of `crm:E22_Human-Made_Object` | `kg:physical_{ref}` |
+| Physical | `mbs:PhysicalComponent` subclass of `crm:E22_Human_Made_Object` | `kg:physical_{ref}` |
 
 They are linked by `mbs:hasPhysicalUnit`. The finding aid is a third thing: `mbs:FindingAid` / `crm:E31_Document`.
 
@@ -47,7 +47,7 @@ RiC-O alignment: `mbs:ArchivalComponent owl:equivalentClass rico:RecordSet` in t
 | EAD | CRM path |
 | --- | --- |
 | `unittitle` | `rdfs:label` ; `crm:P1_is_identified_by` |
-| `unitdate/@normal` | `crm:E12_Production` → `crm:P4_has_time-span` → `crm:E52_Time-Span` (`P82a`/`P82b`) |
+| `unitdate/@normal` | `crm:E12_Production` → `crm:P4_has_time_span` → `crm:E52_Time_Span` (`P82a`/`P82b`) |
 | `origination` Creator | Production `crm:P14_carried_out_by` `crm:E21_Person` / `E74_Group` |
 | role photographer (`pht`) | same production, technique photography |
 | role collector (`col`) | `crm:E10_Transfer_of_Custody` |
@@ -66,7 +66,7 @@ RiC-O alignment: `mbs:ArchivalComponent owl:equivalentClass rico:RecordSet` in t
 | --- | --- |
 | `container[@type=Box]` | `mbs:Box` `kg:box_{n}` |
 | `container[@type=Folder]` | `mbs:Folder` `kg:folder_{box}_{n}` |
-| `corpname` Islamic Archives | `mbs:HoldingCollection` `kg:collection_islamic_archives`; FSA.A.04 `mbs:isPartOfCollection` that holding |
+| `corpname` Islamic Archives | `mbs:HoldingCollection` `kg:collection_islamic_archives`; `kg:component_FSA_A_04` and `kg:component_FSA_A_06` `mbs:isPartOfCollection` that holding |
 | `genreform` Glass negatives | `aat:300134674` wet collodion negatives; `skos:broader` `aat:300010898`; `skos:related` `aat:300241140` |
 | Folder in box | `mbs:housedIn` + `crm:P46_is_composed_of` |
 | Physical unit in folder/box | `mbs:housedIn` |
@@ -87,7 +87,7 @@ A `crmdig:D2_Digitization_Process` produces each `D1` from the physical unit. Ma
 
 ## Reconciliation
 
-Existing EAD `@authfilenumber` values are kept (`owl:sameAs`). Seed file `vocab/seed.yml` fills TGN, AAT, LCSH, and Wikidata where the EAD is silent (notably TGN, which is absent from the source). Live APIs are opt-in (`--live`).
+Existing EAD `@authfilenumber` values are kept (`owl:sameAs` on agents and places). Seed file `vocab/seed.yml` is the shared control vocabulary for FSA.A.04 and FSA.A.06 (AAT, TGN, LCSH, LCNAF, Wikidata, Iconclass). Intra-scheme links use `skos:broader` / `skos:related`; links to those external vocabularies use `skos:exactMatch`, `skos:closeMatch`, `skos:broadMatch`, `skos:relatedMatch`. `python -m pipeline.cli vocab` emits `data/rdf/vocabulary.ttl` idempotently. Live APIs are opt-in (`--live`).
 
 ## Worked example: Masjid-i Jomeh folder (`ref7856`)
 
@@ -109,7 +109,7 @@ kg:component_ref7856
     mbs:hasDigitalObject kg:digital_fsa_a_04_ref7856 .
 
 kg:physical_ref7856
-    a mbs:PhysicalComponent, mbs:DiscreteItem, crm:E22_Human-Made_Object ;
+    a mbs:PhysicalComponent, mbs:DiscreteItem, crm:E22_Human_Made_Object ;
     mbs:housedIn kg:box_84, kg:folder_84_1 .
 ```
 

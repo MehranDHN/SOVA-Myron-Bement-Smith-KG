@@ -10,22 +10,31 @@ from rdflib.namespace import DCTERMS, OWL, RDF, RDFS, XSD
 
 from pipeline.ead_parser import parse_ead, walk
 from pipeline.iiif import enrich_daos, page_index
-from pipeline.namespaces import AAT, CRM, CRMDIG, KG, LANG, MBS, PREFIXES, SKOS, kg_uri
-from pipeline.paths import CACHE_DIR, RDF_DIR, SRCDATA
+from pipeline.namespaces import (
+    AAT,
+    CRM,
+    CRMDIG,
+    KG,
+    LANG,
+    MBS,
+    PREFIXES,
+    SKOS,
+    collection_slug,
+    kg_uri,
+    sova_record_key,
+)
+from pipeline.paths import CACHE_DIR, RDF_DIR, SRCDATA, rdf_dir_for
 from pipeline.reconcile import run as reconcile
 from pipeline.util import slugify, split_normal_date
 
+# Set by run() so emit_agent → emit_islamic_archives does not stub the mapped collection.
+_MAPPED_EADID: str | None = None
+
 
 def bind(g: Graph) -> Graph:
-    g.bind("kg", KG)
-    for pfx, ns in PREFIXES.items():
-        g.bind(pfx, ns)
-    g.bind("rdf", RDF)
-    g.bind("rdfs", RDFS)
-    g.bind("owl", OWL)
-    g.bind("xsd", XSD)
-    g.bind("dct", DCTERMS)
-    return g
+    from pipeline.namespaces import bind_graph
+
+    return bind_graph(g)
 
 
 def component_uri(eid: str) -> URIRef:
@@ -36,10 +45,11 @@ def physical_uri(eid: str) -> URIRef:
     return kg_uri("physical", eid)
 
 
-def sova_url(eid: str) -> str:
-    if eid in {"FSA.A.04", "collection"}:
-        return "https://sova.si.edu/record/fsa.a.04"
-    return f"https://sova.si.edu/record/fsa.a.04/{eid}"
+def sova_url(eid: str, collection_id: str) -> str:
+    key = sova_record_key(collection_id)
+    if eid in {collection_id, "collection", collection_slug(collection_id)}:
+        return f"https://sova.si.edu/record/{key}"
+    return f"https://sova.si.edu/record/{key}/{eid}"
 
 
 def load_reconciled() -> dict:
@@ -99,12 +109,38 @@ def entity_uri(kind: str, rec: dict) -> URIRef:
     return kg_uri(folder, slug)
 
 
-def link_matches(g: Graph, subject: URIRef, rec: dict):
+_SKIP_SAMEAS = {
+    "source_uri",
+    "aat_broader",
+    "aat_related",
+    "broadMatch",
+    "relatedMatch",
+    "closeMatch",
+    "narrowMatch",
+    "exactMatch",
+    "iconclass",
+}
+
+
+def link_matches(g: Graph, subject: URIRef, rec: dict, kind: str | None = None):
+    """owl:sameAs for agents/places; SKOS mapping for concepts is apply_skos()."""
     matches = rec.get("matches") or {}
+    conceptish = (kind or rec.get("kind") or "") in {
+        "genre",
+        "genres",
+        "subject",
+        "subjects",
+        "concept",
+        "concepts",
+        "monument",
+        "monuments",
+    }
     for key, uri in matches.items():
-        if not uri or key in {"source_uri", "aat_broader"}:
+        if not uri or key in _SKIP_SAMEAS:
             continue
-        if key == "aat_related":
+        if isinstance(uri, list):
+            continue
+        if conceptish and key in {"aat", "lcsh", "wikidata"}:
             continue
         g.add((subject, OWL.sameAs, URIRef(uri)))
         g.add((subject, MBS.reconciledTo, URIRef(uri)))
@@ -112,6 +148,10 @@ def link_matches(g: Graph, subject: URIRef, rec: dict):
         g.add((subject, MBS.matchConfidence, Literal(rec["confidence"], datatype=XSD.decimal)))
     if rec.get("text"):
         g.add((subject, MBS.sourceString, Literal(rec["text"])))
+    if conceptish or rec.get("skos"):
+        from pipeline.seed import apply_skos
+
+        apply_skos(g, subject, rec)
 
 
 ISLAMIC_ARCHIVES_NAMES = {
@@ -131,28 +171,66 @@ def islamic_archives_uri() -> URIRef:
     return kg_uri("collection", "islamic_archives")
 
 
-def emit_islamic_archives(g: Graph, rec: dict | None = None) -> URIRef:
-    """Islamic Archives is the parent holding that FSA.A.04 belongs to.
+# Sibling finding aids that hang off kg:collection_islamic_archives.
+# FSA.A.06 (Herzfeld) is stubbed until that EAD is mapped with --ead.
+ISLAMIC_ARCHIVES_SUBCOLLECTIONS = (
+    {"eadid": "FSA.A.04", "label": "Myron Bement Smith Collection"},
+    {"eadid": "FSA.A.06", "label": "Ernst Herzfeld Papers"},
+)
+
+
+def emit_subcollection_stub(g: Graph, eadid: str, label: str) -> URIRef:
+    """Minimal SHACL-valid collection node so the holding already has its branches."""
+    intel = component_uri(eadid)
+    phys = physical_uri(eadid)
+    url = sova_url(eadid, eadid)
+    g.add((intel, RDF.type, MBS.ArchivalComponent))
+    g.add((intel, RDF.type, CRM["E73_Information_Object"]))
+    g.add((phys, RDF.type, MBS.PhysicalComponent))
+    g.add((phys, RDF.type, CRM["E22_Human-Made_Object"]))
+    g.add((intel, MBS.hasPhysicalUnit, phys))
+    g.add((intel, RDFS.label, Literal(label)))
+    g.add((phys, RDFS.label, Literal(label)))
+    g.add((intel, MBS.archivalLevel, Literal("collection")))
+    g.add((intel, MBS.eadRef, Literal(eadid)))
+    g.add((intel, DCTERMS.identifier, Literal(eadid)))
+    g.add((intel, MBS.digitized, Literal(False, datatype=XSD.boolean)))
+    g.add((intel, MBS.sovaUrl, Literal(url, datatype=XSD.anyURI)))
+    g.add((intel, RDFS.seeAlso, URIRef(url)))
+    return intel
+
+
+def emit_islamic_archives(
+    g: Graph, rec: dict | None = None, mapped_eadid: str | None = None
+) -> URIRef:
+    """Islamic Archives is the parent holding of FSA.A.04 and FSA.A.06.
 
     EAD corpname 'Islamic Archives' names that larger collection, not a
-    corporate body. Further sub-collections will be attached with
-    mbs:hasSubCollection later.
+    corporate body. Each finding aid is a sub-collection attached with
+    mbs:hasSubCollection. The collection currently being mapped is linked
+    only; siblings that are not in this EAD are emitted as SHACL-valid stubs.
     """
     uri = islamic_archives_uri()
-    coll = component_uri("FSA.A.04")
     g.add((uri, RDF.type, MBS.HoldingCollection))
     g.add((uri, RDF.type, CRM["E78_Curated_Holding"]))
     g.add((uri, RDF.type, CRM["E73_Information_Object"]))
     g.add((uri, RDFS.label, Literal("Islamic Archives")))
     g.add((uri, SKOS.altLabel, Literal("The Archive for Islamic Culture and Art")))
     g.add((uri, RDFS.comment, Literal(
-        "Parent holding of the Myron Bement Smith Collection (FSA.A.04). "
-        "Further sub-collections of the Islamic Archives will be added as siblings of FSA.A.04."
+        "Parent holding of the Myron Bement Smith Collection (FSA.A.04) and the "
+        "Ernst Herzfeld Papers (FSA.A.06). Further sub-collections use the same "
+        "mbs:hasSubCollection link."
     )))
-    g.add((uri, MBS.hasSubCollection, coll))
-    g.add((uri, CRM["P106_is_composed_of"], coll))
-    g.add((coll, MBS.isPartOfCollection, uri))
-    g.add((coll, CRM["P106i_forms_part_of"], uri))
+    mapped = mapped_eadid or _MAPPED_EADID
+    for row in ISLAMIC_ARCHIVES_SUBCOLLECTIONS:
+        if mapped and row["eadid"] == mapped:
+            coll = component_uri(row["eadid"])
+        else:
+            coll = emit_subcollection_stub(g, row["eadid"], row["label"])
+        g.add((uri, MBS.hasSubCollection, coll))
+        g.add((uri, CRM["P106_is_composed_of"], coll))
+        g.add((coll, MBS.isPartOfCollection, uri))
+        g.add((coll, CRM["P106i_forms_part_of"], uri))
     if rec:
         if rec.get("text"):
             g.add((uri, MBS.sourceString, Literal(rec["text"])))
@@ -170,7 +248,7 @@ def emit_agent(g: Graph, rec: dict) -> URIRef:
         classes = CRM["E74_Group"]
     g.add((uri, RDF.type, classes))
     g.add((uri, RDFS.label, Literal(text)))
-    link_matches(g, uri, rec)
+    link_matches(g, uri, rec, kind="agent")
     return uri
 
 
@@ -178,7 +256,7 @@ def emit_place(g: Graph, rec: dict) -> URIRef:
     uri = entity_uri("place", rec)
     g.add((uri, RDF.type, CRM["E53_Place"]))
     g.add((uri, RDFS.label, Literal(rec.get("text") or "")))
-    link_matches(g, uri, rec)
+    link_matches(g, uri, rec, kind="place")
     return uri
 
 
@@ -186,31 +264,8 @@ def emit_concept(g: Graph, rec: dict, kind: str) -> URIRef:
     uri = entity_uri(kind, rec)
     g.add((uri, RDF.type, CRM["E55_Type"]))
     g.add((uri, RDF.type, SKOS.Concept))
-    g.add((uri, RDFS.label, Literal(rec.get("text") or "")))
-    link_matches(g, uri, rec)
-    label = (rec.get("text") or "").lower()
-    if "glass negative" in label:
-        wet = AAT["300134674"]
-        g.add((uri, OWL.sameAs, wet))
-        g.add((uri, MBS.reconciledTo, wet))
-        g.add((uri, SKOS.exactMatch, wet))
-        g.add((uri, SKOS.broader, AAT["300010898"]))
-        g.add((uri, SKOS.related, AAT["300241140"]))
-        g.add((wet, RDFS.label, Literal("wet collodion negatives")))
-        g.add((AAT["300010898"], RDFS.label, Literal("glass negatives")))
-        g.add((AAT["300241140"], RDFS.label, Literal("dry collodion negatives")))
-        g.add((uri, RDFS.comment, Literal(
-            "EAD Genre Form 'Glass negatives' is mapped to AAT wet collodion negatives "
-            "(300134674). Dry collodion negatives (300241140) is the sibling process."
-        )))
-    matches = rec.get("matches") or {}
-    if matches.get("aat_broader"):
-        g.add((uri, SKOS.broader, URIRef(matches["aat_broader"])))
-    related = matches.get("aat_related")
-    if isinstance(related, str):
-        related = [related]
-    for rel in related or []:
-        g.add((uri, SKOS.related, URIRef(rel)))
+    g.add((uri, RDFS.label, Literal(rec.get("text") or rec.get("label") or "")))
+    link_matches(g, uri, rec, kind=kind)
     return uri
 
 
@@ -465,13 +520,22 @@ def _infer_item_media(did: dict, title: str):
     return None
 
 
-def emit_component(g: Graph, node: dict, parent: dict | None, idx: dict, probe_iiif: bool, pages=None):
+def emit_component(
+    g: Graph,
+    node: dict,
+    parent: dict | None,
+    idx: dict,
+    probe_iiif: bool,
+    pages=None,
+    collection_id: str | None = None,
+):
     eid = node["id"]
     did = node.get("did") or {}
     intel = component_uri(eid)
     phys = physical_uri(eid)
     title = did.get("unittitle") or eid
     level = node.get("level") or "item"
+    collection_id = collection_id or eid
 
     g.add((intel, RDF.type, MBS.ArchivalComponent))
     g.add((intel, RDF.type, CRM["E73_Information_Object"]))
@@ -482,8 +546,8 @@ def emit_component(g: Graph, node: dict, parent: dict | None, idx: dict, probe_i
     g.add((phys, RDFS.label, Literal(title)))
     g.add((intel, MBS.archivalLevel, Literal(level)))
     g.add((intel, MBS.eadRef, Literal(eid)))
-    g.add((intel, MBS.sovaUrl, Literal(sova_url(eid), datatype=XSD.anyURI)))
-    g.add((intel, RDFS.seeAlso, URIRef(sova_url(eid))))
+    g.add((intel, MBS.sovaUrl, Literal(sova_url(eid, collection_id), datatype=XSD.anyURI)))
+    g.add((intel, RDFS.seeAlso, URIRef(sova_url(eid, collection_id))))
     g.add((intel, MBS.digitized, Literal(bool(node.get("digitized")), datatype=XSD.boolean)))
     kind = node.get("digitization_kind") or "none"
     g.add((intel, MBS.digitizationKind, MBS[kind.replace("-", "_")]))
@@ -638,11 +702,11 @@ def _attach_named(g, intel, rec, idx, field):
         g.add((intel, CRM["P67_refers_to"], agent))
 
 
-def emit_finding_aid(g: Graph, header: dict, collection_id: str):
-    fa = kg_uri("finding-aid")
+def emit_finding_aid(g: Graph, header: dict, collection_id: str, title: str, source_name: str):
+    fa = kg_uri("finding_aid", collection_id)
     g.add((fa, RDF.type, MBS.FindingAid))
     g.add((fa, RDF.type, CRM["E31_Document"]))
-    g.add((fa, RDFS.label, Literal("Myron Bement Smith Collection finding aid")))
+    g.add((fa, RDFS.label, Literal(f"{title} finding aid")))
     g.add((fa, CRM["P70_documents"], component_uri(collection_id)))
     if header.get("eadid_url"):
         g.add((fa, OWL.sameAs, URIRef(header["eadid_url"])))
@@ -651,54 +715,62 @@ def emit_finding_aid(g: Graph, header: dict, collection_id: str):
         g.add((fa, DCTERMS.creator, Literal(header["author"])))
     if header.get("publisher"):
         g.add((fa, DCTERMS.publisher, Literal(header["publisher"])))
-    g.add((fa, DCTERMS.source, Literal(str(SRCDATA.name))))
+    g.add((fa, DCTERMS.source, Literal(source_name)))
 
 
 def run(path=None, probe_iiif: bool = False, limit: int | None = None) -> dict:
-    data = parse_ead(path or SRCDATA)
+    global _MAPPED_EADID
+    ead_file = Path(path) if path else SRCDATA
+    data = parse_ead(ead_file)
+    collection_id = data["collection"]["id"]
+    _MAPPED_EADID = collection_id
+    coll_title = (data["collection"].get("did") or {}).get("unittitle") or collection_id
     idx = index_reconciled(load_reconciled())
     pages = page_index()
-    RDF_DIR.mkdir(parents=True, exist_ok=True)
+    out_dir = rdf_dir_for(collection_id)
+    out_dir.mkdir(parents=True, exist_ok=True)
 
-    graphs = {
-        "collection": bind(Graph()),
-        "series-1": bind(Graph()),
-        "series-2": bind(Graph()),
-        "series-3": bind(Graph()),
-        "vocab": bind(Graph()),
-    }
-    emit_finding_aid(graphs["collection"], data["header"], data["collection"]["id"])
-    emit_islamic_archives(graphs["collection"])
+    graphs = {"collection": bind(Graph())}
+    emit_finding_aid(
+        graphs["collection"],
+        data["header"],
+        collection_id,
+        coll_title,
+        ead_file.name,
+    )
+    emit_islamic_archives(graphs["collection"], mapped_eadid=collection_id)
+    from pipeline.seed import emit_vocabulary
+
+    vocab_graph = bind(Graph())
+    emit_vocabulary(vocab_graph)
+    RDF_DIR.mkdir(parents=True, exist_ok=True)
+    vocab_dest = RDF_DIR / "vocabulary.ttl"
+    vocab_graph.serialize(vocab_dest, format="turtle")
 
     count = 0
-    current_series = "collection"
-
-    def series_key(node, parent):
-        if node.get("level") == "series":
-            title = (node.get("did") or {}).get("unittitle") or ""
-            if title.startswith("Papers"):
-                return "series-1"
-            if "Islamic" in title:
-                return "series-2"
-            return "series-3"
-        if parent is None:
-            return "collection"
-        return None
-
-    series_of = {data["collection"]["id"]: "collection"}
+    series_index = 0
+    series_of = {collection_id: "collection"}
 
     for node, parent in walk(data["collection"]):
-        sk = series_key(node, parent)
         pid = parent["id"] if parent else None
-        if sk and sk != "collection":
-            current_series = sk
+        if node.get("level") == "series" and parent and parent.get("level") == "collection":
+            series_index += 1
+            sk = f"series-{series_index}"
             series_of[node["id"]] = sk
+            graphs.setdefault(sk, bind(Graph()))
         elif node["id"] not in series_of:
-            series_of[node["id"]] = series_of.get(pid, current_series)
+            series_of[node["id"]] = series_of.get(pid, "collection")
         gname = series_of[node["id"]]
-        if gname not in graphs:
-            gname = "collection"
-        emit_component(graphs[gname], node, parent, idx, probe_iiif, pages=pages)
+        graphs.setdefault(gname, bind(Graph()))
+        emit_component(
+            graphs[gname],
+            node,
+            parent,
+            idx,
+            probe_iiif,
+            pages=pages,
+            collection_id=collection_id,
+        )
         count += 1
         if limit and count >= limit:
             break
@@ -707,10 +779,15 @@ def run(path=None, probe_iiif: bool = False, limit: int | None = None) -> dict:
     for name, g in graphs.items():
         if len(g) == 0:
             continue
-        dest = RDF_DIR / f"{name}.ttl"
+        dest = out_dir / f"{name}.ttl"
         g.serialize(dest, format="turtle")
         written[name] = {"triples": len(g), "path": str(dest)}
-    return {"components": count, "graphs": written}
+    written["vocabulary"] = {"triples": len(vocab_graph), "path": str(vocab_dest)}
+    return {
+        "components": count,
+        "eadid": collection_id,
+        "graphs": written,
+    }
 
 
 if __name__ == "__main__":

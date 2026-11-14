@@ -1,0 +1,660 @@
+@prefix aat: <http://vocab.getty.edu/aat/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix iconclass: <https://iconclass.org/> .
+@prefix kg: <https://w3id.org/sova/fsa_a_04#> .
+@prefix mbs: <https://w3id.org/sova/fsa_a_04/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tgn: <http://vocab.getty.edu/tgn/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+kg:agent_Q15130478 a crm:E21_Person ;
+    rdfs:label "Field, Henry" ;
+    owl:sameAs wd:Q15130478 ;
+    skos:exactMatch wd:Q15130478 ;
+    skos:prefLabel "Field, Henry"@en ;
+    mbs:reconciledTo wd:Q15130478 ;
+    mbs:seedId "Field_Henry" .
+
+kg:agent_Q159416 a crm:E21_Person ;
+    rdfs:label "Nāsir al-Dīn Shāh, Shah of Iran, 1831-1896" ;
+    owl:sameAs wd:Q159416 ;
+    skos:exactMatch wd:Q159416 ;
+    skos:prefLabel "Nāsir al-Dīn Shāh, Shah of Iran, 1831-1896"@en ;
+    mbs:reconciledTo wd:Q159416 ;
+    mbs:seedId "N_sir_al_D_n_Sh_h_Shah_of_Iran_1831_1896" .
+
+kg:agent_Q182921 a crm:E21_Person ;
+    rdfs:label "Reza Shah Pahlavi, Shah of Iran, 1878-1944" ;
+    owl:sameAs wd:Q182921 ;
+    skos:exactMatch wd:Q182921 ;
+    skos:prefLabel "Reza Shah Pahlavi, Shah of Iran, 1878-1944"@en ;
+    mbs:reconciledTo wd:Q182921 ;
+    mbs:seedId "Reza_Shah_Pahlavi_Shah_of_Iran_1878_1944" .
+
+kg:agent_Q216041 a crm:E21_Person ;
+    rdfs:label "Ettinghausen, Richard" ;
+    owl:sameAs wd:Q216041 ;
+    skos:exactMatch wd:Q216041 ;
+    skos:prefLabel "Ettinghausen, Richard"@en ;
+    mbs:reconciledTo wd:Q216041 ;
+    mbs:seedId "Ettinghausen_Richard" .
+
+kg:agent_Q2915801 a crm:E21_Person ;
+    rdfs:label "Bonfils, Félix, 1831-1885" ;
+    owl:sameAs wd:Q2915801 ;
+    skos:exactMatch wd:Q2915801 ;
+    skos:prefLabel "Bonfils, Félix, 1831-1885"@en ;
+    mbs:reconciledTo wd:Q2915801 ;
+    mbs:seedId "Bonfils_F_lix_1831_1885" .
+
+kg:agent_Q382319 a crm:E21_Person ;
+    rdfs:label "Sevruguin, Antoin, 1851-1933" ;
+    owl:sameAs wd:Q382319 ;
+    skos:exactMatch wd:Q382319 ;
+    skos:prefLabel "Sevruguin, Antoin, 1851-1933"@en ;
+    mbs:reconciledTo wd:Q382319 ;
+    mbs:seedId "Sevruguin_Antoin_1851_1933" .
+
+kg:agent_Q62933 a crm:E21_Person ;
+    rdfs:label "Herzfeld, Ernst, 1879-1948" ;
+    owl:sameAs wd:Q62933 ;
+    skos:exactMatch wd:Q62933 ;
+    skos:prefLabel "Herzfeld, Ernst, 1879-1948"@en ;
+    mbs:reconciledTo wd:Q62933 ;
+    mbs:seedId "Herzfeld_Ernst_1879_1948" .
+
+kg:agent_Q6765187 a crm:E21_Person ;
+    rdfs:label "Blake, Marion Elizabeth" ;
+    owl:sameAs wd:Q6765187 ;
+    skos:exactMatch wd:Q6765187 ;
+    skos:prefLabel "Blake, Marion Elizabeth"@en ;
+    mbs:reconciledTo wd:Q6765187 ;
+    mbs:seedId "Blake_Marion_Elizabeth" .
+
+kg:agent_Q86930 a crm:E21_Person ;
+    rdfs:label "Sarre, Friedrich, 1865-1945" ;
+    rdfs:comment "Colleague of Herzfeld; FSA.A.06." ;
+    owl:sameAs wd:Q86930 ;
+    skos:definition "Colleague of Herzfeld; FSA.A.06." ;
+    skos:exactMatch wd:Q86930 ;
+    skos:prefLabel "Sarre, Friedrich, 1865-1945"@en ;
+    mbs:reconciledTo wd:Q86930 ;
+    mbs:seedId "Sarre_Friedrich_1865_1945" .
+
+kg:agent_Q958788 a crm:E21_Person ;
+    rdfs:label "Pope, Arthur Upham, 1881-1969" ;
+    owl:sameAs wd:Q958788 ;
+    skos:exactMatch wd:Q958788 ;
+    skos:prefLabel "Pope, Arthur Upham, 1881-1969"@en ;
+    mbs:reconciledTo wd:Q958788 ;
+    mbs:seedId "Pope_Arthur_Upham_1881_1969" .
+
+kg:agent_Q98396885 a crm:E21_Person ;
+    rdfs:label "Smith, Myron Bement, 1897-1970" ;
+    owl:sameAs wd:Q98396885 ;
+    skos:exactMatch wd:Q98396885 ;
+    skos:prefLabel "Smith, Myron Bement, 1897-1970"@en ;
+    mbs:reconciledTo wd:Q98396885 ;
+    mbs:seedId "Smith_Myron_Bement_1897_1970" .
+
+kg:concept_aat_300007391 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Religious buildings" ;
+    skos:exactMatch aat:300007391 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Religious buildings"@en ;
+    mbs:reconciledTo aat:300007391 ;
+    mbs:seedId "Religious_buildings" .
+
+kg:concept_aat_300015524 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Portrait photography" ;
+    skos:exactMatch aat:300015524,
+        <https://id.loc.gov/authorities/subjects/sh85101240> ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Portrait photography"@en ;
+    mbs:reconciledTo aat:300015524 ;
+    mbs:seedId "Portrait_photography" .
+
+kg:concept_aat_300026877 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Correspondence" ;
+    skos:exactMatch aat:300026877 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Correspondence"@en ;
+    mbs:reconciledTo aat:300026877 ;
+    mbs:seedId "Correspondence" .
+
+kg:concept_aat_300027200 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Notes" ;
+    skos:exactMatch aat:300027200 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Notes"@en ;
+    mbs:reconciledTo aat:300027200 ;
+    mbs:seedId "Notes" .
+
+kg:concept_aat_300027339 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Sketchbooks" ;
+    rdfs:comment "FSA.A.06 series of field sketchbooks." ;
+    skos:definition "FSA.A.06 series of field sketchbooks." ;
+    skos:exactMatch aat:300027339 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Sketchbooks"@en ;
+    mbs:reconciledTo aat:300027339 ;
+    mbs:seedId "sketchbooks" .
+
+kg:concept_aat_300028094 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Maps" ;
+    skos:exactMatch aat:300028094 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Maps"@en ;
+    mbs:reconciledTo aat:300028094 ;
+    mbs:seedId "Maps" .
+
+kg:concept_aat_300034787 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Architectural drawings" ;
+    skos:exactMatch aat:300034787 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Architectural drawings"@en ;
+    mbs:reconciledTo aat:300034787 ;
+    mbs:seedId "Architectural_drawings" .
+
+kg:concept_aat_300046300 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Photographs" ;
+    skos:exactMatch aat:300046300 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Photographs"@en ;
+    mbs:reconciledTo aat:300046300 ;
+    mbs:seedId "Photographs" .
+
+kg:concept_aat_300127024 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Lantern slides" ;
+    skos:exactMatch aat:300127024 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Lantern slides"@en ;
+    mbs:reconciledTo aat:300127024 ;
+    mbs:seedId "Lantern_slides" .
+
+kg:concept_aat_300127104 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Photographic prints" ;
+    skos:exactMatch aat:300127104 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Photographic prints"@en ;
+    mbs:reconciledTo aat:300127104 ;
+    mbs:seedId "Photographic_prints" .
+
+kg:concept_aat_300127121 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Albumen prints" ;
+    skos:exactMatch aat:300127121 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Albumen prints"@en ;
+    mbs:reconciledTo aat:300127121 ;
+    mbs:seedId "Albumen_prints" .
+
+kg:concept_aat_300127173 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Negatives" ;
+    skos:exactMatch aat:300127173 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Negatives"@en ;
+    mbs:reconciledTo aat:300127173 ;
+    mbs:seedId "Negatives" .
+
+kg:concept_aat_300128377 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Color slides" ;
+    skos:exactMatch aat:300128377 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Color slides"@en ;
+    mbs:reconciledTo aat:300128377 ;
+    mbs:seedId "Color_slides" .
+
+kg:concept_aat_300128695 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Gelatin silver prints" ;
+    skos:exactMatch aat:300128695 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Gelatin silver prints"@en ;
+    mbs:reconciledTo aat:300128695 ;
+    mbs:seedId "Gelatin_silver_prints" .
+
+kg:concept_aat_300188750 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Royalty (Nobility)" ;
+    skos:exactMatch aat:300188750 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Royalty (Nobility)"@en ;
+    mbs:reconciledTo aat:300188750 ;
+    mbs:seedId "Royalty_Nobility" .
+
+kg:concept_aat_300223022 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Studio portraits" ;
+    skos:exactMatch aat:300223022 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Studio portraits"@en ;
+    mbs:reconciledTo aat:300223022 ;
+    mbs:seedId "Studio_portraits" .
+
+kg:concept_aat_300264354 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Notebooks" ;
+    skos:exactMatch aat:300264354 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Notebooks"@en ;
+    mbs:reconciledTo aat:300264354 ;
+    mbs:seedId "Notebooks" .
+
+kg:concept_aat_300264379 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Squeezes" ;
+    rdfs:comment "Paper squeezes of inscriptions; FSA.A.06." ;
+    skos:definition "Paper squeezes of inscriptions; FSA.A.06." ;
+    skos:exactMatch aat:300264379 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Squeezes"@en ;
+    mbs:reconciledTo aat:300264379 ;
+    mbs:seedId "squeezes" .
+
+kg:concept_lcsh_sh85005757 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Antiquities" ;
+    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85005757> ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Antiquities"@en ;
+    mbs:reconciledTo <https://id.loc.gov/authorities/subjects/sh85005757> ;
+    mbs:seedId "Antiquities" .
+
+kg:place_tgn_1000004 a crm:E53_Place ;
+    rdfs:label "Asia" ;
+    owl:sameAs tgn:1000004,
+        wd:Q48 ;
+    skos:exactMatch tgn:1000004,
+        wd:Q48,
+        <https://id.loc.gov/authorities/subjects/sh85008606> ;
+    skos:prefLabel "Asia"@en ;
+    mbs:reconciledTo tgn:1000004,
+        wd:Q48 ;
+    mbs:seedId "Asia" .
+
+kg:place_tgn_1000070 a crm:E53_Place ;
+    rdfs:label "France" ;
+    owl:sameAs tgn:1000070,
+        wd:Q142 ;
+    skos:exactMatch tgn:1000070,
+        wd:Q142 ;
+    skos:prefLabel "France"@en ;
+    mbs:reconciledTo tgn:1000070,
+        wd:Q142 ;
+    mbs:seedId "France" .
+
+kg:place_tgn_1000080 a crm:E53_Place ;
+    rdfs:label "Italy" ;
+    owl:sameAs tgn:1000080,
+        wd:Q38 ;
+    skos:exactMatch tgn:1000080,
+        wd:Q38 ;
+    skos:prefLabel "Italy"@en ;
+    mbs:reconciledTo tgn:1000080,
+        wd:Q38 ;
+    mbs:seedId "Italy" .
+
+kg:place_tgn_1000112 a crm:E53_Place ;
+    rdfs:label "Cyprus" ;
+    owl:sameAs tgn:1000112,
+        wd:Q229 ;
+    skos:exactMatch tgn:1000112,
+        wd:Q229 ;
+    skos:prefLabel "Cyprus"@en ;
+    mbs:reconciledTo tgn:1000112,
+        wd:Q229 ;
+    mbs:seedId "Cyprus" .
+
+kg:place_tgn_1000118 a crm:E53_Place ;
+    rdfs:label "Iraq" ;
+    owl:sameAs tgn:1000118,
+        wd:Q796 ;
+    skos:exactMatch tgn:1000118,
+        wd:Q796 ;
+    skos:prefLabel "Iraq"@en ;
+    mbs:reconciledTo tgn:1000118,
+        wd:Q796 ;
+    mbs:seedId "Iraq" .
+
+kg:place_tgn_1000126 a crm:E53_Place ;
+    rdfs:label "Lebanon" ;
+    owl:sameAs tgn:1000126,
+        wd:Q822 ;
+    skos:exactMatch tgn:1000126,
+        wd:Q822 ;
+    skos:prefLabel "Lebanon"@en ;
+    mbs:reconciledTo tgn:1000126,
+        wd:Q822 ;
+    mbs:seedId "Lebanon" .
+
+kg:place_tgn_1000144 a crm:E53_Place ;
+    rdfs:label "Turkey" ;
+    owl:sameAs tgn:1000144,
+        wd:Q43 ;
+    skos:exactMatch tgn:1000144,
+        wd:Q43 ;
+    skos:prefLabel "Turkey"@en ;
+    mbs:reconciledTo tgn:1000144,
+        wd:Q43 ;
+    mbs:seedId "Turkey" .
+
+kg:place_tgn_1000146 a crm:E53_Place ;
+    rdfs:label "Syria" ;
+    owl:sameAs tgn:1000146,
+        wd:Q858,
+        <https://id.loc.gov/authorities/names/n80061798> ;
+    skos:exactMatch tgn:1000146,
+        wd:Q858,
+        <https://id.loc.gov/authorities/names/n80061798> ;
+    skos:prefLabel "Syria"@en ;
+    mbs:reconciledTo tgn:1000146,
+        wd:Q858,
+        <https://id.loc.gov/authorities/names/n80061798> ;
+    mbs:seedId "Syria" .
+
+kg:place_tgn_7000198 a crm:E53_Place ;
+    rdfs:label "India" ;
+    owl:sameAs tgn:7000198,
+        wd:Q668 ;
+    skos:exactMatch tgn:7000198,
+        wd:Q668 ;
+    skos:prefLabel "India"@en ;
+    mbs:reconciledTo tgn:7000198,
+        wd:Q668 ;
+    mbs:seedId "India" .
+
+kg:place_tgn_7000231 a crm:E53_Place ;
+    rdfs:label "Iran" ;
+    rdfs:comment "Historical English name; same TGN as Iran" ;
+    owl:sameAs tgn:7000231,
+        wd:Q794,
+        <https://id.loc.gov/authorities/names/n79039880> ;
+    skos:altLabel "Persia"@en ;
+    skos:definition "Historical English name; same TGN as Iran" ;
+    skos:exactMatch tgn:7000231,
+        wd:Q794,
+        <https://id.loc.gov/authorities/names/n79039880> ;
+    skos:prefLabel "Iran"@en ;
+    mbs:reconciledTo tgn:7000231,
+        wd:Q794,
+        <https://id.loc.gov/authorities/names/n79039880> ;
+    mbs:seedId "Iran" .
+
+kg:place_tgn_7001374 a crm:E53_Place ;
+    rdfs:label "Isfahan" ;
+    owl:sameAs tgn:7001374,
+        wd:Q42053,
+        <https://id.loc.gov/authorities/names/n79061284> ;
+    skos:altLabel "Isfahan city"@en,
+        "Iṣfahān (Iran)"@en ;
+    skos:exactMatch tgn:7001374,
+        wd:Q42053,
+        <https://id.loc.gov/authorities/names/n79061284> ;
+    skos:prefLabel "Isfahan"@en ;
+    mbs:reconciledTo tgn:7001374,
+        wd:Q42053,
+        <https://id.loc.gov/authorities/names/n79061284> ;
+    mbs:seedId "Isfahan" .
+
+kg:place_tgn_7001657 a crm:E53_Place ;
+    rdfs:label "Naqsh-i Rustam (Iran)" ;
+    owl:sameAs tgn:7001657,
+        wd:Q733613 ;
+    skos:exactMatch tgn:7001657,
+        wd:Q733613 ;
+    skos:prefLabel "Naqsh-i Rustam (Iran)"@en ;
+    mbs:reconciledTo tgn:7001657,
+        wd:Q733613 ;
+    mbs:seedId "Naqsh_i_Rustam_Iran" .
+
+kg:place_tgn_7001658 a crm:E53_Place ;
+    rdfs:label "Pasargadae" ;
+    rdfs:comment "Herzfeld excavation site; FSA.A.06." ;
+    owl:sameAs tgn:7001658,
+        wd:Q203402 ;
+    skos:definition "Herzfeld excavation site; FSA.A.06." ;
+    skos:exactMatch tgn:7001658,
+        wd:Q203402 ;
+    skos:prefLabel "Pasargadae"@en ;
+    mbs:reconciledTo tgn:7001658,
+        wd:Q203402 ;
+    mbs:seedId "pasargadae" .
+
+kg:place_tgn_7002161 a crm:E53_Place ;
+    rdfs:label "Palmyra" ;
+    owl:sameAs tgn:7002161,
+        wd:Q5747 ;
+    skos:altLabel "Palmyra (Syria)"@en ;
+    skos:exactMatch tgn:7002161,
+        wd:Q5747 ;
+    skos:prefLabel "Palmyra"@en ;
+    mbs:reconciledTo tgn:7002161,
+        wd:Q5747 ;
+    mbs:seedId "Palmyra" .
+
+kg:place_tgn_7002165 a crm:E53_Place ;
+    rdfs:label "Aleppo" ;
+    owl:sameAs tgn:7002165,
+        wd:Q41183,
+        <https://id.loc.gov/authorities/names/n79055280> ;
+    skos:exactMatch tgn:7002165,
+        wd:Q41183,
+        <https://id.loc.gov/authorities/names/n79055280> ;
+    skos:prefLabel "Aleppo"@en ;
+    mbs:reconciledTo tgn:7002165,
+        wd:Q41183,
+        <https://id.loc.gov/authorities/names/n79055280> ;
+    mbs:seedId "aleppo" .
+
+kg:place_tgn_7002229 a crm:E53_Place ;
+    rdfs:label "Persepolis" ;
+    owl:sameAs tgn:7002229,
+        wd:Q129072,
+        <https://id.loc.gov/authorities/names/n80063345> ;
+    skos:altLabel "Persepolis (Iran)"@en ;
+    skos:exactMatch tgn:7002229,
+        wd:Q129072,
+        <https://id.loc.gov/authorities/names/n80063345> ;
+    skos:prefLabel "Persepolis"@en ;
+    mbs:reconciledTo tgn:7002229,
+        wd:Q129072,
+        <https://id.loc.gov/authorities/names/n80063345> ;
+    mbs:seedId "Persepolis" .
+
+kg:place_tgn_7007567 a crm:E53_Place ;
+    rdfs:label "New York City" ;
+    owl:sameAs tgn:7007567,
+        wd:Q60 ;
+    skos:exactMatch tgn:7007567,
+        wd:Q60 ;
+    skos:prefLabel "New York City"@en ;
+    mbs:reconciledTo tgn:7007567,
+        wd:Q60 ;
+    mbs:seedId "New_York_City" .
+
+kg:place_tgn_7011132 a crm:E53_Place ;
+    rdfs:label "Samarra" ;
+    rdfs:comment "Herzfeld excavation site; FSA.A.06." ;
+    owl:sameAs tgn:7011132,
+        wd:Q170242,
+        <https://id.loc.gov/authorities/names/n79055264> ;
+    skos:definition "Herzfeld excavation site; FSA.A.06." ;
+    skos:exactMatch tgn:7011132,
+        wd:Q170242,
+        <https://id.loc.gov/authorities/names/n79055264> ;
+    skos:prefLabel "Samarra"@en ;
+    mbs:reconciledTo tgn:7011132,
+        wd:Q170242,
+        <https://id.loc.gov/authorities/names/n79055264> ;
+    mbs:seedId "samarra" .
+
+kg:place_tgn_7013962 a crm:E53_Place ;
+    rdfs:label "Washington D.C." ;
+    owl:sameAs tgn:7013962,
+        wd:Q61 ;
+    skos:exactMatch tgn:7013962,
+        wd:Q61 ;
+    skos:prefLabel "Washington D.C."@en ;
+    mbs:reconciledTo tgn:7013962,
+        wd:Q61 ;
+    mbs:seedId "Washington_D_C" .
+
+kg:place_tgn_7014449 a crm:E53_Place ;
+    rdfs:label "Rochester, New York" ;
+    owl:sameAs tgn:7014449,
+        wd:Q49218 ;
+    skos:exactMatch tgn:7014449,
+        wd:Q49218 ;
+    skos:prefLabel "Rochester, New York"@en ;
+    mbs:reconciledTo tgn:7014449,
+        wd:Q49218 ;
+    mbs:seedId "Rochester_New_York" .
+
+kg:place_tgn_7014497 a crm:E53_Place ;
+    rdfs:label "Tehran" ;
+    owl:sameAs tgn:7014497,
+        wd:Q3616,
+        <https://id.loc.gov/authorities/names/n79039626> ;
+    skos:altLabel "Tehran (Iran)"@en ;
+    skos:exactMatch tgn:7014497,
+        wd:Q3616,
+        <https://id.loc.gov/authorities/names/n79039626> ;
+    skos:prefLabel "Tehran"@en ;
+    mbs:reconciledTo tgn:7014497,
+        wd:Q3616,
+        <https://id.loc.gov/authorities/names/n79039626> ;
+    mbs:seedId "Tehran" .
+
+kg:built_Q1227533 a crm:E22_Human_Made_Object,
+        skos:Concept ;
+    rdfs:label "Masjid-i Jomeh" ;
+    skos:altLabel "Isfahan Masjid-i Jomeh"@en,
+        "Jameh Mosque of Isfahan"@en,
+        "Masjid-i Jum'a"@en,
+        "Masjild-i Jomeh"@en ;
+    skos:broader kg:concept_aat_300007691 ;
+    skos:closeMatch aat:300007691,
+        iconclass:11Q71,
+        <https://id.loc.gov/authorities/subjects/sh85087470> ;
+    skos:exactMatch tgn:7001374,
+        wd:Q1227533 ;
+    skos:prefLabel "Masjid-i Jomeh"@en ;
+    mbs:reconciledTo wd:Q1227533 ;
+    mbs:seedId "Masjid_i_Jomeh" .
+
+kg:concept_lcsh_sh85006660 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Architecture -- Iran" ;
+    skos:broader kg:concept_aat_300263552 ;
+    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85006660> ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Architecture -- Iran"@en ;
+    mbs:reconciledTo <https://id.loc.gov/authorities/subjects/sh85006660> ;
+    mbs:seedId "architecture_iran" .
+
+kg:concept_aat_300000996 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Islamic architecture" ;
+    skos:broader kg:concept_aat_300263552 ;
+    skos:closeMatch iconclass:12I ;
+    skos:exactMatch aat:300000996,
+        wd:Q839805,
+        <https://id.loc.gov/authorities/subjects/sh85006804> ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:narrower kg:concept_aat_300007691 ;
+    skos:prefLabel "Islamic architecture"@en ;
+    mbs:reconciledTo aat:300000996 ;
+    mbs:seedId "islamic_architecture" .
+
+kg:concept_aat_300007691 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Mosques" ;
+    skos:broader kg:concept_aat_300000996 ;
+    skos:closeMatch iconclass:11Q71 ;
+    skos:exactMatch aat:300007691,
+        wd:Q32815,
+        <https://id.loc.gov/authorities/subjects/sh85087470> ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:narrower kg:built_Q1227533 ;
+    skos:prefLabel "Mosques"@en ;
+    mbs:reconciledTo aat:300007691 ;
+    mbs:seedId "mosques" .
+
+kg:concept_aat_300010898 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Glass negatives (generic)" ;
+    rdfs:comment "Generic glass-negative process (AAT 300010898); parent of wet and dry collodion in this scheme." ;
+    skos:definition "Generic glass-negative process (AAT 300010898); parent of wet and dry collodion in this scheme." ;
+    skos:exactMatch aat:300010898 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:narrower kg:concept_aat_300134674,
+        kg:concept_aat_300241140 ;
+    skos:prefLabel "Glass negatives (generic)"@en ;
+    mbs:reconciledTo aat:300010898 ;
+    mbs:seedId "glass_negatives" .
+
+kg:concept_aat_300134674 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Wet collodion negatives" ;
+    rdfs:comment """EAD Genre Form "Glass negatives" maps to AAT wet collodion negatives (300134674). The generic AAT "glass negatives" (300010898) is the local broader concept; dry collodion is a related sibling process.
+""" ;
+    skos:altLabel "Glass negatives"@en ;
+    skos:broader kg:concept_aat_300010898 ;
+    skos:definition """EAD Genre Form "Glass negatives" maps to AAT wet collodion negatives (300134674). The generic AAT "glass negatives" (300010898) is the local broader concept; dry collodion is a related sibling process.
+""" ;
+    skos:exactMatch aat:300134674 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Wet collodion negatives"@en ;
+    skos:related kg:concept_aat_300241140 ;
+    mbs:reconciledTo aat:300134674 ;
+    mbs:seedId "wet_collodion_negatives" .
+
+kg:concept_aat_300241140 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Dry collodion negatives" ;
+    skos:broader kg:concept_aat_300010898 ;
+    skos:exactMatch aat:300241140 ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Dry collodion negatives"@en ;
+    skos:related kg:concept_aat_300134674 ;
+    mbs:reconciledTo aat:300241140 ;
+    mbs:seedId "dry_collodion_negatives" .
+
+kg:concept_aat_300263552 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Architecture" ;
+    skos:closeMatch iconclass:48C1 ;
+    skos:exactMatch aat:300263552,
+        <https://id.loc.gov/authorities/subjects/sh85006611> ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:narrower kg:concept_aat_300000996,
+        kg:concept_lcsh_sh85006660 ;
+    skos:prefLabel "Architecture"@en ;
+    mbs:reconciledTo aat:300263552 ;
+    mbs:seedId "architecture" .
+
+kg:scheme_islamic_archives a skos:ConceptScheme ;
+    rdfs:label "Islamic Archives control vocabulary" ;
+    dct:subject kg:collection_islamic_archives ;
+    dct:title "Islamic Archives control vocabulary" ;
+    rdfs:comment """Shared SKOS scheme for Smithsonian NMAA Archives finding aids that belong to the Islamic Archives holding (FSA.A.04 Myron Bement Smith, FSA.A.06 Ernst Herzfeld Papers).
+""" ;
+    mbs:usedByCollection kg:component_FSA_A_04,
+        kg:component_FSA_A_06 .
+

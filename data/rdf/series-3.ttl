@@ -8,9 +8,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-kg:physical_FSA.A.04 crm:P46_is_composed_of kg:physical_ref9049 .
+kg:physical_FSA_A_04 crm:P46_is_composed_of kg:physical_ref9049 .
 
-kg:component_FSA.A.04 crm:P106_is_composed_of kg:component_ref9049 ;
+kg:component_FSA_A_04 crm:P106_is_composed_of kg:component_ref9049 ;
     mbs:hasChildComponent kg:component_ref9049 .
 
 kg:id_ark_ref9049 a crm:E42_Identifier ;
@@ -2484,7 +2484,7 @@ kg:note_ref9049_scopecontent_0 a crm:E33_Linguistic_Object ;
     rdf:value "Scope and Contents Subseries 3.1, 3.2, and 3.3 inventory items described in Series 1 and 2 but stored separately. Subseries 3.4 lists Smithsonian Copy Negatives that were made after the collection was donated. This subseries is not part of the main MBS collection." ;
     mbs:noteType mbs:ScopeContent .
 
-kg:physical_ref9049 a crm:E22_Human-Made_Object,
+kg:physical_ref9049 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "Outsize and Miscellaneous Items" ;
     crm:P46_is_composed_of kg:physical_ref9050,
@@ -2493,7 +2493,7 @@ kg:physical_ref9049 a crm:E22_Human-Made_Object,
         kg:physical_ref9164 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc351a88897-9070-4ce8-b564-e208b7dfba66> .
 
-kg:physical_ref9050 a crm:E22_Human-Made_Object,
+kg:physical_ref9050 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "Map Case Drawer Items" ;
     crm:P46_is_composed_of kg:physical_ref9051,
@@ -2503,7 +2503,7 @@ kg:physical_ref9050 a crm:E22_Human-Made_Object,
         kg:physical_ref9111 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3aec36137-0b99-4efd-a19d-a22d69797479> .
 
-kg:physical_ref9051 a crm:E22_Human-Made_Object,
+kg:physical_ref9051 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Location 1" ;
@@ -2512,7 +2512,7 @@ kg:physical_ref9051 a crm:E22_Human-Made_Object,
         kg:physical_ref9054 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3f55cce3b-c458-4fb1-bc05-ac66d6313e53> .
 
-kg:physical_ref9055 a crm:E22_Human-Made_Object,
+kg:physical_ref9055 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Location 2" ;
@@ -2535,7 +2535,7 @@ kg:physical_ref9055 a crm:E22_Human-Made_Object,
         kg:physical_ref9182 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3f5541a67-ba3e-46f5-9bf1-c773f4812e15> .
 
-kg:physical_ref9056 a crm:E22_Human-Made_Object,
+kg:physical_ref9056 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 1 Miscellaneous Early Sketches, 1919 and undated [Subseries 1.1. Box 5 Folder 3]" ;
@@ -2543,7 +2543,7 @@ kg:physical_ref9056 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3edc49492-ac19-4520-975d-560aa4c6e086> ;
     mbs:mediaType aat:300015425 .
 
-kg:physical_ref9057 a crm:E22_Human-Made_Object,
+kg:physical_ref9057 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 2 Ink and Pencil Drawings, circa 1920s [Subseries 1.1 Box 5 Folder 7]" ;
@@ -2551,7 +2551,7 @@ kg:physical_ref9057 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc39968eeeb-0303-47a9-8717-e3115f40a706> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9058 a crm:E22_Human-Made_Object,
+kg:physical_ref9058 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 3 Architectural Drawings, doorways, 1922 [Subseries 1.1 Box 5 Folder 8]" ;
@@ -2559,7 +2559,7 @@ kg:physical_ref9058 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc335481077-0820-4490-9ffa-490fd97143ce> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9059 a crm:E22_Human-Made_Object,
+kg:physical_ref9059 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 4 Architectural Drawings, 1926-1927 [Subseries 1.1 Box 5 Folder 9]" ;
@@ -2567,7 +2567,7 @@ kg:physical_ref9059 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc322bbcbb8-a7f5-42bc-a49c-2ba657cb0f6e> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9060 a crm:E22_Human-Made_Object,
+kg:physical_ref9060 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 5 Architectural Drawings, Wheeler-Beecher House, 1927 [Subseries 1.1, Box 5 Folder 10]" ;
@@ -2575,7 +2575,7 @@ kg:physical_ref9060 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc30da70ca4-cd66-4184-a765-b93a7ceb0db3> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9061 a crm:E22_Human-Made_Object,
+kg:physical_ref9061 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 6 Architectural Drawings, unidentified small project, 1938 [Subseries 1.1 Box 5 Folder 11]" ;
@@ -2583,7 +2583,7 @@ kg:physical_ref9061 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc371948b15-effb-4078-b21d-29faa9e25613> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9062 a crm:E22_Human-Made_Object,
+kg:physical_ref9062 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 7 Architectural Sketches, Verona, 1920s [Subseries 1.6, Box 50 Folder 13]" ;
@@ -2591,7 +2591,7 @@ kg:physical_ref9062 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc312a61b5d-9771-471a-8013-300084a54fa4> ;
     mbs:mediaType aat:300015425 .
 
-kg:physical_ref9063 a crm:E22_Human-Made_Object,
+kg:physical_ref9063 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 8 Architectural Drawings, northern Italian brick chimneys, 1920s [Subseries 1.6, Box 50 Folder 14]" ;
@@ -2599,7 +2599,7 @@ kg:physical_ref9063 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3e223d642-06a4-4ec3-993b-f64934e9eb6a> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9064 a crm:E22_Human-Made_Object,
+kg:physical_ref9064 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 9 Architectural Drawings, Italian renaissance details, 1920s [Subseries 1.6 Box 50 Folder 15]" ;
@@ -2607,7 +2607,7 @@ kg:physical_ref9064 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3fa185c63-d14a-45c4-9b1e-6122293dd8ff> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9065 a crm:E22_Human-Made_Object,
+kg:physical_ref9065 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 10 Architectural Drawings, Italian stone work, 1928 [Subseries 1.6 Box 50 Folder 16]" ;
@@ -2615,7 +2615,7 @@ kg:physical_ref9065 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3f7775d48-82e2-402a-9d06-64494e93f5a9> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9066 a crm:E22_Human-Made_Object,
+kg:physical_ref9066 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 11 Architectural Drawings, North Italy nail studded doors, 1930 [Subseries 1.6 Box 50 Folder 17]" ;
@@ -2623,7 +2623,7 @@ kg:physical_ref9066 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc32bba08a4-46c0-490d-ad0b-065eb42f8eb2> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9067 a crm:E22_Human-Made_Object,
+kg:physical_ref9067 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 12 Architectural Drawings, vaults, Italy, undated [Subseries 1.6 Box 50 Folder 18]" ;
@@ -2631,7 +2631,7 @@ kg:physical_ref9067 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc37f020f24-e5d5-4234-b476-a78a1290923d> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9068 a crm:E22_Human-Made_Object,
+kg:physical_ref9068 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 13 Pre-Gothic Terra Cottas, photograph layout [Subseries 1.6 Box 50 Folder 21]" ;
@@ -2639,7 +2639,7 @@ kg:physical_ref9068 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc30668222c-0dfc-40fd-a896-30462e398585> ;
     mbs:mediaType aat:300046300 .
 
-kg:physical_ref9069 a crm:E22_Human-Made_Object,
+kg:physical_ref9069 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 14 Persia, Seljuk period carved wooden door, Freer Gallery photograph [Subseries 2.2 Box 67 Folder 22]" ;
@@ -2647,19 +2647,19 @@ kg:physical_ref9069 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc303e5dbe6-e1df-4483-96da-c1ba729ed633> ;
     mbs:mediaType aat:300046300 .
 
-kg:physical_ref9070 a crm:E22_Human-Made_Object,
+kg:physical_ref9070 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 15 Miscellaneous Orientalism Lithographs [Subseries 2.3 Box 87 Folder 7]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3dbf93ada-e821-4363-bb71-3bb02e047976> .
 
-kg:physical_ref9071 a crm:E22_Human-Made_Object,
+kg:physical_ref9071 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 16 Miscellaneous Art [Subseries 2.3 Box 87 folder 8]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3b75b340a-8944-4979-a2ff-f39c34bb9bcf> .
 
-kg:physical_ref9072 a crm:E22_Human-Made_Object,
+kg:physical_ref9072 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Location 3" ;
@@ -2685,13 +2685,13 @@ kg:physical_ref9072 a crm:E22_Human-Made_Object,
         kg:physical_ref9183 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3f0b3ec53-3c9e-4afd-a080-1bf525c98e42> .
 
-kg:physical_ref9074 a crm:E22_Human-Made_Object,
+kg:physical_ref9074 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 1 Persian Wedding Contract, 1872 [Subseries 2.2 Box 67 Folder 21]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc395e75f98-eb4f-4fb3-9381-8f7ce2f5ffb8> .
 
-kg:physical_ref9075 a crm:E22_Human-Made_Object,
+kg:physical_ref9075 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 2 Isfahan, maps [Subseries 2.2 Box 69 Folder 11]" ;
@@ -2699,7 +2699,7 @@ kg:physical_ref9075 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3cffbb1c9-856a-4c8c-a126-3720008fb33e> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9076 a crm:E22_Human-Made_Object,
+kg:physical_ref9076 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 3 Roads and Railways of Iran, MBS map produced for U. S. Army 1942 [Subseries 2.2 Box 69 Folder 12]" ;
@@ -2707,7 +2707,7 @@ kg:physical_ref9076 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc308692123-302d-4e1d-a0c1-0dd3ad43ceeb> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9077 a crm:E22_Human-Made_Object,
+kg:physical_ref9077 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 4 Iran, transportation networks map [Subseries 2.2 Box 69 Folder 13]" ;
@@ -2715,7 +2715,7 @@ kg:physical_ref9077 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3482f5e90-ed4a-4d76-8656-bdc9b3d2a2fd> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9078 a crm:E22_Human-Made_Object,
+kg:physical_ref9078 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 5 Iran, geological and topographical maps [Subseries 2.2 Box 69 Folder 14]" ;
@@ -2723,19 +2723,19 @@ kg:physical_ref9078 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc32977bd97-e124-4135-9068-bbdc52a8a4f8> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9079 a crm:E22_Human-Made_Object,
+kg:physical_ref9079 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 6 Iran Railways, routes and charts [Subseries 2.2 Box 69 Folder 15]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc373afa12c-f6b4-4362-993e-cce0e5d461c2> .
 
-kg:physical_ref9080 a crm:E22_Human-Made_Object,
+kg:physical_ref9080 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 7 Iran, administrative divisions, 1934-1939 [Subseries 2.2 Box 69 Folder 16]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc39c2ae993-8e7e-40d2-964c-7bc88f438548> .
 
-kg:physical_ref9081 a crm:E22_Human-Made_Object,
+kg:physical_ref9081 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 8 MBS Annotated Map of Iran [Subseries 2.2 Box 69 Folder 17]" ;
@@ -2743,7 +2743,7 @@ kg:physical_ref9081 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc36714246d-68ae-42e4-8dfe-529f56d4d3a7> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9082 a crm:E22_Human-Made_Object,
+kg:physical_ref9082 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 9 Iran, miscellaneous maps [Subseries 2.2 Box 69 Folder 18]" ;
@@ -2751,7 +2751,7 @@ kg:physical_ref9082 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc382b63e08-5583-4303-93bc-2ccdd3ec0767> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9083 a crm:E22_Human-Made_Object,
+kg:physical_ref9083 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 10 n Map of the Middle East, captioned in Arabic script [Subseries 2.3 Box 90 Folder 2]" ;
@@ -2759,7 +2759,7 @@ kg:physical_ref9083 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc35d479a08-3f2d-4345-a18b-17bf54c58b4b> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9084 a crm:E22_Human-Made_Object,
+kg:physical_ref9084 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 11 Map of the Arab World [Subseries 2.3 Box 90 Folder 3]" ;
@@ -2767,7 +2767,7 @@ kg:physical_ref9084 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc322ba2542-e514-45ea-bcdc-27a407f78515> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9085 a crm:E22_Human-Made_Object,
+kg:physical_ref9085 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 12 Iraq, outsize maps [Subseries 2.3 Box 90 Folder 7]" ;
@@ -2775,7 +2775,7 @@ kg:physical_ref9085 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3af6f21c1-e90b-480b-935a-379f9333fd95> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9086 a crm:E22_Human-Made_Object,
+kg:physical_ref9086 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 13 Map of Mohammedan Monuments in Cairo, 1950 [Subseries 2.3 Box 90 Folder 11]" ;
@@ -2783,7 +2783,7 @@ kg:physical_ref9086 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc30e561fa7-b4ec-49db-8ed2-ea31181ab83b> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9087 a crm:E22_Human-Made_Object,
+kg:physical_ref9087 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 14 Tourist Map of Syria under the French Mandate [Subseries 2.3 Box 90 Folder 12]" ;
@@ -2791,13 +2791,13 @@ kg:physical_ref9087 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc33d98f005-6da1-43a9-966c-112f81b4fe79> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9088 a crm:E22_Human-Made_Object,
+kg:physical_ref9088 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 15 Jerusalem, Dome of the Rock [Subseries 2.3 Box 90 Folder 13]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc32287e040-4671-4b59-bf28-a69089cc7383> .
 
-kg:physical_ref9089 a crm:E22_Human-Made_Object,
+kg:physical_ref9089 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 17 Ankara, map [Subseries 2.3 Box 90 Folder 17]" ;
@@ -2805,7 +2805,7 @@ kg:physical_ref9089 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3be9325c9-3aa4-4c36-b7a9-07b1aad2f183> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9090 a crm:E22_Human-Made_Object,
+kg:physical_ref9090 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 18 USSR, Russian language map, 1951 [Subseries 2.3 Box 90 Folder 19]" ;
@@ -2813,7 +2813,7 @@ kg:physical_ref9090 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3f49bc2b8-de15-495a-8b70-c63683ecf2fe> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9091 a crm:E22_Human-Made_Object,
+kg:physical_ref9091 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 19 Russia and Afghanistan, map [Subseries 2.3 Box 90 Folder 20]" ;
@@ -2821,7 +2821,7 @@ kg:physical_ref9091 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc378481af6-e95c-4c37-8550-8791004bd8ef> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9092 a crm:E22_Human-Made_Object,
+kg:physical_ref9092 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 20 Distribution of Greek Vaults and Arches, maps and notes [Subseries 2.3 Box 92 Folder 11]" ;
@@ -2829,7 +2829,7 @@ kg:physical_ref9092 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3efa673ec-d883-4686-9b29-ca5043e877c0> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9093 a crm:E22_Human-Made_Object,
+kg:physical_ref9093 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Location 4" ;
@@ -2852,61 +2852,61 @@ kg:physical_ref9093 a crm:E22_Human-Made_Object,
         kg:physical_ref9110 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3a87211ed-9f2b-43e8-ae50-1129b657c5b2> .
 
-kg:physical_ref9094 a crm:E22_Human-Made_Object,
+kg:physical_ref9094 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 1 Ashtarjan, Isfahan, Masjid-i Jomeh, 1937 [Subseries 2.4 Box 110 Folder 4]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc33cbf2356-ad8e-450a-a0b2-ec887436c17e> .
 
-kg:physical_ref9095 a crm:E22_Human-Made_Object,
+kg:physical_ref9095 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 2 Bersian, Isfahan, Masjid-i Jomeh [Subseries 2.4 Box 110 Folder 8]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3f73b6f5e-972a-473b-8725-1139143d858b> .
 
-kg:physical_ref9096 a crm:E22_Human-Made_Object,
+kg:physical_ref9096 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 3 Buzan, Isfahan, Imamzadeh Karrar [Subseries 2.4 Box 110 Folder 10]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc38469f3d0-a574-495a-ad4d-fc7c1828b888> .
 
-kg:physical_ref9097 a crm:E22_Human-Made_Object,
+kg:physical_ref9097 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 4 Isfahan, Sin, mosque [Subseries 2.4 Box 110 Folder 21]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc324b772f4-6c60-43f3-9f3e-cdf6f951a558> .
 
-kg:physical_ref9098 a crm:E22_Human-Made_Object,
+kg:physical_ref9098 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 5 Isfahan, Sin, mosque, inscription from the manar, rubbing? [Subseries 2.4 Box 110 Folder 22]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc33a68ae3a-3bdb-41f8-a6be-13477b0bf8cf> .
 
-kg:physical_ref9099 a crm:E22_Human-Made_Object,
+kg:physical_ref9099 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 6 Rashat, Gillan, Rukah Suleiman Darab, rubbing [Subseries 2.4 Box 110 Folder 26]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3753b45f1-ce7f-415f-be36-e617ca32bb1c> .
 
-kg:physical_ref9100 a crm:E22_Human-Made_Object,
+kg:physical_ref9100 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 7 Shiraz, Masjid-I Jami Atiq [Subseries 2.4 Box 110 Folder 29]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc32cc658d3-6bbe-4b07-9c82-fef90190c8ac> .
 
-kg:physical_ref9101 a crm:E22_Human-Made_Object,
+kg:physical_ref9101 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 8 Varamin, Tehran, Masjid-i Juma [Subseries 2.4 Box 110 Folder 35]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3fdbbd8ed-4b6d-4930-a8b1-3558dfe1dd03> .
 
-kg:physical_ref9102 a crm:E22_Human-Made_Object,
+kg:physical_ref9102 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 9 Pounced Tracing, unidentified [Subseries 2.4 box 110 Folder 41]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc32abdaec3-f63c-4fd5-8f35-dd3041183044> .
 
-kg:physical_ref9103 a crm:E22_Human-Made_Object,
+kg:physical_ref9103 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 10 Isfahan, Masjid-i Jomeh, Ground Plan by Schroeder, copy [Subseries 2.4 Box 111 Folder 25]" ;
@@ -2914,7 +2914,7 @@ kg:physical_ref9103 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc37863a12c-9fb3-47e6-9b57-df43183541e6> ;
     mbs:mediaType aat:300034787 .
 
-kg:physical_ref9104 a crm:E22_Human-Made_Object,
+kg:physical_ref9104 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 11 Isfahan, Masjid-i Jomeh Ground Plan, original ink drawing and copy [Subseries 2.4 box 111 Folder 26]" ;
@@ -2922,7 +2922,7 @@ kg:physical_ref9104 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc308e74f7b-09b8-4d55-9a09-e7743eb8a654> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9105 a crm:E22_Human-Made_Object,
+kg:physical_ref9105 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 12 Isfahan, Masjid-i Jomeh Ground Plan Sections [Subseries 2.4 Box 111 Folder 27]" ;
@@ -2930,7 +2930,7 @@ kg:physical_ref9105 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc34a652cd9-f04c-4800-831b-889dca9a306d> ;
     mbs:mediaType aat:300034787 .
 
-kg:physical_ref9106 a crm:E22_Human-Made_Object,
+kg:physical_ref9106 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 13 Isfahan, Masjid-i Jomeh Ground Plans, reproductions [Subseries 2.4 Box 111 Folder 28]" ;
@@ -2938,7 +2938,7 @@ kg:physical_ref9106 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc37f9dfc3f-0644-4436-891f-2bcec6cc6a91> ;
     mbs:mediaType aat:300034787 .
 
-kg:physical_ref9107 a crm:E22_Human-Made_Object,
+kg:physical_ref9107 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 14 Isfahan, Masjid-i Jomeh Iwan and Manar, architectural drawings [Subseries 2.4 Box 111 Folder 29]" ;
@@ -2946,7 +2946,7 @@ kg:physical_ref9107 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc327d87483-ba00-4ac5-ac39-03c47d4d0faa> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9108 a crm:E22_Human-Made_Object,
+kg:physical_ref9108 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 15 Isfahan Masjid-i Jomeh Miscellaneous Architectural Drawings, originals [Subseries 2.4 Box 111 Folder 30]" ;
@@ -2954,7 +2954,7 @@ kg:physical_ref9108 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3a668d340-3f68-4992-8122-b81befafe1f1> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9109 a crm:E22_Human-Made_Object,
+kg:physical_ref9109 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 16 Isfahan Masjid-i Jomeh Miscellaneous Architectural Drawings, reproductions [Subseries 2.4 Box 111 Folder 31]" ;
@@ -2962,7 +2962,7 @@ kg:physical_ref9109 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc328d39868-ce88-4676-a4e3-41a695bb5c03> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9110 a crm:E22_Human-Made_Object,
+kg:physical_ref9110 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 17 Isfahan, Masjid-i Jomeh, \"Dutchman for Vaulting,\" ink architectural drawings [Subseries 2.4 Box 111 Folder 34]" ;
@@ -2970,7 +2970,7 @@ kg:physical_ref9110 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3f9c8eb29-71ae-42fe-8178-6256dc31318c> ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9111 a crm:E22_Human-Made_Object,
+kg:physical_ref9111 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Location 5" ;
@@ -2985,7 +2985,7 @@ kg:physical_ref9111 a crm:E22_Human-Made_Object,
         kg:physical_ref9187 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc384ef8019-cfbc-4ba6-943d-7bff73f150e2> .
 
-kg:physical_ref9112 a crm:E22_Human-Made_Object,
+kg:physical_ref9112 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 1 Masjed-e Jame' Esfahan, Ministry of Culture and Arts, National Organization for the Preservation of Historical Monuments of Iran, photogrammetric survey 1973 [Subseries 2.2 Box 67 Folder 14]" ;
@@ -2993,19 +2993,19 @@ kg:physical_ref9112 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3c3b2a52c-d837-481d-b330-a776474cd4d2> ;
     mbs:mediaType aat:300046300 .
 
-kg:physical_ref9113 a crm:E22_Human-Made_Object,
+kg:physical_ref9113 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 2 Damavand, Tehran, Masjid-i Jomeh B [Subseries 2.4 Box 110 Folder 13]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc35ca9d3dc-3f3f-43ab-8ff7-257f3d285302> .
 
-kg:physical_ref9114 a crm:E22_Human-Made_Object,
+kg:physical_ref9114 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 3 Isfahan, Isfahan, Imamzadeh Jafar [Subseries 2.4 Box 110 Folder 19]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc373aa3d16-e278-4702-8cb7-2edd3e875c17> .
 
-kg:physical_ref9115 a crm:E22_Human-Made_Object,
+kg:physical_ref9115 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 4 \"Persian Expedition\" Architectural Sketches [Subseries 2.4 Box 110 Folder 36]" ;
@@ -3013,25 +3013,25 @@ kg:physical_ref9115 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3434ab825-ad13-46c0-86dc-70d5d28bbb75> ;
     mbs:mediaType aat:300015425 .
 
-kg:physical_ref9116 a crm:E22_Human-Made_Object,
+kg:physical_ref9116 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 5 Isfahan, Isfahan, Qaysariya Bazaar, faience mosaics, pounced tracings [Subseries 2.4 Box 110 Folder 37]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc30dbd24a9-ac1f-47f7-b5b5-c7a73cd30f56> .
 
-kg:physical_ref9117 a crm:E22_Human-Made_Object,
+kg:physical_ref9117 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 6 Isfahan, Isfahan, Madrasa-i Imami, faience mosaics, pounced tracings [Subseries 2.4 Box 110 Folder 38]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3c2d24ed9-4c38-4d2b-b924-ee2bfae2efec> .
 
-kg:physical_ref9118 a crm:E22_Human-Made_Object,
+kg:physical_ref9118 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 7 Isfahan, Isfahan, Sar Darb Bukah Shaykh Amir Masud, faience mosaics, pounced tracings [Subseries 2.4 Box 110 Folder 39]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc394b08a7e-5886-4dd8-9241-bd440a6fc44d> .
 
-kg:physical_ref9119 a crm:E22_Human-Made_Object,
+kg:physical_ref9119 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 8 Persian Monuments Large Photo File, Isfahan city, panoramas [Subseries 2.5 Box 124 Folder 20]" ;
@@ -3039,14 +3039,14 @@ kg:physical_ref9119 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3a4c3b432-e8bf-42ea-b2ef-777afbdf51f1> ;
     mbs:mediaType aat:300046300 .
 
-kg:physical_ref9122 a crm:E22_Human-Made_Object,
+kg:physical_ref9122 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "Rolled Items" ;
     crm:P46_is_composed_of kg:physical_ref9127,
         kg:physical_ref9132 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3167ed9cd-8466-47b1-ac26-eadd09086f9c> .
 
-kg:physical_ref9127 a crm:E22_Human-Made_Object,
+kg:physical_ref9127 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Shelf 1" ;
@@ -3057,7 +3057,7 @@ kg:physical_ref9127 a crm:E22_Human-Made_Object,
         kg:physical_ref9186 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc30a3c4edd-1a8d-41c9-b9fe-675a7c878536> .
 
-kg:physical_ref9132 a crm:E22_Human-Made_Object,
+kg:physical_ref9132 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Shelf 2" ;
@@ -3068,7 +3068,7 @@ kg:physical_ref9132 a crm:E22_Human-Made_Object,
         kg:physical_ref9137 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc366a90af5-bf84-4b61-85f8-4b2cbfa596ac> .
 
-kg:physical_ref9139 a crm:E22_Human-Made_Object,
+kg:physical_ref9139 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "Items Stored in Freezer" ;
     crm:P46_is_composed_of kg:physical_ref9140,
@@ -3097,7 +3097,7 @@ kg:physical_ref9139 a crm:E22_Human-Made_Object,
         kg:physical_ref9163 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3ae8c1c27-ff9d-46ab-adb6-c22d32007338> .
 
-kg:physical_ref9140 a crm:E22_Human-Made_Object,
+kg:physical_ref9140 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 1 Box 211 MBS Large Format Negatives # 1 to 400" ;
@@ -3105,7 +3105,7 @@ kg:physical_ref9140 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc34b950e78-97a5-4587-a73e-a687f67ad651> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9141 a crm:E22_Human-Made_Object,
+kg:physical_ref9141 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 2 Box 212 MBS Large Format Negatives # 401 to 775" ;
@@ -3113,7 +3113,7 @@ kg:physical_ref9141 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3d49c1910-0770-4ef5-b962-e550a7ca52ef> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9142 a crm:E22_Human-Made_Object,
+kg:physical_ref9142 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 3 Box 213 MBS Large Format Negatives # 776 to 1129" ;
@@ -3121,7 +3121,7 @@ kg:physical_ref9142 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3a697e713-d92a-46db-af1a-e42cd034cc8e> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9143 a crm:E22_Human-Made_Object,
+kg:physical_ref9143 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 4 Box 214 MBS Large Format Negatives # 1130 to 1267" ;
@@ -3129,7 +3129,7 @@ kg:physical_ref9143 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc35d3c7cb7-f453-45ec-ad28-1e56afc7115a> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9144 a crm:E22_Human-Made_Object,
+kg:physical_ref9144 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 5 Box 215 MBS Leica Negatives #L 1 to L 50" ;
@@ -3137,7 +3137,7 @@ kg:physical_ref9144 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc32eb087ee-ef97-495b-85cb-73071a599ae3> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9145 a crm:E22_Human-Made_Object,
+kg:physical_ref9145 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 6 Box 216 MBS Leica Negatives # L 51 to L 99" ;
@@ -3145,7 +3145,7 @@ kg:physical_ref9145 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3da9b377d-fad8-40c1-9483-15876b11da02> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9146 a crm:E22_Human-Made_Object,
+kg:physical_ref9146 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 7 Box 217 MBS Leica Negatives # L 100 to L 146" ;
@@ -3153,7 +3153,7 @@ kg:physical_ref9146 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3d62f04f2-efbd-449b-becc-94fe4a5d7bed> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9147 a crm:E22_Human-Made_Object,
+kg:physical_ref9147 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 8 Box 218 MBS Leica Negatives # L 147 to L 195" ;
@@ -3161,7 +3161,7 @@ kg:physical_ref9147 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc34ca4297c-9603-442c-9cdb-14caeb5965e1> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9148 a crm:E22_Human-Made_Object,
+kg:physical_ref9148 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 9 Box 219 MBS Leica Negatives # L 196 to L 269, L 273 to L 276" ;
@@ -3169,7 +3169,7 @@ kg:physical_ref9148 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc321b3df61-ecd2-4353-8076-883a1bb6979e> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9149 a crm:E22_Human-Made_Object,
+kg:physical_ref9149 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 10 Box 220 MBS Leica Negatives # L 270 to L 272, L 277 to L 311, \"KDS and Dogs,\" \"1939,\" \"1940,\" \"Stratford Hall Dec. 1941,\" and \"Lanier Place April 1962\"" ;
@@ -3177,7 +3177,7 @@ kg:physical_ref9149 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc32c3f7a98-bf2a-4b41-a4e6-e7fc4340b89d> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9150 a crm:E22_Human-Made_Object,
+kg:physical_ref9150 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 11 Box 221 MBS M Series Negatives # M 3 to M 43" ;
@@ -3185,7 +3185,7 @@ kg:physical_ref9150 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3e611edb2-0e26-4baa-b811-73e31fc80e25> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9151 a crm:E22_Human-Made_Object,
+kg:physical_ref9151 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 12 Box 222 Col. Melvin Hall Negatives 2D" ;
@@ -3193,7 +3193,7 @@ kg:physical_ref9151 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc327d5a289-4383-4553-8a9c-7ce9b95c764f> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9152 a crm:E22_Human-Made_Object,
+kg:physical_ref9152 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 13 Box 223 Col. Melvin Hall Negatives 2 D" ;
@@ -3201,7 +3201,7 @@ kg:physical_ref9152 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc399a7b715-b396-43e0-bb8a-46755ed8054a> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9153 a crm:E22_Human-Made_Object,
+kg:physical_ref9153 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 14 Box 224 Col. Melvin Hall Negatives 2 D, Helmut de Terra Negatives 16 G, Neilson Debevoise Negatives 18 G" ;
@@ -3209,7 +3209,7 @@ kg:physical_ref9153 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc361de33c3-dbcb-419a-b573-3c3a1d27b1a2> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9154 a crm:E22_Human-Made_Object,
+kg:physical_ref9154 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 15 Box 225 Col. Melvin Hall Negatives 2 D; Robert Hamilton Negatives 144 D; Prof. Millon Negatives 175 G; J Hall Paxton Negatives unnumbered" ;
@@ -3217,7 +3217,7 @@ kg:physical_ref9154 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3556293cd-ca51-45eb-a9ab-aaede4849c42> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9155 a crm:E22_Human-Made_Object,
+kg:physical_ref9155 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 16 Box 226 J. Rives Childs Negatives 100C" ;
@@ -3225,7 +3225,7 @@ kg:physical_ref9155 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3677054e6-9584-4139-b091-5d21a4252660> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9156 a crm:E22_Human-Made_Object,
+kg:physical_ref9156 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 17 Box 227 J. Rives Childs Negatives 100 C" ;
@@ -3233,7 +3233,7 @@ kg:physical_ref9156 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3756fc5cb-bb8b-476d-8bb0-f19141922329> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9157 a crm:E22_Human-Made_Object,
+kg:physical_ref9157 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 18 Box 228 Millar Burrows Negatives 115 b; Wisconsiin State Historical Society Negatives 165 G; Emily Dairs Negatives 171 G; Unsourced Negatives 193 G and 194 G" ;
@@ -3241,7 +3241,7 @@ kg:physical_ref9157 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc33b977b3a-8465-4e13-bd3e-d0333f18e618> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9158 a crm:E22_Human-Made_Object,
+kg:physical_ref9158 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 19 Box 229 Amb. James S Moose Jr. Negatives NG 1; J. Hall Paxton Negatives 80 C; Laurence Lockhart Negatives 86 C and 96 C; Harold D Gresham Negatives 92 C; Maj. Alexis Gargarine Negatives 103 C; Millar Burrows Negatives 114 C; Harlan G. Greenfield Negatives 120 C; Patricia Stodhill Negatives 123 C; Elsie Kraeling Negatives 129 C; Hushang Sanai Negatives 132 C; Prof. Douglas D. Crary Negatives 135 C and 142 C; Prof. Ernest N. McCarus Negatives 139 C; Unidentified Negatives" ;
@@ -3249,7 +3249,7 @@ kg:physical_ref9158 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc396ee4370-6e38-4f91-a019-5d0d5bbadb7a> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9159 a crm:E22_Human-Made_Object,
+kg:physical_ref9159 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 20 Box 230 Nicholas V Artamonoff Negatives and Photographs" ;
@@ -3257,7 +3257,7 @@ kg:physical_ref9159 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3202dd4a8-97c7-4c4f-ade9-fa12aa0daf67> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9160 a crm:E22_Human-Made_Object,
+kg:physical_ref9160 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 21 Box 231 Nicholas V Artamonoff Negatives and Photographs; M.E. Dions Negatives 165 G; Wisconsin Historical Societry Negatives 165 G; Winifred H. Tweedie Negatives, 173 G; Prof. Millon Negatives 175 G; Edward Dennis Negative; J. Hall Paxton Negatives 76 TD; Amb. Hare Negatives; Unsourced Negatives" ;
@@ -3265,7 +3265,7 @@ kg:physical_ref9160 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3cf7e066f-fcd1-42e3-aa14-db2d30c5102f> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9161 a crm:E22_Human-Made_Object,
+kg:physical_ref9161 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 22 Box 232 George Woodbridge Negatives 15 G and Prof. Andrew S. Keck Negatives 25 D" ;
@@ -3273,7 +3273,7 @@ kg:physical_ref9161 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3065cc3b1-e6c5-4340-96f2-32679af178a8> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9162 a crm:E22_Human-Made_Object,
+kg:physical_ref9162 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 23 Box 233 Prof. Carleton S. Coon and Paul Schumacher Negatives 27 C; P. W. Bourne Negatives 33C; Hossein Ravanbod Negatives 37 C; Harold Glidden Negatives 40 C; Alice Shurcliffe Negatives 43 C; Pierre Parker Negatives 46 C; Amb. Raymond Hare Negatives 51 C; Dr. William G. Weld Negatives 54 C; LeRoy Percival Jr. Negatives 57 C; Karl S. Twitchell Negatives 62 C; and Rodney Wilcox Jones Negatives 62 C" ;
@@ -3281,7 +3281,7 @@ kg:physical_ref9162 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc33ad035a2-f10f-414b-adbd-9ac39c10e103> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9163 a crm:E22_Human-Made_Object,
+kg:physical_ref9163 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item # 24 Outsize Unsourced Negative, Irem Temple, Wilkes Barre PA [listed in Box 228 Folder 7]" ;
@@ -3289,7 +3289,7 @@ kg:physical_ref9163 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3e43abebd-f3c5-414f-82ed-ea484283b699> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9164 a crm:E22_Human-Made_Object,
+kg:physical_ref9164 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "Smithsonian Copy Negatives" ;
     crm:P46_is_composed_of kg:physical_ref9165,
@@ -3308,7 +3308,7 @@ kg:physical_ref9164 a crm:E22_Human-Made_Object,
         kg:physical_ref9178 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc35883c177-1b89-4098-95b3-8b0dc1498243> .
 
-kg:physical_ref9165 a crm:E22_Human-Made_Object,
+kg:physical_ref9165 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 1 Myron Bement Smith Negatives, L1 to L 36" ;
@@ -3316,7 +3316,7 @@ kg:physical_ref9165 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc38678be02-aa8d-40bf-8a54-bc34dc77ebf7> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9166 a crm:E22_Human-Made_Object,
+kg:physical_ref9166 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 2 Myron Bement Smith Negatives, L 37 to L 72" ;
@@ -3324,7 +3324,7 @@ kg:physical_ref9166 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc31ae150ed-2c7c-45a5-a251-ee29a269543c> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9167 a crm:E22_Human-Made_Object,
+kg:physical_ref9167 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 3 Myron Bement Smith Negatives, L 73 to L 109" ;
@@ -3332,7 +3332,7 @@ kg:physical_ref9167 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc39122cfc6-4229-44a6-b178-b31dc0e93c97> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9168 a crm:E22_Human-Made_Object,
+kg:physical_ref9168 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 4 Myron Bement Smith Negatives, L 110 to L 144" ;
@@ -3340,7 +3340,7 @@ kg:physical_ref9168 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc33c8b385e-9e1e-4e8b-a2f9-a50105996e0d> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9169 a crm:E22_Human-Made_Object,
+kg:physical_ref9169 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 5 Myron Bement Smith Negatives, L 145 to L 183" ;
@@ -3348,7 +3348,7 @@ kg:physical_ref9169 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc36d3776cc-27ac-4ac0-a4dd-e8823b6e2ce0> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9170 a crm:E22_Human-Made_Object,
+kg:physical_ref9170 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 6 Myron Bement Smith Negatives, L184 to L 225" ;
@@ -3356,7 +3356,7 @@ kg:physical_ref9170 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc36fe75a23-7564-4394-a232-4ede7765b235> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9171 a crm:E22_Human-Made_Object,
+kg:physical_ref9171 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 7 Myron Bement Smith Negatives. L 226 to L 1939" ;
@@ -3364,7 +3364,7 @@ kg:physical_ref9171 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc31e01c762-e24d-4080-ba13-af0376f8a118> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9172 a crm:E22_Human-Made_Object,
+kg:physical_ref9172 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 8 Myron Bement Smith Negatives. Large Format # 1 to 402" ;
@@ -3372,7 +3372,7 @@ kg:physical_ref9172 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc33e9b822f-e7b8-4d00-9ce0-be661f8a55f0> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9173 a crm:E22_Human-Made_Object,
+kg:physical_ref9173 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 9 Myron Bement Smith Negatives, Large Format # 403 to 819" ;
@@ -3380,7 +3380,7 @@ kg:physical_ref9173 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3d47771b2-897a-4af8-8587-c244acbdd08c> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9174 a crm:E22_Human-Made_Object,
+kg:physical_ref9174 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 10 Myron Bement Smith Negatives, Large Format # 820 to 1200" ;
@@ -3388,7 +3388,7 @@ kg:physical_ref9174 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc38f7d4466-25a4-4621-978f-ea608104578c> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9175 a crm:E22_Human-Made_Object,
+kg:physical_ref9175 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 11 Melvin Hall Negatives 2 D, Part 1" ;
@@ -3396,7 +3396,7 @@ kg:physical_ref9175 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc350eadf8a-9bd8-41af-940b-31553755206c> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9176 a crm:E22_Human-Made_Object,
+kg:physical_ref9176 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 12 Melvin Hall Negatives 2 D, Part 2" ;
@@ -3404,7 +3404,7 @@ kg:physical_ref9176 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc309ee60f9-b049-43fd-ac9f-b805a7ebf9dc> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9177 a crm:E22_Human-Made_Object,
+kg:physical_ref9177 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 13 Melvin Hall Negatives 2 D, Professor Millon Negatives 175 G; Irem Temple Negative and Amb. Raymond Hare Negatives" ;
@@ -3412,7 +3412,7 @@ kg:physical_ref9177 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc30041b4c2-0d30-4202-8f02-9c2a6add0b82> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9178 a crm:E22_Human-Made_Object,
+kg:physical_ref9178 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Box 14 Andrew Keck Negatives 25 D" ;
@@ -3420,7 +3420,7 @@ kg:physical_ref9178 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc39a0c3f7e-05e6-4f0b-b08c-020c41e6e6d2> ;
     mbs:mediaType aat:300127173 .
 
-kg:physical_ref9182 a crm:E22_Human-Made_Object,
+kg:physical_ref9182 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 17 Photographs of Manuscript from Joseph Upton [Subseries 2.3, Box 91, Folder 31]" ;
@@ -3428,7 +3428,7 @@ kg:physical_ref9182 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc337ea8536-adec-4673-98e1-c6ea7b2e9a6f> ;
     mbs:mediaType aat:300046300 .
 
-kg:physical_ref9183 a crm:E22_Human-Made_Object,
+kg:physical_ref9183 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 16 Saudia Arabia, map, Arabian American Oil Company [Subseries 2.3, Box 90, Folder 15]" ;
@@ -3436,7 +3436,7 @@ kg:physical_ref9183 a crm:E22_Human-Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc32700837c-7074-423f-9390-b6019258348b> ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9187 a crm:E22_Human-Made_Object,
+kg:physical_ref9187 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 9 Garzon Fgfografo - Spain-Grandada" ;
@@ -4072,7 +4072,7 @@ kg:title_ref9187 a crm:E33_Linguistic_Object,
     rdfs:label "Item 9 Garzon Fgfografo - Spain-Grandada" ;
     rdf:value "Item 9 Garzon Fgfografo - Spain-Grandada" .
 
-kg:physical_ref9052 a crm:E22_Human-Made_Object,
+kg:physical_ref9052 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Architectural Drawing, crematory, Yale University project [Subseries 1.1 Box 5 Folder 6]" ;
@@ -4081,7 +4081,7 @@ kg:physical_ref9052 a crm:E22_Human-Made_Object,
     mbs:housedIn kg:storage_item_1 ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9053 a crm:E22_Human-Made_Object,
+kg:physical_ref9053 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Iran, miscellaneous outsized maps [Subseries 2.2 Box 69 Folder 10]" ;
@@ -4090,7 +4090,7 @@ kg:physical_ref9053 a crm:E22_Human-Made_Object,
     mbs:housedIn kg:storage_item_2 ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9054 a crm:E22_Human-Made_Object,
+kg:physical_ref9054 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Damavand, Tehran, Masjild-i Jomeh, ink drawing [Subseries 2.4 Box 110 Folder 12]" ;
@@ -4099,21 +4099,21 @@ kg:physical_ref9054 a crm:E22_Human-Made_Object,
     mbs:housedIn kg:storage_item_3 ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9128 a crm:E22_Human-Made_Object,
+kg:physical_ref9128 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 1 Ponced Tracing, Unidentified [Subseries 2.4 Box 110 Folder 42]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3eadf786a-3fc6-46a5-ad83-75591ab336fa> ;
     mbs:housedIn kg:storage_map_rolled_1 .
 
-kg:physical_ref9129 a crm:E22_Human-Made_Object,
+kg:physical_ref9129 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 2 Isfahan, unidentified tile tracing [Subseries 2.4 Box 110 Folder 43]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3b7088260-5ead-459b-8610-eaeb7666147a> ;
     mbs:housedIn kg:storage_map_rolled_2 .
 
-kg:physical_ref9130 a crm:E22_Human-Made_Object,
+kg:physical_ref9130 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 3 Section Long Façade and Northwest Dome, architectural sketch [Subseries 2.4 Box 111 Folder 35]" ;
@@ -4122,7 +4122,7 @@ kg:physical_ref9130 a crm:E22_Human-Made_Object,
     mbs:housedIn kg:storage_map_rolled_3 ;
     mbs:mediaType aat:300015425 .
 
-kg:physical_ref9131 a crm:E22_Human-Made_Object,
+kg:physical_ref9131 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 4 Isfahan. Masjid-i Jomeh Ground Plan, 3 linen ink drawings [Subseries 2.4 Box 111 Folder 36]" ;
@@ -4131,7 +4131,7 @@ kg:physical_ref9131 a crm:E22_Human-Made_Object,
     mbs:housedIn kg:storage_map_rolled_4 ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9133 a crm:E22_Human-Made_Object,
+kg:physical_ref9133 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 1 Yale Student Exercises, 4 rolled architectural drawings [Subseries 1.1 Box 3 Folder 10]" ;
@@ -4140,7 +4140,7 @@ kg:physical_ref9133 a crm:E22_Human-Made_Object,
     mbs:housedIn kg:storage_map_rolled_6 ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9134 a crm:E22_Human-Made_Object,
+kg:physical_ref9134 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 2 Iran Wall Map Pahlavi Period [Subseries 2.2 Box 69 Folder 19]" ;
@@ -4149,14 +4149,14 @@ kg:physical_ref9134 a crm:E22_Human-Made_Object,
     mbs:housedIn kg:storage_map_rolled_7 ;
     mbs:mediaType aat:300028094 .
 
-kg:physical_ref9135 a crm:E22_Human-Made_Object,
+kg:physical_ref9135 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 3 Isfahan, Masjid-i Jomeh, northwest side lateral, linen tracing [Subseries 2.4 Box 111 Folder 32]" ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3351a5494-318e-47fc-a099-21d5feddb322> ;
     mbs:housedIn kg:storage_map_rolled_8 .
 
-kg:physical_ref9136 a crm:E22_Human-Made_Object,
+kg:physical_ref9136 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 4 Isfahan, Masjid-i Jomeh Plan, \"Dutchman\" tracings [Subseries 2.4 Box 111 Folder 33]" ;
@@ -4165,7 +4165,7 @@ kg:physical_ref9136 a crm:E22_Human-Made_Object,
     mbs:housedIn kg:storage_map_rolled_9 ;
     mbs:mediaType aat:300034787 .
 
-kg:physical_ref9137 a crm:E22_Human-Made_Object,
+kg:physical_ref9137 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 5 Ashtarjan Mosque, ink drawing [Subseries 2.4 Box 110 Folder 5]" ;
@@ -4174,7 +4174,7 @@ kg:physical_ref9137 a crm:E22_Human-Made_Object,
     mbs:housedIn kg:storage_map_rolled_10 ;
     mbs:mediaType aat:300033973 .
 
-kg:physical_ref9186 a crm:E22_Human-Made_Object,
+kg:physical_ref9186 a crm:E22_Human_Made_Object,
         mbs:DiscreteItem,
         mbs:PhysicalComponent ;
     rdfs:label "Item 5 Hajj Commemorative Painting [Subseries 2.3 Box 87 Folder 9]" ;
@@ -4249,7 +4249,7 @@ kg:component_ref9049 a crm:E73_Information_Object,
         kg:component_ref9139,
         kg:component_ref9164 ;
     mbs:hasLinguisticObject kg:note_ref9049_scopecontent_0 ;
-    mbs:hasParentComponent kg:component_FSA.A.04 ;
+    mbs:hasParentComponent kg:component_FSA_A_04 ;
     mbs:hasPhysicalUnit kg:physical_ref9049 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.04/ref9049"^^xsd:anyURI .
 

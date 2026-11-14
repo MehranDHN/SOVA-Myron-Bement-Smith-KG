@@ -1,4 +1,4 @@
-"""Myron Bement Smith Collection (FSA.A.04) EAD → CIDOC CRM pipeline."""
+"""NMAA Archives EAD → CIDOC CRM pipeline (FSA.A.04, FSA.A.06, …)."""
 
 __version__ = "0.1.0"
 

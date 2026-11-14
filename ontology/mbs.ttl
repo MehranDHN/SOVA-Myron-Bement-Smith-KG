@@ -12,7 +12,7 @@
 
 mbs: a owl:Ontology ;
     dct:title "Myron Bement Smith Collection application ontology"@en ;
-    dct:description "Thin OWL application profile over CIDOC CRM 7.1.3 and CRMdig for the Smithsonian SOVA finding aid FSA.A.04. Adds archival level, physical housing (box/folder), digitization flag, and IIIF convenience properties that CRM does not name directly."@en ;
+    dct:description "Thin OWL application profile over CIDOC CRM 7.1.3 and CRMdig for Smithsonian NMAA Archives finding aids (FSA.A.04 Myron Bement Smith, FSA.A.06 Ernst Herzfeld, and further Islamic Archives siblings). Adds archival level, physical housing (box/folder), digitization flag, and IIIF convenience properties that CRM does not name directly. Prefixed CRM local names use underscores so Turtle and SPARQL import into Ontotext GraphDB."@en ;
     dct:creator "SOVA-Myron-Bement-Smith-KG" ;
     vann:preferredNamespacePrefix "mbs" ;
     vann:preferredNamespaceUri "https://w3id.org/sova/fsa_a_04/ontology#" ;
@@ -25,26 +25,26 @@ mbs: a owl:Ontology ;
 
 mbs:ArchivalComponent a owl:Class ;
     rdfs:label "Archival component"@en ;
-    rdfs:comment "Mixin for an EAD component (collection, series, subseries, file, or item) as documented in FSA.A.04."@en ;
+    rdfs:comment "Mixin for an EAD component (collection, series, subseries, file, or item) as documented in FSA.A.04, FSA.A.06, and sibling finding aids."@en ;
     rdfs:subClassOf crm:E73_Information_Object ;
     owl:equivalentClass rico:RecordSet .
 
 mbs:HoldingCollection a owl:Class ;
     rdfs:label "Holding collection"@en ;
     rdfs:subClassOf crm:E78_Curated_Holding ;
-    rdfs:comment "A named collection that may contain other collections. The Islamic Archives is the parent holding of FSA.A.04; further sub-collections will be added as siblings."@en .
+    rdfs:comment "A named collection that may contain other collections. The Islamic Archives is the parent holding of FSA.A.04 and FSA.A.06; further sub-collections use the same class."@en .
 
 mbs:hasSubCollection a owl:ObjectProperty ;
     rdfs:label "has sub-collection"@en ;
     rdfs:domain mbs:HoldingCollection ;
     rdfs:subPropertyOf crm:P106_is_composed_of ;
-    rdfs:comment "Links a parent holding (Islamic Archives) to a constituent collection such as FSA.A.04."@en .
+    rdfs:comment "Links a parent holding (Islamic Archives) to a constituent collection such as FSA.A.04 or FSA.A.06."@en .
 
 mbs:isPartOfCollection a owl:ObjectProperty ;
     rdfs:label "is part of collection"@en ;
     owl:inverseOf mbs:hasSubCollection ;
     rdfs:subPropertyOf crm:P106i_forms_part_of ;
-    rdfs:comment "The Myron Bement Smith Collection is part of the Islamic Archives. Other sub-collections will use the same property."@en .
+    rdfs:comment "FSA.A.04 (Myron Bement Smith) and FSA.A.06 (Ernst Herzfeld Papers) are parts of the Islamic Archives. Other sub-collections use the same property."@en .
 
 mbs:FileUnit a owl:Class ;
     rdfs:label "EAD file unit"@en ;
@@ -54,12 +54,13 @@ mbs:FileUnit a owl:Class ;
 mbs:ItemUnit a owl:Class ;
     rdfs:label "EAD item unit"@en ;
     rdfs:subClassOf mbs:ArchivalComponent ;
+    owl:disjointWith mbs:FileUnit ;
     rdfs:comment "EAD @level='item'. A discrete intellectual resource: a photograph, glass negative, lantern slide, architectural drawing, notebook, map, or similarly individual object."@en .
 
 mbs:PhysicalComponent a owl:Class ;
     rdfs:label "Physical archival unit"@en ;
     rdfs:comment "The physical manifestation of an EAD component: papers, prints, negatives, drawings, or a container of them."@en ;
-    rdfs:subClassOf crm:E22_Human-Made_Object .
+    rdfs:subClassOf crm:E22_Human_Made_Object .
 
 mbs:DocumentaryFile a owl:Class ;
     rdfs:label "Documentary file (physical)"@en ;
@@ -123,7 +124,7 @@ mbs:hasChildComponent a owl:ObjectProperty ;
 
 mbs:StorageUnit a owl:Class ;
     rdfs:label "Storage unit"@en ;
-    rdfs:subClassOf crm:E22_Human-Made_Object ;
+    rdfs:subClassOf crm:E22_Human_Made_Object ;
     rdfs:comment "A physical housing unit in the National Museum of Asian Art Archives stacks."@en .
 
 mbs:Box a owl:Class ;
@@ -132,6 +133,7 @@ mbs:Box a owl:Class ;
 
 mbs:Folder a owl:Class ;
     rdfs:label "Folder"@en ;
+    owl:disjointWith mbs:Box, mbs:StorageItem, mbs:MapCase ; 
     rdfs:subClassOf mbs:StorageUnit .
 
 mbs:MapCase a owl:Class ;
@@ -202,6 +204,7 @@ mbs:JpegSurrogate a owl:Class ;
 mbs:PdfSurrogate a owl:Class ;
     rdfs:label "PDF digital surrogate"@en ;
     rdfs:subClassOf crmdig:D1_Digital_Object ;
+    owl:disjointWith mbs:JpegSurrogate, mbs:PdfPage ;
     rdfs:comment "PDF for a digitized EAD file, accessed via the EDAN slideshow. Composed of PdfPage individuals, each with its own IIIF Manifest."@en .
 
 mbs:PdfPage a owl:Class ;
@@ -212,6 +215,7 @@ mbs:PdfPage a owl:Class ;
 mbs:ImageSet a owl:Class ;
     rdfs:label "Multi-image digital set"@en ;
     rdfs:subClassOf crmdig:D1_Digital_Object ;
+    owl:disjointWith mbs:JpegSurrogate, mbs:PdfSurrogate ;
     rdfs:comment "Slideshow of multiple JPEGs on an EAD item (exception to the single-JPEG item pattern)."@en .
 
 mbs:viewerUrl a owl:DatatypeProperty ;
@@ -293,6 +297,25 @@ mbs:sourceString a owl:DatatypeProperty ;
     rdfs:label "source string"@en ;
     rdfs:range xsd:string .
 
+mbs:seedId a owl:DatatypeProperty ;
+    rdfs:label "seed identifier"@en ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Stable id of a row in vocab/seed.yml. Used to merge manual terms across sub-collections."@en .
+
+mbs:usedByCollection a owl:ObjectProperty ;
+    rdfs:label "used by collection"@en ;
+    rdfs:domain skos:ConceptScheme ;
+    rdfs:range mbs:ArchivalComponent ;
+    rdfs:comment "The Islamic Archives SKOS scheme is shared by FSA.A.04, FSA.A.06, and further siblings."@en .
+
+#################################################################
+# SKOS mapping vs hierarchy (control vocabulary)
+#################################################################
+# skos:broader / skos:related   — both concepts are in kg: scheme (seed.yml intra).
+# skos:broadMatch / skos:relatedMatch / skos:exactMatch / skos:closeMatch
+#   — the object is an external authority (AAT, TGN, LCSH, LCNAF, Wikidata, Iconclass).
+# broadMatch is not broader: the parent is not minted as a local concept.
+
 #################################################################
 # Linguistic descriptions (scopecontent, bioghist, languages, …)
 #################################################################
@@ -339,4 +362,24 @@ mbs:FilePlan a mbs:NoteType, skos:Concept ; skos:prefLabel "fileplan"@en .
 
 mbs:Box rdfs:seeAlso rico:Instantiation .
 mbs:ArchivalComponent rdfs:seeAlso rico:RecordSet .
-crm:E22_Human-Made_Object rdfs:seeAlso rico:Thing .
+crm:E22_Human_Made_Object rdfs:seeAlso rico:Thing .
+
+#################################################################
+# GraphDB-safe CIDOC CRM local names
+# Official 7.1.3 IRIs keep hyphens; those forms cannot be used as
+# SPARQL/Turtle prefixed names in Ontotext GraphDB. Underscore local
+# names in this crm: namespace are owl-equivalent to the official IRIs
+# (written here as full IRIs, not hyphenated CURIEs).
+#################################################################
+
+crm:E22_Human_Made_Object a owl:Class ;
+    rdfs:label "E22 Human-Made Object"@en ;
+    owl:equivalentClass <http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object> .
+
+crm:E52_Time_Span a owl:Class ;
+    rdfs:label "E52 Time-Span"@en ;
+    owl:equivalentClass <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> .
+
+crm:P4_has_time_span a owl:ObjectProperty ;
+    rdfs:label "P4 has time-span"@en ;
+    owl:equivalentProperty <http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span> .

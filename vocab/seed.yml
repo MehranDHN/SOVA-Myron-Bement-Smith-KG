@@ -1,6 +1,46 @@
-# High-confidence seed reconciliations for FSA.A.04.
-# Used before live AAT / TGN / LCSH / Wikidata lookups.
-# Each entry: source_label (lowercase key), kind, matches.
+# Shared Islamic Archives control vocabulary
+# ==========================================
+# Manual, high-confidence terms for every sub-collection (FSA.A.04,
+# FSA.A.06, and later siblings). Edit this file, then:
+#
+#   python -m pipeline.cli vocab
+#
+# That parse is idempotent: the same id or label always mints the same
+# kg: URI and the same SKOS triples in data/rdf/vocabulary.ttl.
+# `reconcile` and `map` also apply the seed. Adding a row never duplicates
+# an existing concept; it merges on id, label, or exact authority IRI.
+#
+# Authorities (shorthand keys are exactMatch):
+#   aat, tgn, lcsh, lcnaf, wikidata, iconclass, uri
+#
+# SKOS — intra-scheme (this file, kg: concepts)
+#   broader / narrower  skos:broader / skos:narrower
+#   related             skos:related
+#   Values are local ids or labels of other rows in this file.
+#
+# SKOS — mapping (external AAT / TGN / LCSH / LCNAF / Wikidata / Iconclass)
+#   exact / exactMatch       skos:exactMatch   same meaning, other scheme
+#   close / closeMatch       skos:closeMatch   nearly the same, not identity
+#   broadMatch / broaderMatch  skos:broadMatch this concept is narrower than
+#                            an EXTERNAL concept (parent is not in this seed)
+#   narrowMatch              skos:narrowMatch
+#   relatedMatch             skos:relatedMatch associative, other scheme
+#
+# skos:broader vs skos:broadMatch
+#   broader     = parent is another row in this seed (same ConceptScheme).
+#   broadMatch  = parent exists only in AAT/LCSH/… and is not minted locally.
+#   Do not write aat_broader when you can point `broader:` at a local id.
+#   Legacy `aat_broader` / `aat_related` are read as broadMatch / relatedMatch.
+#
+# Optional: id, prefLabel, altLabels, note, collections.
+
+scheme:
+  id: islamic_archives
+  prefLabel: Islamic Archives control vocabulary
+  note: >
+    Shared SKOS scheme for Smithsonian NMAA Archives finding aids that
+    belong to the Islamic Archives holding (FSA.A.04 Myron Bement Smith,
+    FSA.A.06 Ernst Herzfeld Papers).
 
 agents:
   - label: "Smith, Myron Bement, 1897-1970"
@@ -33,6 +73,10 @@ agents:
   - label: "Reza Shah Pahlavi, Shah of Iran, 1878-1944"
     wikidata: Q182921
     kind: person
+  - label: "Sarre, Friedrich, 1865-1945"
+    wikidata: Q86930
+    kind: person
+    note: Colleague of Herzfeld; FSA.A.06.
 
 places:
   - label: Iran
@@ -114,6 +158,22 @@ places:
   - label: Turkey
     tgn: "1000144"
     wikidata: Q43
+  - id: samarra
+    label: Samarra
+    tgn: "7011132"
+    wikidata: Q170242
+    lcnaf: n79055264
+    note: Herzfeld excavation site; FSA.A.06.
+  - id: pasargadae
+    label: Pasargadae
+    tgn: "7001658"
+    wikidata: Q203402
+    note: Herzfeld excavation site; FSA.A.06.
+  - id: aleppo
+    label: Aleppo
+    tgn: "7002165"
+    wikidata: Q41183
+    lcnaf: n79055280
 
 monuments:
   - labels:
@@ -123,9 +183,12 @@ monuments:
       - "Jameh Mosque of Isfahan"
       - "Masjid-i Jum'a"
     wikidata: Q1227533
-    aat: "300007691"  # mosques (buildings)
     tgn_place: "7001374"
-    lcsh: sh85087470
+    broader: mosques
+    close:
+      aat: "300007691"
+      lcsh: sh85087470
+      iconclass: "11Q71"
 
 genres:
   - label: Correspondence
@@ -138,16 +201,27 @@ genres:
     aat: "300127121"
   - label: "Gelatin silver prints"
     aat: "300128695"
-  - label: "Glass negatives"
-    aat: "300134674"  # wet collodion negatives (this collection's Genre Form)
-    aat_broader: "300010898"  # glass negatives (generic)
-    aat_related:
-      - "300241140"  # dry collodion negatives
-    note: "EAD Genre Form 'Glass negatives' maps to wet collodion, not generic glass negatives."
-  - label: "Wet collodion negatives"
+  - id: wet_collodion_negatives
+    prefLabel: Wet collodion negatives
+    label: "Glass negatives"
+    altLabels:
+      - "Wet collodion negatives"
     aat: "300134674"
-  - label: "Dry collodion negatives"
+    broader: glass_negatives
+    related: dry_collodion_negatives
+    note: >
+      EAD Genre Form "Glass negatives" maps to AAT wet collodion negatives
+      (300134674). The generic AAT "glass negatives" (300010898) is the
+      local broader concept; dry collodion is a related sibling process.
+  - id: glass_negatives
+    prefLabel: Glass negatives (generic)
+    aat: "300010898"
+    note: Generic glass-negative process (AAT 300010898); parent of wet and dry collodion in this scheme.
+  - id: dry_collodion_negatives
+    prefLabel: Dry collodion negatives
+    label: "Dry collodion negatives"
     aat: "300241140"
+    broader: glass_negatives
   - label: "Studio portraits"
     aat: "300223022"
   - label: Photographs
@@ -168,21 +242,44 @@ genres:
     aat: "300007391"
   - label: "Royalty (Nobility)"
     aat: "300188750"
+  - id: sketchbooks
+    label: Sketchbooks
+    aat: "300027339"
+    note: FSA.A.06 series of field sketchbooks.
+  - id: squeezes
+    label: Squeezes
+    aat: "300264379"
+    note: Paper squeezes of inscriptions; FSA.A.06.
 
 subjects:
-  - label: "Islamic architecture"
+  - id: islamic_architecture
+    label: "Islamic architecture"
     lcsh: sh85006804
     aat: "300000996"
     wikidata: Q839805
-  - label: Mosques
+    broader: architecture
+    close:
+      iconclass: "12I"
+  - id: mosques
+    label: Mosques
     lcsh: sh85087470
     aat: "300007691"
     wikidata: Q32815
-  - label: "Architecture -- Iran"
+    broader: islamic_architecture
+    close:
+      iconclass: "11Q71"
+  - id: architecture_iran
+    label: "Architecture -- Iran"
     lcsh: sh85006660
-  - label: Architecture
+    broader: architecture
+    # LCSH "Architecture -- Iran" is a geographic subdivision of Architecture.
+    # The parent is in this seed, so use broader (not broadMatch).
+  - id: architecture
+    label: Architecture
     lcsh: sh85006611
     aat: "300263552"
+    close:
+      iconclass: "48C1"
   - label: Antiquities
     lcsh: sh85005757
   - label: "Portrait photography"

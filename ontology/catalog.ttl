@@ -4,8 +4,8 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 
 <https://w3id.org/sova/fsa_a_04/ontology> a owl:Ontology ;
-    dct:title "FSA.A.04 knowledge graph catalog"@en ;
-    dct:description "Prefix registry and imports for the Myron Bement Smith Collection graph."@en ;
+    dct:title "NMAA Archives Islamic Archives knowledge graph catalog"@en ;
+    dct:description "Prefix registry and imports for FSA.A.04 (Myron Bement Smith) and sibling FSA.A.06 (Ernst Herzfeld Papers)."@en ;
     vann:preferredNamespacePrefix "mbs" ;
     owl:imports <https://w3id.org/sova/fsa_a_04/ontology#> ;
     rdfs:seeAlso <http://www.cidoc-crm.org/cidoc-crm/> ,

@@ -1,0 +1,32 @@
+# Shared Islamic Archives SKOS scheme: local hierarchy vs external mapping.
+PREFIX kg:         <https://w3id.org/sova/fsa_a_04#>
+PREFIX mbs:        <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs:       <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?concept ?label ?rel ?target
+WHERE {
+  kg:scheme_islamic_archives a skos:ConceptScheme .
+  ?concept skos:inScheme kg:scheme_islamic_archives ;
+           skos:prefLabel ?label .
+  {
+    ?concept skos:broader ?target .
+    BIND("broader (local)" AS ?rel)
+  } UNION {
+    ?concept skos:related ?target .
+    BIND("related (local)" AS ?rel)
+  } UNION {
+    ?concept skos:exactMatch ?target .
+    BIND("exactMatch (external)" AS ?rel)
+  } UNION {
+    ?concept skos:closeMatch ?target .
+    BIND("closeMatch (external)" AS ?rel)
+  } UNION {
+    ?concept skos:broadMatch ?target .
+    BIND("broadMatch (external)" AS ?rel)
+  } UNION {
+    ?concept skos:relatedMatch ?target .
+    BIND("relatedMatch (external)" AS ?rel)
+  }
+}
+ORDER BY ?label ?rel

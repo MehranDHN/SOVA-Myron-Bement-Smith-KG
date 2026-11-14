@@ -32,7 +32,7 @@ CRM is the native model because the collection is event-centred cultural heritag
 Each series, subseries, file, or item is:
 
 1. an **intellectual** `mbs:ArchivalComponent` (`crm:E73_Information_Object`)
-2. a **physical** `mbs:PhysicalComponent` (`crm:E22_Human-Made_Object`)
+2. a **physical** `mbs:PhysicalComponent` (`crm:E22_Human_Made_Object`)
 
 A glass negative is not the Friday Mosque it depicts. The mosque is a separate `crm:E22` built work, linked with `crm:P67_refers_to` / `crm:P138_represents`, and reconciled to Wikidata (Jameh Mosque of Isfahan `Q1227533`) and AAT mosques (`aat:300007691`).
 
@@ -50,7 +50,7 @@ Full field mapping: [`docs/mappings.md`](docs/mappings.md) and [`mappings/ead-to
 
 ### Namespaces and URIs
 
-Instance resources use the hash namespace **`kg:`** (`https://w3id.org/sova/fsa_a_04#`) so Turtle serializes prefixed names instead of long angle-bracket IRIs. Local names use underscores (no hyphens).
+Instance resources use the hash namespace **`kg:`** (`https://w3id.org/sova/fsa_a_04#`) so Turtle serializes prefixed names instead of long angle-bracket IRIs. Local names use underscores (no dots or hyphens), which Ontotext GraphDB can import as prefixed names. CIDOC classes such as `crm:E22_Human_Made_Object` are `owl:equivalentClass` the official hyphenated CRM IRIs.
 
 ```turtle
 @prefix kg:     <https://w3id.org/sova/fsa_a_04#> .
@@ -85,7 +85,7 @@ EAD `@level` is not only hierarchy depth. In this collection:
 
 ### Islamic Archives (parent holding)
 
-EAD `corpname` **Islamic Archives** names a larger holding, not a corporate body. FSA.A.04 is one sub-collection of that holding (`kg:collection_islamic_archives` `mbs:hasSubCollection` `kg:component_FSA.A.04`). Further sub-collections of the Islamic Archives will be attached the same way.
+EAD `corpname` **Islamic Archives** names a larger holding, not a corporate body. FSA.A.04 is one sub-collection of that holding (`kg:collection_islamic_archives` `mbs:hasSubCollection` `kg:component_FSA_A_04`). FSA.A.06 (Ernst Herzfeld Papers) is the sibling branch (`kg:component_FSA_A_06`); it is stubbed until `python -m pipeline.cli map --ead srcdata/FSA.A.06-ead.xml` is run.
 
 ### Linguistic descriptions
 
@@ -117,7 +117,8 @@ Digitization appears as:
 ## Repository layout
 
 ```
-srcdata/FSA.A.04-ead.xml     EAD source of truth
+srcdata/FSA.A.04-ead.xml     EAD source of truth (Myron Bement Smith)
+srcdata/FSA.A.06-ead.xml     Sibling EAD (Ernst Herzfeld Papers; map with --ead)
 ontology/mbs.ttl             Local OWL application profile
 ontology/catalog.ttl         Prefix / import catalog
 mappings/ead-to-crm.yml      Machine mapping table
@@ -153,6 +154,7 @@ Stages (any one can be run alone):
 | Inventory | `python -m pipeline.cli inventory` | `data/reports/inventory.json` |
 | Extract | `python -m pipeline.cli extract` | `vocab/cache/entities.json` |
 | Reconcile | `python -m pipeline.cli reconcile` | `vocab/cache/reconciled.json` |
+| Shared vocabulary | `python -m pipeline.cli vocab` | `data/rdf/vocabulary.ttl` |
 | Map to CRM | `python -m pipeline.cli map` | `data/rdf/*.ttl` |
 | Slideshow pages | `python -m pipeline.cli slideshow` | `vocab/cache/slideshow-pages.json` |
 | SHACL | `python -m pipeline.cli validate` | `data/reports/shacl-report.txt` |
@@ -163,6 +165,7 @@ Optional flags:
 - `--probe-iiif` — HTTP-check derived IIIF `info.json` / manifest URLs
 - `--fetch-slideshow` — harvest per-page IDS ids from EDAN slideshow HTML
 - `--limit N` — map only the first N components (useful while developing)
+- `--ead path` — finding aid XML (default `srcdata/FSA.A.04-ead.xml`; FSA.A.06 writes `data/rdf/fsa_a_06/`)
 
 Smoke tests:
 
@@ -173,7 +176,7 @@ python tests/test_parser.py
 ## Reconciliation
 
 1. Keep every `@authfilenumber` already in the EAD (Wikidata Q-ids, `id.loc.gov`, `vocab.getty.edu/aat`).
-2. Match labels against [`vocab/seed.yml`](vocab/seed.yml) (Iran/Isfahan/Tehran/Palmyra TGN, Masjid-i Jomeh Wikidata, AAT for glass negatives, correspondence, lantern slides, …).
+2. Match labels against [`vocab/seed.yml`](vocab/seed.yml), the shared Islamic Archives control vocabulary (AAT, TGN, LCSH, LCNAF, Wikidata, Iconclass). `python -m pipeline.cli vocab` writes `data/rdf/vocabulary.ttl` idempotently. `skos:broader` is for local seed parents; `skos:broadMatch` is for external parents.
 3. Harvest inline names in titles and notes, not only `<controlaccess>`.
 4. Write a reviewable cache under `vocab/cache/` so rebuilds are deterministic.
 5. Unmatched strings remain first-class local resources (`mbs:sourceString`).
@@ -206,15 +209,16 @@ More queries:
 - [`queries/agents-wikidata.rq`](queries/agents-wikidata.rq) — agents with Wikidata links
 - [`queries/digitized-by-place.rq`](queries/digitized-by-place.rq) — digitized components by place
 - [`queries/islamic-archives.rq`](queries/islamic-archives.rq) — Islamic Archives parent holding and sub-collections
+- [`queries/vocabulary.rq`](queries/vocabulary.rq) — shared SKOS scheme (broader vs broadMatch)
 - [`queries/digitized-access.rq`](queries/digitized-access.rq) — PDF slideshow files vs JPEG items
 
 ## Generated RDF files
 
 | File | Contents | Triples |
 | --- | --- | --- |
-| `data/rdf/collection.ttl` | Collection node, finding aid, Islamic Archives holding | 603 |
+| `data/rdf/collection.ttl` | Collection node, finding aid, Islamic Archives holding, FSA.A.06 stub | 620 |
 | `data/rdf/series-1.ttl` | Series 1 Papers | 62,944 |
-| `data/rdf/series-2.ttl` | Series 2 Islamic Archives | 365,224 |
+| `data/rdf/series-2.ttl` | Series 2 Islamic Archives | 365,241 |
 | `data/rdf/series-3.ttl` | Series 3 outsize / miscellaneous | 4,108 |
 
 Agents, places, and concepts are written into the series file that first mentions them. Rebuild time is a few minutes (`python -m pipeline.cli map`).
@@ -231,7 +235,7 @@ Current inventory (`python -m pipeline.cli inventory` against the 2026-10-15 EAD
 | Distinct boxes | 234 |
 | Named entities with URI / without | 6692 / 7080 |
 | Unique agents / places / subjects / genres extracted | 1053 / 452 / 59 / 8 |
-| RDF triples (collection + 3 series) | 432,879 |
+| RDF triples (collection + 3 series) | 432,913 |
 | FileUnit / ItemUnit | 625 / 3,370 |
 
 Housing types in the EAD: Box, Folder, Oversize, Roll, Map-rolled, Item.
@@ -246,7 +250,7 @@ Preferred citation of the collection:
 
 > The Myron Bement Smith Collection, FSA A.04. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Katharine Dennis Smith.
 
-Finding aid author: Dr. Elizabeth Graves (2015). Related SOVA collections (Herzfeld FSA.A.06, Bier, Sevruguin albums) are recorded as `relatedmaterial` in the EAD and are out of scope for v1 except as textual notes.
+Finding aid author: Dr. Elizabeth Graves (2015). The Ernst Herzfeld Papers (FSA.A.06) are a sibling sub-collection of the Islamic Archives (`kg:component_FSA_A_06`); map them with `--ead srcdata/FSA.A.06-ead.xml`. Other related SOVA collections (Bier, Sevruguin albums) remain textual `relatedmaterial` notes.
 
 ## Scope of v1
 

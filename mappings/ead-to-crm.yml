@@ -1,5 +1,7 @@
-# EAD 2002 (FSA.A.04) → CIDOC CRM 7.1.3 + CRMdig + mbs:
-# Paths use EAD local names. CRM names use the official hyphenated OWL encoding.
+# EAD 2002 (FSA.A.04, FSA.A.06, …) → CIDOC CRM 7.1.3 + CRMdig + mbs:
+# Paths use EAD local names. Prefixed CRM local names replace "-" with "_"
+# (GraphDB/SPARQL). Official hyphenated CIDOC IRIs are owl:equivalentClass
+# in ontology/mbs.ttl. Instance local names replace "." and "-" with "_".
 
 namespaces:
   kg: https://w3id.org/sova/fsa_a_04#
@@ -16,7 +18,7 @@ component:
       also: [crm:E73_Information_Object]
       fragment: intellectual
     - class: mbs:PhysicalComponent
-      also: [crm:E22_Human-Made_Object]
+      also: [crm:E22_Human_Made_Object]
       fragment: physical
   links:
     - "intellectual mbs:hasPhysicalUnit physical"
@@ -31,7 +33,7 @@ fields:
   - ead: unitid
     crm: "P1_is_identified_by → E42_Identifier"
   - ead: unitdate/@normal
-    crm: "E12_Production P4_has_time-span E52_Time-Span P82_at_some_time_within"
+    crm: "E12_Production P4_has_time_span E52_Time_Span P82_at_some_time_within"
   - ead: origination[label=Creator]/persname
     crm: "E12_Production P14_carried_out_by E21_Person"
   - ead: origination/persname[@role contains pht]

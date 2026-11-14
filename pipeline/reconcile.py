@@ -8,12 +8,9 @@ from __future__ import annotations
 
 import json
 import re
-from pathlib import Path
-
-import yaml
 
 from pipeline.extract_entities import extract
-from pipeline.paths import CACHE_DIR, SEED_VOCAB
+from pipeline.paths import CACHE_DIR
 from pipeline.ead_parser import normalize_auth_uri
 
 
@@ -27,41 +24,17 @@ def _norm(s: str | None) -> str:
 
 
 def load_seed() -> dict:
-    raw = yaml.safe_load(SEED_VOCAB.read_text(encoding="utf-8"))
-    index = {"agent": {}, "place": {}, "genre": {}, "subject": {}, "monument": []}
-    for row in raw.get("agents") or []:
-        index["agent"][_norm(row["label"])] = row
-    for row in raw.get("places") or []:
-        index["place"][_norm(row["label"])] = row
-    for row in raw.get("genres") or []:
-        index["genre"][_norm(row["label"])] = row
-    for row in raw.get("subjects") or []:
-        index["subject"][_norm(row["label"])] = row
-    for row in raw.get("monuments") or []:
-        index["monument"].append(row)
-    return index
+    from pipeline.seed import load_index
+
+    return load_index()
 
 
 def _uris_from_seed(row: dict) -> dict:
-    out = {}
-    if row.get("wikidata"):
-        out["wikidata"] = f"http://www.wikidata.org/entity/{row['wikidata']}"
-    if row.get("aat"):
-        out["aat"] = f"http://vocab.getty.edu/aat/{row['aat']}"
-    if row.get("aat_broader"):
-        out["aat_broader"] = f"http://vocab.getty.edu/aat/{row['aat_broader']}"
-    related = row.get("aat_related")
-    if related:
-        if isinstance(related, str):
-            related = [related]
-        out["aat_related"] = [f"http://vocab.getty.edu/aat/{r}" for r in related]
-    if row.get("tgn"):
-        out["tgn"] = f"http://vocab.getty.edu/tgn/{row['tgn']}"
-    if row.get("lcsh"):
-        out["lcsh"] = f"https://id.loc.gov/authorities/subjects/{row['lcsh']}"
-    if row.get("lcnaf"):
-        out["lcnaf"] = f"https://id.loc.gov/authorities/names/{row['lcnaf']}"
-    return out
+    if row.get("matches"):
+        return dict(row["matches"])
+    from pipeline.seed import uris_from_seed_row
+
+    return uris_from_seed_row(row)
 
 
 def _monument_hit(text: str, monuments: list) -> dict | None:
@@ -100,10 +73,14 @@ def reconcile_record(rec: dict, kind: str, seed: dict) -> dict:
         "subjects": "subject",
     }[kind]
     seed_row = seed[bucket].get(n)
+    skos = None
+    seed_id = None
     if seed_row:
         matches.update(_uris_from_seed(seed_row))
         method.append("seed")
         confidence = max(confidence, 0.9)
+        skos = seed_row.get("skos")
+        seed_id = seed_row.get("seed_id") or seed_row.get("id")
     if kind in {"places", "subjects"}:
         mon = _monument_hit(label, seed["monument"])
         if mon:
@@ -113,8 +90,14 @@ def reconcile_record(rec: dict, kind: str, seed: dict) -> dict:
             method.append("seed-monument")
             confidence = max(confidence, 0.85)
             rec["monument"] = True
+            skos = mon.get("skos") or skos
+            seed_id = mon.get("seed_id") or seed_id
     rec = dict(rec)
     rec["matches"] = matches
+    if skos:
+        rec["skos"] = skos
+    if seed_id:
+        rec["seed_id"] = seed_id
     rec["method"] = method
     rec["confidence"] = confidence
     rec["kind"] = kind[:-1] if kind.endswith("s") else kind

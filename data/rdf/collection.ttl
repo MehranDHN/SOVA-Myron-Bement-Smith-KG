@@ -15,22 +15,22 @@
 
 kg:event_digitization_fs_fsa_a_04 a crmdig:D2_Digitization_Process ;
     crm:P108_has_produced kg:digital_fs_fsa_a_04 ;
-    crm:P16_used_specific_object kg:physical_FSA.A.04 .
+    crm:P16_used_specific_object kg:physical_FSA_A_04 .
 
-kg:event_production_FSA.A.04 a crm:E12_Production ;
+kg:event_production_FSA_A_04 a crm:E12_Production ;
     rdfs:label "Production of Myron Bement Smith Collection" ;
-    crm:P108_has_produced kg:physical_FSA.A.04 ;
+    crm:P108_has_produced kg:physical_FSA_A_04 ;
     crm:P14_carried_out_by kg:agent_Q6765187,
         kg:agent_Q98396885 ;
-    crm:P4_has_time-span kg:time_FSA.A.04 .
+    crm:P4_has_time_span kg:time_FSA_A_04 .
 
-kg:finding_aid a crm:E31_Document,
+kg:finding_aid_FSA_A_04 a crm:E31_Document,
         mbs:FindingAid ;
     rdfs:label "Myron Bement Smith Collection finding aid" ;
     dct:creator "Dr. Elizabeth Graves" ;
     dct:publisher "National Museum of Asian Art Archives" ;
     dct:source "FSA.A.04-ead.xml" ;
-    crm:P70_documents kg:component_FSA.A.04 ;
+    crm:P70_documents kg:component_FSA_A_04 ;
     rdfs:seeAlso <https://n2t.net/ark:/65665/dc3c8c950fe-250b-40df-b8c7-bcf788073968> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3c8c950fe-250b-40df-b8c7-bcf788073968> .
 
@@ -134,196 +134,200 @@ kg:agent_yale_university a crm:E74_Group ;
     rdfs:label "Yale University" ;
     mbs:sourceString "Yale University" .
 
-kg:id_ark_FSA.A.04 a crm:E42_Identifier ;
+kg:id_ark_FSA_A_04 a crm:E42_Identifier ;
     rdfs:label "https://n2t.net/ark:/65665/dc3c8c950fe-250b-40df-b8c7-bcf788073968" .
 
-kg:note_FSA.A.04_accessrestrict_0_p_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_accessrestrict_0_p_0 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Collection is open for research." .
 
-kg:note_FSA.A.04_acqinfo_0_p_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_acqinfo_0_p_0 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Gift of Katherine Dennis Smith, transfered from National Anthropological Archives." .
 
-kg:note_FSA.A.04_arrangement_0_p_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_0 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "The collection is arranged into 2 major series with further subseries. A third series inventories the outsized and miscellaneous materials." .
 
-kg:note_FSA.A.04_arrangement_0_p_1 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_1 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Series 1: Papers" .
 
-kg:note_FSA.A.04_arrangement_0_p_10 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_10 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Series 2: The Islamic Archives" .
 
-kg:note_FSA.A.04_arrangement_0_p_11 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_11 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.1: Islamic Archives History, Collection Information" .
 
-kg:note_FSA.A.04_arrangement_0_p_12 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_12 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.2: Resource Materials Iran" .
 
-kg:note_FSA.A.04_arrangement_0_p_13 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_13 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.3: Resource Materials Other Islamic World and General" .
 
-kg:note_FSA.A.04_arrangement_0_p_14 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_14 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.4: Myron Bement Smith Architectural Sketches, Plans and Notes, Iran, 1933-1937" .
 
-kg:note_FSA.A.04_arrangement_0_p_15 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_15 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.5: Myron Bement Smith Iran Photographs, Notebooks and Negative Registers" .
 
-kg:note_FSA.A.04_arrangement_0_p_16 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_16 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.6: Country Photograph File" .
 
-kg:note_FSA.A.04_arrangement_0_p_17 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_17 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.7: Lantern Slide Collection" .
 
-kg:note_FSA.A.04_arrangement_0_p_18 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_18 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.8: Myron Bement Smith 35 mm Color Slides" .
 
-kg:note_FSA.A.04_arrangement_0_p_19 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_19 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.9: Country 35 mm Color Slide File" .
 
-kg:note_FSA.A.04_arrangement_0_p_2 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_2 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 1.1: Biographic Materials" .
 
-kg:note_FSA.A.04_arrangement_0_p_20 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_20 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.10: Myron Bement Smith Negatives" .
 
-kg:note_FSA.A.04_arrangement_0_p_21 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_21 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.11: Country Photograph Negatives" .
 
-kg:note_FSA.A.04_arrangement_0_p_22 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_22 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 2.12: Antoin Sevruguin Photographs" .
 
-kg:note_FSA.A.04_arrangement_0_p_23 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_23 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Series 3: Outsize and Miscellaneous Items" .
 
-kg:note_FSA.A.04_arrangement_0_p_24 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_24 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 3.1: Map Case Drawers" .
 
-kg:note_FSA.A.04_arrangement_0_p_25 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_25 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 3.2: Rolled Items" .
 
-kg:note_FSA.A.04_arrangement_0_p_26 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_26 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 3.3 Items in Freezer" .
 
-kg:note_FSA.A.04_arrangement_0_p_27 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_27 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 3.4 Smithsonian Copy Negatives" .
 
-kg:note_FSA.A.04_arrangement_0_p_3 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_3 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 1.2: Professional Experience" .
 
-kg:note_FSA.A.04_arrangement_0_p_4 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_4 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 1.3: Notebooks, Journals and Appointment Books" .
 
-kg:note_FSA.A.04_arrangement_0_p_5 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_5 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 1.4: Correspondence" .
 
-kg:note_FSA.A.04_arrangement_0_p_6 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_6 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 1.5: Published and Unpublished Materials" .
 
-kg:note_FSA.A.04_arrangement_0_p_7 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_7 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 1.6: Italy Research 1925, 1927-1928" .
 
-kg:note_FSA.A.04_arrangement_0_p_8 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_8 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 1.7: Iran Research 1933-1937" .
 
-kg:note_FSA.A.04_arrangement_0_p_9 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0_p_9 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Subseries 1.8: Katharine Dennis Smith Papers and Correspondence" .
 
-kg:note_FSA.A.04_bioghist_0_p_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_bioghist_0_p_0 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Myron Bement Smith was born in Newark Valley, New York in 1897 and grew up in Rochester, New York. He died in Washington D.C. in 1970. He showed an early interest in drawing, and after graduation from high school, he worked as a draftsman for a Rochester architect. He served in the US Army Medical Corps in France during World War I and on return again worked as an architectural draftsman. He studied at Yale University from 1922 to 1926, earning a Bachelor of Fine Arts degree. During summer vacations, he worked as draftsman or designer for architectural firms in New York City. After graduation, he received a John Simon Guggenheim Memorial Foundation grant and spent two years in Italy doing research on northern Italian brick and stone work. He used photography as an tool for his research and published several well-illustrated articles. On return he joined an architectural firm in Philadelphia and in 1931 became a registered architect in New York. He enrolled in Harvard University graduate school in 1929 pursuing a Master of Fine Arts degree." .
 
-kg:note_FSA.A.04_bioghist_0_p_1 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_bioghist_0_p_1 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "In April 1930, Smith was appointed Secretary of the newly created American Institute for Persian Art and Archaeology founded by Arthur Upham Pope and located in New York City. He had no prior academic or work experience in Islamic art or architecture, and his job entailed designing publications, arranging lectures, organizing exhibitions and fund raising. That summer he arranged an independent study course at Harvard University on Persian art and subsequently studied Persian language at Columbia University and attended graduate courses at the Institute of Fine Arts at New York University. His work and academic credentials enabled him to compete successfully for a research fellowship from the American Council of Learned Societies in 1933 to study Iranian Islamic architecture." .
 
-kg:note_FSA.A.04_bioghist_0_p_2 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_bioghist_0_p_2 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Accompanied by his new bride Katharine Dennis, Smith left for Iran in 1933. They suffered a horrendous motor vehicle accident in Iraq en route and required a lengthy recuperation in Lebanon and Cyprus. The Smiths eventually arrived in Isfahan, Iran, where they established their \"Expedition House,\" as Smith called it, in a rented faculty house at Stuart College. Smith's research consisted of meticulous photographic documentation of Islamic monuments and architectural sketches and drawings of many of them. He concentrated on the Isfahan area but also documented monuments elsewhere in Iran. Smith outfitted his station wagon as a combination camper and research vehicle in which he and his staff traveled widely. Katharine sometimes traveled with him but generally she remained in Isfahan managing the household and logistics for the \"expedition.\" The Smiths left Iran in 1937." .
 
-kg:note_FSA.A.04_bioghist_0_p_3 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_bioghist_0_p_3 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Smith published several articles about Iran's Islamic monuments based on his field research and in 1947 completed his PhD thesis for The Johns Hopkins University on the vault in Persian architecture. His professional career from 1938 until his death in 1970 consisted of a series of temporary academic positions, contract work and government or academic sponsored lecture tours and photographic exhibits. He had a long lasting relationship with the Library of Congress where he served as an Honorary Consultant from 1938 to 1940 and again from 1948 to 1970; from 1943 to 1944 he was Chief of the Iranian Section at the Library. Despite his lack of published material, Smith was well-known among academic, government and private citizens who worked, traveled or were otherwise interested Iran and the Islamic world." .
 
-kg:note_FSA.A.04_bioghist_0_p_4 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_bioghist_0_p_4 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Smith developed an extensive network of professional and social contacts that dated from his early student days and increased markedly during his time at the Persian Institute and later in Iran. He kept in touch with them and they touted him to others who were interested in Iran or Islamic art and architecture. This network served him well in realizing his ambition of creating a resource for scholars that relied on photographs to document Islamic architecture. The Islamic Archives began with his own collection of photographs from his Iran research and grew to include all manner of photographic and other materials not only on the Islamic world but also other areas. Creating and managing the Archives became the main focus of Smith's professional life and career. In 1967 he received a grant from the National Endowment for the Humanities to revise his PhD thesis as a publishable manuscript but died before he could complete it." .
 
-kg:note_FSA.A.04_custodhist_0_p_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_custodhist_0_p_0 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Gift of Katharine Dennis Smith." .
 
-kg:note_FSA.A.04_prefercite_0_p_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_prefercite_0_p_0 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "The Myron Bement Smith Collection, FSA A.04. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Katharine Dennis Smith." .
 
-kg:note_FSA.A.04_processinfo_0_p_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_processinfo_0_p_0 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Processed by Dr. Elizabeth Graves." .
 
-kg:note_FSA.A.04_relatedmaterial_0_p_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_relatedmaterial_0_p_0 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Ernst Herzfeld Papers. FSA.A.06. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Ernst Herzfeld, 1946." .
 
-kg:note_FSA.A.04_relatedmaterial_0_p_1 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_relatedmaterial_0_p_1 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Lionel Bier Collection. FSA.A2004.05. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of the Estate of Lionel Bier." .
 
-kg:note_FSA.A.04_relatedmaterial_0_p_2 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_relatedmaterial_0_p_2 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Carol Bier and Lionel Bier Collection. FSA.A2008.01. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Carol Bier." .
 
-kg:note_FSA.A.04_relatedmaterial_0_p_3 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_relatedmaterial_0_p_3 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Stephen Arpee Collection of Sevruguin Photographs. FSA.A2011.03. National Museum of Asian Art Archives. Smithsonian Institution, Washington D.C." .
 
-kg:note_FSA.A.04_relatedmaterial_0_p_4 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_relatedmaterial_0_p_4 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Album of Persian Photographs, FSA.A2015.09. National Museum of Asian Art Archives. Smithsonian Institution, Washington D.C." .
 
-kg:note_FSA.A.04_relatedmaterial_0_p_5 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_relatedmaterial_0_p_5 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Jay Bisno Collection of Sevruguin Photographs. FSA.A.15. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Jay Bisno, 1985." .
 
-kg:note_FSA.A.04_scopecontent_0_p_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_scopecontent_0_p_0 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "The Myron Bement Smith Collection consists of two parts, the papers of Myron Bement Smith and his wife Katharine and the Islamic Archives. The papers include some biographic material about Myron but little about his wife. Information on his academic and professional experience is sketchy and his diaries and appointment books often contain only sporadic entries. The papers contain substantial material about his field research in Italy in the 1920s and his years working on Islamic architecture in Iran in the 1930s. Correspondence comprises the largest and most potentially useful part of the papers. Letters describe the milieu in which he operated in Rochester, NY and New York City in the 1920s and early 1930s; the Smiths' life in Iran from 1933 to 1937; and the extensive network of academic and social contacts that Myron and Katharine developed and maintained over his lifetime." .
 
-kg:note_FSA.A.04_scopecontent_0_p_1 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_scopecontent_0_p_1 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "The Islamic Archives, formally entitled The Archive for Islamic Culture and Art, was a project to which Smith devoted most of his professional life. It includes both original materials, such as his photographs and notes, and items acquired by him from other scholars or experts on Islamic art and architecture. Most of the latter consists of photographs and slides. Smith intended the Archives to serve as a resource for scholars interested in the architecture and art of the entire Islamic world although he also included some materials about non-Islamic architecture. The core collection of the Archives consists of Smith's original photographs and architectural sketches of Iranian Islamic monuments made during his field research in the 1930s. He meticulously photographed the interior and exterior of monuments, including their decorative detail. Some of the photographic materials subsequently loaned, purchased, or donated to the Archives may enable scholars to document sites over time but in many cases the materials are poorly preserved or reproduced. A notable exception to this is the glassplate negatives and prints of 19th century Iranian photographer Antoin Sevruguin." .
 
-kg:note_FSA.A.04_userestrict_0_p_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_userestrict_0_p_0 a crm:E33_Linguistic_Object ;
     crm:P72_has_language lang:eng ;
     rdf:value "Permission to publish, quote, or reproduce must be secured from the repository." .
+
+kg:physical_FSA_A_06 a crm:E22_Human_Made_Object,
+        mbs:PhysicalComponent ;
+    rdfs:label "Ernst Herzfeld Papers" .
 
 kg:place_isfahan_iran a crm:E53_Place ;
     rdfs:label "Isfahan, Iran" ;
@@ -384,7 +388,7 @@ kg:place_tgn_7014449 a crm:E53_Place ;
         wd:Q49218 ;
     mbs:sourceString "Rochester, New York" .
 
-kg:time_FSA.A.04 a crm:E52_Time-Span ;
+kg:time_FSA_A_04 a crm:E52_Time_Span ;
     rdfs:label "circa 1910-1970" ;
     crm:P78_is_identified_by "circa 1910-1970" ;
     crm:P82a_begin_of_the_begin "1905" ;
@@ -396,6 +400,19 @@ kg:agent_Q6765187 a crm:E21_Person ;
     mbs:matchConfidence 0.95 ;
     mbs:reconciledTo wd:Q6765187 ;
     mbs:sourceString "Blake, Marion Elizabeth" .
+
+kg:component_FSA_A_06 a crm:E73_Information_Object,
+        mbs:ArchivalComponent ;
+    rdfs:label "Ernst Herzfeld Papers" ;
+    dct:identifier "FSA.A.06" ;
+    crm:P106i_forms_part_of kg:collection_islamic_archives ;
+    rdfs:seeAlso <https://sova.si.edu/record/fsa.a.06> ;
+    mbs:archivalLevel "collection" ;
+    mbs:digitized false ;
+    mbs:eadRef "FSA.A.06" ;
+    mbs:hasPhysicalUnit kg:physical_FSA_A_06 ;
+    mbs:isPartOfCollection kg:collection_islamic_archives ;
+    mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06"^^xsd:anyURI .
 
 kg:concept_aat_300000996 a crm:E55_Type,
         skos:Concept ;
@@ -463,155 +480,144 @@ kg:digital_fs_fsa_a_04 a crmdig:D1_Digital_Object,
         mbs:JpegSurrogate ;
     rdfs:label "Myron Bement Smith Collection" ;
     crm:P2_has_type aat:300266239 ;
-    crm:P70i_is_documented_in kg:component_FSA.A.04 ;
+    crm:P70i_is_documented_in kg:component_FSA_A_04 ;
     rdfs:seeAlso <https://ids.si.edu/ids/deliveryService?id=FS-FSA_A.04> ;
     mbs:iiifImageService "https://ids.si.edu/ids/iiif/FS-FSA_A.04"^^xsd:anyURI ;
     mbs:iiifManifest "https://ids.si.edu/ids/manifest/FS-FSA_A.04"^^xsd:anyURI ;
     mbs:mediaType aat:300266239 ;
     mbs:viewerUrl "https://ids.si.edu/ids/deliveryService?id=FS-FSA_A.04"^^xsd:anyURI .
 
-kg:note_FSA.A.04_abstract_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_abstract_0 a crm:E33_Linguistic_Object ;
     rdfs:label "Abstract" ;
     crm:P2_has_type mbs:Abstract ;
     crm:P72_has_language lang:eng ;
     rdf:value "The Myron Bement Smith collection consists of two parts, the papers of Myron Bement Smith and his wife Katharine and the Islamic Archives. It contains substantial material about his field research in Italy in the 1920s and his years working on Islamic architecture in Iran in the 1930s. Letters describe the milieu in which he operated in Rochester NY and New York City in the 1920s and early 1930s; the Smiths' life in Iran from 1933 to 1937; and the extensive network of academic and social contacts that Myron and Katharine developed and maintained over his lifetime. The Islamic Archives was a project to which Smith devoted most of his professional life. It includes both original materials, such as his photographs and notes, and items acquired by him from other scholars or experts on Islamic art and architecture. Smith intended the Archives to serve as a resource for scholars interested in the architecture and art of the entire Islamic world although he also included some materials about non-Islamic architecture." ;
     mbs:noteType mbs:Abstract .
 
-kg:note_FSA.A.04_accessrestrict_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_accessrestrict_0 a crm:E33_Linguistic_Object ;
     rdfs:label "Conditions Governing Access" ;
-    crm:P148_has_component kg:note_FSA.A.04_accessrestrict_0_p_0 ;
+    crm:P148_has_component kg:note_FSA_A_04_accessrestrict_0_p_0 ;
     crm:P2_has_type mbs:AccessRestrict ;
     crm:P72_has_language lang:eng ;
     rdf:value "Conditions Governing Access Collection is open for research." ;
     mbs:noteType mbs:AccessRestrict .
 
-kg:note_FSA.A.04_acqinfo_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_acqinfo_0 a crm:E33_Linguistic_Object ;
     rdfs:label "Source" ;
-    crm:P148_has_component kg:note_FSA.A.04_acqinfo_0_p_0 ;
+    crm:P148_has_component kg:note_FSA_A_04_acqinfo_0_p_0 ;
     crm:P2_has_type mbs:AcqInfo ;
     crm:P72_has_language lang:eng ;
     rdf:value "Source Gift of Katherine Dennis Smith, transfered from National Anthropological Archives." ;
     mbs:noteType mbs:AcqInfo .
 
-kg:note_FSA.A.04_arrangement_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_arrangement_0 a crm:E33_Linguistic_Object ;
     rdfs:label "Arrangement" ;
-    crm:P148_has_component kg:note_FSA.A.04_arrangement_0_p_0,
-        kg:note_FSA.A.04_arrangement_0_p_1,
-        kg:note_FSA.A.04_arrangement_0_p_10,
-        kg:note_FSA.A.04_arrangement_0_p_11,
-        kg:note_FSA.A.04_arrangement_0_p_12,
-        kg:note_FSA.A.04_arrangement_0_p_13,
-        kg:note_FSA.A.04_arrangement_0_p_14,
-        kg:note_FSA.A.04_arrangement_0_p_15,
-        kg:note_FSA.A.04_arrangement_0_p_16,
-        kg:note_FSA.A.04_arrangement_0_p_17,
-        kg:note_FSA.A.04_arrangement_0_p_18,
-        kg:note_FSA.A.04_arrangement_0_p_19,
-        kg:note_FSA.A.04_arrangement_0_p_2,
-        kg:note_FSA.A.04_arrangement_0_p_20,
-        kg:note_FSA.A.04_arrangement_0_p_21,
-        kg:note_FSA.A.04_arrangement_0_p_22,
-        kg:note_FSA.A.04_arrangement_0_p_23,
-        kg:note_FSA.A.04_arrangement_0_p_24,
-        kg:note_FSA.A.04_arrangement_0_p_25,
-        kg:note_FSA.A.04_arrangement_0_p_26,
-        kg:note_FSA.A.04_arrangement_0_p_27,
-        kg:note_FSA.A.04_arrangement_0_p_3,
-        kg:note_FSA.A.04_arrangement_0_p_4,
-        kg:note_FSA.A.04_arrangement_0_p_5,
-        kg:note_FSA.A.04_arrangement_0_p_6,
-        kg:note_FSA.A.04_arrangement_0_p_7,
-        kg:note_FSA.A.04_arrangement_0_p_8,
-        kg:note_FSA.A.04_arrangement_0_p_9 ;
+    crm:P148_has_component kg:note_FSA_A_04_arrangement_0_p_0,
+        kg:note_FSA_A_04_arrangement_0_p_1,
+        kg:note_FSA_A_04_arrangement_0_p_10,
+        kg:note_FSA_A_04_arrangement_0_p_11,
+        kg:note_FSA_A_04_arrangement_0_p_12,
+        kg:note_FSA_A_04_arrangement_0_p_13,
+        kg:note_FSA_A_04_arrangement_0_p_14,
+        kg:note_FSA_A_04_arrangement_0_p_15,
+        kg:note_FSA_A_04_arrangement_0_p_16,
+        kg:note_FSA_A_04_arrangement_0_p_17,
+        kg:note_FSA_A_04_arrangement_0_p_18,
+        kg:note_FSA_A_04_arrangement_0_p_19,
+        kg:note_FSA_A_04_arrangement_0_p_2,
+        kg:note_FSA_A_04_arrangement_0_p_20,
+        kg:note_FSA_A_04_arrangement_0_p_21,
+        kg:note_FSA_A_04_arrangement_0_p_22,
+        kg:note_FSA_A_04_arrangement_0_p_23,
+        kg:note_FSA_A_04_arrangement_0_p_24,
+        kg:note_FSA_A_04_arrangement_0_p_25,
+        kg:note_FSA_A_04_arrangement_0_p_26,
+        kg:note_FSA_A_04_arrangement_0_p_27,
+        kg:note_FSA_A_04_arrangement_0_p_3,
+        kg:note_FSA_A_04_arrangement_0_p_4,
+        kg:note_FSA_A_04_arrangement_0_p_5,
+        kg:note_FSA_A_04_arrangement_0_p_6,
+        kg:note_FSA_A_04_arrangement_0_p_7,
+        kg:note_FSA_A_04_arrangement_0_p_8,
+        kg:note_FSA_A_04_arrangement_0_p_9 ;
     crm:P2_has_type mbs:Arrangement ;
     crm:P72_has_language lang:eng ;
     rdf:value "Arrangement The collection is arranged into 2 major series with further subseries. A third series inventories the outsized and miscellaneous materials. Series 1: Papers Subseries 1.1: Biographic Materials Subseries 1.2: Professional Experience Subseries 1.3: Notebooks, Journals and Appointment Books Subseries 1.4: Correspondence Subseries 1.5: Published and Unpublished Materials Subseries 1.6: Italy Research 1925, 1927-1928 Subseries 1.7: Iran Research 1933-1937 Subseries 1.8: Katharine Dennis Smith Papers and Correspondence Series 2: The Islamic Archives Subseries 2.1: Islamic Archives History, Collection Information Subseries 2.2: Resource Materials Iran Subseries 2.3: Resource Materials Other Islamic World and General Subseries 2.4: Myron Bement Smith Architectural Sketches, Plans and Notes, Iran, 1933-1937 Subseries 2.5: Myron Bement Smith Iran Photographs, Notebooks and Negative Registers Subseries 2.6: Country Photograph File Subseries 2.7: Lantern Slide Collection Subseries 2.8: Myron Bement Smith 35 mm Color Slides Subseries 2.9: Country 35 mm Color Slide File Subseries 2.10: Myron Bement Smith Negatives Subseries 2.11: Country Photograph Negatives Subseries 2.12: Antoin Sevruguin Photographs Series 3: Outsize and Miscellaneous Items Subseries 3.1: Map Case Drawers Subseries 3.2: Rolled Items Subseries 3.3 Items in Freezer Subseries 3.4 Smithsonian Copy Negatives" ;
     mbs:noteType mbs:Arrangement .
 
-kg:note_FSA.A.04_bioghist_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_bioghist_0 a crm:E33_Linguistic_Object ;
     rdfs:label "Biographical Note" ;
-    crm:P148_has_component kg:note_FSA.A.04_bioghist_0_p_0,
-        kg:note_FSA.A.04_bioghist_0_p_1,
-        kg:note_FSA.A.04_bioghist_0_p_2,
-        kg:note_FSA.A.04_bioghist_0_p_3,
-        kg:note_FSA.A.04_bioghist_0_p_4 ;
+    crm:P148_has_component kg:note_FSA_A_04_bioghist_0_p_0,
+        kg:note_FSA_A_04_bioghist_0_p_1,
+        kg:note_FSA_A_04_bioghist_0_p_2,
+        kg:note_FSA_A_04_bioghist_0_p_3,
+        kg:note_FSA_A_04_bioghist_0_p_4 ;
     crm:P2_has_type mbs:BiogHist ;
     crm:P72_has_language lang:eng ;
     rdf:value "Biographical Note Myron Bement Smith was born in Newark Valley, New York in 1897 and grew up in Rochester, New York. He died in Washington D.C. in 1970. He showed an early interest in drawing, and after graduation from high school, he worked as a draftsman for a Rochester architect. He served in the US Army Medical Corps in France during World War I and on return again worked as an architectural draftsman. He studied at Yale University from 1922 to 1926, earning a Bachelor of Fine Arts degree. During summer vacations, he worked as draftsman or designer for architectural firms in New York City. After graduation, he received a John Simon Guggenheim Memorial Foundation grant and spent two years in Italy doing research on northern Italian brick and stone work. He used photography as an tool for his research and published several well-illustrated articles. On return he joined an architectural firm in Philadelphia and in 1931 became a registered architect in New York. He enrolled in Harvard University graduate school in 1929 pursuing a Master of Fine Arts degree. In April 1930, Smith was appointed Secretary of the newly created American Institute for Persian Art and Archaeology founded by Arthur Upham Pope and located in New York City. He had no prior academic or work experience in Islamic art or architecture, and his job entailed designing publications, arranging lectures, organizing exhibitions and fund raising. That summer he arranged an independent study course at Harvard University on Persian art and subsequently studied Persian language at Columbia University and attended graduate courses at the Institute of Fine Arts at New York University. His work and academic credentials enabled him to compete successfully for a research fellowship from the American Council of Learned Societies in 1933 to study Iranian Islamic architecture. Accompanied by his new bride Katharine Dennis, Smith left for Iran in 1933. They suffered a horrendous motor vehicle accident in Iraq en route and required a lengthy recuperation in Lebanon and Cyprus. The Smiths eventually arrived in Isfahan, Iran, where they established their \"Expedition House,\" as Smith called it, in a rented faculty house at Stuart College. Smith's research consisted of meticulous photographic documentation of Islamic monuments and architectural sketches and drawings of many of them. He concentrated on the Isfahan area but also documented monuments elsewhere in Iran. Smith outfitted his station wagon as a combination camper and research vehicle in which he and his staff traveled widely. Katharine sometimes traveled with him but generally she remained in Isfahan managing the household and logistics for the \"expedition.\" The Smiths left Iran in 1937. Smith published several articles about Iran's Islamic monuments based on his field research and in 1947 completed his PhD thesis for The Johns Hopkins University on the vault in Persian architecture. His professional career from 1938 until his death in 1970 consisted of a series of temporary academic positions, contract work and government or academic sponsored lecture tours and photographic exhibits. He had a long lasting relationship with the Library of Congress where he served as an Honorary Consultant from 1938 to 1940 and again from 1948 to 1970; from 1943 to 1944 he was Chief of the Iranian Section at the Library. Despite his lack of published material, Smith was well-known among academic, government and private citizens who worked, traveled or were otherwise interested Iran and the Islamic world. Smith developed an extensive network of professional and social contacts that dated from his early student days and increased markedly during his time at the Persian Institute and later in Iran. He kept in touch with them and they touted him to others who were interested in Iran or Islamic art and architecture. This network served him well in realizing his ambition of creating a resource for scholars that relied on photographs to document Islamic architecture. The Islamic Archives began with his own collection of photographs from his Iran research and grew to include all manner of photographic and other materials not only on the Islamic world but also other areas. Creating and managing the Archives became the main focus of Smith's professional life and career. In 1967 he received a grant from the National Endowment for the Humanities to revise his PhD thesis as a publishable manuscript but died before he could complete it." ;
     mbs:noteType mbs:BiogHist .
 
-kg:note_FSA.A.04_custodhist_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_custodhist_0 a crm:E33_Linguistic_Object ;
     rdfs:label "Custodial History" ;
-    crm:P148_has_component kg:note_FSA.A.04_custodhist_0_p_0 ;
+    crm:P148_has_component kg:note_FSA_A_04_custodhist_0_p_0 ;
     crm:P2_has_type mbs:CustodHist ;
     crm:P72_has_language lang:eng ;
     rdf:value "Custodial History Gift of Katharine Dennis Smith." ;
     mbs:noteType mbs:CustodHist .
 
-kg:note_FSA.A.04_prefercite_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_prefercite_0 a crm:E33_Linguistic_Object ;
     rdfs:label "Preferred Citation" ;
-    crm:P148_has_component kg:note_FSA.A.04_prefercite_0_p_0 ;
+    crm:P148_has_component kg:note_FSA_A_04_prefercite_0_p_0 ;
     crm:P2_has_type mbs:PreferCite ;
     crm:P72_has_language lang:eng ;
     rdf:value "Preferred Citation The Myron Bement Smith Collection, FSA A.04. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Katharine Dennis Smith." ;
     mbs:noteType mbs:PreferCite .
 
-kg:note_FSA.A.04_processinfo_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_processinfo_0 a crm:E33_Linguistic_Object ;
     rdfs:label "Processing Information" ;
-    crm:P148_has_component kg:note_FSA.A.04_processinfo_0_p_0 ;
+    crm:P148_has_component kg:note_FSA_A_04_processinfo_0_p_0 ;
     crm:P2_has_type mbs:ProcessInfo ;
     crm:P72_has_language lang:eng ;
     rdf:value "Processing Information Processed by Dr. Elizabeth Graves." ;
     mbs:noteType mbs:ProcessInfo .
 
-kg:note_FSA.A.04_relatedmaterial_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_relatedmaterial_0 a crm:E33_Linguistic_Object ;
     rdfs:label "Related Materials" ;
-    crm:P148_has_component kg:note_FSA.A.04_relatedmaterial_0_p_0,
-        kg:note_FSA.A.04_relatedmaterial_0_p_1,
-        kg:note_FSA.A.04_relatedmaterial_0_p_2,
-        kg:note_FSA.A.04_relatedmaterial_0_p_3,
-        kg:note_FSA.A.04_relatedmaterial_0_p_4,
-        kg:note_FSA.A.04_relatedmaterial_0_p_5 ;
+    crm:P148_has_component kg:note_FSA_A_04_relatedmaterial_0_p_0,
+        kg:note_FSA_A_04_relatedmaterial_0_p_1,
+        kg:note_FSA_A_04_relatedmaterial_0_p_2,
+        kg:note_FSA_A_04_relatedmaterial_0_p_3,
+        kg:note_FSA_A_04_relatedmaterial_0_p_4,
+        kg:note_FSA_A_04_relatedmaterial_0_p_5 ;
     crm:P2_has_type mbs:RelatedMaterial ;
     crm:P72_has_language lang:eng ;
     rdf:value "Related Materials Ernst Herzfeld Papers. FSA.A.06. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Ernst Herzfeld, 1946. Lionel Bier Collection. FSA.A2004.05. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of the Estate of Lionel Bier. Carol Bier and Lionel Bier Collection. FSA.A2008.01. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Carol Bier. Stephen Arpee Collection of Sevruguin Photographs. FSA.A2011.03. National Museum of Asian Art Archives. Smithsonian Institution, Washington D.C. Album of Persian Photographs, FSA.A2015.09. National Museum of Asian Art Archives. Smithsonian Institution, Washington D.C. Jay Bisno Collection of Sevruguin Photographs. FSA.A.15. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Jay Bisno, 1985." ;
     mbs:noteType mbs:RelatedMaterial .
 
-kg:note_FSA.A.04_scopecontent_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_scopecontent_0 a crm:E33_Linguistic_Object ;
     rdfs:label "Scope and Contents" ;
-    crm:P148_has_component kg:note_FSA.A.04_scopecontent_0_p_0,
-        kg:note_FSA.A.04_scopecontent_0_p_1 ;
+    crm:P148_has_component kg:note_FSA_A_04_scopecontent_0_p_0,
+        kg:note_FSA_A_04_scopecontent_0_p_1 ;
     crm:P2_has_type mbs:ScopeContent ;
     crm:P72_has_language lang:eng ;
     rdf:value "Scope and Contents The Myron Bement Smith Collection consists of two parts, the papers of Myron Bement Smith and his wife Katharine and the Islamic Archives. The papers include some biographic material about Myron but little about his wife. Information on his academic and professional experience is sketchy and his diaries and appointment books often contain only sporadic entries. The papers contain substantial material about his field research in Italy in the 1920s and his years working on Islamic architecture in Iran in the 1930s. Correspondence comprises the largest and most potentially useful part of the papers. Letters describe the milieu in which he operated in Rochester, NY and New York City in the 1920s and early 1930s; the Smiths' life in Iran from 1933 to 1937; and the extensive network of academic and social contacts that Myron and Katharine developed and maintained over his lifetime. The Islamic Archives, formally entitled The Archive for Islamic Culture and Art, was a project to which Smith devoted most of his professional life. It includes both original materials, such as his photographs and notes, and items acquired by him from other scholars or experts on Islamic art and architecture. Most of the latter consists of photographs and slides. Smith intended the Archives to serve as a resource for scholars interested in the architecture and art of the entire Islamic world although he also included some materials about non-Islamic architecture. The core collection of the Archives consists of Smith's original photographs and architectural sketches of Iranian Islamic monuments made during his field research in the 1930s. He meticulously photographed the interior and exterior of monuments, including their decorative detail. Some of the photographic materials subsequently loaned, purchased, or donated to the Archives may enable scholars to document sites over time but in many cases the materials are poorly preserved or reproduced. A notable exception to this is the glassplate negatives and prints of 19th century Iranian photographer Antoin Sevruguin." ;
     mbs:noteType mbs:ScopeContent .
 
-kg:note_FSA.A.04_userestrict_0 a crm:E33_Linguistic_Object ;
+kg:note_FSA_A_04_userestrict_0 a crm:E33_Linguistic_Object ;
     rdfs:label "Conditions Governing Use" ;
-    crm:P148_has_component kg:note_FSA.A.04_userestrict_0_p_0 ;
+    crm:P148_has_component kg:note_FSA_A_04_userestrict_0_p_0 ;
     crm:P2_has_type mbs:UseRestrict ;
     crm:P72_has_language lang:eng ;
     rdf:value "Conditions Governing Use Permission to publish, quote, or reproduce must be secured from the repository." ;
     mbs:noteType mbs:UseRestrict .
 
-kg:title_FSA.A.04 a crm:E33_Linguistic_Object,
+kg:title_FSA_A_04 a crm:E33_Linguistic_Object,
         crm:E35_Title ;
     rdfs:label "Myron Bement Smith Collection" ;
     crm:P72_has_language lang:eng ;
     rdf:value "Myron Bement Smith Collection" .
 
-kg:collection_islamic_archives a crm:E73_Information_Object,
-        crm:E78_Curated_Holding,
-        mbs:HoldingCollection ;
-    rdfs:label "Islamic Archives" ;
-    crm:P106_is_composed_of kg:component_FSA.A.04 ;
-    rdfs:comment "Parent holding of the Myron Bement Smith Collection (FSA.A.04). Further sub-collections of the Islamic Archives will be added as siblings of FSA.A.04." ;
-    skos:altLabel "The Archive for Islamic Culture and Art" ;
-    mbs:hasSubCollection kg:component_FSA.A.04 ;
-    mbs:sourceString "Islamic Archives",
-        "The Archive for Islamic Culture and Art" .
-
-kg:physical_FSA.A.04 a crm:E22_Human-Made_Object,
+kg:physical_FSA_A_04 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "Myron Bement Smith Collection" ;
     crm:P2_has_type kg:concept_aat_300000996,
@@ -627,13 +633,13 @@ kg:physical_FSA.A.04 a crm:E22_Human-Made_Object,
             rdfs:label "100 Cubic feet" ] ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3c8c950fe-250b-40df-b8c7-bcf788073968> .
 
-kg:component_FSA.A.04 a crm:E73_Information_Object,
+kg:component_FSA_A_04 a crm:E73_Information_Object,
         mbs:ArchivalComponent ;
     rdfs:label "Myron Bement Smith Collection" ;
     dct:identifier "FSA.A.04" ;
     dct:language "eng" ;
     dct:publisher "National Museum of Asian Art Archives" ;
-    crm:P102_has_title kg:title_FSA.A.04 ;
+    crm:P102_has_title kg:title_FSA_A_04 ;
     crm:P106i_forms_part_of kg:collection_islamic_archives ;
     crm:P129_is_about kg:concept_aat_300000996,
         kg:concept_aat_300007691,
@@ -644,7 +650,7 @@ kg:component_FSA.A.04 a crm:E73_Information_Object,
         kg:concept_islamic_architecture_turkey,
         kg:concept_lcsh_sh85006660,
         kg:concept_united_states_social_life_and_customs ;
-    crm:P1_is_identified_by kg:title_FSA.A.04 ;
+    crm:P1_is_identified_by kg:title_FSA_A_04 ;
     crm:P3_has_note "Arrangement The collection is arranged into 2 major series with further subseries. A third series inventories the outsized and miscellaneous materials. Series 1: Papers Subseries 1.1: Biographic Materials Subseries 1.2: Professional Experience Subseries 1.3: Notebooks, Journals and Appointment Books Subseries 1.4: Correspondence Subseries 1.5: Published and Unpublished Materials Subseries 1.6: Italy Research 1925, 1927-1928 Subseries 1.7: Iran Research 1933-1937 Subseries 1.8: Katharine Dennis Smith Papers and Correspondence Series 2: The Islamic Archives Subseries 2.1: Islamic Archives History, Collection Information Subseries 2.2: Resource Materials Iran Subseries 2.3: Resource Materials Other Islamic World and General Subseries 2.4: Myron Bement Smith Architectural Sketches, Plans and Notes, Iran, 1933-1937 Subseries 2.5: Myron Bement Smith Iran Photographs, Notebooks and Negative Registers Subseries 2.6: Country Photograph File Subseries 2.7: Lantern Slide Collection Subseries 2.8: Myron Bement Smith 35 mm Color Slides Subseries 2.9: Country 35 mm Color Slide File Subseries 2.10: Myron Bement Smith Negatives Subseries 2.11: Country Photograph Negatives Subseries 2.12: Antoin Sevruguin Photographs Series 3: Outsize and Miscellaneous Items Subseries 3.1: Map Case Drawers Subseries 3.2: Rolled Items Subseries 3.3 Items in Freezer Subseries 3.4 Smithsonian Copy Negatives",
         "Biographical Note Myron Bement Smith was born in Newark Valley, New York in 1897 and grew up in Rochester, New York. He died in Washington D.C. in 1970. He showed an early interest in drawing, and after graduation from high school, he worked as a draftsman for a Rochester architect. He served in the US Army Medical Corps in France during World War I and on return again worked as an architectural draftsman. He studied at Yale University from 1922 to 1926, earning a Bachelor of Fine Arts degree. During summer vacations, he worked as draftsman or designer for architectural firms in New York City. After graduation, he received a John Simon Guggenheim Memorial Foundation grant and spent two years in Italy doing research on northern Italian brick and stone work. He used photography as an tool for his research and published several well-illustrated articles. On return he joined an architectural firm in Philadelphia and in 1931 became a registered architect in New York. He enrolled in Harvard University graduate school in 1929 pursuing a Master of Fine Arts degree. In April 1930, Smith was appointed Secretary of the newly created American Institute for Persian Art and Archaeology founded by Arthur Upham Pope and located in New York City. He had no prior academic or work experience in Islamic art or architecture, and his job entailed designing publications, arranging lectures, organizing exhibitions and fund raising. That summer he arranged an independent study course at Harvard University on Persian art and subsequently studied Persian language at Columbia University and attended graduate courses at the Institute of Fine Arts at New York University. His work and academic credentials enabled him to compete successfully for a research fellowship from the American Council of Learned Societies in 1933 to study Iranian Islamic architecture. Accompanied by his new bride Katharine Dennis, Smith left for Iran in 1933. They suffered a horrendous motor vehicle accident in Iraq en route and required a lengthy recuperation in Lebanon and Cyprus. The Smiths eventually arrived in Isfahan, Iran, where they established their \"Expedition House,\" as Smith called it, in a rented faculty house at Stuart College. Smith's research consisted of meticulous photographic documentation of Islamic monuments and architectural sketches and drawings of many of them. He concentrated on the Isfahan area but also documented monuments elsewhere in Iran. Smith outfitted his station wagon as a combination camper and research vehicle in which he and his staff traveled widely. Katharine sometimes traveled with him but generally she remained in Isfahan managing the household and logistics for the \"expedition.\" The Smiths left Iran in 1937. Smith published several articles about Iran's Islamic monuments based on his field research and in 1947 completed his PhD thesis for The Johns Hopkins University on the vault in Persian architecture. His professional career from 1938 until his death in 1970 consisted of a series of temporary academic positions, contract work and government or academic sponsored lecture tours and photographic exhibits. He had a long lasting relationship with the Library of Congress where he served as an Honorary Consultant from 1938 to 1940 and again from 1948 to 1970; from 1943 to 1944 he was Chief of the Iranian Section at the Library. Despite his lack of published material, Smith was well-known among academic, government and private citizens who worked, traveled or were otherwise interested Iran and the Islamic world. Smith developed an extensive network of professional and social contacts that dated from his early student days and increased markedly during his time at the Persian Institute and later in Iran. He kept in touch with them and they touted him to others who were interested in Iran or Islamic art and architecture. This network served him well in realizing his ambition of creating a resource for scholars that relied on photographs to document Islamic architecture. The Islamic Archives began with his own collection of photographs from his Iran research and grew to include all manner of photographic and other materials not only on the Islamic world but also other areas. Creating and managing the Archives became the main focus of Smith's professional life and career. In 1967 he received a grant from the National Endowment for the Humanities to revise his PhD thesis as a publishable manuscript but died before he could complete it.",
         "Conditions Governing Access Collection is open for research.",
@@ -656,7 +662,7 @@ kg:component_FSA.A.04 a crm:E73_Information_Object,
         "Scope and Contents The Myron Bement Smith Collection consists of two parts, the papers of Myron Bement Smith and his wife Katharine and the Islamic Archives. The papers include some biographic material about Myron but little about his wife. Information on his academic and professional experience is sketchy and his diaries and appointment books often contain only sporadic entries. The papers contain substantial material about his field research in Italy in the 1920s and his years working on Islamic architecture in Iran in the 1930s. Correspondence comprises the largest and most potentially useful part of the papers. Letters describe the milieu in which he operated in Rochester, NY and New York City in the 1920s and early 1930s; the Smiths' life in Iran from 1933 to 1937; and the extensive network of academic and social contacts that Myron and Katharine developed and maintained over his lifetime. The Islamic Archives, formally entitled The Archive for Islamic Culture and Art, was a project to which Smith devoted most of his professional life. It includes both original materials, such as his photographs and notes, and items acquired by him from other scholars or experts on Islamic art and architecture. Most of the latter consists of photographs and slides. Smith intended the Archives to serve as a resource for scholars interested in the architecture and art of the entire Islamic world although he also included some materials about non-Islamic architecture. The core collection of the Archives consists of Smith's original photographs and architectural sketches of Iranian Islamic monuments made during his field research in the 1930s. He meticulously photographed the interior and exterior of monuments, including their decorative detail. Some of the photographic materials subsequently loaned, purchased, or donated to the Archives may enable scholars to document sites over time but in many cases the materials are poorly preserved or reproduced. A notable exception to this is the glassplate negatives and prints of 19th century Iranian photographer Antoin Sevruguin.",
         "Source Gift of Katherine Dennis Smith, transfered from National Anthropological Archives.",
         "The Myron Bement Smith collection consists of two parts, the papers of Myron Bement Smith and his wife Katharine and the Islamic Archives. It contains substantial material about his field research in Italy in the 1920s and his years working on Islamic architecture in Iran in the 1930s. Letters describe the milieu in which he operated in Rochester NY and New York City in the 1920s and early 1930s; the Smiths' life in Iran from 1933 to 1937; and the extensive network of academic and social contacts that Myron and Katharine developed and maintained over his lifetime. The Islamic Archives was a project to which Smith devoted most of his professional life. It includes both original materials, such as his photographs and notes, and items acquired by him from other scholars or experts on Islamic art and architecture. Smith intended the Archives to serve as a resource for scholars interested in the architecture and art of the entire Islamic world although he also included some materials about non-Islamic architecture." ;
-    crm:P48_has_preferred_identifier kg:id_ark_FSA.A.04 ;
+    crm:P48_has_preferred_identifier kg:id_ark_FSA_A_04 ;
     crm:P67_refers_to kg:agent_Q15130478,
         kg:agent_Q16224169,
         kg:agent_Q216041,
@@ -677,17 +683,17 @@ kg:component_FSA.A.04 a crm:E73_Information_Object,
         kg:agent_us_army_medical_corps,
         kg:agent_yale_university,
         kg:collection_islamic_archives,
-        kg:note_FSA.A.04_abstract_0,
-        kg:note_FSA.A.04_accessrestrict_0,
-        kg:note_FSA.A.04_acqinfo_0,
-        kg:note_FSA.A.04_arrangement_0,
-        kg:note_FSA.A.04_bioghist_0,
-        kg:note_FSA.A.04_custodhist_0,
-        kg:note_FSA.A.04_prefercite_0,
-        kg:note_FSA.A.04_processinfo_0,
-        kg:note_FSA.A.04_relatedmaterial_0,
-        kg:note_FSA.A.04_scopecontent_0,
-        kg:note_FSA.A.04_userestrict_0,
+        kg:note_FSA_A_04_abstract_0,
+        kg:note_FSA_A_04_accessrestrict_0,
+        kg:note_FSA_A_04_acqinfo_0,
+        kg:note_FSA_A_04_arrangement_0,
+        kg:note_FSA_A_04_bioghist_0,
+        kg:note_FSA_A_04_custodhist_0,
+        kg:note_FSA_A_04_prefercite_0,
+        kg:note_FSA_A_04_processinfo_0,
+        kg:note_FSA_A_04_relatedmaterial_0,
+        kg:note_FSA_A_04_scopecontent_0,
+        kg:note_FSA_A_04_userestrict_0,
         kg:place_isfahan_iran,
         kg:place_newark_valley_new_york,
         kg:place_rochester_ny,
@@ -703,26 +709,34 @@ kg:component_FSA.A.04 a crm:E73_Information_Object,
     mbs:digitized true ;
     mbs:eadRef "FSA.A.04" ;
     mbs:hasDigitalObject kg:digital_fs_fsa_a_04 ;
-    mbs:hasLinguisticObject kg:note_FSA.A.04_abstract_0,
-        kg:note_FSA.A.04_accessrestrict_0,
-        kg:note_FSA.A.04_acqinfo_0,
-        kg:note_FSA.A.04_arrangement_0,
-        kg:note_FSA.A.04_bioghist_0,
-        kg:note_FSA.A.04_custodhist_0,
-        kg:note_FSA.A.04_prefercite_0,
-        kg:note_FSA.A.04_processinfo_0,
-        kg:note_FSA.A.04_relatedmaterial_0,
-        kg:note_FSA.A.04_scopecontent_0,
-        kg:note_FSA.A.04_userestrict_0 ;
-    mbs:hasPhysicalUnit kg:physical_FSA.A.04 ;
+    mbs:hasLinguisticObject kg:note_FSA_A_04_abstract_0,
+        kg:note_FSA_A_04_accessrestrict_0,
+        kg:note_FSA_A_04_acqinfo_0,
+        kg:note_FSA_A_04_arrangement_0,
+        kg:note_FSA_A_04_bioghist_0,
+        kg:note_FSA_A_04_custodhist_0,
+        kg:note_FSA_A_04_prefercite_0,
+        kg:note_FSA_A_04_processinfo_0,
+        kg:note_FSA_A_04_relatedmaterial_0,
+        kg:note_FSA_A_04_scopecontent_0,
+        kg:note_FSA_A_04_userestrict_0 ;
+    mbs:hasPhysicalUnit kg:physical_FSA_A_04 ;
     mbs:isPartOfCollection kg:collection_islamic_archives ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.04"^^xsd:anyURI .
+
+kg:collection_islamic_archives a crm:E73_Information_Object,
+        crm:E78_Curated_Holding,
+        mbs:HoldingCollection ;
+    rdfs:label "Islamic Archives" ;
+    crm:P106_is_composed_of kg:component_FSA_A_04,
+        kg:component_FSA_A_06 ;
+    rdfs:comment "Parent holding of the Myron Bement Smith Collection (FSA.A.04) and the Ernst Herzfeld Papers (FSA.A.06). Further sub-collections use the same mbs:hasSubCollection link." ;
+    skos:altLabel "The Archive for Islamic Culture and Art" ;
+    mbs:hasSubCollection kg:component_FSA_A_04,
+        kg:component_FSA_A_06 ;
+    mbs:sourceString "Islamic Archives",
+        "The Archive for Islamic Culture and Art" .
 
 lang:eng a crm:E56_Language ;
     rdfs:label "English" .
 
-lang:per a crm:E56_Language ;
-    rdfs:label "Persian" . 
-
-lang:ara a crm:E56_Language ;
-    rdfs:label "Arabic" .       
