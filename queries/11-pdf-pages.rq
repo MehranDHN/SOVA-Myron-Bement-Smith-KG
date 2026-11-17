@@ -1,0 +1,22 @@
+# Q11 — File-level PDF surrogate composed of per-page D1 objects.
+PREFIX mbs:     <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crmdig:  <http://www.ics.forth.gr/isl/CRMdig/>
+PREFIX crm:     <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?file ?title ?pdf ?pageCount ?page ?pageNo ?manifest
+WHERE {
+  ?file a mbs:FileUnit ;
+        rdfs:label ?title ;
+        mbs:hasDigitalObject ?pdf .
+  ?pdf a mbs:PdfSurrogate .
+  OPTIONAL { ?pdf mbs:pageCount ?pageCount }
+  OPTIONAL {
+    ?pdf mbs:hasPage ?page .
+    ?page a crmdig:D1_Digital_Object ;
+          mbs:pageNumber ?pageNo .
+    OPTIONAL { ?page mbs:iiifManifest ?manifest }
+  }
+}
+ORDER BY ?title ?pageNo
+LIMIT 200

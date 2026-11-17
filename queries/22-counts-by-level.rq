@@ -1,0 +1,13 @@
+# Q22 — Census of archival levels, digitization, and D1 coverage.
+PREFIX mbs:     <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crmdig:  <http://www.ics.forth.gr/isl/CRMdig/>
+
+SELECT ?level (COUNT(DISTINCT ?c) AS ?components)
+       (SUM(IF(?dig, 1, 0)) AS ?digitized)
+       (COUNT(DISTINCT ?d1) AS ?digitalObjects)
+WHERE {
+  ?c a mbs:ArchivalComponent ; mbs:archivalLevel ?level ; mbs:digitized ?dig .
+  OPTIONAL { ?c mbs:hasDigitalObject ?d1 . ?d1 a crmdig:D1_Digital_Object }
+}
+GROUP BY ?level
+ORDER BY ?level

@@ -1,0 +1,22 @@
+# Q03 — Full intellectual path collection → series → subseries → file → item.
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?collectionTitle ?seriesTitle ?subTitle ?fileTitle ?itemTitle ?item
+WHERE {
+  ?collection mbs:archivalLevel "collection" ; rdfs:label ?collectionTitle ;
+              crm:P106_is_composed_of ?series .
+  ?series mbs:archivalLevel "series" ; rdfs:label ?seriesTitle ;
+          crm:P106_is_composed_of ?sub .
+  ?sub mbs:archivalLevel "subseries" ; rdfs:label ?subTitle .
+  OPTIONAL {
+    ?sub crm:P106_is_composed_of ?file .
+    ?file mbs:archivalLevel "file" ; rdfs:label ?fileTitle .
+    OPTIONAL {
+      ?file crm:P106_is_composed_of ?item .
+      ?item mbs:archivalLevel "item" ; rdfs:label ?itemTitle .
+    }
+  }
+}
+LIMIT 200

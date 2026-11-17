@@ -1,0 +1,19 @@
+# Q21 — Sevruguin glass negatives under Series 2.12, with D1 + IIIF.
+PREFIX kg:      <https://w3id.org/sova/fsa_a_04#>
+PREFIX mbs:     <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:     <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX crmdig:  <http://www.ics.forth.gr/isl/CRMdig/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?item ?title ?d1 ?manifest
+WHERE {
+  kg:component_ref7426 crm:P106_is_composed_of+ ?item .
+  ?item a mbs:ItemUnit ; rdfs:label ?title ; mbs:digitized true .
+  FILTER(CONTAINS(LCASE(STR(?title)), "sevruguin"))
+  OPTIONAL {
+    ?item mbs:hasDigitalObject ?d1 .
+    ?d1 a crmdig:D1_Digital_Object .
+    OPTIONAL { ?d1 mbs:iiifManifest ?manifest }
+  }
+}
+LIMIT 50

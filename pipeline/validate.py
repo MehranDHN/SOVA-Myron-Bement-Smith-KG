@@ -8,7 +8,7 @@ from pathlib import Path
 from rdflib import Graph
 
 from pipeline.namespaces import PREFIXES
-from pipeline.paths import ONTOLOGY, RDF_DIR, REPORTS_DIR, SHAPES
+from pipeline.paths import ONTOLOGY, REPORTS_DIR, SHAPES, iter_rdf_ttls
 
 
 def load_data() -> Graph:
@@ -17,7 +17,7 @@ def load_data() -> Graph:
         g.bind(pfx, ns)
     if ONTOLOGY.exists():
         g.parse(ONTOLOGY, format="turtle")
-    for ttl in sorted(RDF_DIR.glob("*.ttl")):
+    for ttl in iter_rdf_ttls():
         g.parse(ttl, format="turtle")
     return g
 

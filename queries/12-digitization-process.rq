@@ -1,0 +1,17 @@
+# Q12 — CRMdig D2 digitization process produced D1 from the physical unit.
+PREFIX mbs:     <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crmdig:  <http://www.ics.forth.gr/isl/CRMdig/>
+PREFIX crm:     <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?component ?title ?process ?d1 ?phys
+WHERE {
+  ?component a mbs:ArchivalComponent ;
+             rdfs:label ?title ;
+             mbs:hasDigitalObject ?d1 ;
+             mbs:hasPhysicalUnit ?phys .
+  ?process a crmdig:D2_Digitization_Process ;
+           crm:P108_has_produced ?d1 ;
+           crm:P16_used_specific_object ?phys .
+}
+LIMIT 80

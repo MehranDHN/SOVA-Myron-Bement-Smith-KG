@@ -1,0 +1,16 @@
+# Q16 — Photographs that represent a built work (mosque), not the building itself.
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX aat:  <http://vocab.getty.edu/aat/>
+
+SELECT ?photo ?title ?built ?builtLabel ?wd
+WHERE {
+  ?photo a mbs:ArchivalComponent ;
+         rdfs:label ?title ;
+         crm:P138_represents ?built .
+  ?built a crm:E22_Human_Made_Object ; rdfs:label ?builtLabel .
+  OPTIONAL { ?built owl:sameAs ?wd }
+}
+LIMIT 50

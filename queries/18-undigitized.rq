@@ -1,0 +1,12 @@
+# Q18 — Components with no dao / D1 (still first-class in the tree).
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?level (COUNT(?c) AS ?n)
+WHERE {
+  ?c a mbs:ArchivalComponent ;
+     mbs:digitized false ;
+     mbs:archivalLevel ?level .
+}
+GROUP BY ?level
+ORDER BY ?level

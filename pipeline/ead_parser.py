@@ -86,18 +86,50 @@ def normalize_auth_uri(source: str | None, auth: str | None) -> str | None:
     return None
 
 
-def parse_dao(el) -> dict:
-    href = xlink_href(el) or ""
+def classify_dao_href(href: str) -> dict:
+    """Classify an EAD ``dao/@xlink:href`` (IDS JPEG, EDAN eadrefid, or damspath)."""
+    href = href or ""
     kind = "other"
     ids_id = None
     eadrefid = None
+    damspath = None
+    damspath_id = None
     if "ids.si.edu" in href and "id=" in href:
         kind = "ids-image"
         ids_id = href.split("id=", 1)[-1].split("&", 1)[0]
     elif "edan.si.edu/slideshow" in href:
-        kind = "edan-slideshow"
-        if "eadrefid=" in href:
-            eadrefid = href.split("eadrefid=", 1)[-1].split("&", 1)[0]
+        if "damspath=" in href:
+            kind = "edan-damspath"
+            damspath = href.split("damspath=", 1)[-1].split("&", 1)[0]
+            damspath_id = damspath.rstrip("/").rsplit("/", 1)[-1] or damspath
+        else:
+            kind = "edan-slideshow"
+            if "eadrefid=" in href:
+                eadrefid = href.split("eadrefid=", 1)[-1].split("&", 1)[0]
+    return {
+        "kind": kind,
+        "ids_id": ids_id,
+        "eadrefid": eadrefid,
+        "damspath": damspath,
+        "damspath_id": damspath_id,
+    }
+
+
+def digital_source_id(dao: dict, component_id: str, index: int = 1) -> str:
+    """Stable key used to mint ``kg:digital_{slug}`` (same rule as map_crm)."""
+    return (
+        dao.get("ids_id")
+        or dao.get("eadrefid")
+        or dao.get("damspath_id")
+        or dao.get("damspath")
+        or f"{component_id}_{index}"
+    )
+
+
+def parse_dao(el) -> dict:
+    href = xlink_href(el) or ""
+    classified = classify_dao_href(href)
+    kind = classified["kind"]
     role = xlink_role(el) or ""
     if role == "representative-image" and kind == "ids-image":
         kind = "representative-image"
@@ -110,8 +142,10 @@ def parse_dao(el) -> dict:
         "title": title,
         "role": role or None,
         "kind": kind,
-        "ids_id": ids_id,
-        "eadrefid": eadrefid,
+        "ids_id": classified["ids_id"],
+        "eadrefid": classified["eadrefid"],
+        "damspath": classified["damspath"],
+        "damspath_id": classified["damspath_id"],
     }
 
 
@@ -294,15 +328,19 @@ def parse_component(el, parent_id: str | None = None, depth: int = 0) -> dict:
     if daos and not digitized:
         digitized = True
     kind = "none"
-    if any(d["kind"] == "edan-slideshow" for d in daos):
-        kind = "edan-slideshow"
-    if any(d["kind"] in {"ids-image", "representative-image"} for d in daos):
-        if kind == "edan-slideshow":
-            kind = "mixed"
-        else:
-            kind = "ids-image"
-    elif any(d["kind"] == "representative-image" for d in daos):
+    slideshowish = {"edan-slideshow", "edan-damspath"}
+    has_slide = any(d["kind"] in slideshowish for d in daos)
+    has_ids = any(d["kind"] in {"ids-image", "representative-image"} for d in daos)
+    if has_slide and has_ids:
+        kind = "mixed"
+    elif has_ids:
         kind = "ids-image"
+    elif any(d["kind"] == "edan-damspath" for d in daos) and not any(
+        d["kind"] == "edan-slideshow" for d in daos
+    ):
+        kind = "edan-damspath"
+    elif has_slide:
+        kind = "edan-slideshow"
     return {
         "id": el.get("id") or did.get("id") or "collection",
         "level": el.get("level") or "collection",

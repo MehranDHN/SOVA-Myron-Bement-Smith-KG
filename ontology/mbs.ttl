@@ -196,6 +196,10 @@ mbs:edan_slideshow a mbs:DigitizationKind, skos:Concept ;
     skos:prefLabel "EDAN slideshow"@en ;
     skos:definition "PDF (EAD file) or multi-image set delivered through edan.si.edu/slideshow keyed by eadrefid. Each page is a separate IDS image with its own IIIF Manifest."@en .
 
+mbs:edan_damspath a mbs:DigitizationKind, skos:Concept ;
+    skos:prefLabel "EDAN damspath slideshow"@en ;
+    skos:definition "Multi-image set on edan.si.edu/slideshow/slideshowViewer.htm keyed by damspath (FSA.A.06 sketchbooks and similar). Harvested as mbs:ImageSet or mbs:PdfSurrogate the same way as eadrefid slideshows."@en .
+
 mbs:JpegSurrogate a owl:Class ;
     rdfs:label "JPEG digital surrogate"@en ;
     rdfs:subClassOf crmdig:D1_Digital_Object ;

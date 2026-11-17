@@ -1,0 +1,17 @@
+# Q13 — E12 Production of the physical object with E52 time-span.
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?component ?title ?begin ?end ?agent
+WHERE {
+  ?component mbs:hasPhysicalUnit ?phys ; rdfs:label ?title .
+  ?prod a crm:E12_Production ; crm:P108_has_produced ?phys .
+  OPTIONAL {
+    ?prod crm:P4_has_time_span ?ts .
+    OPTIONAL { ?ts crm:P82a_begin_of_the_begin ?begin }
+    OPTIONAL { ?ts crm:P82b_end_of_the_end ?end }
+  }
+  OPTIONAL { ?prod crm:P14_carried_out_by ?agent }
+}
+LIMIT 80

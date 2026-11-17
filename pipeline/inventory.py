@@ -3,14 +3,13 @@
 from __future__ import annotations
 
 import json
-from collections import Counter, defaultdict
+from collections import Counter
 
 from pipeline.ead_parser import parse_ead, walk
-from pipeline.paths import REPORTS_DIR, SRCDATA
+from pipeline.paths import DEFAULT_EADID, REPORTS_DIR, SRCDATA, inventory_path
 
 
-def run(path=None) -> dict:
-    data = parse_ead(path or SRCDATA)
+def from_parsed(data: dict) -> dict:
     coll = data["collection"]
     levels = Counter()
     digitized = Counter()
@@ -87,11 +86,27 @@ def run(path=None) -> dict:
         "named_without_uri": auth_without_uri,
         "series": series,
         "header": data["header"],
+        "path": data.get("path"),
     }
-    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    out = REPORTS_DIR / "inventory.json"
-    out.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
     return report
+
+
+def write_report(report: dict) -> dict:
+    """Write ``inventory-{eadid}.json``; keep ``inventory.json`` as the FSA.A.04 copy."""
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(report, indent=2, ensure_ascii=False)
+    eadid = report.get("eadid") or DEFAULT_EADID
+    dest = inventory_path(eadid)
+    dest.write_text(payload, encoding="utf-8")
+    if eadid == DEFAULT_EADID:
+        (REPORTS_DIR / "inventory.json").write_text(payload, encoding="utf-8")
+    report["written"] = str(dest)
+    return report
+
+
+def run(path=None) -> dict:
+    data = parse_ead(path or SRCDATA)
+    return write_report(from_parsed(data))
 
 
 def _all_named(node):

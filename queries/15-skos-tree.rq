@@ -1,0 +1,12 @@
+# Q15 — SKOS tree inside the Islamic Archives scheme (local broader only).
+PREFIX kg:   <https://w3id.org/sova/fsa_a_04#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?parent ?parentLabel ?child ?childLabel
+WHERE {
+  ?child skos:inScheme kg:scheme_islamic_archives ;
+         skos:broader ?parent ;
+         skos:prefLabel ?childLabel .
+  ?parent skos:prefLabel ?parentLabel .
+}
+ORDER BY ?parentLabel ?childLabel

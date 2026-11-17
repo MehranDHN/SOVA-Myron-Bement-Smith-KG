@@ -1,0 +1,15 @@
+# Q17 — Finding aid (E31) documents the collection node.
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+
+SELECT ?fa ?faLabel ?collection ?title ?creator ?source
+WHERE {
+  ?fa a mbs:FindingAid , crm:E31_Document ;
+      rdfs:label ?faLabel ;
+      crm:P70_documents ?collection .
+  ?collection rdfs:label ?title .
+  OPTIONAL { ?fa dct:creator ?creator }
+  OPTIONAL { ?fa dct:source ?source }
+}

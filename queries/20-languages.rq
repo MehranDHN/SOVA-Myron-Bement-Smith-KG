@@ -1,0 +1,12 @@
+# Q20 — Languages on components (crm:P72).
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?lang (COUNT(DISTINCT ?c) AS ?n)
+WHERE {
+  ?c a mbs:ArchivalComponent ; mbs:hasLinguisticObject ?note .
+  ?note crm:P72_has_language ?lang .
+}
+GROUP BY ?lang
+ORDER BY DESC(?n)

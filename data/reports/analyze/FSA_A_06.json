@@ -1,0 +1,530 @@
+{
+  "eadid": "FSA.A.06",
+  "title": "Ernst Herzfeld Papers",
+  "label": "Ernst Herzfeld Papers",
+  "sova": "https://sova.si.edu/record/fsa.a.06",
+  "ark": "https://n2t.net/ark:/65665/dc3d8456fbe-98f6-4159-bd2f-c485379b84a7",
+  "local": "srcdata/FSA.A.06-ead.xml",
+  "local_sha256": "5f7923ff82bc8b58a6be86b13e1494ea8f70dd8d0f8fe7e49697a59920334f20",
+  "header": {
+    "eadid": "FSA.A.06",
+    "eadid_url": "https://n2t.net/ark:/65665/dc3d8456fbe-98f6-4159-bd2f-c485379b84a7",
+    "countrycode": "US",
+    "mainagencycode": "US-DSI-NMAAA",
+    "titleproper": [
+      "Ernst Herzfeld Papers",
+      "Ernst Herzfeld Papers"
+    ],
+    "author": "Joseph M. Upton and Colleen Hennessey",
+    "publisher": "National Museum of Asian Art Archives",
+    "creation": "This finding aid was produced using ArchivesSpace on 2026-05-21 17:16:18 -0400.",
+    "descrules": "Describing Archives: A Content Standard"
+  },
+  "inventory": {
+    "eadid": "FSA.A.06",
+    "title": "Ernst Herzfeld Papers",
+    "components": 16902,
+    "levels": {
+      "collection": 1,
+      "series": 7,
+      "subseries": 70,
+      "file": 1071,
+      "item": 15753
+    },
+    "digitized_components": 7125,
+    "undigitized_components": 9777,
+    "digitization_kinds": {
+      "ids-image": 7018,
+      "dao:representative-image": 2,
+      "none": 9777,
+      "edan-damspath": 94,
+      "dao:edan-damspath": 99,
+      "edan-slideshow": 12,
+      "dao:edan-slideshow": 13,
+      "dao:ids-image": 7229,
+      "mixed": 1
+    },
+    "with_ark": 16902,
+    "with_controlaccess": 7554,
+    "container_types": {
+      "Volume": 2488,
+      "Page": 2280,
+      "Item": 8856
+    },
+    "distinct_boxes": 0,
+    "folder_mentions": 0,
+    "authority_sources": {
+      "wikidata": 15399,
+      "lcsh": 51279,
+      "local": 7069,
+      "aat": 9031,
+      "naf": 40,
+      "source_not_specified": 50,
+      "ingest": 4876,
+      "gmgpc": 1,
+      "lcgft": 1
+    },
+    "named_elements": {
+      "persname": 15400,
+      "subject": 37151,
+      "geogname": 27190,
+      "corpname": 39,
+      "genreform": 7966,
+      "title": 1014,
+      "famname": 19
+    },
+    "named_with_uri": 65707,
+    "named_without_uri": 23072,
+    "series": [
+      {
+        "id": "ref6208",
+        "title": "Travel Journals",
+        "unitid": "Series 1",
+        "children": 8,
+        "digitized": false
+      },
+      {
+        "id": "ref6806",
+        "title": "Sketchbooks",
+        "unitid": "Series 2",
+        "children": 15,
+        "digitized": false
+      },
+      {
+        "id": "ref8055",
+        "title": "Notebooks",
+        "unitid": "Series 3",
+        "children": 623,
+        "digitized": false
+      },
+      {
+        "id": "ref10847",
+        "title": "Photographic Files",
+        "unitid": "Series 4",
+        "children": 3957,
+        "digitized": false
+      },
+      {
+        "id": "ref8672",
+        "title": "Drawings and Maps",
+        "unitid": "Series 5",
+        "children": 1441,
+        "digitized": false
+      },
+      {
+        "id": "ref9924",
+        "title": "Paper Squeezes of Inscriptions",
+        "unitid": "Series 6",
+        "children": 4,
+        "digitized": false
+      },
+      {
+        "id": "ref10431",
+        "title": "Records of Samarra Expeditions",
+        "unitid": "Series 7",
+        "children": 29,
+        "digitized": false
+      }
+    ],
+    "path": "C:\\Users\\Mehran\\SOVA-Myron-Bement-Smith-KG\\srcdata\\FSA.A.06-ead.xml"
+  },
+  "rdf": {
+    "dir": "data/rdf/fsa_a_06",
+    "mapped": true,
+    "stub_in_parent": true,
+    "file_count": 8,
+    "files": [
+      {
+        "path": "data/rdf/fsa_a_06/collection.ttl",
+        "bytes": 37912,
+        "components": 2,
+        "digital_objects": 1,
+        "d1_mentions": 1
+      },
+      {
+        "path": "data/rdf/fsa_a_06/series-1.ttl",
+        "bytes": 974626,
+        "components": 312,
+        "digital_objects": 0,
+        "d1_mentions": 0
+      },
+      {
+        "path": "data/rdf/fsa_a_06/series-2.ttl",
+        "bytes": 3682255,
+        "components": 1241,
+        "digital_objects": 35,
+        "d1_mentions": 35
+      },
+      {
+        "path": "data/rdf/fsa_a_06/series-3.ttl",
+        "bytes": 2626245,
+        "components": 625,
+        "digital_objects": 11,
+        "d1_mentions": 11
+      },
+      {
+        "path": "data/rdf/fsa_a_06/series-4.ttl",
+        "bytes": 68282558,
+        "components": 11968,
+        "digital_objects": 5130,
+        "d1_mentions": 5130
+      },
+      {
+        "path": "data/rdf/fsa_a_06/series-5.ttl",
+        "bytes": 15434426,
+        "components": 1805,
+        "digital_objects": 1605,
+        "d1_mentions": 1605
+      },
+      {
+        "path": "data/rdf/fsa_a_06/series-6.ttl",
+        "bytes": 5642023,
+        "components": 448,
+        "digital_objects": 390,
+        "d1_mentions": 390
+      },
+      {
+        "path": "data/rdf/fsa_a_06/series-7.ttl",
+        "bytes": 2856003,
+        "components": 509,
+        "digital_objects": 167,
+        "d1_mentions": 167
+      }
+    ],
+    "components": 16903,
+    "digital_objects": 7338,
+    "d1_mentions": 7339
+  },
+  "compare_rdf": {
+    "ead_components": 16902,
+    "rdf_components": 16903,
+    "ead_daos": 7343,
+    "rdf_digital_locals": 7338,
+    "components_in_ead_missing_from_rdf": {
+      "count": 0,
+      "sample": []
+    },
+    "components_in_rdf_missing_from_ead": {
+      "count": 1,
+      "sample": [
+        "component_FSA_A_04"
+      ]
+    },
+    "digital_keys_in_ead_missing_from_rdf": {
+      "count": 0,
+      "sample": []
+    },
+    "digital_keys_in_rdf_missing_from_ead": {
+      "count": 0,
+      "sample": []
+    },
+    "digitized_components_without_d1": {
+      "count": 0,
+      "sample": []
+    },
+    "dao_kinds": {
+      "representative-image": 2,
+      "edan-damspath": 99,
+      "edan-slideshow": 13,
+      "ids-image": 7229
+    },
+    "mapped": true
+  },
+  "vocabulary": {
+    "named_mentions": 88779,
+    "named_with_uri": 65707,
+    "named_without_uri": 23072,
+    "unseeded_label_types": 322,
+    "unseeded_top": [
+      {
+        "kind": "subject",
+        "label": "archaeology",
+        "occurrences": 4371,
+        "example_component": "ref6208",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85006507"
+      },
+      {
+        "kind": "subject",
+        "label": "art of the islamic world",
+        "occurrences": 3291,
+        "example_component": "FSA.A.06",
+        "example_uri": null
+      },
+      {
+        "kind": "subject",
+        "label": "ancient near eastern art",
+        "occurrences": 3289,
+        "example_component": "FSA.A.06",
+        "example_uri": null
+      },
+      {
+        "kind": "subject",
+        "label": "excavations (archaeology)",
+        "occurrences": 2915,
+        "example_component": "FSA.A.06",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85046105"
+      },
+      {
+        "kind": "subject",
+        "label": "inscriptions",
+        "occurrences": 2184,
+        "example_component": "FSA.A.06",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85066566"
+      },
+      {
+        "kind": "subject",
+        "label": "decoration and ornament",
+        "occurrences": 2169,
+        "example_component": "FSA.A.06",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85036229"
+      },
+      {
+        "kind": "genre",
+        "label": "drawings",
+        "occurrences": 1647,
+        "example_component": "FSA.A.06",
+        "example_uri": "http://vocab.getty.edu/aat/300033973"
+      },
+      {
+        "kind": "subject",
+        "label": "architectural drawing",
+        "occurrences": 1615,
+        "example_component": "FSA.A.06",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85006587"
+      },
+      {
+        "kind": "place",
+        "label": "sāmarrāʼ (iraq)",
+        "occurrences": 1294,
+        "example_component": "ref6208",
+        "example_uri": "https://id.loc.gov/authorities/names/n86116843"
+      },
+      {
+        "kind": "place",
+        "label": "mesopotamia",
+        "occurrences": 1292,
+        "example_component": "FSA.A.06",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh97001366"
+      },
+      {
+        "kind": "subject",
+        "label": "abbasids",
+        "occurrences": 1152,
+        "example_component": "FSA.A.06",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85000061"
+      },
+      {
+        "kind": "subject",
+        "label": "inscriptions, arabic",
+        "occurrences": 1052,
+        "example_component": "ref6208",
+        "example_uri": null
+      },
+      {
+        "kind": "subject",
+        "label": "pottery",
+        "occurrences": 1012,
+        "example_component": "FSA.A.06",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85105729"
+      },
+      {
+        "kind": "subject",
+        "label": "islamic art and architecture series",
+        "occurrences": 972,
+        "example_component": "ref20270",
+        "example_uri": null
+      },
+      {
+        "kind": "place",
+        "label": "aleppo (syria)",
+        "occurrences": 828,
+        "example_component": "ref6208",
+        "example_uri": "https://id.loc.gov/authorities/names/n81053997"
+      },
+      {
+        "kind": "subject",
+        "label": "relief (sculpture)",
+        "occurrences": 698,
+        "example_component": "ref6208",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85112527"
+      },
+      {
+        "kind": "subject",
+        "label": "animals in art",
+        "occurrences": 659,
+        "example_component": "ref6809",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85005283"
+      },
+      {
+        "kind": "subject",
+        "label": "sassanids",
+        "occurrences": 632,
+        "example_component": "ref6208",
+        "example_uri": null
+      },
+      {
+        "kind": "subject",
+        "label": "stucco",
+        "occurrences": 474,
+        "example_component": "ref6809",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85129239"
+      },
+      {
+        "kind": "place",
+        "label": "bakun, tall-e (iran)",
+        "occurrences": 453,
+        "example_component": "FSA.A.06",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh2009007516"
+      },
+      {
+        "kind": "place",
+        "label": "iran -- fars -- takht-e jamshid -- tal-i bakun",
+        "occurrences": 442,
+        "example_component": "ref26468",
+        "example_uri": null
+      },
+      {
+        "kind": "subject",
+        "label": "mural painting and decoration",
+        "occurrences": 428,
+        "example_component": "ref19689",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85088531"
+      },
+      {
+        "kind": "place",
+        "label": "iraq -- salah ad-din -- samarra -- dar al-khilafa",
+        "occurrences": 428,
+        "example_component": "ref24994",
+        "example_uri": null
+      },
+      {
+        "kind": "genre",
+        "label": "paper squeezes",
+        "occurrences": 399,
+        "example_component": "FSA.A.06",
+        "example_uri": null
+      },
+      {
+        "kind": "place",
+        "label": "luristān (iran)",
+        "occurrences": 397,
+        "example_component": "ref8266",
+        "example_uri": null
+      },
+      {
+        "kind": "place",
+        "label": "iraq -- salah ad-din -- samarra",
+        "occurrences": 327,
+        "example_component": "ref24983",
+        "example_uri": null
+      },
+      {
+        "kind": "place",
+        "label": "nahāvand (iran)",
+        "occurrences": 310,
+        "example_component": "ref10847",
+        "example_uri": null
+      },
+      {
+        "kind": "subject",
+        "label": "textile design",
+        "occurrences": 309,
+        "example_component": "ref6208",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85134310"
+      },
+      {
+        "kind": "place",
+        "label": "iran -- hamadan -- nihavand",
+        "occurrences": 309,
+        "example_component": "ref26052",
+        "example_uri": null
+      },
+      {
+        "kind": "subject",
+        "label": "cuneiform inscriptions",
+        "occurrences": 308,
+        "example_component": "ref6208",
+        "example_uri": null
+      },
+      {
+        "kind": "subject",
+        "label": "headgear",
+        "occurrences": 304,
+        "example_component": "ref6942",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh85059483"
+      },
+      {
+        "kind": "subject",
+        "label": "middle persian language",
+        "occurrences": 299,
+        "example_component": "ref6208",
+        "example_uri": null
+      },
+      {
+        "kind": "subject",
+        "label": "inscriptions, pahlavi",
+        "occurrences": 296,
+        "example_component": "ref6208",
+        "example_uri": null
+      },
+      {
+        "kind": "place",
+        "label": "damascus (syria)",
+        "occurrences": 293,
+        "example_component": "ref6208",
+        "example_uri": "https://id.loc.gov/authorities/names/n79143055"
+      },
+      {
+        "kind": "place",
+        "label": "pasargadae (extinct city)",
+        "occurrences": 257,
+        "example_component": "FSA.A.06",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh2004001811"
+      },
+      {
+        "kind": "subject",
+        "label": "numismatics",
+        "occurrences": 248,
+        "example_component": "FSA.A.06",
+        "example_uri": "https://id.loc.gov/authorities/subjects/sh99005172"
+      },
+      {
+        "kind": "place",
+        "label": "paikuli (iraq)",
+        "occurrences": 248,
+        "example_component": "ref6809",
+        "example_uri": null
+      },
+      {
+        "kind": "place",
+        "label": "syria -- damascus -- damascus",
+        "occurrences": 246,
+        "example_component": "ref28388",
+        "example_uri": null
+      },
+      {
+        "kind": "subject",
+        "label": "inscriptions, parthian",
+        "occurrences": 233,
+        "example_component": "ref6208",
+        "example_uri": null
+      },
+      {
+        "kind": "subject",
+        "label": "achaemenian inscriptions",
+        "occurrences": 224,
+        "example_component": "ref6208",
+        "example_uri": null
+      }
+    ],
+    "seed_agents": 11,
+    "seed_places": 27,
+    "seed_genres": 21,
+    "seed_subjects": 6
+  },
+  "remote": {
+    "status": "skipped",
+    "live": false
+  },
+  "compare_remote": null
+}

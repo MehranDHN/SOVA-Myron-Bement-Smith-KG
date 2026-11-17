@@ -1,0 +1,16 @@
+# Q02 — Collection composed of series (intellectual P106 tree).
+PREFIX kg:   <https://w3id.org/sova/fsa_a_04#>
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?collection ?series ?title ?eadRef
+WHERE {
+  ?collection a mbs:ArchivalComponent ;
+              mbs:archivalLevel "collection" ;
+              crm:P106_is_composed_of ?series .
+  ?series mbs:archivalLevel "series" ;
+          rdfs:label ?title ;
+          mbs:eadRef ?eadRef .
+}
+ORDER BY ?eadRef

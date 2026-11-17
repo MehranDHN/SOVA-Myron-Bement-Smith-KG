@@ -1,0 +1,14 @@
+# Q05 — Direct parent/child links (mbs:hasChildComponent).
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?parentLevel ?parentTitle ?childLevel ?childTitle
+WHERE {
+  ?parent mbs:hasChildComponent ?child ;
+          mbs:archivalLevel ?parentLevel ;
+          rdfs:label ?parentTitle .
+  ?child mbs:archivalLevel ?childLevel ;
+         rdfs:label ?childTitle .
+}
+ORDER BY ?parentLevel ?parentTitle
+LIMIT 100

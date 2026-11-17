@@ -1,0 +1,13 @@
+# Q04 — Every descendant of Series 2 (property path P106+).
+PREFIX kg:   <https://w3id.org/sova/fsa_a_04#>
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?level (COUNT(?c) AS ?n)
+WHERE {
+  kg:component_ref7426 crm:P106_is_composed_of+ ?c .
+  ?c mbs:archivalLevel ?level .
+}
+GROUP BY ?level
+ORDER BY ?level

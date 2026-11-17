@@ -1,0 +1,18 @@
+# Q14 — Glass / wet collodion negatives typed to the local AAT concept.
+PREFIX kg:   <https://w3id.org/sova/fsa_a_04#>
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?component ?title ?digitized ?concept ?broader
+WHERE {
+  ?component a mbs:ArchivalComponent ;
+             rdfs:label ?title ;
+             mbs:digitized ?digitized ;
+             mbs:hasPhysicalUnit ?phys .
+  ?phys crm:P2_has_type kg:concept_aat_300134674 .
+  BIND(kg:concept_aat_300134674 AS ?concept)
+  OPTIONAL { ?concept skos:broader ?broader }
+}
+LIMIT 100

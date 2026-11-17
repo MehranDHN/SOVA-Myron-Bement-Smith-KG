@@ -7,6 +7,7 @@ Usage (from repository root):
     python -m pipeline.cli reconcile
     python -m pipeline.cli map
     python -m pipeline.cli vocab
+    python -m pipeline.cli analyze
     python -m pipeline.cli validate
     python -m pipeline.cli all
 """
@@ -28,7 +29,7 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="NMAA Archives EAD → CIDOC CRM pipeline")
     parser.add_argument(
         "stage",
-        choices=["inventory", "extract", "reconcile", "map", "validate", "slideshow", "vocab", "all"],
+        choices=["inventory", "extract", "reconcile", "map", "validate", "slideshow", "vocab", "analyze", "all"],
     )
     parser.add_argument("--live", action="store_true", help="Optional live vocabulary lookups")
     parser.add_argument("--probe-iiif", action="store_true", help="HTTP-probe derived IIIF URLs")
@@ -42,6 +43,16 @@ def main(argv=None) -> int:
         "--ead",
         default=None,
         help="EAD XML path (default srcdata/FSA.A.04-ead.xml; use FSA.A.06-ead.xml for Herzfeld)",
+    )
+    parser.add_argument(
+        "--live-ead",
+        action="store_true",
+        help="Analyze: fetch published SOVA EAD XML and diff against srcdata/",
+    )
+    parser.add_argument(
+        "--refresh-ead",
+        action="store_true",
+        help="Analyze: re-download cached remote EAD XML",
     )
     args = parser.parse_args(argv)
     ead_path = args.ead
@@ -87,6 +98,20 @@ def main(argv=None) -> int:
         from pipeline.validate import run as validate
 
         print(json.dumps(validate(), indent=2))
+    if args.stage == "analyze":
+        from pipeline.analyze import run as analyze
+
+        result = analyze(path=ead_path, live_ead=args.live_ead, refresh=args.refresh_ead)
+        print(json.dumps(result.get("written"), indent=2))
+        print(json.dumps(result.get("totals"), indent=2))
+        for coll in result.get("collections") or []:
+            inv = coll["inventory"]
+            cmp = coll["compare_rdf"]
+            print(
+                f"{coll['eadid']}: components={inv['components']} "
+                f"digitized={inv['digitized_components']} mapped={coll['rdf']['mapped']} "
+                f"missing_from_rdf={cmp['components_in_ead_missing_from_rdf']['count']}"
+            )
     return 0
 
 

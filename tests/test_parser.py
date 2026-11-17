@@ -204,6 +204,107 @@ def test_seed_skos_and_idempotent():
     assert architecture["uri"] in iran_arch["intra_uris"]["broader"]
 
 
+def test_rdf_layout_per_collection():
+    from pipeline.paths import RDF_DIR, rdf_dir_for, vocabulary_ttl, iter_rdf_ttls
+
+    assert rdf_dir_for("FSA.A.04") == RDF_DIR / "fsa_a_04"
+    assert rdf_dir_for("FSA.A.06") == RDF_DIR / "fsa_a_06"
+    assert rdf_dir_for(None) == RDF_DIR / "fsa_a_04"
+    assert not (RDF_DIR / "collection.ttl").exists()
+    assert not (RDF_DIR / "series-1.ttl").exists()
+    assert vocabulary_ttl() == RDF_DIR / "vocabulary.ttl"
+    assert vocabulary_ttl().exists()
+    a04 = rdf_dir_for("FSA.A.04")
+    a06 = rdf_dir_for("FSA.A.06")
+    assert (a04 / "collection.ttl").exists()
+    assert (a04 / "series-1.ttl").exists()
+    assert (a04 / "series-3.ttl").exists()
+    assert (a06 / "collection.ttl").exists()
+    assert (a06 / "series-7.ttl").exists()
+    ttls = {p.as_posix() for p in iter_rdf_ttls()}
+    assert vocabulary_ttl().as_posix() in ttls
+    assert (a04 / "series-2.ttl").as_posix() in ttls
+    assert (a06 / "series-1.ttl").as_posix() in ttls
+
+
+def test_dao_damspath_and_digital_id():
+    from pipeline.ead_parser import classify_dao_href, digital_source_id
+
+    ids = classify_dao_href(
+        "https://ids.si.edu/ids/deliveryService?id=FS-FSA_A.6_04.GN.0976"
+    )
+    assert ids["kind"] == "ids-image"
+    assert ids["ids_id"] == "FS-FSA_A.6_04.GN.0976"
+    slide = classify_dao_href(
+        "https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref6601"
+    )
+    assert slide["kind"] == "edan-slideshow"
+    assert slide["eadrefid"] == "FSA.A.04_ref6601"
+    dam = classify_dao_href(
+        "https://edan.si.edu/slideshow/slideshowViewer.htm?damspath=/Public_Sets/FS/FSA/FSA_A.06_02.01.01"
+    )
+    assert dam["kind"] == "edan-damspath"
+    assert dam["damspath_id"] == "FSA_A.06_02.01.01"
+    assert digital_source_id(dam, "ref6806", 1) == "FSA_A.06_02.01.01"
+
+
+def test_analyze_compare_is_idempotent():
+    from pipeline.analyze import compare_ead_rdf, compare_ead_trees
+    from pipeline.namespaces import kg_name
+    from pipeline.util import slugify
+
+    snap = {
+        "components": {
+            "ref1": {
+                "id": "ref1",
+                "level": "item",
+                "title": "A",
+                "ark": "ark:1",
+                "digitized": True,
+                "digitization_kind": "ids-image",
+                "component_local": kg_name("component", "ref1"),
+                "dao_count": 1,
+                "daos": [
+                    {
+                        "href": "https://ids.si.edu/ids/deliveryService?id=FS-1",
+                        "digital_local": kg_name("digital", slugify("FS-1")),
+                    }
+                ],
+            }
+        },
+        "daos": [
+            {
+                "href": "https://ids.si.edu/ids/deliveryService?id=FS-1",
+                "digital_local": kg_name("digital", slugify("FS-1")),
+            }
+        ],
+    }
+    rdf = {
+        "component_locals": {kg_name("component", "ref1")},
+        "digital_locals": {kg_name("digital", slugify("FS-1"))},
+        "mapped": True,
+    }
+    a = compare_ead_rdf(snap, rdf)
+    b = compare_ead_rdf(snap, rdf)
+    assert a == b
+    assert a["components_in_ead_missing_from_rdf"]["count"] == 0
+    assert a["digitized_components_without_d1"]["count"] == 0
+    from pipeline.analyze import COMPONENT_RE, DIGITAL_RE
+
+    ttl = "kg:component_ref7856 a mbs:ArchivalComponent .\nkg:digital_fs_fsa_a_04 a crmdig:D1_Digital_Object ."
+    assert COMPONENT_RE.findall(ttl) == ["component_ref7856"]
+    assert DIGITAL_RE.findall(ttl) == ["digital_fs_fsa_a_04"]
+    remote = {
+        "components": dict(snap["components"]),
+        "daos": list(snap["daos"]),
+        "header": {"creation": "same"},
+    }
+    local = {"components": snap["components"], "daos": snap["daos"], "header": {"creation": "same"}}
+    diff = compare_ead_trees(local, remote)
+    assert diff["added_components"]["count"] == 0
+    assert diff["new_dao_hrefs"]["count"] == 0
+
+
 if __name__ == "__main__":
     test_collection_identity()
     test_digitized_flag_on_known_item()
@@ -213,4 +314,7 @@ if __name__ == "__main__":
     test_kg_curie_is_turtle_safe()
     test_islamic_archives_and_glass_negatives()
     test_seed_skos_and_idempotent()
+    test_rdf_layout_per_collection()
+    test_dao_damspath_and_digital_id()
+    test_analyze_compare_is_idempotent()
     print("ok")

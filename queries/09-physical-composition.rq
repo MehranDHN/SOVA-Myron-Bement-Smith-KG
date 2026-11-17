@@ -1,0 +1,13 @@
+# Q09 — Physical composition tree (crm:P46) parallel to intellectual P106.
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?parentTitle ?childTitle ?parentPhys ?childPhys
+WHERE {
+  ?parent mbs:hasPhysicalUnit ?parentPhys ; rdfs:label ?parentTitle ;
+          mbs:archivalLevel "subseries" .
+  ?parentPhys crm:P46_is_composed_of ?childPhys .
+  ?child mbs:hasPhysicalUnit ?childPhys ; rdfs:label ?childTitle .
+}
+LIMIT 80

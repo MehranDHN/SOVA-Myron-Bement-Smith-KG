@@ -1,0 +1,122 @@
+{
+  "eadid": "FSA.A.06",
+  "title": "Ernst Herzfeld Papers",
+  "components": 16902,
+  "levels": {
+    "collection": 1,
+    "series": 7,
+    "subseries": 70,
+    "file": 1071,
+    "item": 15753
+  },
+  "digitized_components": 7125,
+  "undigitized_components": 9777,
+  "digitization_kinds": {
+    "ids-image": 7018,
+    "dao:representative-image": 2,
+    "none": 9777,
+    "edan-damspath": 94,
+    "dao:edan-damspath": 99,
+    "edan-slideshow": 12,
+    "dao:edan-slideshow": 13,
+    "dao:ids-image": 7229,
+    "mixed": 1
+  },
+  "with_ark": 16902,
+  "with_controlaccess": 7554,
+  "container_types": {
+    "Volume": 2488,
+    "Page": 2280,
+    "Item": 8856
+  },
+  "distinct_boxes": 0,
+  "folder_mentions": 0,
+  "authority_sources": {
+    "wikidata": 15399,
+    "lcsh": 51279,
+    "local": 7069,
+    "aat": 9031,
+    "naf": 40,
+    "source_not_specified": 50,
+    "ingest": 4876,
+    "gmgpc": 1,
+    "lcgft": 1
+  },
+  "named_elements": {
+    "persname": 15400,
+    "subject": 37151,
+    "geogname": 27190,
+    "corpname": 39,
+    "genreform": 7966,
+    "title": 1014,
+    "famname": 19
+  },
+  "named_with_uri": 65707,
+  "named_without_uri": 23072,
+  "series": [
+    {
+      "id": "ref6208",
+      "title": "Travel Journals",
+      "unitid": "Series 1",
+      "children": 8,
+      "digitized": false
+    },
+    {
+      "id": "ref6806",
+      "title": "Sketchbooks",
+      "unitid": "Series 2",
+      "children": 15,
+      "digitized": false
+    },
+    {
+      "id": "ref8055",
+      "title": "Notebooks",
+      "unitid": "Series 3",
+      "children": 623,
+      "digitized": false
+    },
+    {
+      "id": "ref10847",
+      "title": "Photographic Files",
+      "unitid": "Series 4",
+      "children": 3957,
+      "digitized": false
+    },
+    {
+      "id": "ref8672",
+      "title": "Drawings and Maps",
+      "unitid": "Series 5",
+      "children": 1441,
+      "digitized": false
+    },
+    {
+      "id": "ref9924",
+      "title": "Paper Squeezes of Inscriptions",
+      "unitid": "Series 6",
+      "children": 4,
+      "digitized": false
+    },
+    {
+      "id": "ref10431",
+      "title": "Records of Samarra Expeditions",
+      "unitid": "Series 7",
+      "children": 29,
+      "digitized": false
+    }
+  ],
+  "header": {
+    "eadid": "FSA.A.06",
+    "eadid_url": "https://n2t.net/ark:/65665/dc3d8456fbe-98f6-4159-bd2f-c485379b84a7",
+    "countrycode": "US",
+    "mainagencycode": "US-DSI-NMAAA",
+    "titleproper": [
+      "Ernst Herzfeld Papers",
+      "Ernst Herzfeld Papers"
+    ],
+    "author": "Joseph M. Upton and Colleen Hennessey",
+    "publisher": "National Museum of Asian Art Archives",
+    "creation": "This finding aid was produced using ArchivesSpace on 2026-05-21 17:16:18 -0400.",
+    "descrules": "Describing Archives: A Content Standard"
+  },
+  "path": "C:\\Users\\Mehran\\SOVA-Myron-Bement-Smith-KG\\srcdata\\FSA.A.06-ead.xml"
+}

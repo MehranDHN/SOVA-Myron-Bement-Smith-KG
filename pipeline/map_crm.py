@@ -8,7 +8,7 @@ from pathlib import Path
 from rdflib import BNode, Graph, Literal, URIRef
 from rdflib.namespace import DCTERMS, OWL, RDF, RDFS, XSD
 
-from pipeline.ead_parser import parse_ead, walk
+from pipeline.ead_parser import digital_source_id, parse_ead, walk
 from pipeline.iiif import enrich_daos, page_index
 from pipeline.namespaces import (
     AAT,
@@ -348,14 +348,16 @@ def emit_digital(g: Graph, component: URIRef, node: dict, daos: list[dict]):
     eid = node["id"]
     level = node.get("level") or ""
     for i, dao in enumerate(daos, start=1):
-        did = dao.get("ids_id") or dao.get("eadrefid") or f"{eid}_{i}"
+        did = digital_source_id(dao, eid, i)
         d1 = kg_uri("digital", slugify(did))
         g.add((d1, RDF.type, CRMDIG["D1_Digital_Object"]))
         g.add((d1, RDFS.label, Literal(dao.get("title") or did)))
         g.add((component, MBS.hasDigitalObject, d1))
         g.add((d1, CRM["P70i_is_documented_in"], component))
         pages = dao.get("pages") or []
-        is_slideshow = bool(dao.get("eadrefid") and dao.get("kind") == "edan-slideshow")
+        is_slideshow = dao.get("kind") in {"edan-slideshow", "edan-damspath"} and bool(
+            dao.get("eadrefid") or dao.get("damspath")
+        )
         if dao.get("ids_id") and not is_slideshow:
             g.add((d1, RDF.type, MBS.JpegSurrogate))
             g.add((d1, MBS.mediaType, AAT["300266239"]))

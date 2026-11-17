@@ -1,0 +1,14 @@
+# Q06 — Two nodes per component: E73 intellectual + E22 physical.
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?intel ?level ?title ?phys
+WHERE {
+  ?intel a mbs:ArchivalComponent , crm:E73_Information_Object ;
+         mbs:archivalLevel ?level ;
+         rdfs:label ?title ;
+         mbs:hasPhysicalUnit ?phys .
+  ?phys a mbs:PhysicalComponent , crm:E22_Human_Made_Object .
+}
+LIMIT 50

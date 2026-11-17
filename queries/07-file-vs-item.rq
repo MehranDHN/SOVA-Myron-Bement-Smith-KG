@@ -1,0 +1,12 @@
+# Q07 — File units vs item units (media type of the archival level).
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?kind (COUNT(?c) AS ?n) (COUNT(?digitized) AS ?digitizedN)
+WHERE {
+  { ?c a mbs:FileUnit . BIND("file" AS ?kind) }
+  UNION
+  { ?c a mbs:ItemUnit . BIND("item" AS ?kind) }
+  OPTIONAL { ?c mbs:digitized true . BIND(true AS ?digitized) }
+}
+GROUP BY ?kind

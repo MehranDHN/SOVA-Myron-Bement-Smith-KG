@@ -1,0 +1,15 @@
+# Q10 — Item-level JPEG D1 digital objects with IIIF Manifest.
+PREFIX mbs:     <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crmdig:  <http://www.ics.forth.gr/isl/CRMdig/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?component ?title ?d1 ?manifest
+WHERE {
+  ?component a mbs:ItemUnit ;
+             mbs:digitized true ;
+             rdfs:label ?title ;
+             mbs:hasDigitalObject ?d1 .
+  ?d1 a crmdig:D1_Digital_Object , mbs:JpegSurrogate .
+  OPTIONAL { ?d1 mbs:iiifManifest ?manifest }
+}
+LIMIT 100

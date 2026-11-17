@@ -1,0 +1,648 @@
+@prefix aat: <http://vocab.getty.edu/aat/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix crmdig: <http://www.ics.forth.gr/isl/CRMdig/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix kg: <https://w3id.org/sova/fsa_a_04#> .
+@prefix mbs: <https://w3id.org/sova/fsa_a_04/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tgn: <http://vocab.getty.edu/tgn/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:event_digitization_fs_fsa_a_6_04_gn_0976 a crmdig:D2_Digitization_Process ;
+    crm:P108_has_produced kg:digital_fs_fsa_a_6_04_gn_0976 ;
+    crm:P16_used_specific_object kg:physical_FSA_A_06 .
+
+kg:event_production_FSA_A_06 a crm:E12_Production ;
+    rdfs:label "Production of Ernst Herzfeld Papers" ;
+    crm:P108_has_produced kg:physical_FSA_A_06 ;
+    crm:P14_carried_out_by kg:agent_Q62933 ;
+    crm:P4_has_time_span kg:time_FSA_A_06 ;
+    crm:P7_took_place_at kg:concept_lcsh_sh2004001811,
+        kg:place_bakun_tall_e_iran,
+        kg:place_mesopotamia,
+        kg:place_samarra_iraq,
+        kg:place_taq_e_bostan_site_iran,
+        kg:place_tgn_1000118,
+        kg:place_tgn_1000126,
+        kg:place_tgn_1000144,
+        kg:place_tgn_1000146,
+        kg:place_tgn_7000231,
+        kg:place_tgn_7002229 .
+
+kg:finding_aid_FSA_A_06 a crm:E31_Document,
+        mbs:FindingAid ;
+    rdfs:label "Ernst Herzfeld Papers finding aid" ;
+    dct:creator "Joseph M. Upton and Colleen Hennessey" ;
+    dct:publisher "National Museum of Asian Art Archives" ;
+    dct:source "FSA.A.06-ead.xml" ;
+    crm:P70_documents kg:component_FSA_A_06 ;
+    rdfs:seeAlso <https://n2t.net/ark:/65665/dc3d8456fbe-98f6-4159-bd2f-c485379b84a7> ;
+    owl:sameAs <https://n2t.net/ark:/65665/dc3d8456fbe-98f6-4159-bd2f-c485379b84a7> .
+
+kg:agent_anistas_mari_al_karmili_ab_1866_1947 a crm:E21_Person ;
+    rdfs:label "Anistās Mārī, al-Karmilī, ab, 1866-1947" ;
+    mbs:sourceString "Anistās Mārī, al-Karmilī, ab, 1866-1947" .
+
+kg:agent_becker_carl_heinrich_1876_1933 a crm:E21_Person ;
+    rdfs:label "Becker, Carl Heinrich, 1876-1933" ;
+    mbs:sourceString "Becker, Carl Heinrich, 1876-1933" .
+
+kg:agent_bell_gertrude_lowthian_1868_1926 a crm:E21_Person ;
+    rdfs:label "Bell, Gertrude Lowthian, 1868-1926" ;
+    mbs:sourceString "Bell, Gertrude Lowthian, 1868-1926" .
+
+kg:agent_berchem_max_van_1863_1921 a crm:E21_Person ;
+    rdfs:label "Berchem, Max van, 1863-1921" ;
+    mbs:sourceString "Berchem, Max van, 1863-1921" .
+
+kg:agent_kaiser_friedrich_museum a crm:E74_Group ;
+    rdfs:label "Kaiser-Friedrich-Museum" ;
+    mbs:sourceString "Kaiser-Friedrich-Museum" .
+
+kg:agent_krefter_friedrich_1898_1995 a crm:E21_Person ;
+    rdfs:label "Krefter, Friedrich, 1898-1995" ;
+    mbs:sourceString "Krefter, Friedrich, 1898-1995" .
+
+kg:agent_meyer_eduard_1855_1930 a crm:E21_Person ;
+    rdfs:label "Meyer, Eduard, 1855-1930" ;
+    mbs:sourceString "Meyer, Eduard, 1855-1930" .
+
+kg:agent_sarre_friedrich_paul_theodor_1865_1945 a crm:E21_Person ;
+    rdfs:label "Sarre, Friedrich Paul Theodor, 1865-1945" ;
+    mbs:sourceString "Sarre, Friedrich Paul Theodor, 1865-1945" .
+
+kg:agent_verlag_philipp_von_zabern a crm:E74_Group ;
+    rdfs:label "Verlag Philipp von Zabern" ;
+    mbs:sourceString "Verlag Philipp von Zabern" .
+
+kg:id_ark_FSA_A_06 a crm:E42_Identifier ;
+    rdfs:label "https://n2t.net/ark:/65665/dc3d8456fbe-98f6-4159-bd2f-c485379b84a7" .
+
+kg:note_FSA_A_06_accessrestrict_0_p_0 a crm:E33_Linguistic_Object ;
+    rdf:value "Collection is open for research." .
+
+kg:note_FSA_A_06_acqinfo_0_p_0 a crm:E33_Linguistic_Object ;
+    rdf:value "Ernst Herzfeld donated his papers to the Freer Gallery of Art in 1946." .
+
+kg:note_FSA_A_06_arrangement_0_p_0 a crm:E33_Linguistic_Object ;
+    rdf:value "This collection is organized into seven series." .
+
+kg:note_FSA_A_06_bibliography_0_p_0 a crm:E33_Linguistic_Object ;
+    rdf:value "Ann C. Gunter and Stefan R. Hauser, 2004: \"Ernst Herzfeld and the development of Near Eastern Studies, 1900-1950. Boston, Massasuchetts: Brill.\"" .
+
+kg:note_FSA_A_06_bioghist_0_p_0 a crm:E33_Linguistic_Object ;
+    rdf:value "The Ernst Herzfeld Papers document the career of Ernst Herzfeld (1879--1948), a German architect, archaeologist, and historian of Islamic and Pre-Islamic studies. After training as an architect he studied archaeology under Delitzch from 1903 to 1906 at the excavations at Assur in Mesopotamia. A student of Latin, Greek, Arabic, Persian, Turkish, and Hebrew, Herzfeld received a doctorate in Humanistic Studies at universities in Munich and Berlin in 1907. His work with Friedrich Sarre to survey the monuments of the Tigris-Euphrates valleys resulted in landmark studies in architectural history, published in 1911 and 1920." .
+
+kg:note_FSA_A_06_bioghist_0_p_1 a crm:E33_Linguistic_Object ;
+    rdf:value "In 1920 Herzfeld was appointed to the chair of Historical Geography in Berlin and began his excavation at Samarra. Herzfeld's work there led to a six-volume publication. He published widely throughout his life on the sources of Islamic architecture and ornament, including the Royal Palace at Persepolis." .
+
+kg:note_FSA_A_06_bioghist_0_p_2 a crm:E33_Linguistic_Object ;
+    rdf:value "From 1934 until the end of his life Herzfeld spent his time producing many books and articles, lecturing, and working at the Institute for Advanced Study at Princeton (1936--1945.) Many of his works continue to be published posthumously." .
+
+kg:note_FSA_A_06_custodhist_0_p_0 a crm:E33_Linguistic_Object ;
+    rdf:value "It was his friend and colleague, Richard Ettinghausen, then curator of Near Eastern art at the Freer Gallery of Art, who encouraged Ernst Herzfeld to donate his papers to the Smithsonian Institution. Since the original gift in 1946, there have been a number of significant additions. Herzfeld's sister, Charlotte Bradford, arranged for several donations to be made from the estate in 1950 and 1951, and, at her request, papers left by Herzfeld in Cairo were given to the Freer Gallery by Prof. Murad Kamil of Fuad I University in 1952. After extensive investigation, Herzfeld's final edited manuscript of \"The Persian Empire\", thought to have been lost, was discovered and given to the Freer Gallery in 1965 by the French Institute of Oriental Archaeology in Cairo. An old friend, the numismatist George C. Miles, added substantially to the papers in 1960 and 1970." .
+
+kg:note_FSA_A_06_prefercite_0_p_0 a crm:E33_Linguistic_Object ;
+    rdf:value "Ernst Herzfeld Papers. FSA.A.06. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Ernst Herzfeld, 1946." .
+
+kg:note_FSA_A_06_processinfo_0_p_0 a crm:E33_Linguistic_Object ;
+    rdf:value "The guide to the Ernst Herzfeld Papers was prepared by Joseph M. Upton in 1974. Partially unprocessed. Processing completed by Colleen Hennessey and Xavier Courouble." .
+
+kg:note_FSA_A_06_scopecontent_0_p_0 a crm:E33_Linguistic_Object ;
+    rdf:value "Papers (1899--1962) of German born archaeologist Ernst Emil Herzfeld (1879--1948), a preeminent scholar of Near Eastern and Iranian studies. The collection measures 150 linear feet (circa 30,000 items) and documents Herzfeld's work as a pioneer in the field and sheds light on his excavations at Samarra, Persepolis, Pasargadae, and Aleppo. Formats include correspondence; field notebooks; drawings; sketchbooks; inventories of objects; \"squeeze\" copies of architectural details; and photographs." .
+
+kg:note_FSA_A_06_userestrict_0_p_0 a crm:E33_Linguistic_Object ;
+    rdf:value "Permission to publish, quote, or reproduce must be secured from the repository." .
+
+kg:physical_FSA_A_04 a crm:E22_Human_Made_Object,
+        mbs:PhysicalComponent ;
+    rdfs:label "Myron Bement Smith Collection" .
+
+kg:time_FSA_A_06 a crm:E52_Time_Span ;
+    rdfs:label "1903-1947" ;
+    crm:P78_is_identified_by "1903-1947" ;
+    crm:P82a_begin_of_the_begin "1903" ;
+    crm:P82b_end_of_the_end "1947" .
+
+kg:work_papyrus a crm:E33_Linguistic_Object ;
+    rdfs:label "Papyrus" .
+
+kg:agent_Q62933 a crm:E21_Person ;
+    rdfs:label "Herzfeld, Ernst, 1879-1948" ;
+    owl:sameAs wd:Q62933 ;
+    mbs:matchConfidence 0.95 ;
+    mbs:reconciledTo wd:Q62933 ;
+    mbs:sourceString "Herzfeld, Ernst, 1879-1948" .
+
+kg:component_FSA_A_04 a crm:E73_Information_Object,
+        mbs:ArchivalComponent ;
+    rdfs:label "Myron Bement Smith Collection" ;
+    dct:identifier "FSA.A.04" ;
+    crm:P106i_forms_part_of kg:collection_islamic_archives ;
+    rdfs:seeAlso <https://sova.si.edu/record/fsa.a.04> ;
+    mbs:archivalLevel "collection" ;
+    mbs:digitized false ;
+    mbs:eadRef "FSA.A.04" ;
+    mbs:hasPhysicalUnit kg:physical_FSA_A_04 ;
+    mbs:isPartOfCollection kg:collection_islamic_archives ;
+    mbs:sovaUrl "https://sova.si.edu/record/fsa.a.04"^^xsd:anyURI .
+
+kg:concept_aat_300007391 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Religious buildings" ;
+    skos:exactMatch aat:300007391 ;
+    mbs:matchConfidence 0.95 ;
+    mbs:sourceString "Religious buildings" .
+
+kg:concept_aerial_photography a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Aerial photography" ;
+    mbs:sourceString "Aerial photography" .
+
+kg:concept_ancient_near_eastern_art a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Ancient Near Eastern Art" ;
+    mbs:sourceString "Ancient Near Eastern Art" .
+
+kg:concept_architectural_drawing a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Architectural drawing" ;
+    mbs:sourceString "Architectural drawing" .
+
+kg:concept_art_of_the_islamic_world a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Art of the Islamic World" ;
+    mbs:sourceString "Art of the Islamic World" .
+
+kg:concept_ayyubids a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Ayyubids" ;
+    mbs:sourceString "Ayyubids" .
+
+kg:concept_decoration_and_ornament a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Decoration and ornament" ;
+    mbs:sourceString "Decoration and ornament" .
+
+kg:concept_description_and_travel a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Description and Travel" ;
+    mbs:sourceString "Description and Travel" .
+
+kg:concept_excavations_archaeology a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Excavations (Archaeology)" ;
+    mbs:sourceString "Excavations (Archaeology)" .
+
+kg:concept_history a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "History" ;
+    mbs:sourceString "History" .
+
+kg:concept_lcsh_sh2004001811 a crm:E53_Place ;
+    rdfs:label "Pasargadae (Extinct city)" ;
+    owl:sameAs <https://id.loc.gov/authorities/subjects/sh2004001811> ;
+    mbs:matchConfidence 0.95 ;
+    mbs:reconciledTo <https://id.loc.gov/authorities/subjects/sh2004001811> ;
+    mbs:sourceString "Pasargadae (Extinct city)" .
+
+kg:concept_lcsh_sh85000061 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Abbasids" ;
+    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85000061> ;
+    mbs:matchConfidence 0.95 ;
+    mbs:sourceString "Abbasids" .
+
+kg:concept_lcsh_sh85005757 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Antiquities" ;
+    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85005757> ;
+    mbs:matchConfidence 0.95 ;
+    mbs:sourceString "Antiquities" .
+
+kg:concept_lcsh_sh85066566 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Inscriptions" ;
+    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85066566> ;
+    mbs:matchConfidence 0.95 ;
+    mbs:sourceString "Inscriptions" .
+
+kg:concept_lcsh_sh85105729 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Pottery" ;
+    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85105729> ;
+    mbs:matchConfidence 0.95 ;
+    mbs:sourceString "Pottery" .
+
+kg:concept_numismatics a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Numismatics" ;
+    mbs:sourceString "Numismatics" .
+
+kg:digital_fs_fsa_a_6_04_gn_0976 a crmdig:D1_Digital_Object,
+        mbs:JpegSurrogate ;
+    rdfs:label "Ernst Herzfeld Papers" ;
+    crm:P2_has_type aat:300266239 ;
+    crm:P70i_is_documented_in kg:component_FSA_A_06 ;
+    rdfs:seeAlso <https://ids.si.edu/ids/deliveryService?id=FS-FSA_A.6_04.GN.0976> ;
+    mbs:iiifImageService "https://ids.si.edu/ids/iiif/FS-FSA_A.6_04.GN.0976"^^xsd:anyURI ;
+    mbs:iiifManifest "https://ids.si.edu/ids/manifest/FS-FSA_A.6_04.GN.0976"^^xsd:anyURI ;
+    mbs:mediaType aat:300266239 ;
+    mbs:viewerUrl "https://ids.si.edu/ids/deliveryService?id=FS-FSA_A.6_04.GN.0976"^^xsd:anyURI .
+
+kg:note_FSA_A_06_abstract_0 a crm:E33_Linguistic_Object ;
+    rdfs:label "Abstract" ;
+    crm:P2_has_type mbs:Abstract ;
+    rdf:value "An outstanding scholar in the field of Iranian studies, Ernst Herzfeld (1879--1948) explored all phases of Near Eastern culture from the prehistoric period to Islamic times. This collection documents Herzfeld's excavations at Samarra, Persepolis, Pasargadae, and Aleppo and includes correspondence; field notebooks; drawings; sketchbooks; inventories of objects; \"squeeze\" copies of architectural details; and photographs." ;
+    mbs:noteType mbs:Abstract .
+
+kg:note_FSA_A_06_accessrestrict_0 a crm:E33_Linguistic_Object ;
+    rdfs:label "Conditions Governing Access" ;
+    crm:P148_has_component kg:note_FSA_A_06_accessrestrict_0_p_0 ;
+    crm:P2_has_type mbs:AccessRestrict ;
+    rdf:value "Conditions Governing Access Collection is open for research." ;
+    mbs:noteType mbs:AccessRestrict .
+
+kg:note_FSA_A_06_acqinfo_0 a crm:E33_Linguistic_Object ;
+    rdfs:label "Immediate Source of Acquisition" ;
+    crm:P148_has_component kg:note_FSA_A_06_acqinfo_0_p_0 ;
+    crm:P2_has_type mbs:AcqInfo ;
+    rdf:value "Immediate Source of Acquisition Ernst Herzfeld donated his papers to the Freer Gallery of Art in 1946." ;
+    mbs:noteType mbs:AcqInfo .
+
+kg:note_FSA_A_06_arrangement_0 a crm:E33_Linguistic_Object ;
+    rdfs:label "Arrangement" ;
+    crm:P148_has_component kg:note_FSA_A_06_arrangement_0_p_0 ;
+    crm:P2_has_type mbs:Arrangement ;
+    rdf:value "Arrangement This collection is organized into seven series. Series 1: Travel journals Series 2: Sketchbooks Series 3: Notebooks Series 4: Photographic files 1-42 Series 5: Drawings and maps Series 6: Squeezes Series 7: Samarra Expedition" ;
+    mbs:noteType mbs:Arrangement .
+
+kg:note_FSA_A_06_bibliography_0 a crm:E33_Linguistic_Object ;
+    rdfs:label "Bibliography" ;
+    crm:P148_has_component kg:note_FSA_A_06_bibliography_0_p_0 ;
+    crm:P2_has_type mbs:Bibliography ;
+    rdf:value "Bibliography Ann C. Gunter and Stefan R. Hauser, 2004: \"Ernst Herzfeld and the development of Near Eastern Studies, 1900-1950. Boston, Massasuchetts: Brill.\"" ;
+    mbs:noteType mbs:Bibliography .
+
+kg:note_FSA_A_06_bioghist_0 a crm:E33_Linguistic_Object ;
+    rdfs:label "Biographical / Historical" ;
+    crm:P148_has_component kg:note_FSA_A_06_bioghist_0_p_0,
+        kg:note_FSA_A_06_bioghist_0_p_1,
+        kg:note_FSA_A_06_bioghist_0_p_2 ;
+    crm:P2_has_type mbs:BiogHist ;
+    rdf:value "Biographical / Historical The Ernst Herzfeld Papers document the career of Ernst Herzfeld (1879--1948), a German architect, archaeologist, and historian of Islamic and Pre-Islamic studies. After training as an architect he studied archaeology under Delitzch from 1903 to 1906 at the excavations at Assur in Mesopotamia. A student of Latin, Greek, Arabic, Persian, Turkish, and Hebrew, Herzfeld received a doctorate in Humanistic Studies at universities in Munich and Berlin in 1907. His work with Friedrich Sarre to survey the monuments of the Tigris-Euphrates valleys resulted in landmark studies in architectural history, published in 1911 and 1920. In 1920 Herzfeld was appointed to the chair of Historical Geography in Berlin and began his excavation at Samarra. Herzfeld's work there led to a six-volume publication. He published widely throughout his life on the sources of Islamic architecture and ornament, including the Royal Palace at Persepolis. From 1934 until the end of his life Herzfeld spent his time producing many books and articles, lecturing, and working at the Institute for Advanced Study at Princeton (1936--1945.) Many of his works continue to be published posthumously. 1879 July 23 Born in Celle, Germany. 1897 Received diploma from Joachimsthaler Gymnasium, Berlin. 1897-circa 1898 Fulfilled military service. circa 1899 Studied architecture at the Technical University and Assyriology, art history, and philosophy at the Friedrich-Wilhems Universität in Berlin. 1903 Passed exam in structural engineering. 1903-1905 Assistant to Walter Andrae (1875-1956) in Assur. 1905-1906 Traveled throughout Iran and Iraq. 1907 Excavation in Cilicia. Passed oral exam in February. Awarded doctorate in Humanistic Studies by Friedrich-Wilhems Universtät zu Berlin. After receiving Ph.D. traveled extensively in Syria and Iraq with Friedrich Sarre, director of the Islamic Museum in Berlin. 1910 Herzfeld and Sarre jointly publish, Iranische Felsreliefs (Berlin, 1910). 1911-1913 Field Director under direction of Sarre during expedition to Samarra. circa 1914 Drafted into service in France and Poland during World War I. Sent to Iraq where he functioned as a surveyor. 1916 Father died. 1917 Appointed associate professor for Historical Geography and Art History of the Ancient Orient at Berlin. Along with Friedrich Sarre and others, founded the German-Persian Society to increase cultural and economic exchange between Germany and Persia. 1920 Appointed world's first full professor of Near Eastern Archeology. Begins excavation at Samarra. 1922 Mother died. 1923-1934 In Persia, where he completed many excavations and studies. 1928 Excavation at Pasargadae. 1931-1934 Appointed director of the Oriental Institute of the University of Chicago and moved to Persepolis. 1934 As grandson of Jews, Nazi legislation expelling state employees of Jewish descent forced Herzfeld to retire as a professor employed by the state. Moved to London. 1936 Delivered Lowell Lectures. Moved to Boston. Lectured on Iranian history and appointed a member of the Princeton Institute for Advanced Study. 1944 Retired from Princeton University. 1948 January 20 Died." ;
+    mbs:noteType mbs:BiogHist .
+
+kg:note_FSA_A_06_custodhist_0 a crm:E33_Linguistic_Object ;
+    rdfs:label "Custodial History" ;
+    crm:P148_has_component kg:note_FSA_A_06_custodhist_0_p_0 ;
+    crm:P2_has_type mbs:CustodHist ;
+    rdf:value "Custodial History It was his friend and colleague, Richard Ettinghausen, then curator of Near Eastern art at the Freer Gallery of Art, who encouraged Ernst Herzfeld to donate his papers to the Smithsonian Institution. Since the original gift in 1946, there have been a number of significant additions. Herzfeld's sister, Charlotte Bradford, arranged for several donations to be made from the estate in 1950 and 1951, and, at her request, papers left by Herzfeld in Cairo were given to the Freer Gallery by Prof. Murad Kamil of Fuad I University in 1952. After extensive investigation, Herzfeld's final edited manuscript of \"The Persian Empire\", thought to have been lost, was discovered and given to the Freer Gallery in 1965 by the French Institute of Oriental Archaeology in Cairo. An old friend, the numismatist George C. Miles, added substantially to the papers in 1960 and 1970." ;
+    mbs:noteType mbs:CustodHist .
+
+kg:note_FSA_A_06_prefercite_0 a crm:E33_Linguistic_Object ;
+    rdfs:label "Preferred Citation" ;
+    crm:P148_has_component kg:note_FSA_A_06_prefercite_0_p_0 ;
+    crm:P2_has_type mbs:PreferCite ;
+    rdf:value "Preferred Citation Ernst Herzfeld Papers. FSA.A.06. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Ernst Herzfeld, 1946." ;
+    mbs:noteType mbs:PreferCite .
+
+kg:note_FSA_A_06_processinfo_0 a crm:E33_Linguistic_Object ;
+    rdfs:label "Processing Information" ;
+    crm:P148_has_component kg:note_FSA_A_06_processinfo_0_p_0 ;
+    crm:P2_has_type mbs:ProcessInfo ;
+    rdf:value "Processing Information The guide to the Ernst Herzfeld Papers was prepared by Joseph M. Upton in 1974. Partially unprocessed. Processing completed by Colleen Hennessey and Xavier Courouble." ;
+    mbs:noteType mbs:ProcessInfo .
+
+kg:note_FSA_A_06_scopecontent_0 a crm:E33_Linguistic_Object ;
+    rdfs:label "Scope and Contents" ;
+    crm:P148_has_component kg:note_FSA_A_06_scopecontent_0_p_0 ;
+    crm:P2_has_type mbs:ScopeContent ;
+    rdf:value "Scope and Contents Papers (1899--1962) of German born archaeologist Ernst Emil Herzfeld (1879--1948), a preeminent scholar of Near Eastern and Iranian studies. The collection measures 150 linear feet (circa 30,000 items) and documents Herzfeld's work as a pioneer in the field and sheds light on his excavations at Samarra, Persepolis, Pasargadae, and Aleppo. Formats include correspondence; field notebooks; drawings; sketchbooks; inventories of objects; \"squeeze\" copies of architectural details; and photographs." ;
+    mbs:noteType mbs:ScopeContent .
+
+kg:note_FSA_A_06_userestrict_0 a crm:E33_Linguistic_Object ;
+    rdfs:label "Conditions Governing Use" ;
+    crm:P148_has_component kg:note_FSA_A_06_userestrict_0_p_0 ;
+    crm:P2_has_type mbs:UseRestrict ;
+    rdf:value "Conditions Governing Use Permission to publish, quote, or reproduce must be secured from the repository." ;
+    mbs:noteType mbs:UseRestrict .
+
+kg:place_bakun_tall_e_iran a crm:E53_Place ;
+    rdfs:label "Bakun, Tall-e (Iran)" ;
+    mbs:sourceString "Bakun, Tall-e (Iran)" .
+
+kg:place_mesopotamia a crm:E53_Place ;
+    rdfs:label "Mesopotamia" ;
+    mbs:sourceString "Mesopotamia" .
+
+kg:place_samarra_iraq a crm:E53_Place ;
+    rdfs:label "Sāmarrāʼ (Iraq)" ;
+    mbs:sourceString "Sāmarrāʼ (Iraq)" .
+
+kg:place_taq_e_bostan_site_iran a crm:E53_Place ;
+    rdfs:label "Taq-e Bostan Site (Iran)" ;
+    mbs:sourceString "Taq-e Bostan Site (Iran)" .
+
+kg:place_tgn_1000118 a crm:E53_Place ;
+    rdfs:label "Iraq" ;
+    owl:sameAs tgn:1000118,
+        wd:Q796,
+        <https://id.loc.gov/authorities/names/n79077342> ;
+    mbs:matchConfidence 0.95 ;
+    mbs:reconciledTo tgn:1000118,
+        wd:Q796,
+        <https://id.loc.gov/authorities/names/n79077342> ;
+    mbs:sourceString "Iraq" .
+
+kg:place_tgn_1000126 a crm:E53_Place ;
+    rdfs:label "Lebanon" ;
+    owl:sameAs tgn:1000126,
+        wd:Q822 ;
+    mbs:matchConfidence 0.9 ;
+    mbs:reconciledTo tgn:1000126,
+        wd:Q822 ;
+    mbs:sourceString "Lebanon" .
+
+kg:place_tgn_1000144 a crm:E53_Place ;
+    rdfs:label "Turkey" ;
+    owl:sameAs tgn:1000144,
+        wd:Q43 ;
+    mbs:matchConfidence 0.9 ;
+    mbs:reconciledTo tgn:1000144,
+        wd:Q43 ;
+    mbs:sourceString "Turkey" .
+
+kg:place_tgn_1000146 a crm:E53_Place ;
+    rdfs:label "Syria" ;
+    owl:sameAs tgn:1000146,
+        wd:Q858,
+        <https://id.loc.gov/authorities/names/n80061798> ;
+    mbs:matchConfidence 0.95 ;
+    mbs:reconciledTo tgn:1000146,
+        wd:Q858,
+        <https://id.loc.gov/authorities/names/n80061798> ;
+    mbs:sourceString "Syria" .
+
+kg:place_tgn_7000231 a crm:E53_Place ;
+    rdfs:label "Iran" ;
+    owl:sameAs tgn:7000231,
+        wd:Q794,
+        <https://id.loc.gov/authorities/names/n79039880> ;
+    mbs:matchConfidence 0.95 ;
+    mbs:reconciledTo tgn:7000231,
+        wd:Q794,
+        <https://id.loc.gov/authorities/names/n79039880> ;
+    mbs:sourceString "Iran" .
+
+kg:place_tgn_7002229 a crm:E53_Place ;
+    rdfs:label "Persepolis (Iran)" ;
+    owl:sameAs tgn:7002229,
+        wd:Q129072,
+        <https://id.loc.gov/authorities/names/n80063345> ;
+    mbs:matchConfidence 0.95 ;
+    mbs:reconciledTo tgn:7002229,
+        wd:Q129072,
+        <https://id.loc.gov/authorities/names/n80063345> ;
+    mbs:sourceString "Persepolis (Iran)" .
+
+kg:title_FSA_A_06 a crm:E33_Linguistic_Object,
+        crm:E35_Title ;
+    rdfs:label "Ernst Herzfeld Papers" ;
+    rdf:value "Ernst Herzfeld Papers" .
+
+kg:concept_aat_300026877 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Correspondence" ;
+    skos:exactMatch aat:300026877 ;
+    mbs:matchConfidence 0.95 ;
+    mbs:sourceString "Correspondence" .
+
+kg:concept_articles a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Articles" ;
+    mbs:sourceString "Articles" .
+
+kg:concept_blueprints a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Blueprints" ;
+    mbs:sourceString "Blueprints" .
+
+kg:concept_clippings a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Clippings" ;
+    mbs:sourceString "Clippings" .
+
+kg:concept_diaries a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Diaries" ;
+    mbs:sourceString "Diaries" .
+
+kg:concept_drawings a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Drawings" ;
+    mbs:sourceString "Drawings" .
+
+kg:concept_journals_accounts a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Journals (accounts)" ;
+    mbs:sourceString "Journals (accounts)" .
+
+kg:concept_notebooks a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Notebooks" ;
+    mbs:sourceString "Notebooks" .
+
+kg:concept_paper_squeezes a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Paper Squeezes" ;
+    mbs:sourceString "Paper Squeezes" .
+
+kg:concept_photographs a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Photographs" ;
+    mbs:sourceString "Photographs" .
+
+kg:concept_rubbings a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Rubbings" ;
+    mbs:sourceString "Rubbings" .
+
+kg:concept_sketchbooks a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Sketchbooks" ;
+    mbs:sourceString "Sketchbooks" .
+
+kg:concept_sketches a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Sketches" ;
+    mbs:sourceString "Sketches" .
+
+kg:physical_FSA_A_06 a crm:E22_Human_Made_Object,
+        mbs:PhysicalComponent ;
+    rdfs:label "Ernst Herzfeld Papers" ;
+    crm:P2_has_type kg:concept_aat_300007391,
+        kg:concept_aat_300026877,
+        kg:concept_aerial_photography,
+        kg:concept_ancient_near_eastern_art,
+        kg:concept_architectural_drawing,
+        kg:concept_art_of_the_islamic_world,
+        kg:concept_articles,
+        kg:concept_ayyubids,
+        kg:concept_blueprints,
+        kg:concept_clippings,
+        kg:concept_decoration_and_ornament,
+        kg:concept_description_and_travel,
+        kg:concept_diaries,
+        kg:concept_drawings,
+        kg:concept_excavations_archaeology,
+        kg:concept_history,
+        kg:concept_journals_accounts,
+        kg:concept_lcsh_sh85000061,
+        kg:concept_lcsh_sh85005757,
+        kg:concept_lcsh_sh85066566,
+        kg:concept_lcsh_sh85105729,
+        kg:concept_notebooks,
+        kg:concept_numismatics,
+        kg:concept_paper_squeezes,
+        kg:concept_photographs,
+        kg:concept_rubbings,
+        kg:concept_sketchbooks,
+        kg:concept_sketches ;
+    crm:P43_has_dimension [ a crm:E54_Dimension ;
+            rdfs:label "150 Linear Feet" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "circa 30,000 items" ] ;
+    owl:sameAs <https://n2t.net/ark:/65665/dc3d8456fbe-98f6-4159-bd2f-c485379b84a7> ;
+    mbs:mediaType kg:concept_aat_300026877,
+        kg:concept_articles,
+        kg:concept_blueprints,
+        kg:concept_clippings,
+        kg:concept_diaries,
+        kg:concept_drawings,
+        kg:concept_journals_accounts,
+        kg:concept_notebooks,
+        kg:concept_paper_squeezes,
+        kg:concept_photographs,
+        kg:concept_rubbings,
+        kg:concept_sketchbooks,
+        kg:concept_sketches .
+
+kg:collection_islamic_archives a crm:E73_Information_Object,
+        crm:E78_Curated_Holding,
+        mbs:HoldingCollection ;
+    rdfs:label "Islamic Archives" ;
+    crm:P106_is_composed_of kg:component_FSA_A_04,
+        kg:component_FSA_A_06 ;
+    rdfs:comment "Parent holding of the Myron Bement Smith Collection (FSA.A.04) and the Ernst Herzfeld Papers (FSA.A.06). Further sub-collections use the same mbs:hasSubCollection link." ;
+    skos:altLabel "The Archive for Islamic Culture and Art" ;
+    mbs:hasSubCollection kg:component_FSA_A_04,
+        kg:component_FSA_A_06 .
+
+kg:component_FSA_A_06 a crm:E73_Information_Object,
+        mbs:ArchivalComponent ;
+    rdfs:label "Ernst Herzfeld Papers" ;
+    dct:identifier "FSA.A.06" ;
+    dct:publisher "National Museum of Asian Art Archives" ;
+    crm:P102_has_title kg:title_FSA_A_06 ;
+    crm:P106i_forms_part_of kg:collection_islamic_archives ;
+    crm:P129_is_about kg:concept_aat_300007391,
+        kg:concept_aerial_photography,
+        kg:concept_ancient_near_eastern_art,
+        kg:concept_architectural_drawing,
+        kg:concept_art_of_the_islamic_world,
+        kg:concept_ayyubids,
+        kg:concept_decoration_and_ornament,
+        kg:concept_description_and_travel,
+        kg:concept_excavations_archaeology,
+        kg:concept_history,
+        kg:concept_lcsh_sh85000061,
+        kg:concept_lcsh_sh85005757,
+        kg:concept_lcsh_sh85066566,
+        kg:concept_lcsh_sh85105729,
+        kg:concept_numismatics,
+        kg:work_papyrus ;
+    crm:P1_is_identified_by kg:title_FSA_A_06 ;
+    crm:P2_has_type kg:concept_aat_300026877,
+        kg:concept_articles,
+        kg:concept_blueprints,
+        kg:concept_clippings,
+        kg:concept_diaries,
+        kg:concept_drawings,
+        kg:concept_journals_accounts,
+        kg:concept_notebooks,
+        kg:concept_paper_squeezes,
+        kg:concept_photographs,
+        kg:concept_rubbings,
+        kg:concept_sketchbooks,
+        kg:concept_sketches ;
+    crm:P3_has_note "An outstanding scholar in the field of Iranian studies, Ernst Herzfeld (1879--1948) explored all phases of Near Eastern culture from the prehistoric period to Islamic times. This collection documents Herzfeld's excavations at Samarra, Persepolis, Pasargadae, and Aleppo and includes correspondence; field notebooks; drawings; sketchbooks; inventories of objects; \"squeeze\" copies of architectural details; and photographs.",
+        "Arrangement This collection is organized into seven series. Series 1: Travel journals Series 2: Sketchbooks Series 3: Notebooks Series 4: Photographic files 1-42 Series 5: Drawings and maps Series 6: Squeezes Series 7: Samarra Expedition",
+        "Bibliography Ann C. Gunter and Stefan R. Hauser, 2004: \"Ernst Herzfeld and the development of Near Eastern Studies, 1900-1950. Boston, Massasuchetts: Brill.\"",
+        "Biographical / Historical The Ernst Herzfeld Papers document the career of Ernst Herzfeld (1879--1948), a German architect, archaeologist, and historian of Islamic and Pre-Islamic studies. After training as an architect he studied archaeology under Delitzch from 1903 to 1906 at the excavations at Assur in Mesopotamia. A student of Latin, Greek, Arabic, Persian, Turkish, and Hebrew, Herzfeld received a doctorate in Humanistic Studies at universities in Munich and Berlin in 1907. His work with Friedrich Sarre to survey the monuments of the Tigris-Euphrates valleys resulted in landmark studies in architectural history, published in 1911 and 1920. In 1920 Herzfeld was appointed to the chair of Historical Geography in Berlin and began his excavation at Samarra. Herzfeld's work there led to a six-volume publication. He published widely throughout his life on the sources of Islamic architecture and ornament, including the Royal Palace at Persepolis. From 1934 until the end of his life Herzfeld spent his time producing many books and articles, lecturing, and working at the Institute for Advanced Study at Princeton (1936--1945.) Many of his works continue to be published posthumously. 1879 July 23 Born in Celle, Germany. 1897 Received diploma from Joachimsthaler Gymnasium, Berlin. 1897-circa 1898 Fulfilled military service. circa 1899 Studied architecture at the Technical University and Assyriology, art history, and philosophy at the Friedrich-Wilhems Universität in Berlin. 1903 Passed exam in structural engineering. 1903-1905 Assistant to Walter Andrae (1875-1956) in Assur. 1905-1906 Traveled throughout Iran and Iraq. 1907 Excavation in Cilicia. Passed oral exam in February. Awarded doctorate in Humanistic Studies by Friedrich-Wilhems Universtät zu Berlin. After receiving Ph.D. traveled extensively in Syria and Iraq with Friedrich Sarre, director of the Islamic Museum in Berlin. 1910 Herzfeld and Sarre jointly publish, Iranische Felsreliefs (Berlin, 1910). 1911-1913 Field Director under direction of Sarre during expedition to Samarra. circa 1914 Drafted into service in France and Poland during World War I. Sent to Iraq where he functioned as a surveyor. 1916 Father died. 1917 Appointed associate professor for Historical Geography and Art History of the Ancient Orient at Berlin. Along with Friedrich Sarre and others, founded the German-Persian Society to increase cultural and economic exchange between Germany and Persia. 1920 Appointed world's first full professor of Near Eastern Archeology. Begins excavation at Samarra. 1922 Mother died. 1923-1934 In Persia, where he completed many excavations and studies. 1928 Excavation at Pasargadae. 1931-1934 Appointed director of the Oriental Institute of the University of Chicago and moved to Persepolis. 1934 As grandson of Jews, Nazi legislation expelling state employees of Jewish descent forced Herzfeld to retire as a professor employed by the state. Moved to London. 1936 Delivered Lowell Lectures. Moved to Boston. Lectured on Iranian history and appointed a member of the Princeton Institute for Advanced Study. 1944 Retired from Princeton University. 1948 January 20 Died.",
+        "Conditions Governing Access Collection is open for research.",
+        "Conditions Governing Use Permission to publish, quote, or reproduce must be secured from the repository.",
+        "Custodial History It was his friend and colleague, Richard Ettinghausen, then curator of Near Eastern art at the Freer Gallery of Art, who encouraged Ernst Herzfeld to donate his papers to the Smithsonian Institution. Since the original gift in 1946, there have been a number of significant additions. Herzfeld's sister, Charlotte Bradford, arranged for several donations to be made from the estate in 1950 and 1951, and, at her request, papers left by Herzfeld in Cairo were given to the Freer Gallery by Prof. Murad Kamil of Fuad I University in 1952. After extensive investigation, Herzfeld's final edited manuscript of \"The Persian Empire\", thought to have been lost, was discovered and given to the Freer Gallery in 1965 by the French Institute of Oriental Archaeology in Cairo. An old friend, the numismatist George C. Miles, added substantially to the papers in 1960 and 1970.",
+        "Immediate Source of Acquisition Ernst Herzfeld donated his papers to the Freer Gallery of Art in 1946.",
+        "Preferred Citation Ernst Herzfeld Papers. FSA.A.06. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Ernst Herzfeld, 1946.",
+        "Processing Information The guide to the Ernst Herzfeld Papers was prepared by Joseph M. Upton in 1974. Partially unprocessed. Processing completed by Colleen Hennessey and Xavier Courouble.",
+        "Scope and Contents Papers (1899--1962) of German born archaeologist Ernst Emil Herzfeld (1879--1948), a preeminent scholar of Near Eastern and Iranian studies. The collection measures 150 linear feet (circa 30,000 items) and documents Herzfeld's work as a pioneer in the field and sheds light on his excavations at Samarra, Persepolis, Pasargadae, and Aleppo. Formats include correspondence; field notebooks; drawings; sketchbooks; inventories of objects; \"squeeze\" copies of architectural details; and photographs." ;
+    crm:P48_has_preferred_identifier kg:id_ark_FSA_A_06 ;
+    crm:P67_refers_to kg:agent_Q62933,
+        kg:agent_anistas_mari_al_karmili_ab_1866_1947,
+        kg:agent_becker_carl_heinrich_1876_1933,
+        kg:agent_bell_gertrude_lowthian_1868_1926,
+        kg:agent_berchem_max_van_1863_1921,
+        kg:agent_kaiser_friedrich_museum,
+        kg:agent_krefter_friedrich_1898_1995,
+        kg:agent_meyer_eduard_1855_1930,
+        kg:agent_sarre_friedrich_paul_theodor_1865_1945,
+        kg:agent_verlag_philipp_von_zabern,
+        kg:concept_lcsh_sh2004001811,
+        kg:note_FSA_A_06_abstract_0,
+        kg:note_FSA_A_06_accessrestrict_0,
+        kg:note_FSA_A_06_acqinfo_0,
+        kg:note_FSA_A_06_arrangement_0,
+        kg:note_FSA_A_06_bibliography_0,
+        kg:note_FSA_A_06_bioghist_0,
+        kg:note_FSA_A_06_custodhist_0,
+        kg:note_FSA_A_06_prefercite_0,
+        kg:note_FSA_A_06_processinfo_0,
+        kg:note_FSA_A_06_scopecontent_0,
+        kg:note_FSA_A_06_userestrict_0,
+        kg:place_bakun_tall_e_iran,
+        kg:place_mesopotamia,
+        kg:place_samarra_iraq,
+        kg:place_taq_e_bostan_site_iran,
+        kg:place_tgn_1000118,
+        kg:place_tgn_1000126,
+        kg:place_tgn_1000144,
+        kg:place_tgn_1000146,
+        kg:place_tgn_7000231,
+        kg:place_tgn_7002229 ;
+    rdfs:seeAlso <https://sova.si.edu/record/fsa.a.06> ;
+    owl:sameAs <https://n2t.net/ark:/65665/dc3d8456fbe-98f6-4159-bd2f-c485379b84a7> ;
+    mbs:archivalLevel "collection" ;
+    mbs:digitizationKind mbs:ids_image ;
+    mbs:digitized true ;
+    mbs:eadRef "FSA.A.06" ;
+    mbs:hasDigitalObject kg:digital_fs_fsa_a_6_04_gn_0976 ;
+    mbs:hasLinguisticObject kg:note_FSA_A_06_abstract_0,
+        kg:note_FSA_A_06_accessrestrict_0,
+        kg:note_FSA_A_06_acqinfo_0,
+        kg:note_FSA_A_06_arrangement_0,
+        kg:note_FSA_A_06_bibliography_0,
+        kg:note_FSA_A_06_bioghist_0,
+        kg:note_FSA_A_06_custodhist_0,
+        kg:note_FSA_A_06_prefercite_0,
+        kg:note_FSA_A_06_processinfo_0,
+        kg:note_FSA_A_06_scopecontent_0,
+        kg:note_FSA_A_06_userestrict_0 ;
+    mbs:hasPhysicalUnit kg:physical_FSA_A_06 ;
+    mbs:isPartOfCollection kg:collection_islamic_archives ;
+    mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06"^^xsd:anyURI .
+

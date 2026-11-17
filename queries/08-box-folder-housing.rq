@@ -1,0 +1,16 @@
+# Q08 — Physical housing: item in folder in box.
+PREFIX mbs:  <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?box ?boxNo ?folder ?folderNo ?title ?component
+WHERE {
+  ?component a mbs:ArchivalComponent ;
+             rdfs:label ?title ;
+             mbs:hasPhysicalUnit ?phys .
+  ?phys mbs:housedIn ?folder .
+  ?folder a mbs:Folder ; mbs:folderNumber ?folderNo .
+  ?folder mbs:housedIn ?box .
+  ?box a mbs:Box ; mbs:boxNumber ?boxNo ; rdfs:label ?box .
+}
+ORDER BY ?boxNo ?folderNo
+LIMIT 100
