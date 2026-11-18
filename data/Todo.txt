@@ -5,3 +5,5 @@
   A: Accessing to Slide Show with (https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref6601)
   B: Accessing the image viewer with (https://ids.si.edu/ids/deliveryService?id=FS-FSA_A.4_2.12.GN.07.05)
   Both of them should be presented in our RDF Data and both of them have IIIF Manifests each in its own way.  
+
+5- The seed.yml should effect both catalogs and in case of wd:Q4751824 there are two seperate entity that are exactly the same. The common concepts should transfer from collection.ttl to vocabulary.ttl. 

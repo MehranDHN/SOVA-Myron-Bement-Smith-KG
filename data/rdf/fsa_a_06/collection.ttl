@@ -45,30 +45,38 @@ kg:finding_aid_FSA_A_06 a crm:E31_Document,
 
 kg:agent_anistas_mari_al_karmili_ab_1866_1947 a crm:E21_Person ;
     rdfs:label "Anistās Mārī, al-Karmilī, ab, 1866-1947" ;
+    skos:exactMatch wd:Q4751824;
     mbs:sourceString "Anistās Mārī, al-Karmilī, ab, 1866-1947" .
 
 kg:agent_becker_carl_heinrich_1876_1933 a crm:E21_Person ;
     rdfs:label "Becker, Carl Heinrich, 1876-1933" ;
+    skos:exactMatch wd:Q68121;
     mbs:sourceString "Becker, Carl Heinrich, 1876-1933" .
 
 kg:agent_bell_gertrude_lowthian_1868_1926 a crm:E21_Person ;
     rdfs:label "Bell, Gertrude Lowthian, 1868-1926" ;
+    skos:exactMatch wd:Q231360;
     mbs:sourceString "Bell, Gertrude Lowthian, 1868-1926" .
 
 kg:agent_berchem_max_van_1863_1921 a crm:E21_Person ;
     rdfs:label "Berchem, Max van, 1863-1921" ;
+    skos:exactMatch wd:Q3853087;
     mbs:sourceString "Berchem, Max van, 1863-1921" .
 
 kg:agent_kaiser_friedrich_museum a crm:E74_Group ;
     rdfs:label "Kaiser-Friedrich-Museum" ;
+    skos:altLabel "Bode Museum"@en;
+    skos:exactMatch wd:Q157825;
     mbs:sourceString "Kaiser-Friedrich-Museum" .
 
 kg:agent_krefter_friedrich_1898_1995 a crm:E21_Person ;
     rdfs:label "Krefter, Friedrich, 1898-1995" ;
+    skos:exactMatch wd:Q1460555;
     mbs:sourceString "Krefter, Friedrich, 1898-1995" .
 
 kg:agent_meyer_eduard_1855_1930 a crm:E21_Person ;
     rdfs:label "Meyer, Eduard, 1855-1930" ;
+    skos:exactMatch wd:Q76894;
     mbs:sourceString "Meyer, Eduard, 1855-1930" .
 
 kg:agent_sarre_friedrich_paul_theodor_1865_1945 a crm:E21_Person ;

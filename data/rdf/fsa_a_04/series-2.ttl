@@ -117429,6 +117429,7 @@ kg:digital_fsa_a_04_ref10665_page_1 a crmdig:D1_Digital_Object,
     mbs:iiifImageService "https://ids.si.edu/ids/iiif/FS-FSA-2026-013326"^^xsd:anyURI ;
     mbs:iiifManifest "https://ids.si.edu/ids/manifest/FS-FSA-2026-013326"^^xsd:anyURI ;
     mbs:pageNumber 1 ;
+    crm:P67_refers_to kg:place_tgn_7001374;
     mbs:viewerUrl "https://ids.si.edu/ids/deliveryService?id=FS-FSA-2026-013326"^^xsd:anyURI .
 
 kg:digital_fsa_a_04_ref10665_page_10 a crmdig:D1_Digital_Object,

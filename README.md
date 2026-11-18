@@ -1,14 +1,35 @@
-# Myron Bement Smith Collection Knowledge Graph
+# Islamic Archives Knowledge Graph
 
-CIDOC CRM and OWL knowledge graph of the **Myron Bement Smith Collection** (Smithsonian National Museum of Asian Art Archives, identifier **FSA.A.04**).
+[![Version](https://img.shields.io/badge/release-v2-0B3D91.svg)](#scope-of-v2)
+[![License: GPL v3](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](LICENSE)
+[![CIDOC CRM](https://img.shields.io/badge/CIDOC_CRM-7.1.3-8B1E3F.svg)](https://www.cidoc-crm.org/)
+[![CRMdig](https://img.shields.io/badge/CRMdig-D1%20%2F%20D2-5C4B7A.svg)](https://www.cidoc-crm.org/crmdig/)
+[![RDF Turtle](https://img.shields.io/badge/RDF-Turtle-77AADD.svg)](https://www.w3.org/TR/turtle/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB.svg)](https://www.python.org/)
+[![IIIF](https://img.shields.io/badge/IIIF-Presentation-1C7C54.svg)](https://iiif.io/)
+[![SKOS](https://img.shields.io/badge/SKOS-AAT%20%7C%20TGN%20%7C%20LCSH%20%7C%20Wikidata-C45C26.svg)](vocab/seed.yml)
+[![FSA.A.04](https://img.shields.io/badge/FSA.A.04-Myron_Bement_Smith-1B4F72.svg)](https://sova.si.edu/record/fsa.a.04)
+[![FSA.A.06](https://img.shields.io/badge/FSA.A.06-Ernst_Herzfeld-1B4F72.svg)](https://sova.si.edu/record/fsa.a.06)
+[![NMAA Archives](https://img.shields.io/badge/Smithsonian-NMAA_Archives-6C3483.svg)](https://asia.si.edu/research/archives/)
+[![GraphDB](https://img.shields.io/badge/GraphDB-underscore_CURIEs-2E86AB.svg)](#namespaces-and-uris)
 
-The source is the ArchivesSpace EAD 2002 finding aid in [`srcdata/FSA.A.04-ead.xml`](srcdata/FSA.A.04-ead.xml). The public hierarchical rendering of the same data is [SOVA FSA.A.04](https://sova.si.edu/record/fsa-a-04). This repository turns that finding aid into Linked Open Data: archival box/folder structure, agents, places, subjects, a digitization flag, and Smithsonian IIIF access points, reconciled to **AAT**, **TGN**, **LCSH/LCNAF**, and **Wikidata**.
+CIDOC CRM and OWL knowledge graph of the Smithsonian National Museum of Asian Art **Islamic Archives** holding: the **Myron Bement Smith Collection** ([FSA.A.04](https://sova.si.edu/record/fsa.a.04)) and the **Ernst Herzfeld Papers** ([FSA.A.06](https://sova.si.edu/record/fsa.a.06)), with a shared SKOS control vocabulary for further sibling finding aids.
 
-Collection ARK: <https://n2t.net/ark:/65665/dc3c8c950fe-250b-40df-b8c7-bcf788073968>
+Sources are ArchivesSpace EAD 2002 files in [`srcdata/`](srcdata/). The graph is Linked Open Data: archival series/file/item trees, physical housing, agents, places, subjects, digitization, and Smithsonian IIIF access points, reconciled to **AAT**, **TGN**, **LCSH/LCNAF**, and **Wikidata**. Each fonds is sharded under `data/rdf/fsa_a_04/` and `data/rdf/fsa_a_06/`. Shared concepts live in [`data/rdf/vocabulary.ttl`](data/rdf/vocabulary.ttl).
 
-## Why this collection
+| Fonds | ARK | SOVA |
+| --- | --- | --- |
+| Islamic Archives (parent holding) | — | modelled as `kg:collection_islamic_archives` |
+| FSA.A.04 Myron Bement Smith | <https://n2t.net/ark:/65665/dc3c8c950fe-250b-40df-b8c7-bcf788073968> | [sova.si.edu/record/fsa.a.04](https://sova.si.edu/record/fsa.a.04) |
+| FSA.A.06 Ernst Herzfeld Papers | <https://n2t.net/ark:/65665/dc3d8456fbe-98f6-4159-bd2f-c485379b84a7> | [sova.si.edu/record/fsa.a.06](https://sova.si.edu/record/fsa.a.06) |
 
-Smith (1897–1970) documented Islamic architecture in Iran in the 1930s and spent the rest of his career building the **Islamic Archives**: photographs, lantern slides, 35 mm slides, negatives, notebooks, correspondence, and architectural plans covering Iran and the wider Islamic world. Subseries 2.12 holds Antoin Sevruguin’s glass negatives and prints. The finding aid already carries a minimum of agent, date, place, and topical encoding. The graph keeps that encoding, fills gaps (especially TGN and monument identities), and makes digitization and IIIF queryable.
+## Why the Islamic Archives
+
+Smith (1897–1970) documented Islamic architecture in Iran in the 1930s and spent the rest of his career assembling the **Islamic Archives**: photographs, lantern slides, 35 mm slides, negatives, notebooks, correspondence, and architectural plans covering Iran and the wider Islamic world. Subseries 2.12 of FSA.A.04 holds Antoin Sevruguin’s glass negatives and prints.
+
+Herzfeld (1879–1948) excavated and surveyed Samarra, Persepolis, Pasargadae, and Aleppo. FSA.A.06 holds travel journals, sketchbooks, notebooks, photographic files, drawings and maps, paper squeezes of inscriptions, and the Samarra expedition records — about 150 linear feet.
+
+Both fonds sit under one holding (`mbs:HoldingCollection`). The graph keeps EAD encoding, fills gaps (especially TGN and monument identities), and makes digitization and IIIF queryable across collections. Isolate one fonds in SPARQL with `VALUES ?coll { kg:component_FSA_A_04 }` or `kg:component_FSA_A_06`.
 
 ## Ontology
 
@@ -25,7 +46,7 @@ The stored model is **CIDOC CRM 7.1.3 (OWL)** plus **CRMdig**, with a thin appli
 
 [Records in Contexts (RiC-O)](https://www.ica.org/standards/RiC/ontology) and [Linked Art](https://linked.art/) are alignments, not the native graph. `mbs:ArchivalComponent` is declared `owl:equivalentClass` `rico:RecordSet` so an export is possible later.
 
-CRM is the native model because the collection is event-centred cultural heritage (making a photograph, field research in Isfahan, acquiring Sevruguin plates, digitization at the Smithsonian). The archival tree is expressed with CRM composition (`P106` for information objects, `P46` for physical units) plus `mbs:archivalLevel`.
+CRM is the native model because these fonds are event-centred cultural heritage (making a photograph, field research in Isfahan, Herzfeld’s Samarra excavations, acquiring Sevruguin plates, digitization at the Smithsonian). The archival tree is expressed with CRM composition (`P106` for information objects, `P46` for physical units) plus `mbs:archivalLevel`.
 
 ### Two nodes per EAD component
 
@@ -105,7 +126,7 @@ Smithsonian ARKs remain `owl:sameAs` full IRIs. SOVA pages are `mbs:sovaUrl` / `
 
 ### File versus item (media type)
 
-EAD `@level` is not only hierarchy depth. In this collection:
+EAD `@level` is not only hierarchy depth. In these finding aids:
 
 - **`file`** (`mbs:FileUnit` / `mbs:DocumentaryFile`) is an aggregating documentary unit — a correspondence folder, a dossier of mixed papers. Typed with AAT *files (document groupings)* (`aat:300027182`).
 - **`item`** (`mbs:ItemUnit` / `mbs:DiscreteItem`) is a single resource. Media type is taken from `genreform`, `physdesc/extent@type` (glass negatives, albumen prints, …), or the title (photograph, drawing, notebook, plan).
@@ -120,13 +141,29 @@ Every EAD prose field — `abstract`, `scopecontent`, `bioghist`, `arrangement`,
 
 ## Source data
 
-The EAD is DACS-compliant, produced in ArchivesSpace (export dated 2026-10-15). Structure:
+Both finding aids are DACS-compliant ArchivesSpace EAD 2002.
+
+**FSA.A.04** Myron Bement Smith (export 2026-10-15):
 
 - **Series 1** Papers (1.1 biographic … 1.8 Katharine Dennis Smith)
 - **Series 2** The Islamic Archives (2.1 history … 2.12 Sevruguin photographs)
 - **Series 3** Outsize and miscellaneous (map-case, rolled items, freezer, Smithsonian copy negatives)
 
-Levels used: `collection`, `series`, `subseries`, `file`, `item`. Housing is almost always Box + Folder; Series 3 also uses Item locations.
+Housing is almost always Box + Folder; Series 3 also uses Item, Roll, Oversize, Map-rolled.
+
+**FSA.A.06** Ernst Herzfeld Papers:
+
+- **Series 1** Travel Journals
+- **Series 2** Sketchbooks
+- **Series 3** Notebooks
+- **Series 4** Photographic Files
+- **Series 5** Drawings and Maps
+- **Series 6** Paper Squeezes of Inscriptions
+- **Series 7** Records of Samarra Expeditions
+
+Housing is Volume / Page / Item (no Box/Folder). Sketchbooks use EDAN `damspath=` slideshows (`mbs:edan_damspath`) as well as IDS JPEGs and a few `eadrefid` slideshows.
+
+Levels used in both: `collection`, `series`, `subseries`, `file`, `item`.
 
 Authority encoding already in the EAD (uneven):
 
@@ -134,12 +171,13 @@ Authority encoding already in the EAD (uneven):
 - LCSH / LCNAF on subjects and some places (mix of full URIs and bare labels)
 - AAT on `genreform`. EAD “Glass negatives” is mapped to wet collodion negatives (`aat:300134674`), with generic glass negatives (`aat:300010898`) as SKOS broader and dry collodion (`aat:300241140`) as related.
 - **No TGN** in the source — spatial enhancement is a pipeline goal
-- Inline `persname` / `geogname` in titles (Masjid-i Jomeh, Isfahan, Palmyra, …) are harvested in addition to `<controlaccess>`
+- Inline `persname` / `geogname` in titles (Masjid-i Jomeh, Isfahan, Palmyra, Samarra, …) are harvested in addition to `<controlaccess>`
 
 Digitization appears as:
 
 1. Direct IDS images, e.g. Sevruguin `https://ids.si.edu/ids/deliveryService?id=FS-FSA_A.4_2.12.GN.00.02-000004`
-2. EDAN slideshows, e.g. Masjid-i Jomeh folder `https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref7856`
+2. EDAN slideshows by `eadrefid`, e.g. Masjid-i Jomeh `https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref7856`
+3. EDAN slideshows by `damspath` (Herzfeld sketchbooks), e.g. `https://edan.si.edu/slideshow/slideshowViewer.htm?damspath=/Public_Sets/FS/FSA/FSA_A.06_02.01.01`
 
 ## Pipeline
 
@@ -532,17 +570,32 @@ Full per-collection diff: [`data/reports/analyze/report.md`](data/reports/analyz
 ## Licence and citation
 
 - **Code** in this repository: [GNU GPL v3](LICENSE).
-- **Finding aid text and archival metadata**: Smithsonian / National Museum of Asian Art Archives. Permission to publish, quote, or reproduce collection materials must be secured from the repository ([conditions of use](https://sova.si.edu/record/fsa-a-04)).
+- **Finding aid text and archival metadata**: Smithsonian / National Museum of Asian Art Archives. Permission to publish, quote, or reproduce collection materials must be secured from the repository ([FSA.A.04 conditions](https://sova.si.edu/record/fsa.a.04), [FSA.A.06 conditions](https://sova.si.edu/record/fsa.a.06)).
 - **Many Smithsonian digital images** are released under CC0; check the object page. This project stores URIs, not image binaries.
 
-Preferred citation of the collection:
+Preferred citations:
 
-> The Myron Bement Smith Collection, FSA A.04. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Katharine Dennis Smith.
+> The Myron Bement Smith Collection, FSA.A.04. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Katharine Dennis Smith.
 
-Finding aid author: Dr. Elizabeth Graves (2015). The Ernst Herzfeld Papers (FSA.A.06) are a sibling sub-collection of the Islamic Archives (`kg:component_FSA_A_06`); map them with `--ead srcdata/FSA.A.06-ead.xml`. Other related SOVA collections (Bier, Sevruguin albums) remain textual `relatedmaterial` notes.
+> Ernst Herzfeld Papers, FSA.A.06. National Museum of Asian Art Archives. Smithsonian Institution, Washington, D.C. Gift of Ernst Herzfeld, 1946.
 
-## Scope of v1
+Finding aid authors: Dr. Elizabeth Graves (FSA.A.04, 2015); Joseph M. Upton and Colleen Hennessey (FSA.A.06). Other related SOVA collections (Bier, Sevruguin albums) remain textual `relatedmaterial` notes until their EAD is added as further sub-collections of the Islamic Archives.
 
-In scope: full EAD parse of FSA.A.04 and FSA.A.06, CRM mapping of FSA.A.04, box/folder (and Herzfeld Volume/Page/Item in the analyzer), digitized flag, derived IIIF URIs, seed reconciliation to AAT/TGN/LCSH/Wikidata, idempotent EAD-vs-RDF analysis, SHACL, SPARQL catalog, public README.
+## Scope of v2
 
-Out of scope: OCR, computer vision, a hosted SPARQL endpoint, rewriting Smithsonian manifests.
+**v1** mapped a single fonds (FSA.A.04) as a standalone knowledge graph.
+
+**v2** treats the Islamic Archives as the parent holding and maps every documented sibling under the same CIDOC CRM / CRMdig profile, shared SKOS scheme, and per-collection RDF shards.
+
+In scope:
+
+- Full EAD parse and CRM mapping of **FSA.A.04** and **FSA.A.06**
+- Parent holding `kg:collection_islamic_archives` (`mbs:HoldingCollection` / `crm:E78`)
+- Shared vocabulary [`vocab/seed.yml`](vocab/seed.yml) → [`data/rdf/vocabulary.ttl`](data/rdf/vocabulary.ttl)
+- Physical housing: Box/Folder (Smith) and Volume/Page/Item (Herzfeld)
+- `crmdig:D1_Digital_Object` for IDS JPEGs, EDAN `eadrefid` slideshows, and EDAN `damspath` slideshows, with IIIF Manifests
+- Idempotent EAD-vs-RDF analyzer (`python -m pipeline.analyze`)
+- SPARQL catalog for the intellectual `P106` tree, housing, and D1 surrogates
+- Layout ready for further NMAA Islamic Archives siblings (`data/rdf/<eadid-slug>/`)
+
+Out of scope: OCR, computer vision, a hosted SPARQL endpoint, rewriting Smithsonian manifests, mapping collections that are only named in `relatedmaterial` (Bier, extra Sevruguin albums) until their EAD is ingested.

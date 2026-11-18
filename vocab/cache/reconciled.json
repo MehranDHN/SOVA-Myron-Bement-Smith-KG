@@ -3539,6 +3539,15 @@
         "source_uri": "http://www.wikidata.org/entity/Q98396885",
         "wikidata": "http://www.wikidata.org/entity/Q98396885"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q98396885"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Smith_Myron_Bement_1897_1970",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -3569,6 +3578,15 @@
         "source_uri": "http://www.wikidata.org/entity/Q6765187",
         "wikidata": "http://www.wikidata.org/entity/Q6765187"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q6765187"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Blake_Marion_Elizabeth",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -3595,6 +3613,15 @@
         "source_uri": "http://www.wikidata.org/entity/Q62933",
         "wikidata": "http://www.wikidata.org/entity/Q62933"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q62933"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Herzfeld_Ernst_1879_1948",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -3696,6 +3723,15 @@
         "source_uri": "http://www.wikidata.org/entity/Q958788",
         "wikidata": "http://www.wikidata.org/entity/Q958788"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q958788"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Pope_Arthur_Upham_1881_1969",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -3722,6 +3758,15 @@
         "source_uri": "http://www.wikidata.org/entity/Q15130478",
         "wikidata": "http://www.wikidata.org/entity/Q15130478"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q15130478"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Field_Henry",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -3748,6 +3793,15 @@
         "source_uri": "http://www.wikidata.org/entity/Q216041",
         "wikidata": "http://www.wikidata.org/entity/Q216041"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q216041"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Ettinghausen_Richard",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -11673,6 +11727,15 @@
       "matches": {
         "wikidata": "http://www.wikidata.org/entity/Q216041"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q216041"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Ettinghausen_Richard",
       "method": [
         "seed"
       ],
@@ -11761,6 +11824,15 @@
       "matches": {
         "wikidata": "http://www.wikidata.org/entity/Q15130478"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q15130478"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Field_Henry",
       "method": [
         "seed"
       ],
@@ -21766,6 +21838,15 @@
         "source_uri": "http://www.wikidata.org/entity/Q382319",
         "wikidata": "http://www.wikidata.org/entity/Q382319"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q382319"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Sevruguin_Antoin_1851_1933",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -36928,6 +37009,15 @@
         "source_uri": "http://www.wikidata.org/entity/Q2915801",
         "wikidata": "http://www.wikidata.org/entity/Q2915801"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q2915801"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Bonfils_F_lix_1831_1885",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -38259,6 +38349,15 @@
         "source_uri": "http://www.wikidata.org/entity/Q159416",
         "wikidata": "http://www.wikidata.org/entity/Q159416"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q159416"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "N_sir_al_D_n_Sh_h_Shah_of_Iran_1831_1896",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -38285,6 +38384,15 @@
         "source_uri": "http://www.wikidata.org/entity/Q182921",
         "wikidata": "http://www.wikidata.org/entity/Q182921"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q182921"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Reza_Shah_Pahlavi_Shah_of_Iran_1878_1944",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -38532,9 +38640,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q60",
-        "tgn": "http://vocab.getty.edu/tgn/7007567"
+        "tgn": "http://vocab.getty.edu/tgn/7007567",
+        "wikidata": "http://www.wikidata.org/entity/Q60"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7007567",
+            "http://www.wikidata.org/entity/Q60"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "New_York_City",
       "method": [
         "seed"
       ],
@@ -38577,9 +38695,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q49218",
-        "tgn": "http://vocab.getty.edu/tgn/7014449"
+        "tgn": "http://vocab.getty.edu/tgn/7014449",
+        "wikidata": "http://www.wikidata.org/entity/Q49218"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7014449",
+            "http://www.wikidata.org/entity/Q49218"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Rochester_New_York",
       "method": [
         "seed"
       ],
@@ -38602,9 +38730,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q61",
-        "tgn": "http://vocab.getty.edu/tgn/7013962"
+        "tgn": "http://vocab.getty.edu/tgn/7013962",
+        "wikidata": "http://www.wikidata.org/entity/Q61"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7013962",
+            "http://www.wikidata.org/entity/Q61"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Washington_D_C",
       "method": [
         "seed"
       ],
@@ -38655,9 +38793,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q142",
-        "tgn": "http://vocab.getty.edu/tgn/1000070"
+        "tgn": "http://vocab.getty.edu/tgn/1000070",
+        "wikidata": "http://www.wikidata.org/entity/Q142"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/1000070",
+            "http://www.wikidata.org/entity/Q142"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "France",
       "method": [
         "seed"
       ],
@@ -39036,9 +39184,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q796",
-        "tgn": "http://vocab.getty.edu/tgn/1000118"
+        "tgn": "http://vocab.getty.edu/tgn/1000118",
+        "wikidata": "http://www.wikidata.org/entity/Q796"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/1000118",
+            "http://www.wikidata.org/entity/Q796"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Iraq",
       "method": [
         "seed"
       ],
@@ -39221,9 +39379,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q38",
-        "tgn": "http://vocab.getty.edu/tgn/1000080"
+        "tgn": "http://vocab.getty.edu/tgn/1000080",
+        "wikidata": "http://www.wikidata.org/entity/Q38"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/1000080",
+            "http://www.wikidata.org/entity/Q38"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Italy",
       "method": [
         "seed"
       ],
@@ -39350,9 +39518,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q229",
-        "tgn": "http://vocab.getty.edu/tgn/1000112"
+        "tgn": "http://vocab.getty.edu/tgn/1000112",
+        "wikidata": "http://www.wikidata.org/entity/Q229"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/1000112",
+            "http://www.wikidata.org/entity/Q229"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Cyprus",
       "method": [
         "seed"
       ],
@@ -40683,10 +40861,21 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q794",
         "tgn": "http://vocab.getty.edu/tgn/7000231",
-        "lcnaf": "https://id.loc.gov/authorities/names/n79039880"
+        "lcnaf": "https://id.loc.gov/authorities/names/n79039880",
+        "wikidata": "http://www.wikidata.org/entity/Q794"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7000231",
+            "https://id.loc.gov/authorities/names/n79039880",
+            "http://www.wikidata.org/entity/Q794"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Iran",
       "method": [
         "seed"
       ],
@@ -44315,9 +44504,20 @@
       "matches": {
         "source_uri": "https://id.loc.gov/authorities/subjects/sh85008606",
         "lcsh": "https://id.loc.gov/authorities/subjects/sh85008606",
-        "wikidata": "http://www.wikidata.org/entity/Q48",
-        "tgn": "http://vocab.getty.edu/tgn/1000004"
+        "tgn": "http://vocab.getty.edu/tgn/1000004",
+        "wikidata": "http://www.wikidata.org/entity/Q48"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/1000004",
+            "https://id.loc.gov/authorities/subjects/sh85008606",
+            "http://www.wikidata.org/entity/Q48"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Asia",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -47763,9 +47963,20 @@
       "matches": {
         "source_uri": "https://id.loc.gov/authorities/names/n79039880",
         "lcnaf": "https://id.loc.gov/authorities/names/n79039880",
-        "wikidata": "http://www.wikidata.org/entity/Q794",
-        "tgn": "http://vocab.getty.edu/tgn/7000231"
+        "tgn": "http://vocab.getty.edu/tgn/7000231",
+        "wikidata": "http://www.wikidata.org/entity/Q794"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7000231",
+            "https://id.loc.gov/authorities/names/n79039880",
+            "http://www.wikidata.org/entity/Q794"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Iran",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -47861,9 +48072,21 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q794",
-        "tgn": "http://vocab.getty.edu/tgn/7000231"
+        "tgn": "http://vocab.getty.edu/tgn/7000231",
+        "lcnaf": "https://id.loc.gov/authorities/names/n79039880",
+        "wikidata": "http://www.wikidata.org/entity/Q794"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7000231",
+            "https://id.loc.gov/authorities/names/n79039880",
+            "http://www.wikidata.org/entity/Q794"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Iran",
       "method": [
         "seed"
       ],
@@ -48654,10 +48877,21 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q42053",
         "tgn": "http://vocab.getty.edu/tgn/7001374",
-        "lcnaf": "https://id.loc.gov/authorities/names/n79061284"
+        "lcnaf": "https://id.loc.gov/authorities/names/n79061284",
+        "wikidata": "http://www.wikidata.org/entity/Q42053"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7001374",
+            "https://id.loc.gov/authorities/names/n79061284",
+            "http://www.wikidata.org/entity/Q42053"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Isfahan",
       "method": [
         "seed"
       ],
@@ -48696,10 +48930,21 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q129072",
         "tgn": "http://vocab.getty.edu/tgn/7002229",
-        "lcnaf": "https://id.loc.gov/authorities/names/n80063345"
+        "lcnaf": "https://id.loc.gov/authorities/names/n80063345",
+        "wikidata": "http://www.wikidata.org/entity/Q129072"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7002229",
+            "https://id.loc.gov/authorities/names/n80063345",
+            "http://www.wikidata.org/entity/Q129072"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Persepolis",
       "method": [
         "seed"
       ],
@@ -49342,9 +49587,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q43",
-        "tgn": "http://vocab.getty.edu/tgn/1000144"
+        "tgn": "http://vocab.getty.edu/tgn/1000144",
+        "wikidata": "http://www.wikidata.org/entity/Q43"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/1000144",
+            "http://www.wikidata.org/entity/Q43"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Turkey",
       "method": [
         "seed"
       ],
@@ -50259,9 +50514,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q668",
-        "tgn": "http://vocab.getty.edu/tgn/7000198"
+        "tgn": "http://vocab.getty.edu/tgn/7000198",
+        "wikidata": "http://www.wikidata.org/entity/Q668"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7000198",
+            "http://www.wikidata.org/entity/Q668"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "India",
       "method": [
         "seed"
       ],
@@ -51616,10 +51881,21 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q858",
         "tgn": "http://vocab.getty.edu/tgn/1000146",
-        "lcnaf": "https://id.loc.gov/authorities/names/n80061798"
+        "lcnaf": "https://id.loc.gov/authorities/names/n80061798",
+        "wikidata": "http://www.wikidata.org/entity/Q858"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/1000146",
+            "https://id.loc.gov/authorities/names/n80061798",
+            "http://www.wikidata.org/entity/Q858"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Syria",
       "method": [
         "seed"
       ],
@@ -52370,9 +52646,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q822",
-        "tgn": "http://vocab.getty.edu/tgn/1000126"
+        "tgn": "http://vocab.getty.edu/tgn/1000126",
+        "wikidata": "http://www.wikidata.org/entity/Q822"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/1000126",
+            "http://www.wikidata.org/entity/Q822"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Lebanon",
       "method": [
         "seed"
       ],
@@ -54875,10 +55161,21 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q3616",
         "tgn": "http://vocab.getty.edu/tgn/7014497",
-        "lcnaf": "https://id.loc.gov/authorities/names/n79039626"
+        "lcnaf": "https://id.loc.gov/authorities/names/n79039626",
+        "wikidata": "http://www.wikidata.org/entity/Q3616"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7014497",
+            "https://id.loc.gov/authorities/names/n79039626",
+            "http://www.wikidata.org/entity/Q3616"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Tehran",
       "method": [
         "seed"
       ],
@@ -55203,10 +55500,32 @@
       "monument": true,
       "matches": {
         "wikidata": "http://www.wikidata.org/entity/Q1227533",
-        "aat": "http://vocab.getty.edu/aat/300007691",
-        "lcsh": "https://id.loc.gov/authorities/subjects/sh85087470",
-        "tgn": "http://vocab.getty.edu/tgn/7001374"
+        "tgn": "http://vocab.getty.edu/tgn/7001374",
+        "closeMatch": [
+          "http://vocab.getty.edu/aat/300007691",
+          "https://id.loc.gov/authorities/subjects/sh85087470",
+          "https://iconclass.org/11Q71"
+        ]
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1227533",
+            "http://vocab.getty.edu/tgn/7001374"
+          ],
+          "closeMatch": [
+            "http://vocab.getty.edu/aat/300007691",
+            "https://id.loc.gov/authorities/subjects/sh85087470",
+            "https://iconclass.org/11Q71"
+          ]
+        },
+        "intra": {
+          "broader": [
+            "https://w3id.org/sova/fsa_a_04#concept_aat_300007691"
+          ]
+        }
+      },
+      "seed_id": "Masjid_i_Jomeh",
       "method": [
         "seed-monument"
       ],
@@ -55269,10 +55588,21 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q48",
         "tgn": "http://vocab.getty.edu/tgn/1000004",
-        "lcsh": "https://id.loc.gov/authorities/subjects/sh85008606"
+        "lcsh": "https://id.loc.gov/authorities/subjects/sh85008606",
+        "wikidata": "http://www.wikidata.org/entity/Q48"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/1000004",
+            "https://id.loc.gov/authorities/subjects/sh85008606",
+            "http://www.wikidata.org/entity/Q48"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Asia",
       "method": [
         "seed"
       ],
@@ -55953,10 +56283,32 @@
       "monument": true,
       "matches": {
         "wikidata": "http://www.wikidata.org/entity/Q1227533",
-        "aat": "http://vocab.getty.edu/aat/300007691",
-        "lcsh": "https://id.loc.gov/authorities/subjects/sh85087470",
-        "tgn": "http://vocab.getty.edu/tgn/7001374"
+        "tgn": "http://vocab.getty.edu/tgn/7001374",
+        "closeMatch": [
+          "http://vocab.getty.edu/aat/300007691",
+          "https://id.loc.gov/authorities/subjects/sh85087470",
+          "https://iconclass.org/11Q71"
+        ]
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1227533",
+            "http://vocab.getty.edu/tgn/7001374"
+          ],
+          "closeMatch": [
+            "http://vocab.getty.edu/aat/300007691",
+            "https://id.loc.gov/authorities/subjects/sh85087470",
+            "https://iconclass.org/11Q71"
+          ]
+        },
+        "intra": {
+          "broader": [
+            "https://w3id.org/sova/fsa_a_04#concept_aat_300007691"
+          ]
+        }
+      },
+      "seed_id": "Masjid_i_Jomeh",
       "method": [
         "seed-monument"
       ],
@@ -56549,10 +56901,32 @@
       "monument": true,
       "matches": {
         "wikidata": "http://www.wikidata.org/entity/Q1227533",
-        "aat": "http://vocab.getty.edu/aat/300007691",
-        "lcsh": "https://id.loc.gov/authorities/subjects/sh85087470",
-        "tgn": "http://vocab.getty.edu/tgn/7001374"
+        "tgn": "http://vocab.getty.edu/tgn/7001374",
+        "closeMatch": [
+          "http://vocab.getty.edu/aat/300007691",
+          "https://id.loc.gov/authorities/subjects/sh85087470",
+          "https://iconclass.org/11Q71"
+        ]
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://www.wikidata.org/entity/Q1227533",
+            "http://vocab.getty.edu/tgn/7001374"
+          ],
+          "closeMatch": [
+            "http://vocab.getty.edu/aat/300007691",
+            "https://id.loc.gov/authorities/subjects/sh85087470",
+            "https://iconclass.org/11Q71"
+          ]
+        },
+        "intra": {
+          "broader": [
+            "https://w3id.org/sova/fsa_a_04#concept_aat_300007691"
+          ]
+        }
+      },
+      "seed_id": "Masjid_i_Jomeh",
       "method": [
         "seed-monument"
       ],
@@ -56878,9 +57252,24 @@
           "field": "unittitle"
         }
       ],
-      "matches": {},
-      "method": [],
-      "confidence": 0.0,
+      "matches": {
+        "tgn": "http://vocab.getty.edu/tgn/7001658",
+        "wikidata": "http://www.wikidata.org/entity/Q203402"
+      },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7001658",
+            "http://www.wikidata.org/entity/Q203402"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "pasargadae",
+      "method": [
+        "seed"
+      ],
+      "confidence": 0.9,
       "kind": "place"
     },
     {
@@ -57667,9 +58056,21 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q42053",
-        "tgn": "http://vocab.getty.edu/tgn/7001374"
+        "tgn": "http://vocab.getty.edu/tgn/7001374",
+        "lcnaf": "https://id.loc.gov/authorities/names/n79061284",
+        "wikidata": "http://www.wikidata.org/entity/Q42053"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7001374",
+            "https://id.loc.gov/authorities/names/n79061284",
+            "http://www.wikidata.org/entity/Q42053"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Isfahan",
       "method": [
         "seed"
       ],
@@ -58231,9 +58632,26 @@
           "field": "unittitle"
         }
       ],
-      "matches": {},
-      "method": [],
-      "confidence": 0.0,
+      "matches": {
+        "tgn": "http://vocab.getty.edu/tgn/7011132",
+        "lcnaf": "https://id.loc.gov/authorities/names/n79055264",
+        "wikidata": "http://www.wikidata.org/entity/Q170242"
+      },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7011132",
+            "https://id.loc.gov/authorities/names/n79055264",
+            "http://www.wikidata.org/entity/Q170242"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "samarra",
+      "method": [
+        "seed"
+      ],
+      "confidence": 0.9,
       "kind": "place"
     },
     {
@@ -58432,9 +58850,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q5747",
-        "tgn": "http://vocab.getty.edu/tgn/7002161"
+        "tgn": "http://vocab.getty.edu/tgn/7002161",
+        "wikidata": "http://www.wikidata.org/entity/Q5747"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7002161",
+            "http://www.wikidata.org/entity/Q5747"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Palmyra",
       "method": [
         "seed"
       ],
@@ -60565,9 +60993,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q5747",
-        "tgn": "http://vocab.getty.edu/tgn/7002161"
+        "tgn": "http://vocab.getty.edu/tgn/7002161",
+        "wikidata": "http://www.wikidata.org/entity/Q5747"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7002161",
+            "http://www.wikidata.org/entity/Q5747"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Palmyra",
       "method": [
         "seed"
       ],
@@ -60592,9 +61030,20 @@
       "matches": {
         "source_uri": "https://id.loc.gov/authorities/names/n80061798",
         "lcnaf": "https://id.loc.gov/authorities/names/n80061798",
-        "wikidata": "http://www.wikidata.org/entity/Q858",
-        "tgn": "http://vocab.getty.edu/tgn/1000146"
+        "tgn": "http://vocab.getty.edu/tgn/1000146",
+        "wikidata": "http://www.wikidata.org/entity/Q858"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/1000146",
+            "https://id.loc.gov/authorities/names/n80061798",
+            "http://www.wikidata.org/entity/Q858"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Syria",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -61520,9 +61969,19 @@
       "matches": {
         "source_uri": "https://id.loc.gov/authorities/names/n79077342",
         "lcnaf": "https://id.loc.gov/authorities/names/n79077342",
-        "wikidata": "http://www.wikidata.org/entity/Q796",
-        "tgn": "http://vocab.getty.edu/tgn/1000118"
+        "tgn": "http://vocab.getty.edu/tgn/1000118",
+        "wikidata": "http://www.wikidata.org/entity/Q796"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/1000118",
+            "http://www.wikidata.org/entity/Q796"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Iraq",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -61552,9 +62011,19 @@
       "matches": {
         "source_uri": "https://id.loc.gov/authorities/names/n80125948",
         "lcnaf": "https://id.loc.gov/authorities/names/n80125948",
-        "wikidata": "http://www.wikidata.org/entity/Q668",
-        "tgn": "http://vocab.getty.edu/tgn/7000198"
+        "tgn": "http://vocab.getty.edu/tgn/7000198",
+        "wikidata": "http://www.wikidata.org/entity/Q668"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7000198",
+            "http://www.wikidata.org/entity/Q668"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "India",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -61944,9 +62413,21 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q42053",
-        "tgn": "http://vocab.getty.edu/tgn/7001374"
+        "tgn": "http://vocab.getty.edu/tgn/7001374",
+        "lcnaf": "https://id.loc.gov/authorities/names/n79061284",
+        "wikidata": "http://www.wikidata.org/entity/Q42053"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7001374",
+            "https://id.loc.gov/authorities/names/n79061284",
+            "http://www.wikidata.org/entity/Q42053"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Isfahan",
       "method": [
         "seed"
       ],
@@ -62085,9 +62566,19 @@
         }
       ],
       "matches": {
-        "wikidata": "http://www.wikidata.org/entity/Q733613",
-        "tgn": "http://vocab.getty.edu/tgn/7001657"
+        "tgn": "http://vocab.getty.edu/tgn/7001657",
+        "wikidata": "http://www.wikidata.org/entity/Q733613"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7001657",
+            "http://www.wikidata.org/entity/Q733613"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Naqsh_i_Rustam_Iran",
       "method": [
         "seed"
       ],
@@ -62277,9 +62768,20 @@
       "matches": {
         "source_uri": "https://id.loc.gov/authorities/names/n80063345",
         "lcnaf": "https://id.loc.gov/authorities/names/n80063345",
-        "wikidata": "http://www.wikidata.org/entity/Q129072",
-        "tgn": "http://vocab.getty.edu/tgn/7002229"
+        "tgn": "http://vocab.getty.edu/tgn/7002229",
+        "wikidata": "http://www.wikidata.org/entity/Q129072"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7002229",
+            "https://id.loc.gov/authorities/names/n80063345",
+            "http://www.wikidata.org/entity/Q129072"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Persepolis",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -63045,9 +63547,20 @@
       "matches": {
         "source_uri": "https://id.loc.gov/authorities/names/n79039626",
         "lcnaf": "https://id.loc.gov/authorities/names/n79039626",
-        "wikidata": "http://www.wikidata.org/entity/Q3616",
-        "tgn": "http://vocab.getty.edu/tgn/7014497"
+        "tgn": "http://vocab.getty.edu/tgn/7014497",
+        "wikidata": "http://www.wikidata.org/entity/Q3616"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/tgn/7014497",
+            "https://id.loc.gov/authorities/names/n79039626",
+            "http://www.wikidata.org/entity/Q3616"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Tehran",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -63585,9 +64098,30 @@
       "matches": {
         "source_uri": "https://id.loc.gov/authorities/subjects/sh85006804",
         "lcsh": "https://id.loc.gov/authorities/subjects/sh85006804",
+        "aat": "http://vocab.getty.edu/aat/300000996",
         "wikidata": "http://www.wikidata.org/entity/Q839805",
-        "aat": "http://vocab.getty.edu/aat/300000996"
+        "closeMatch": [
+          "https://iconclass.org/12I"
+        ]
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/aat/300000996",
+            "https://id.loc.gov/authorities/subjects/sh85006804",
+            "http://www.wikidata.org/entity/Q839805"
+          ],
+          "closeMatch": [
+            "https://iconclass.org/12I"
+          ]
+        },
+        "intra": {
+          "broader": [
+            "https://w3id.org/sova/fsa_a_04#concept_aat_300263552"
+          ]
+        }
+      },
+      "seed_id": "islamic_architecture",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -63733,9 +64267,30 @@
       "matches": {
         "source_uri": "https://id.loc.gov/authorities/subjects/sh85087470",
         "lcsh": "https://id.loc.gov/authorities/subjects/sh85087470",
+        "aat": "http://vocab.getty.edu/aat/300007691",
         "wikidata": "http://www.wikidata.org/entity/Q32815",
-        "aat": "http://vocab.getty.edu/aat/300007691"
+        "closeMatch": [
+          "https://iconclass.org/11Q71"
+        ]
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/aat/300007691",
+            "https://id.loc.gov/authorities/subjects/sh85087470",
+            "http://www.wikidata.org/entity/Q32815"
+          ],
+          "closeMatch": [
+            "https://iconclass.org/11Q71"
+          ]
+        },
+        "intra": {
+          "broader": [
+            "https://w3id.org/sova/fsa_a_04#concept_aat_300000996"
+          ]
+        }
+      },
+      "seed_id": "mosques",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -63762,6 +64317,19 @@
         "source_uri": "https://id.loc.gov/authorities/subjects/sh85006660",
         "lcsh": "https://id.loc.gov/authorities/subjects/sh85006660"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "https://id.loc.gov/authorities/subjects/sh85006660"
+          ]
+        },
+        "intra": {
+          "broader": [
+            "https://w3id.org/sova/fsa_a_04#concept_aat_300263552"
+          ]
+        }
+      },
+      "seed_id": "architecture_iran",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -64604,6 +65172,15 @@
         "source_uri": "https://id.loc.gov/authorities/subjects/sh85005757",
         "lcsh": "https://id.loc.gov/authorities/subjects/sh85005757"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "https://id.loc.gov/authorities/subjects/sh85005757"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Antiquities",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -65945,8 +66522,24 @@
       "matches": {
         "source_uri": "https://id.loc.gov/authorities/subjects/sh85006611",
         "lcsh": "https://id.loc.gov/authorities/subjects/sh85006611",
-        "aat": "http://vocab.getty.edu/aat/300263552"
+        "aat": "http://vocab.getty.edu/aat/300263552",
+        "closeMatch": [
+          "https://iconclass.org/48C1"
+        ]
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/aat/300263552",
+            "https://id.loc.gov/authorities/subjects/sh85006611"
+          ],
+          "closeMatch": [
+            "https://iconclass.org/48C1"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "architecture",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -67400,6 +67993,16 @@
         "lcsh": "https://id.loc.gov/authorities/subjects/sh85101240",
         "aat": "http://vocab.getty.edu/aat/300015524"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/aat/300015524",
+            "https://id.loc.gov/authorities/subjects/sh85101240"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Portrait_photography",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -72733,6 +73336,15 @@
         "source_uri": "http://vocab.getty.edu/aat/300026877",
         "aat": "http://vocab.getty.edu/aat/300026877"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/aat/300026877"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Correspondence",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -72779,6 +73391,15 @@
         "source_uri": "http://vocab.getty.edu/aat/300027200",
         "aat": "http://vocab.getty.edu/aat/300027200"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/aat/300027200"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Notes",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -73501,6 +74122,15 @@
         "source_uri": "http://vocab.getty.edu/aat/300127104",
         "aat": "http://vocab.getty.edu/aat/300127104"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/aat/300127104"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Photographic_prints",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -73527,6 +74157,15 @@
         "source_uri": "http://vocab.getty.edu/aat/300127121",
         "aat": "http://vocab.getty.edu/aat/300127121"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/aat/300127121"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Albumen_prints",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -76290,12 +76929,24 @@
         }
       ],
       "matches": {
-        "aat": "http://vocab.getty.edu/aat/300134674",
-        "aat_broader": "http://vocab.getty.edu/aat/300010898",
-        "aat_related": [
-          "http://vocab.getty.edu/aat/300241140"
-        ]
+        "aat": "http://vocab.getty.edu/aat/300134674"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/aat/300134674"
+          ]
+        },
+        "intra": {
+          "broader": [
+            "https://w3id.org/sova/fsa_a_04#concept_aat_300010898"
+          ],
+          "related": [
+            "https://w3id.org/sova/fsa_a_04#concept_aat_300241140"
+          ]
+        }
+      },
+      "seed_id": "wet_collodion_negatives",
       "method": [
         "seed"
       ],
@@ -77013,6 +77664,15 @@
         "source_uri": "http://vocab.getty.edu/aat/300128695",
         "aat": "http://vocab.getty.edu/aat/300128695"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/aat/300128695"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Gelatin_silver_prints",
       "method": [
         "ead-authfilenumber",
         "seed"
@@ -77319,6 +77979,15 @@
         "source_uri": "http://vocab.getty.edu/aat/300223022",
         "aat": "http://vocab.getty.edu/aat/300223022"
       },
+      "skos": {
+        "mapping": {
+          "exactMatch": [
+            "http://vocab.getty.edu/aat/300223022"
+          ]
+        },
+        "intra": {}
+      },
+      "seed_id": "Studio_portraits",
       "method": [
         "ead-authfilenumber",
         "seed"

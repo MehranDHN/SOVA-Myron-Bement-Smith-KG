@@ -20,7 +20,9 @@ kg:agent_Q15130478 a crm:E21_Person ;
 
 kg:agent_Q159416 a crm:E21_Person ;
     rdfs:label "Nāsir al-Dīn Shāh, Shah of Iran, 1831-1896" ;
+    rdfs:comment "4th king of Qajar era" ;
     owl:sameAs wd:Q159416 ;
+    skos:definition "4th king of Qajar era" ;
     skos:exactMatch wd:Q159416 ;
     skos:prefLabel "Nāsir al-Dīn Shāh, Shah of Iran, 1831-1896"@en ;
     mbs:reconciledTo wd:Q159416 ;
@@ -28,7 +30,9 @@ kg:agent_Q159416 a crm:E21_Person ;
 
 kg:agent_Q182921 a crm:E21_Person ;
     rdfs:label "Reza Shah Pahlavi, Shah of Iran, 1878-1944" ;
+    rdfs:comment "First king of the Pahlavi era" ;
     owl:sameAs wd:Q182921 ;
+    skos:definition "First king of the Pahlavi era" ;
     skos:exactMatch wd:Q182921 ;
     skos:prefLabel "Reza Shah Pahlavi, Shah of Iran, 1878-1944"@en ;
     mbs:reconciledTo wd:Q182921 ;
@@ -57,6 +61,16 @@ kg:agent_Q382319 a crm:E21_Person ;
     skos:prefLabel "Sevruguin, Antoin, 1851-1933"@en ;
     mbs:reconciledTo wd:Q382319 ;
     mbs:seedId "Sevruguin_Antoin_1851_1933" .
+
+kg:agent_Q4751824 a crm:E21_Person ;
+    rdfs:label "Anistās Mārī, al-Karmilī, ab, 1866-1947" ;
+    rdfs:comment "Iraqi Catholic priest and Discalced Carmelite friar" ;
+    owl:sameAs wd:Q4751824 ;
+    skos:definition "Iraqi Catholic priest and Discalced Carmelite friar" ;
+    skos:exactMatch wd:Q4751824 ;
+    skos:prefLabel "Anistās Mārī, al-Karmilī, ab, 1866-1947"@en ;
+    mbs:reconciledTo wd:Q4751824 ;
+    mbs:seedId "Anist_s_M_r_al_Karmil_ab_1866_1947" .
 
 kg:agent_Q62933 a crm:E21_Person ;
     rdfs:label "Herzfeld, Ernst, 1879-1948" ;
@@ -256,15 +270,15 @@ kg:concept_aat_300264354 a crm:E55_Type,
     mbs:reconciledTo aat:300264354 ;
     mbs:seedId "Notebooks" .
 
-kg:concept_aat_300264379 a crm:E55_Type,
+kg:concept_aat_300451052 a crm:E55_Type,
         skos:Concept ;
     rdfs:label "Squeezes" ;
     rdfs:comment "Paper squeezes of inscriptions; FSA.A.06." ;
     skos:definition "Paper squeezes of inscriptions; FSA.A.06." ;
-    skos:exactMatch aat:300264379 ;
+    skos:exactMatch aat:300451052 ;
     skos:inScheme kg:scheme_islamic_archives ;
     skos:prefLabel "Squeezes"@en ;
-    mbs:reconciledTo aat:300264379 ;
+    mbs:reconciledTo aat:300451052 ;
     mbs:seedId "squeezes" .
 
 kg:concept_lcsh_sh85005757 a crm:E55_Type,
@@ -547,7 +561,9 @@ kg:built_Q1227533 a crm:E22_Human_Made_Object,
     skos:altLabel "Isfahan Masjid-i Jomeh"@en,
         "Jameh Mosque of Isfahan"@en,
         "Masjid-i Jum'a"@en,
-        "Masjild-i Jomeh"@en ;
+        "Masjild-i Jomeh"@en,
+        "مسجد جامع اصفهان"@en,
+        "مسجد عتيق اصفهان"@en ;
     skos:broader kg:concept_aat_300007691 ;
     skos:closeMatch aat:300007691,
         iconclass:11Q71,

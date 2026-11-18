@@ -70,13 +70,22 @@ agents:
   - label: "Nāsir al-Dīn Shāh, Shah of Iran, 1831-1896"
     wikidata: Q159416
     kind: person
+    note: 4th king of Qajar era
   - label: "Reza Shah Pahlavi, Shah of Iran, 1878-1944"
     wikidata: Q182921
     kind: person
+    note: First king of the Pahlavi era
   - label: "Sarre, Friedrich, 1865-1945"
     wikidata: Q86930
     kind: person
     note: Colleague of Herzfeld; FSA.A.06.
+  - label: "Anistās Mārī, al-Karmilī, ab, 1866-1947"
+    wikidata: Q4751824
+    kind: person
+    note: Iraqi Catholic priest and Discalced Carmelite friar    
+
+
+
 
 places:
   - label: Iran
@@ -182,6 +191,8 @@ monuments:
       - "Masjild-i Jomeh"
       - "Jameh Mosque of Isfahan"
       - "Masjid-i Jum'a"
+      - "مسجد جامع اصفهان"
+      - "مسجد عتيق اصفهان"
     wikidata: Q1227533
     tgn_place: "7001374"
     broader: mosques
@@ -248,7 +259,7 @@ genres:
     note: FSA.A.06 series of field sketchbooks.
   - id: squeezes
     label: Squeezes
-    aat: "300264379"
+    aat: "300451052"
     note: Paper squeezes of inscriptions; FSA.A.06.
 
 subjects:
