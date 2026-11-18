@@ -17,6 +17,9 @@ CIDOC CRM and OWL knowledge graph of the Smithsonian National Museum of Asian Ar
 
 Sources are ArchivesSpace EAD 2002 files in [`srcdata/`](srcdata/). The graph is Linked Open Data: archival series/file/item trees, physical housing, agents, places, subjects, digitization, and Smithsonian IIIF access points, reconciled to **AAT**, **TGN**, **LCSH/LCNAF**, and **Wikidata**. Each fonds is sharded under `data/rdf/fsa_a_04/` and `data/rdf/fsa_a_06/`. Shared concepts live in [`data/rdf/vocabulary.ttl`](data/rdf/vocabulary.ttl).
 
+
+![Islamic Archives Knowledge Graph Architecture](/docs/slides/Islamic_Archives_Knowledge_Graph_Architecture.jpg)
+
 | Fonds | ARK | SOVA |
 | --- | --- | --- |
 | Islamic Archives (parent holding) | — | modelled as `kg:collection_islamic_archives` |
