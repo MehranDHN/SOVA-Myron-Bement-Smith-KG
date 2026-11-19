@@ -15,7 +15,7 @@
 
 CIDOC CRM and OWL knowledge graph of the Smithsonian National Museum of Asian Art **Islamic Archives** holding: the **Myron Bement Smith Collection** ([FSA.A.04](https://sova.si.edu/record/fsa.a.04)) and the **Ernst Herzfeld Papers** ([FSA.A.06](https://sova.si.edu/record/fsa.a.06)), with a shared SKOS control vocabulary for further sibling finding aids.
 
-Sources are ArchivesSpace EAD 2002 files in [`srcdata/`](srcdata/). The graph is Linked Open Data: archival series/file/item trees, physical housing, agents, places, subjects, digitization, and Smithsonian IIIF access points, reconciled to **AAT**, **TGN**, **LCSH/LCNAF**, and **Wikidata**. Each fonds is sharded under `data/rdf/fsa_a_04/` and `data/rdf/fsa_a_06/`. Shared concepts live in [`data/rdf/vocabulary.ttl`](data/rdf/vocabulary.ttl).
+Sources are ArchivesSpace EAD 2002 files in [`srcdata/`](srcdata/). The graph is Linked Open Data: archival series/file/item trees, physical housing, agents, places, subjects, digitization, and Smithsonian IIIF access points, reconciled to **AAT**, **TGN**, **LCSH/LCNAF**, and **Wikidata**. Each fonds is sharded under `data/rdf/fsa_a_04/` and `data/rdf/fsa_a_06/`. Shared seed entities and concepts live in [`data/rdf/vocabulary.ttl`](data/rdf/vocabulary.ttl); collection shards reference those URIs without duplicating their descriptions.
 
 
 ![Islamic Archives Knowledge Graph Architecture](/docs/slides/Islamic_Archives_Knowledge_Graph_Architecture.jpg)
@@ -274,6 +274,7 @@ python tests/test_parser.py
 
 1. Keep every `@authfilenumber` already in the EAD (Wikidata Q-ids, `id.loc.gov`, `vocab.getty.edu/aat`).
 2. Match labels against [`vocab/seed.yml`](vocab/seed.yml), the shared Islamic Archives control vocabulary (AAT, TGN, LCSH, LCNAF, Wikidata, Iconclass). `python -m pipeline.cli vocab` writes `data/rdf/vocabulary.ttl` idempotently. `skos:broader` is for local seed parents; `skos:broadMatch` is for external parents.
+   Seeded `crm:E21_Person`, `crm:E74_Group`, `crm:E53_Place`, and `crm:E55_Type` descriptions are emitted only in `data/rdf/vocabulary.ttl`; collection and series shards retain references to their stable seed URIs. Agent seed rows default to people; use `kind: group` for corporate bodies.
 3. Harvest inline names in titles and notes, not only `<controlaccess>`.
 4. Write a reviewable cache under `vocab/cache/` so rebuilds are deterministic.
 5. Unmatched strings remain first-class local resources (`mbs:sourceString`).
