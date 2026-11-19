@@ -28,6 +28,14 @@ kg:agent_Q159416 a crm:E21_Person ;
     mbs:reconciledTo wd:Q159416 ;
     mbs:seedId "N_sir_al_D_n_Sh_h_Shah_of_Iran_1831_1896" .
 
+kg:agent_Q16224169 a crm:E21_Person ;
+    rdfs:label "Aga-Oglu, Mehmet, 1896-1949" ;
+    owl:sameAs wd:Q16224169 ;
+    skos:exactMatch wd:Q16224169 ;
+    skos:prefLabel "Aga-Oglu, Mehmet, 1896-1949"@en ;
+    mbs:reconciledTo wd:Q16224169 ;
+    mbs:seedId "Aga_Oglu_Mehmet_1896_1949" .
+
 kg:agent_Q182921 a crm:E21_Person ;
     rdfs:label "Reza Shah Pahlavi, Shah of Iran, 1878-1944" ;
     rdfs:comment "First king of the Pahlavi era" ;
@@ -72,6 +80,25 @@ kg:agent_Q4751824 a crm:E21_Person ;
     mbs:reconciledTo wd:Q4751824 ;
     mbs:seedId "Anist_s_M_r_al_Karmil_ab_1866_1947" .
 
+kg:agent_Q5303861 a crm:E21_Person ;
+    rdfs:label "Kuban, Dogan" ;
+    owl:sameAs wd:Q5303861 ;
+    skos:exactMatch wd:Q5303861 ;
+    skos:prefLabel "Kuban, Dogan"@en ;
+    mbs:reconciledTo wd:Q5303861 ;
+    mbs:seedId "Kuban_Dogan" .
+
+kg:agent_Q5701361 a crm:E21_Person ;
+    rdfs:label "Lockhart, Laurence" ;
+    owl:sameAs wd:Q5701361 ;
+    skos:altLabel "Dr. Laurence Lockhart"@en,
+        "Dr. Laurence Lockhart,"@en,
+        "Laurence Lockhart"@en ;
+    skos:exactMatch wd:Q5701361 ;
+    skos:prefLabel "Lockhart, Laurence"@en ;
+    mbs:reconciledTo wd:Q5701361 ;
+    mbs:seedId "Lockhart_Laurence" .
+
 kg:agent_Q62933 a crm:E21_Person ;
     rdfs:label "Herzfeld, Ernst, 1879-1948" ;
     owl:sameAs wd:Q62933 ;
@@ -88,6 +115,14 @@ kg:agent_Q6765187 a crm:E21_Person ;
     mbs:reconciledTo wd:Q6765187 ;
     mbs:seedId "Blake_Marion_Elizabeth" .
 
+kg:agent_Q84873 a crm:E21_Person ;
+    rdfs:label "Sarre, Friedrich Paul Theodor, 1865-1945" ;
+    owl:sameAs wd:Q84873 ;
+    skos:exactMatch wd:Q84873 ;
+    skos:prefLabel "Sarre, Friedrich Paul Theodor, 1865-1945"@en ;
+    mbs:reconciledTo wd:Q84873 ;
+    mbs:seedId "Sarre_Friedrich_Paul_Theodor_1865_1945" .
+
 kg:agent_Q86930 a crm:E21_Person ;
     rdfs:label "Sarre, Friedrich, 1865-1945" ;
     rdfs:comment "Colleague of Herzfeld; FSA.A.06." ;
@@ -97,6 +132,14 @@ kg:agent_Q86930 a crm:E21_Person ;
     skos:prefLabel "Sarre, Friedrich, 1865-1945"@en ;
     mbs:reconciledTo wd:Q86930 ;
     mbs:seedId "Sarre_Friedrich_1865_1945" .
+
+kg:agent_Q94652926 a crm:E21_Person ;
+    rdfs:label "Moe, Henry Allen" ;
+    owl:sameAs wd:Q94652926 ;
+    skos:exactMatch wd:Q94652926 ;
+    skos:prefLabel "Moe, Henry Allen"@en ;
+    mbs:reconciledTo wd:Q94652926 ;
+    mbs:seedId "Moe_Henry_Allen" .
 
 kg:agent_Q958788 a crm:E21_Person ;
     rdfs:label "Pope, Arthur Upham, 1881-1969" ;
@@ -109,10 +152,96 @@ kg:agent_Q958788 a crm:E21_Person ;
 kg:agent_Q98396885 a crm:E21_Person ;
     rdfs:label "Smith, Myron Bement, 1897-1970" ;
     owl:sameAs wd:Q98396885 ;
+    skos:altLabel "Myron Bement Smith"@en ;
     skos:exactMatch wd:Q98396885 ;
     skos:prefLabel "Smith, Myron Bement, 1897-1970"@en ;
     mbs:reconciledTo wd:Q98396885 ;
     mbs:seedId "Smith_Myron_Bement_1897_1970" .
+
+kg:agent_american_council_of_learned_societies a crm:E74_Group ;
+    rdfs:label "American Council of Learned Societies" ;
+    skos:prefLabel "American Council of Learned Societies"@en ;
+    mbs:seedId "american_council_of_learned_societies" .
+
+kg:agent_american_institute_for_persian_art_and_archaeology a crm:E74_Group ;
+    rdfs:label "American Institute for Persian Art and Archaeology" ;
+    skos:prefLabel "American Institute for Persian Art and Archaeology"@en ;
+    mbs:seedId "american_institute_for_persian_art_and_archaeology" .
+
+kg:agent_becker_carl_heinrich_1876_1933 a crm:E21_Person ;
+    rdfs:label "Becker, Carl Heinrich, 1876-1933" ;
+    skos:prefLabel "Becker, Carl Heinrich, 1876-1933"@en ;
+    mbs:seedId "becker_carl_heinrich_1876_1933" .
+
+kg:agent_bell_gertrude_lowthian_1868_1926 a crm:E21_Person ;
+    rdfs:label "Bell, Gertrude Lowthian, 1868-1926" ;
+    skos:prefLabel "Bell, Gertrude Lowthian, 1868-1926"@en ;
+    mbs:seedId "bell_gertrude_lowthian_1868_1926" .
+
+kg:agent_berchem_max_van_1863_1921 a crm:E21_Person ;
+    rdfs:label "Berchem, Max van, 1863-1921" ;
+    skos:prefLabel "Berchem, Max van, 1863-1921"@en ;
+    mbs:seedId "berchem_max_van_1863_1921" .
+
+kg:agent_columbia_university a crm:E74_Group ;
+    rdfs:label "Columbia University" ;
+    skos:prefLabel "Columbia University"@en ;
+    mbs:seedId "columbia_university" .
+
+kg:agent_harvard_university a crm:E74_Group ;
+    rdfs:label "Harvard University" ;
+    skos:prefLabel "Harvard University"@en ;
+    mbs:seedId "harvard_university" .
+
+kg:agent_institute_of_fine_arts_at_new_york_university a crm:E74_Group ;
+    rdfs:label "Institute of Fine Arts at New York University" ;
+    skos:prefLabel "Institute of Fine Arts at New York University"@en ;
+    mbs:seedId "institute_of_fine_arts_at_new_york_university" .
+
+kg:agent_kaiser_friedrich_museum a crm:E74_Group ;
+    rdfs:label "Kaiser-Friedrich-Museum" ;
+    skos:prefLabel "Kaiser-Friedrich-Museum"@en ;
+    mbs:seedId "kaiser_friedrich_museum" .
+
+kg:agent_krefter_friedrich_1898_1995 a crm:E21_Person ;
+    rdfs:label "Krefter, Friedrich, 1898-1995" ;
+    skos:prefLabel "Krefter, Friedrich, 1898-1995"@en ;
+    mbs:seedId "krefter_friedrich_1898_1995" .
+
+kg:agent_library_of_congress a crm:E74_Group ;
+    rdfs:label "Library of Congress" ;
+    skos:prefLabel "Library of Congress"@en ;
+    mbs:seedId "library_of_congress" .
+
+kg:agent_meyer_eduard_1855_1930 a crm:E21_Person ;
+    rdfs:label "Meyer, Eduard, 1855-1930" ;
+    skos:prefLabel "Meyer, Eduard, 1855-1930"@en ;
+    mbs:seedId "meyer_eduard_1855_1930" .
+
+kg:agent_stuart_college a crm:E74_Group ;
+    rdfs:label "Stuart College" ;
+    skos:prefLabel "Stuart College"@en ;
+    mbs:seedId "stuart_college" .
+
+kg:agent_the_johns_hopkins_university a crm:E74_Group ;
+    rdfs:label "The Johns Hopkins University" ;
+    skos:prefLabel "The Johns Hopkins University"@en ;
+    mbs:seedId "the_johns_hopkins_university" .
+
+kg:agent_us_army_medical_corps a crm:E74_Group ;
+    rdfs:label "US Army Medical Corps" ;
+    skos:prefLabel "US Army Medical Corps"@en ;
+    mbs:seedId "us_army_medical_corps" .
+
+kg:agent_verlag_philipp_von_zabern a crm:E74_Group ;
+    rdfs:label "Verlag Philipp von Zabern" ;
+    skos:prefLabel "Verlag Philipp von Zabern"@en ;
+    mbs:seedId "verlag_philipp_von_zabern" .
+
+kg:agent_yale_university a crm:E74_Group ;
+    rdfs:label "Yale University" ;
+    skos:prefLabel "Yale University"@en ;
+    mbs:seedId "yale_university" .
 
 kg:concept_aat_300007391 a crm:E55_Type,
         skos:Concept ;
@@ -281,6 +410,155 @@ kg:concept_aat_300451052 a crm:E55_Type,
     mbs:reconciledTo aat:300451052 ;
     mbs:seedId "squeezes" .
 
+kg:concept_aerial_photography a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Aerial photography" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Aerial photography"@en ;
+    mbs:seedId "aerial_photography" .
+
+kg:concept_ancient_near_eastern_art a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Ancient Near Eastern Art" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Ancient Near Eastern Art"@en ;
+    mbs:seedId "ancient_near_eastern_art" .
+
+kg:concept_architectural_drawing a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Architectural drawing" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Architectural drawing"@en ;
+    mbs:seedId "architectural_drawing" .
+
+kg:concept_art_of_the_islamic_world a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Art of the Islamic World" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Art of the Islamic World"@en ;
+    mbs:seedId "art_of_the_islamic_world" .
+
+kg:concept_articles a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Articles" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Articles"@en ;
+    mbs:seedId "articles" .
+
+kg:concept_ayyubids a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Ayyubids" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Ayyubids"@en ;
+    mbs:seedId "ayyubids" .
+
+kg:concept_blueprints a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Blueprints" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Blueprints"@en ;
+    mbs:seedId "blueprints" .
+
+kg:concept_clippings a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Clippings" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Clippings"@en ;
+    mbs:seedId "clippings" .
+
+kg:concept_decoration_and_ornament a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Decoration and ornament" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Decoration and ornament"@en ;
+    mbs:seedId "decoration_and_ornament" .
+
+kg:concept_description_and_travel a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Description and Travel" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Description and Travel"@en ;
+    mbs:seedId "description_and_travel" .
+
+kg:concept_diaries a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Diaries" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Diaries"@en ;
+    mbs:seedId "diaries" .
+
+kg:concept_drawings a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Drawings" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Drawings"@en ;
+    mbs:seedId "drawings" .
+
+kg:concept_excavations_archaeology a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Excavations (Archaeology)" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Excavations (Archaeology)"@en ;
+    mbs:seedId "excavations_archaeology" .
+
+kg:concept_history a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "History" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "History"@en ;
+    mbs:seedId "history" .
+
+kg:concept_iran_description_and_travel a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Iran-description and travel" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Iran-description and travel"@en ;
+    mbs:seedId "iran_description_and_travel" .
+
+kg:concept_iran_history_20th_century a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Iran-History 20th Century" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Iran-History 20th Century"@en ;
+    mbs:seedId "iran_history_20th_century" .
+
+kg:concept_iran_social_life_and_customs a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Iran-social life and customs" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Iran-social life and customs"@en ;
+    mbs:seedId "iran_social_life_and_customs" .
+
+kg:concept_islamic_architecture_middle_east a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Islamic Architecture-Middle East" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Islamic Architecture-Middle East"@en ;
+    mbs:seedId "islamic_architecture_middle_east" .
+
+kg:concept_islamic_architecture_turkey a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Islamic Architecture-Turkey" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Islamic Architecture-Turkey"@en ;
+    mbs:seedId "islamic_architecture_turkey" .
+
+kg:concept_journals_accounts a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Journals (accounts)" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Journals (accounts)"@en ;
+    mbs:seedId "journals_accounts" .
+
+kg:concept_lcsh_sh85000061 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Abbasids" ;
+    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85000061> ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Abbasids"@en ;
+    mbs:reconciledTo <https://id.loc.gov/authorities/subjects/sh85000061> ;
+    mbs:seedId "Abbasids" .
+
 kg:concept_lcsh_sh85005757 a crm:E55_Type,
         skos:Concept ;
     rdfs:label "Antiquities" ;
@@ -289,6 +567,79 @@ kg:concept_lcsh_sh85005757 a crm:E55_Type,
     skos:prefLabel "Antiquities"@en ;
     mbs:reconciledTo <https://id.loc.gov/authorities/subjects/sh85005757> ;
     mbs:seedId "Antiquities" .
+
+kg:concept_lcsh_sh85066566 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Inscriptions" ;
+    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85066566> ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Inscriptions"@en ;
+    mbs:reconciledTo <https://id.loc.gov/authorities/subjects/sh85066566> ;
+    mbs:seedId "Inscriptions" .
+
+kg:concept_lcsh_sh85105729 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Pottery" ;
+    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85105729> ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Pottery"@en ;
+    mbs:reconciledTo <https://id.loc.gov/authorities/subjects/sh85105729> ;
+    mbs:seedId "Pottery" .
+
+kg:concept_numismatics a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Numismatics" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Numismatics"@en ;
+    mbs:seedId "numismatics" .
+
+kg:concept_paper_squeezes a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Paper Squeezes" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Paper Squeezes"@en ;
+    mbs:seedId "paper_squeezes" .
+
+kg:concept_rubbings a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Rubbings" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Rubbings"@en ;
+    mbs:seedId "rubbings" .
+
+kg:concept_sketches a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Sketches" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "Sketches"@en ;
+    mbs:seedId "sketches" .
+
+kg:concept_united_states_social_life_and_customs a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "United States-Social life and customs" ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:prefLabel "United States-Social life and customs"@en ;
+    mbs:seedId "united_states_social_life_and_customs" .
+
+kg:place_bakun_tall_e_iran a crm:E53_Place ;
+    rdfs:label "Bakun, Tall-e (Iran)" ;
+    skos:prefLabel "Bakun, Tall-e (Iran)"@en ;
+    mbs:seedId "bakun_tall_e_iran" .
+
+kg:place_mesopotamia a crm:E53_Place ;
+    rdfs:label "Mesopotamia" ;
+    skos:prefLabel "Mesopotamia"@en ;
+    mbs:seedId "mesopotamia" .
+
+kg:place_newark_valley_new_york a crm:E53_Place ;
+    rdfs:label "Newark Valley, New York" ;
+    skos:prefLabel "Newark Valley, New York"@en ;
+    mbs:seedId "newark_valley_new_york" .
+
+kg:place_taq_e_bostan_site_iran a crm:E53_Place ;
+    rdfs:label "Taq-e Bostan Site (Iran)" ;
+    skos:prefLabel "Taq-e Bostan Site (Iran)"@en ;
+    mbs:seedId "taq_e_bostan_site_iran" .
 
 kg:place_tgn_1000004 a crm:E53_Place ;
     rdfs:label "Asia" ;
@@ -416,6 +767,7 @@ kg:place_tgn_7001374 a crm:E53_Place ;
         wd:Q42053,
         <https://id.loc.gov/authorities/names/n79061284> ;
     skos:altLabel "Isfahan city"@en,
+        "Isfahan, Iran"@en,
         "Iṣfahān (Iran)"@en ;
     skos:exactMatch tgn:7001374,
         wd:Q42053,
@@ -442,9 +794,11 @@ kg:place_tgn_7001658 a crm:E53_Place ;
     rdfs:comment "Herzfeld excavation site; FSA.A.06." ;
     owl:sameAs tgn:7001658,
         wd:Q203402 ;
+    skos:altLabel "Pasargadae (Extinct city)"@en ;
     skos:definition "Herzfeld excavation site; FSA.A.06." ;
     skos:exactMatch tgn:7001658,
-        wd:Q203402 ;
+        wd:Q203402,
+        <https://id.loc.gov/authorities/subjects/sh2004001811> ;
     skos:prefLabel "Pasargadae"@en ;
     mbs:reconciledTo tgn:7001658,
         wd:Q203402 ;
@@ -508,6 +862,8 @@ kg:place_tgn_7011132 a crm:E53_Place ;
     owl:sameAs tgn:7011132,
         wd:Q170242,
         <https://id.loc.gov/authorities/names/n79055264> ;
+    skos:altLabel "Sāmarrāʼ (Iraq)"@en,
+        "Sāmarrāʼ (Iraq)"@en ;
     skos:definition "Herzfeld excavation site; FSA.A.06." ;
     skos:exactMatch tgn:7011132,
         wd:Q170242,
@@ -533,6 +889,7 @@ kg:place_tgn_7014449 a crm:E53_Place ;
     rdfs:label "Rochester, New York" ;
     owl:sameAs tgn:7014449,
         wd:Q49218 ;
+    skos:altLabel "Rochester, NY"@en ;
     skos:exactMatch tgn:7014449,
         wd:Q49218 ;
     skos:prefLabel "Rochester, New York"@en ;
@@ -558,6 +915,8 @@ kg:place_tgn_7014497 a crm:E53_Place ;
 kg:built_Q1227533 a crm:E22_Human_Made_Object,
         skos:Concept ;
     rdfs:label "Masjid-i Jomeh" ;
+    crm:P2_has_type kg:concept_aat_300007691 ;
+    owl:sameAs wd:Q1227533 ;
     skos:altLabel "Isfahan Masjid-i Jomeh"@en,
         "Jameh Mosque of Isfahan"@en,
         "Masjid-i Jum'a"@en,
@@ -570,6 +929,7 @@ kg:built_Q1227533 a crm:E22_Human_Made_Object,
         <https://id.loc.gov/authorities/subjects/sh85087470> ;
     skos:exactMatch tgn:7001374,
         wd:Q1227533 ;
+    skos:inScheme kg:scheme_islamic_archives ;
     skos:prefLabel "Masjid-i Jomeh"@en ;
     mbs:reconciledTo wd:Q1227533 ;
     mbs:seedId "Masjid_i_Jomeh" .
@@ -597,20 +957,6 @@ kg:concept_aat_300000996 a crm:E55_Type,
     skos:prefLabel "Islamic architecture"@en ;
     mbs:reconciledTo aat:300000996 ;
     mbs:seedId "islamic_architecture" .
-
-kg:concept_aat_300007691 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Mosques" ;
-    skos:broader kg:concept_aat_300000996 ;
-    skos:closeMatch iconclass:11Q71 ;
-    skos:exactMatch aat:300007691,
-        wd:Q32815,
-        <https://id.loc.gov/authorities/subjects/sh85087470> ;
-    skos:inScheme kg:scheme_islamic_archives ;
-    skos:narrower kg:built_Q1227533 ;
-    skos:prefLabel "Mosques"@en ;
-    mbs:reconciledTo aat:300007691 ;
-    mbs:seedId "mosques" .
 
 kg:concept_aat_300010898 a crm:E55_Type,
         skos:Concept ;
@@ -664,6 +1010,20 @@ kg:concept_aat_300263552 a crm:E55_Type,
     skos:prefLabel "Architecture"@en ;
     mbs:reconciledTo aat:300263552 ;
     mbs:seedId "architecture" .
+
+kg:concept_aat_300007691 a crm:E55_Type,
+        skos:Concept ;
+    rdfs:label "Mosques" ;
+    skos:broader kg:concept_aat_300000996 ;
+    skos:closeMatch iconclass:11Q71 ;
+    skos:exactMatch aat:300007691,
+        wd:Q32815,
+        <https://id.loc.gov/authorities/subjects/sh85087470> ;
+    skos:inScheme kg:scheme_islamic_archives ;
+    skos:narrower kg:built_Q1227533 ;
+    skos:prefLabel "Mosques"@en ;
+    mbs:reconciledTo aat:300007691 ;
+    mbs:seedId "mosques" .
 
 kg:scheme_islamic_archives a skos:ConceptScheme ;
     rdfs:label "Islamic Archives control vocabulary" ;

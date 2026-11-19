@@ -7,8 +7,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix tgn: <http://vocab.getty.edu/tgn/> .
-@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 kg:event_production_ref6208 a crm:E12_Production ;
@@ -16,8 +14,7 @@ kg:event_production_ref6208 a crm:E12_Production ;
     crm:P108_has_produced kg:physical_ref6208 ;
     crm:P14_carried_out_by kg:agent_Q62933 ;
     crm:P4_has_time_span kg:time_ref6208 ;
-    crm:P7_took_place_at kg:concept_lcsh_sh2004001811,
-        kg:place_aleppo_syria,
+    crm:P7_took_place_at kg:place_aleppo_syria,
         kg:place_baghdad_iraq,
         kg:place_croatia,
         kg:place_damascus_syria,
@@ -31,7 +28,6 @@ kg:event_production_ref6208 a crm:E12_Production ;
         kg:place_khark_island_iran,
         kg:place_maarrat_al_numan_syria,
         kg:place_ray_iran,
-        kg:place_samarra_iraq,
         kg:place_shiraz_iran,
         kg:place_tgn_1000004,
         kg:place_tgn_1000118,
@@ -40,7 +36,9 @@ kg:event_production_ref6208 a crm:E12_Production ;
         kg:place_tgn_7000231,
         kg:place_tgn_7001374,
         kg:place_tgn_7001657,
+        kg:place_tgn_7001658,
         kg:place_tgn_7002229,
+        kg:place_tgn_7011132,
         kg:place_tus_iran .
 
 kg:event_production_ref6211 a crm:E12_Production ;
@@ -11861,11 +11859,6 @@ kg:concept_cuneiform_inscriptions_elamite a crm:E55_Type,
     rdfs:label "Cuneiform inscriptions, Elamite" ;
     mbs:sourceString "Cuneiform inscriptions, Elamite" .
 
-kg:concept_excavations_archaeology a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Excavations (Archaeology)" ;
-    mbs:sourceString "Excavations (Archaeology)" .
-
 kg:concept_inscriptions_pahlavi a crm:E55_Type,
         skos:Concept ;
     rdfs:label "Inscriptions, Pahlavi" ;
@@ -11875,13 +11868,6 @@ kg:concept_inscriptions_parthian a crm:E55_Type,
         skos:Concept ;
     rdfs:label "Inscriptions, Parthian" ;
     mbs:sourceString "Inscriptions, Parthian" .
-
-kg:concept_lcsh_sh2004001811 a crm:E53_Place ;
-    rdfs:label "Pasargadae (Extinct city)" ;
-    owl:sameAs <https://id.loc.gov/authorities/subjects/sh2004001811> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo <https://id.loc.gov/authorities/subjects/sh2004001811> ;
-    mbs:sourceString "Pasargadae (Extinct city)" .
 
 kg:concept_lcsh_sh85006507 a crm:E55_Type,
         skos:Concept ;
@@ -14564,10 +14550,6 @@ kg:place_ray_iran a crm:E53_Place ;
     rdfs:label "Ray (Iran)" ;
     mbs:sourceString "Ray (Iran)" .
 
-kg:place_samarra_iraq a crm:E53_Place ;
-    rdfs:label "Sāmarrāʼ (Iraq)" ;
-    mbs:sourceString "Sāmarrāʼ (Iraq)" .
-
 kg:place_shiraz_iran a crm:E53_Place ;
     rdfs:label "Shīrāz (Iran)" ;
     mbs:sourceString "Shīrāz (Iran)" .
@@ -14575,57 +14557,6 @@ kg:place_shiraz_iran a crm:E53_Place ;
 kg:place_sistan_va_baluchistan_iran a crm:E53_Place ;
     rdfs:label "Sīstān va Balūchistān (Iran)" ;
     mbs:sourceString "Sīstān va Balūchistān (Iran)" .
-
-kg:place_tgn_1000146 a crm:E53_Place ;
-    rdfs:label "Syria" ;
-    owl:sameAs tgn:1000146,
-        wd:Q858,
-        <https://id.loc.gov/authorities/names/n80061798> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:1000146,
-        wd:Q858,
-        <https://id.loc.gov/authorities/names/n80061798> ;
-    mbs:sourceString "Syria" .
-
-kg:place_tgn_7000198 a crm:E53_Place ;
-    rdfs:label "India" ;
-    owl:sameAs tgn:7000198,
-        wd:Q668,
-        <https://id.loc.gov/authorities/names/n80125948> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:7000198,
-        wd:Q668,
-        <https://id.loc.gov/authorities/names/n80125948> ;
-    mbs:sourceString "India" .
-
-kg:place_tgn_7001374 a crm:E53_Place ;
-    rdfs:label "Iṣfahān (Iran)" ;
-    owl:sameAs tgn:7001374,
-        wd:Q42053 ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:7001374,
-        wd:Q42053 ;
-    mbs:sourceString "Iṣfahān (Iran)" .
-
-kg:place_tgn_7001657 a crm:E53_Place ;
-    rdfs:label "Naqsh-i Rustam (Iran)" ;
-    owl:sameAs tgn:7001657,
-        wd:Q733613 ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:7001657,
-        wd:Q733613 ;
-    mbs:sourceString "Naqsh-i Rustam (Iran)" .
-
-kg:place_tgn_7002229 a crm:E53_Place ;
-    rdfs:label "Persepolis (Iran)" ;
-    owl:sameAs tgn:7002229,
-        wd:Q129072,
-        <https://id.loc.gov/authorities/names/n80063345> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:7002229,
-        wd:Q129072,
-        <https://id.loc.gov/authorities/names/n80063345> ;
-    mbs:sourceString "Persepolis (Iran)" .
 
 kg:place_tus_iran a crm:E53_Place ;
     rdfs:label "Ṭūs (Iran)" ;
@@ -16209,11 +16140,11 @@ kg:physical_ref6208 a crm:E22_Human_Made_Object,
         kg:concept_old_persian_inscriptions,
         kg:concept_sassanids ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
+            rdfs:label "8 Items" ],
+        [ a crm:E54_Dimension ;
             rdfs:label "various dimensions" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Travel journals" ],
-        [ a crm:E54_Dimension ;
-            rdfs:label "8 Items" ] ;
+            rdfs:label "Travel journals" ] ;
     crm:P46_is_composed_of kg:physical_ref6211,
         kg:physical_ref6229,
         kg:physical_ref6330,
@@ -16229,18 +16160,18 @@ kg:physical_ref6211 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "N-47: \"Trip to Khurramābād and Ahwaz\"" ;
     crm:P2_has_type kg:concept_aat_300263552,
+        kg:concept_aat_300264354,
         kg:concept_description_and_travel,
         kg:concept_diaries,
         kg:concept_inscriptions_arabic,
         kg:concept_lcsh_sh85005757,
-        kg:concept_lcsh_sh85066566,
-        kg:concept_notebooks ;
+        kg:concept_lcsh_sh85066566 ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "1 Diary" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "14.6 cm. x 8 cm." ],
         [ a crm:E54_Dimension ;
-            rdfs:label "1 volume (46 pages)" ] ;
+            rdfs:label "1 volume (46 pages)" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "1 Diary" ] ;
     crm:P46_is_composed_of kg:physical_ref6213,
         kg:physical_ref6215,
         kg:physical_ref6217,
@@ -16250,8 +16181,8 @@ kg:physical_ref6211 a crm:E22_Human_Made_Object,
         kg:physical_ref6225,
         kg:physical_ref6227 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc33d32afd5-a1e7-4c0c-9206-0d4505026035> ;
-    mbs:mediaType kg:concept_diaries,
-        kg:concept_notebooks .
+    mbs:mediaType kg:concept_aat_300264354,
+        kg:concept_diaries .
 
 kg:physical_ref6213 a crm:E22_Human_Made_Object,
         mbs:DocumentaryFile,
@@ -16313,14 +16244,14 @@ kg:physical_ref6229 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "N-81: \"Von Kalat Schergat nach Schiraz, 1905\"" ;
     crm:P2_has_type kg:concept_aat_300263552,
+        kg:concept_aat_300264354,
         kg:concept_description_and_travel,
         kg:concept_diaries,
-        kg:concept_lcsh_sh85005757,
-        kg:concept_notebooks ;
+        kg:concept_lcsh_sh85005757 ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "20.5 cm. x 17.1 cm." ],
-        [ a crm:E54_Dimension ;
             rdfs:label "1 Diary" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "20.5 cm. x 17.1 cm." ],
         [ a crm:E54_Dimension ;
             rdfs:label "1 volume (98 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref6231,
@@ -16376,8 +16307,8 @@ kg:physical_ref6229 a crm:E22_Human_Made_Object,
         kg:physical_ref6326,
         kg:physical_ref6328 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3e7fef596-53aa-472e-a2df-29d26e5a400d> ;
-    mbs:mediaType kg:concept_diaries,
-        kg:concept_notebooks .
+    mbs:mediaType kg:concept_aat_300264354,
+        kg:concept_diaries .
 
 kg:physical_ref6231 a crm:E22_Human_Made_Object,
         mbs:DocumentaryFile,
@@ -16799,16 +16730,16 @@ kg:physical_ref6330 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "N-82: \"Von Schiraz nach Teheran und Konstantinopel, 1905\"" ;
     crm:P2_has_type kg:concept_aat_300263552,
+        kg:concept_aat_300264354,
         kg:concept_description_and_travel,
         kg:concept_diaries,
-        kg:concept_lcsh_sh85005757,
-        kg:concept_notebooks ;
+        kg:concept_lcsh_sh85005757 ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
+            rdfs:label "1 Diary" ],
+        [ a crm:E54_Dimension ;
             rdfs:label "1 volume (68 pages)" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "20.5 cm. x 17.1 cm." ],
-        [ a crm:E54_Dimension ;
-            rdfs:label "1 Diary" ] ;
+            rdfs:label "20.5 cm. x 17.1 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref6331,
         kg:physical_ref6332,
         kg:physical_ref6334,
@@ -16829,8 +16760,8 @@ kg:physical_ref6330 a crm:E22_Human_Made_Object,
         kg:physical_ref6363,
         kg:physical_ref6365 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3c13ba021-4ce1-44e6-b92e-7ef46fff0c88> ;
-    mbs:mediaType kg:concept_diaries,
-        kg:concept_notebooks .
+    mbs:mediaType kg:concept_aat_300264354,
+        kg:concept_diaries .
 
 kg:physical_ref6331 a crm:E22_Human_Made_Object,
         mbs:DocumentaryFile,
@@ -16988,12 +16919,12 @@ kg:physical_ref6367 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "N-83: \"Tagebuch. Persien I, 1923\"" ;
     crm:P2_has_type kg:concept_aat_300263552,
+        kg:concept_aat_300264354,
         kg:concept_ancient_near_eastern_art,
         kg:concept_art_of_the_islamic_world,
         kg:concept_description_and_travel,
         kg:concept_diaries,
-        kg:concept_lcsh_sh85005757,
-        kg:concept_notebooks ;
+        kg:concept_lcsh_sh85005757 ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             rdfs:label "1 Diary" ],
         [ a crm:E54_Dimension ;
@@ -17086,8 +17017,8 @@ kg:physical_ref6367 a crm:E22_Human_Made_Object,
         kg:physical_ref6527,
         kg:physical_ref6529 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc398aa80f2-6c11-427c-99f9-9e54fff1abc1> ;
-    mbs:mediaType kg:concept_diaries,
-        kg:concept_notebooks .
+    mbs:mediaType kg:concept_aat_300264354,
+        kg:concept_diaries .
 
 kg:physical_ref6369 a crm:E22_Human_Made_Object,
         mbs:DocumentaryFile,
@@ -17773,12 +17704,12 @@ kg:physical_ref6531 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "N-84: Tagebuch. Persien II, 1923-1924" ;
     crm:P2_has_type kg:concept_aat_300263552,
+        kg:concept_aat_300264354,
         kg:concept_ancient_near_eastern_art,
         kg:concept_art_of_the_islamic_world,
         kg:concept_description_and_travel,
         kg:concept_diaries,
-        kg:concept_lcsh_sh85005757,
-        kg:concept_notebooks ;
+        kg:concept_lcsh_sh85005757 ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             rdfs:label "1 volume (90 pages)" ],
         [ a crm:E54_Dimension ;
@@ -17856,8 +17787,8 @@ kg:physical_ref6531 a crm:E22_Human_Made_Object,
         kg:physical_ref6663,
         kg:physical_ref6665 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc36e1eac60-8d43-46dc-863c-57752ab9e4df> ;
-    mbs:mediaType kg:concept_diaries,
-        kg:concept_notebooks .
+    mbs:mediaType kg:concept_aat_300264354,
+        kg:concept_diaries .
 
 kg:physical_ref6533 a crm:E22_Human_Made_Object,
         mbs:DocumentaryFile,
@@ -18423,12 +18354,12 @@ kg:physical_ref6667 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "N-85: \"Afghanistan -Ostpersien I. 1924-1925\"" ;
     crm:P2_has_type kg:concept_aat_300263552,
+        kg:concept_aat_300264354,
         kg:concept_ancient_near_eastern_art,
         kg:concept_art_of_the_islamic_world,
         kg:concept_description_and_travel,
         kg:concept_diaries,
-        kg:concept_lcsh_sh85005757,
-        kg:concept_notebooks ;
+        kg:concept_lcsh_sh85005757 ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             rdfs:label "1 Diary" ],
         [ a crm:E54_Dimension ;
@@ -18460,8 +18391,8 @@ kg:physical_ref6667 a crm:E22_Human_Made_Object,
         kg:physical_ref6711,
         kg:physical_ref6713 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3569de86a-6959-4a46-90b4-f33fc2b03123> ;
-    mbs:mediaType kg:concept_diaries,
-        kg:concept_notebooks .
+    mbs:mediaType kg:concept_aat_300264354,
+        kg:concept_diaries .
 
 kg:physical_ref6669 a crm:E22_Human_Made_Object,
         mbs:DocumentaryFile,
@@ -19066,32 +18997,6 @@ kg:concept_inscriptions_arabic a crm:E55_Type,
     rdfs:label "Inscriptions, Arabic" ;
     mbs:sourceString "Inscriptions, Arabic" .
 
-kg:concept_lcsh_sh85066566 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Inscriptions" ;
-    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85066566> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:sourceString "Inscriptions" .
-
-kg:place_tgn_1000144 a crm:E53_Place ;
-    rdfs:label "Turkey" ;
-    owl:sameAs tgn:1000144,
-        wd:Q43 ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:1000144,
-        wd:Q43 ;
-    mbs:sourceString "Turkey" .
-
-kg:concept_ancient_near_eastern_art a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Ancient Near Eastern Art" ;
-    mbs:sourceString "Ancient Near Eastern Art" .
-
-kg:concept_art_of_the_islamic_world a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Art of the Islamic World" ;
-    mbs:sourceString "Art of the Islamic World" .
-
 kg:component_ref6208 a crm:E73_Information_Object,
         mbs:ArchivalComponent ;
     rdfs:label "Travel Journals" ;
@@ -19144,7 +19049,6 @@ kg:component_ref6208 a crm:E73_Information_Object,
         "Scope and Contents The travel journals are in Herzfeld's handwriting in German. They have been transliterated into typed versions of which each page is faced by a xerox copy of the original, showing sketches and inscriptions." ;
     crm:P48_has_preferred_identifier kg:id_ark_ref6208 ;
     crm:P67_refers_to kg:agent_Q62933,
-        kg:concept_lcsh_sh2004001811,
         kg:note_ref6208_altformavail_0,
         kg:note_ref6208_arrangement_0,
         kg:note_ref6208_bioghist_0,
@@ -19176,7 +19080,6 @@ kg:component_ref6208 a crm:E73_Information_Object,
         kg:place_khark_island_iran,
         kg:place_maarrat_al_numan_syria,
         kg:place_ray_iran,
-        kg:place_samarra_iraq,
         kg:place_shiraz_iran,
         kg:place_tgn_1000004,
         kg:place_tgn_1000118,
@@ -19185,7 +19088,9 @@ kg:component_ref6208 a crm:E73_Information_Object,
         kg:place_tgn_7000231,
         kg:place_tgn_7001374,
         kg:place_tgn_7001657,
+        kg:place_tgn_7001658,
         kg:place_tgn_7002229,
+        kg:place_tgn_7011132,
         kg:place_tus_iran ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.06/ref6208> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc398b63d43-935a-4991-809e-ff136c473d6b> ;
@@ -19241,8 +19146,8 @@ kg:component_ref6211 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85005757,
         kg:concept_lcsh_sh85066566 ;
     crm:P1_is_identified_by kg:title_ref6211 ;
-    crm:P2_has_type kg:concept_diaries,
-        kg:concept_notebooks ;
+    crm:P2_has_type kg:concept_aat_300264354,
+        kg:concept_diaries ;
     crm:P3_has_note "Arrangement In the original arrangement of the Ernst Herzfeld Archive, Travel Journals were included in a larger body of diverse material acknowledged by Ernst Herzfeld as his study collection. In the early 1970s, Joseph Upton, for research purpose, rearranged the collection and created a specific series (Ernst Herzfeld Papers, Series 1: Travel Journals, 1905-1928) for eight travel journals. For some reason, Upton has given this journal an accession number related to the series he created for the notebooks (Ernst Herzfeld Papers, Series 3: Notebooks, 1904-1946, 1957, n.d.), probably following Herzfeld's original organization.",
         "General Title is provided by Xavier Courouble, FSg Archives cataloger, based on Joseph Upton's Catalogue of the Herzfeld Archive.",
         "Local Numbers Ernst Herzfeld Papers, N-47 FSA A.6 03.047 FSA A.6 01.01",
@@ -19284,71 +19189,6 @@ kg:component_ref6211 a crm:E73_Information_Object,
     mbs:hasParentComponent kg:component_ref6208 ;
     mbs:hasPhysicalUnit kg:physical_ref6211 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref6211"^^xsd:anyURI .
-
-kg:concept_description_and_travel a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Description and Travel" ;
-    mbs:sourceString "Description and Travel" .
-
-kg:concept_lcsh_sh85005757 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Antiquities" ;
-    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85005757> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:sourceString "Antiquities" .
-
-kg:place_tgn_1000118 a crm:E53_Place ;
-    rdfs:label "Iraq" ;
-    owl:sameAs tgn:1000118,
-        wd:Q796,
-        <https://id.loc.gov/authorities/names/n79077342> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:1000118,
-        wd:Q796,
-        <https://id.loc.gov/authorities/names/n79077342> ;
-    mbs:sourceString "Iraq" .
-
-kg:agent_Q62933 a crm:E21_Person ;
-    rdfs:label "Herzfeld, Ernst, 1879-1948" ;
-    owl:sameAs wd:Q62933 ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo wd:Q62933 ;
-    mbs:sourceString "Herzfeld, Ernst, 1879-1948" .
-
-kg:concept_aat_300263552 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Architecture" ;
-    skos:exactMatch aat:300263552,
-        <https://id.loc.gov/authorities/subjects/sh85006611> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:sourceString "Architecture" .
-
-kg:place_tgn_1000004 a crm:E53_Place ;
-    rdfs:label "Asia" ;
-    owl:sameAs tgn:1000004,
-        wd:Q48,
-        <https://id.loc.gov/authorities/subjects/sh85008606> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:1000004,
-        wd:Q48,
-        <https://id.loc.gov/authorities/subjects/sh85008606> ;
-    mbs:sourceString "Asia" .
-
-kg:place_tgn_7000231 a crm:E53_Place ;
-    rdfs:label "Iran" ;
-    owl:sameAs tgn:7000231,
-        wd:Q794,
-        <https://id.loc.gov/authorities/names/n79039880> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:7000231,
-        wd:Q794,
-        <https://id.loc.gov/authorities/names/n79039880> ;
-    mbs:sourceString "Iran" .
-
-kg:concept_notebooks a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Notebooks" ;
-    mbs:sourceString "Notebooks" .
 
 kg:component_ref6767 a crm:E73_Information_Object,
         mbs:ArchivalComponent ;
@@ -19434,8 +19274,8 @@ kg:component_ref6330 a crm:E73_Information_Object,
         kg:concept_description_and_travel,
         kg:concept_lcsh_sh85005757 ;
     crm:P1_is_identified_by kg:title_ref6330 ;
-    crm:P2_has_type kg:concept_diaries,
-        kg:concept_notebooks ;
+    crm:P2_has_type kg:concept_aat_300264354,
+        kg:concept_diaries ;
     crm:P3_has_note "Arrangement In the original arrangement of the Ernst Herzfeld Archive, Travel Journals were included in a larger body of diverse material acknowledged by Ernst Herzfeld as his study collection. In the early 1970s, Joseph Upton, for research purpose, rearranged the collection and created a specific series (Ernst Herzfeld Papers, Series 1: Travel Journals, 1905-1928) for eight travel journals. For some reason, Upton has given this journal an accession number related to the series he created for the notebooks (Ernst Herzfeld Papers, Series 3: Notebooks, 1904-1946, 1957, n.d.), probably following Herzfeld's original organization.",
         "General - Additional information from staff reads, \"The handwritten text of the Journal in Gothic script was first transliterated by Mrs. Franz Pariser and later reviewed by Ernst Herzfeld's former collaborator, Friedrich Krefter. Please contact the Archives for digital access to the transliterated copy.\"",
         "Local Numbers Ernst Herzfeld Papers, N-82 FSA A.6 03.082 FSA A.6 01.03",
@@ -19486,11 +19326,6 @@ kg:component_ref6330 a crm:E73_Information_Object,
     mbs:hasPhysicalUnit kg:physical_ref6330 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref6330"^^xsd:anyURI .
 
-kg:concept_diaries a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Diaries" ;
-    mbs:sourceString "Diaries" .
-
 kg:component_ref6667 a crm:E73_Information_Object,
         mbs:ArchivalComponent ;
     rdfs:label "N-85: \"Afghanistan -Ostpersien I. 1924-1925\"" ;
@@ -19526,8 +19361,8 @@ kg:component_ref6667 a crm:E73_Information_Object,
         kg:concept_description_and_travel,
         kg:concept_lcsh_sh85005757 ;
     crm:P1_is_identified_by kg:title_ref6667 ;
-    crm:P2_has_type kg:concept_diaries,
-        kg:concept_notebooks ;
+    crm:P2_has_type kg:concept_aat_300264354,
+        kg:concept_diaries ;
     crm:P3_has_note "Arrangement In the original arrangement of the Ernst Herzfeld Archive, Travel Journals were included in a larger body of diverse material acknowledged by Ernst Herzfeld as his study collection. In the early 1970s, Joseph Upton, for research purpose, rearranged the collection and created a specific series (Ernst Herzfeld Papers, Series 1: Travel Journals, 1905-1928) for eight travel journals. For some reason, Upton has given this journal an accession number related to the series he created for the notebooks (Ernst Herzfeld Papers, Series 3: Notebooks, 1904-1946, 1957, n.d.), probably following Herzfeld's original organization.",
         "General - Additional information from staff reads, \"Only part of the handwritten text of the Journal in German was transliterated and reviewed by Ernst Herzfeld's former collaborator, Friedrich Krefter, with the assistance of his wife, Maria Krefter. Please contact the Archives for digital access to the transliterated copy.\"",
         "Local Numbers Ernst Herzfeld Papers, N-85 FSA A.6 03.085 FSA A.6 01.06",
@@ -19721,8 +19556,8 @@ kg:component_ref6229 a crm:E73_Information_Object,
         kg:concept_description_and_travel,
         kg:concept_lcsh_sh85005757 ;
     crm:P1_is_identified_by kg:title_ref6229 ;
-    crm:P2_has_type kg:concept_diaries,
-        kg:concept_notebooks ;
+    crm:P2_has_type kg:concept_aat_300264354,
+        kg:concept_diaries ;
     crm:P3_has_note "Arrangement In the original arrangement of the Ernst Herzfeld Archive, Travel Journals were included in a larger body of diverse material acknowledged by Ernst Herzfeld as his study collection. In the early 1970s, Joseph Upton, for research purpose, rearranged the collection and created a specific series (Ernst Herzfeld Papers, Series 1: Travel Journals, 1905-1928) for eight travel journals. For some reason, Upton has given this journal an accession number related to the series he created for the notebooks (Ernst Herzfeld Papers, Series 3: Notebooks, 1904-1946, 1957, n.d.), probably following Herzfeld's original organization.",
         "General - Additional information from staff reads, \"The handwritten text of the Journal in Gothic script was first transliterated by Mrs. Franz Pariser and later reviewed by Ernst Herzfeld's former collaborator, Friedrich Krefter. Please contact the Archives for digital access to the transliterated copy.\"",
         "Local Numbers Ernst Herzfeld Papers, N-81 FSA A.6 03.081 FSA A.6 01.02",
@@ -19889,8 +19724,8 @@ kg:component_ref6531 a crm:E73_Information_Object,
         kg:concept_description_and_travel,
         kg:concept_lcsh_sh85005757 ;
     crm:P1_is_identified_by kg:title_ref6531 ;
-    crm:P2_has_type kg:concept_diaries,
-        kg:concept_notebooks ;
+    crm:P2_has_type kg:concept_aat_300264354,
+        kg:concept_diaries ;
     crm:P3_has_note "Arrangement In the original arrangement of the Ernst Herzfeld Archive, Travel Journals were included in a larger body of diverse material acknowledged by Ernst Herzfeld as his study collection. In the early 1970s, Joseph Upton, for research purpose, rearranged the collection and created a specific series (Ernst Herzfeld Papers, Series 1: Travel Journals, 1905-1928) for eight travel journals. For some reason, Upton has given this journal an accession number related to the series he created for the notebooks (Ernst Herzfeld Papers, Series 3: Notebooks, 1904-1946, 1957, n.d.), probably following Herzfeld's original organization.",
         "General - Additional information from staff reads, \"The handwritten text of the Journal in German was transliterated and reviewed by Ernst Herzfeld's former collaborator, Friedrich Krefter, with the assistance of his wife, Maria Krefter. Please contact the Archives for digital access to the transliterated copy.\"",
         "Local Numbers Ernst Herzfeld Papers, N-84 FSA A.6 03.084 FSA A.6 01.05",
@@ -20090,8 +19925,8 @@ kg:component_ref6367 a crm:E73_Information_Object,
         kg:concept_description_and_travel,
         kg:concept_lcsh_sh85005757 ;
     crm:P1_is_identified_by kg:title_ref6367 ;
-    crm:P2_has_type kg:concept_diaries,
-        kg:concept_notebooks ;
+    crm:P2_has_type kg:concept_aat_300264354,
+        kg:concept_diaries ;
     crm:P3_has_note "Arrangement In the original arrangement of the Ernst Herzfeld Archive, Travel Journals were included in a larger body of diverse material acknowledged by Ernst Herzfeld as his study collection. In the early 1970s, Joseph Upton, for research purpose, rearranged the collection and created a specific series (Ernst Herzfeld Papers, Series 1: Travel Journals, 1905-1928) for eight travel journals. For some reason, Upton has given this journal an accession number related to the series he created for the notebooks (Ernst Herzfeld Papers, Series 3: Notebooks, 1904-1946, 1957, n.d.), probably following Herzfeld's original organization.",
         "General - Additional information from staff reads, \"The handwritten text of the Journal in German was transliterated and reviewed by Ernst Herzfeld's former collaborator, Friedrich Krefter, with the assistance of his wife, Maria Krefter. Please contact the Archives for digital access to the transliterated copy.\"",
         "Local Numbers Ernst Herzfeld Papers, N-83 FSA A.6 03.083 FSA A.6 01.04",

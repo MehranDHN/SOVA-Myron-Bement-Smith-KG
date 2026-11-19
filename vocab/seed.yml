@@ -42,8 +42,11 @@ scheme:
     belong to the Islamic Archives holding (FSA.A.04 Myron Bement Smith,
     FSA.A.06 Ernst Herzfeld Papers).
 
+# Agent entries default to people; set kind: group for CRM E74_Group entities.
 agents:
   - label: "Smith, Myron Bement, 1897-1970"
+    altLabels:
+      - "Myron Bement Smith"
     wikidata: Q98396885
     kind: person
   - label: "Sevruguin, Antoin, 1851-1933"
@@ -83,7 +86,76 @@ agents:
     wikidata: Q4751824
     kind: person
     note: Iraqi Catholic priest and Discalced Carmelite friar    
-
+  - label: "Lockhart, Laurence"
+    altLabels:
+      - "Dr. Laurence Lockhart"
+      - "Dr. Laurence Lockhart,"
+      - "Laurence Lockhart"
+    wikidata: Q5701361
+    kind: person
+  - label: "Aga-Oglu, Mehmet, 1896-1949"
+    wikidata: Q16224169
+    kind: person
+  - label: "Kuban, Dogan"
+    wikidata: Q5303861
+    kind: person
+  - label: "Moe, Henry Allen"
+    wikidata: Q94652926
+    kind: person
+  - id: becker_carl_heinrich_1876_1933
+    label: "Becker, Carl Heinrich, 1876-1933"
+    kind: person
+  - id: bell_gertrude_lowthian_1868_1926
+    label: "Bell, Gertrude Lowthian, 1868-1926"
+    kind: person
+  - id: berchem_max_van_1863_1921
+    label: "Berchem, Max van, 1863-1921"
+    kind: person
+  - id: krefter_friedrich_1898_1995
+    label: "Krefter, Friedrich, 1898-1995"
+    kind: person
+  - id: meyer_eduard_1855_1930
+    label: "Meyer, Eduard, 1855-1930"
+    kind: person
+  - label: "Sarre, Friedrich Paul Theodor, 1865-1945"
+    wikidata: Q84873
+    kind: person
+  - id: american_council_of_learned_societies
+    label: American Council of Learned Societies
+    kind: group
+  - id: american_institute_for_persian_art_and_archaeology
+    label: American Institute for Persian Art and Archaeology
+    kind: group
+  - id: columbia_university
+    label: Columbia University
+    kind: group
+  - id: harvard_university
+    label: Harvard University
+    kind: group
+  - id: institute_of_fine_arts_at_new_york_university
+    label: Institute of Fine Arts at New York University
+    kind: group
+  - id: kaiser_friedrich_museum
+    label: Kaiser-Friedrich-Museum
+    kind: group
+  - id: library_of_congress
+    label: Library of Congress
+    kind: group
+  - id: stuart_college
+    label: Stuart College
+    kind: group
+  - id: the_johns_hopkins_university
+    label: The Johns Hopkins University
+    kind: group
+  - id: us_army_medical_corps
+    label: US Army Medical Corps
+    kind: group
+  - id: verlag_philipp_von_zabern
+    label: Verlag Philipp von Zabern
+    kind: group
+  - id: yale_university
+    label: Yale University
+    kind: group
 
 
 
@@ -97,6 +169,8 @@ places:
     wikidata: Q794
     note: Historical English name; same TGN as Iran
   - label: Isfahan
+    altLabels:
+      - "Isfahan, Iran"
     tgn: "7001374"
     wikidata: Q42053
     lcnaf: n79061284
@@ -143,6 +217,8 @@ places:
     tgn: "7007567"
     wikidata: Q60
   - label: "Rochester, New York"
+    altLabels:
+      - "Rochester, NY"
     tgn: "7014449"
     wikidata: Q49218
   - label: "Washington D.C."
@@ -169,20 +245,34 @@ places:
     wikidata: Q43
   - id: samarra
     label: Samarra
+    altLabels:
+      - "Sāmarrāʼ (Iraq)"
+      - "Sāmarrāʼ (Iraq)"
     tgn: "7011132"
     wikidata: Q170242
     lcnaf: n79055264
     note: Herzfeld excavation site; FSA.A.06.
   - id: pasargadae
     label: Pasargadae
+    altLabels:
+      - "Pasargadae (Extinct city)"
     tgn: "7001658"
     wikidata: Q203402
+    lcsh: sh2004001811
     note: Herzfeld excavation site; FSA.A.06.
   - id: aleppo
     label: Aleppo
     tgn: "7002165"
     wikidata: Q41183
     lcnaf: n79055280
+  - id: newark_valley_new_york
+    label: Newark Valley, New York
+  - id: bakun_tall_e_iran
+    label: Bakun, Tall-e (Iran)
+  - id: mesopotamia
+    label: Mesopotamia
+  - id: taq_e_bostan_site_iran
+    label: Taq-e Bostan Site (Iran)
 
 monuments:
   - labels:
@@ -261,6 +351,24 @@ genres:
     label: Squeezes
     aat: "300451052"
     note: Paper squeezes of inscriptions; FSA.A.06.
+  - id: blueprints
+    label: Blueprints
+  - id: clippings
+    label: Clippings
+  - id: articles
+    label: Articles
+  - id: diaries
+    label: Diaries
+  - id: drawings
+    label: Drawings
+  - id: journals_accounts
+    label: "Journals (accounts)"
+  - id: paper_squeezes
+    label: Paper Squeezes
+  - id: rubbings
+    label: Rubbings
+  - id: sketches
+    label: Sketches
 
 subjects:
   - id: islamic_architecture
@@ -296,3 +404,41 @@ subjects:
   - label: "Portrait photography"
     lcsh: sh85101240
     aat: "300015524"
+  - id: iran_description_and_travel
+    label: "Iran-description and travel"
+  - id: iran_history_20th_century
+    label: "Iran-History 20th Century"
+  - id: iran_social_life_and_customs
+    label: "Iran-social life and customs"
+  - id: islamic_architecture_middle_east
+    label: "Islamic Architecture-Middle East"
+  - id: islamic_architecture_turkey
+    label: "Islamic Architecture-Turkey"
+  - id: united_states_social_life_and_customs
+    label: "United States-Social life and customs"
+  - id: ayyubids
+    label: Ayyubids
+  - id: art_of_the_islamic_world
+    label: Art of the Islamic World
+  - id: history
+    label: History
+  - id: excavations_archaeology
+    label: "Excavations (Archaeology)"
+  - label: Pottery
+    lcsh: sh85105729
+  - id: description_and_travel
+    label: Description and Travel
+  - id: decoration_and_ornament
+    label: Decoration and ornament
+  - id: ancient_near_eastern_art
+    label: Ancient Near Eastern Art
+  - id: aerial_photography
+    label: Aerial photography
+  - label: Abbasids
+    lcsh: sh85000061
+  - id: numismatics
+    label: Numismatics
+  - label: Inscriptions
+    lcsh: sh85066566
+  - id: architectural_drawing
+    label: Architectural drawing

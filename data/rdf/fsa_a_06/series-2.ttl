@@ -8,8 +8,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix tgn: <http://vocab.getty.edu/tgn/> .
-@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 kg:event_digitization_fsa_a_06_02_01_01 a crmdig:D2_Digitization_Process ;
@@ -157,8 +155,7 @@ kg:event_production_ref6806 a crm:E12_Production ;
     crm:P108_has_produced kg:physical_ref6806 ;
     crm:P14_carried_out_by kg:agent_Q62933 ;
     crm:P4_has_time_span kg:time_ref6806 ;
-    crm:P7_took_place_at kg:concept_lcsh_sh2004001811,
-        kg:place_aleppo_syria,
+    crm:P7_took_place_at kg:place_aleppo_syria,
         kg:place_baghdad_iraq,
         kg:place_croatia,
         kg:place_damascus_syria,
@@ -172,7 +169,6 @@ kg:event_production_ref6806 a crm:E12_Production ;
         kg:place_khark_island_iran,
         kg:place_maarrat_al_numan_syria,
         kg:place_ray_iran,
-        kg:place_samarra_iraq,
         kg:place_shiraz_iran,
         kg:place_tgn_1000004,
         kg:place_tgn_1000118,
@@ -181,7 +177,9 @@ kg:event_production_ref6806 a crm:E12_Production ;
         kg:place_tgn_7000231,
         kg:place_tgn_7001374,
         kg:place_tgn_7001657,
+        kg:place_tgn_7001658,
         kg:place_tgn_7002229,
+        kg:place_tgn_7011132,
         kg:place_tus_iran .
 
 kg:event_production_ref6808 a crm:E12_Production ;
@@ -244,10 +242,10 @@ kg:event_production_ref6942 a crm:E12_Production ;
     crm:P108_has_produced kg:physical_ref6942 ;
     crm:P14_carried_out_by kg:agent_Q62933 ;
     crm:P4_has_time_span kg:time_ref6942 ;
-    crm:P7_took_place_at kg:concept_lcsh_sh2004001811,
-        kg:place_tgn_1000004,
+    crm:P7_took_place_at kg:place_tgn_1000004,
         kg:place_tgn_7000231,
         kg:place_tgn_7001657,
+        kg:place_tgn_7001658,
         kg:place_tgn_7002229 .
 
 kg:event_production_ref6986 a crm:E12_Production ;
@@ -299,19 +297,19 @@ kg:event_production_ref7146 a crm:E12_Production ;
     crm:P108_has_produced kg:physical_ref7146 ;
     crm:P14_carried_out_by kg:agent_Q62933 ;
     crm:P4_has_time_span kg:time_ref7146 ;
-    crm:P7_took_place_at kg:concept_lcsh_sh2004001811,
-        kg:place_tgn_1000004,
-        kg:place_tgn_7000231 .
+    crm:P7_took_place_at kg:place_tgn_1000004,
+        kg:place_tgn_7000231,
+        kg:place_tgn_7001658 .
 
 kg:event_production_ref7180 a crm:E12_Production ;
     rdfs:label "Production of SK-X Pasargadae II" ;
     crm:P108_has_produced kg:physical_ref7180 ;
     crm:P14_carried_out_by kg:agent_Q62933 ;
     crm:P4_has_time_span kg:time_ref7180 ;
-    crm:P7_took_place_at kg:concept_lcsh_sh2004001811,
-        kg:place_tgn_1000004,
+    crm:P7_took_place_at kg:place_tgn_1000004,
         kg:place_tgn_7000231,
         kg:place_tgn_7001657,
+        kg:place_tgn_7001658,
         kg:place_tgn_7002229 .
 
 kg:event_production_ref7214 a crm:E12_Production ;
@@ -468,11 +466,11 @@ kg:event_production_ref7648 a crm:E12_Production ;
     crm:P108_has_produced kg:physical_ref7648 ;
     crm:P14_carried_out_by kg:agent_Q62933 ;
     crm:P4_has_time_span kg:time_ref7648 ;
-    crm:P7_took_place_at kg:concept_lcsh_sh2004001811,
-        kg:place_firuzabad_iran,
+    crm:P7_took_place_at kg:place_firuzabad_iran,
         kg:place_tgn_1000004,
         kg:place_tgn_7000231,
         kg:place_tgn_7001657,
+        kg:place_tgn_7001658,
         kg:place_tgn_7002229 .
 
 kg:event_production_ref7658 a crm:E12_Production ;
@@ -48620,37 +48618,9 @@ kg:place_qum_iran a crm:E53_Place ;
     mbs:reconciledTo <https://id.loc.gov/authorities/names/n82131780> ;
     mbs:sourceString "Qum (Iran)" .
 
-kg:place_samarra_iraq a crm:E53_Place ;
-    rdfs:label "Sāmarrāʼ (Iraq)" ;
-    mbs:sourceString "Sāmarrāʼ (Iraq)" .
-
 kg:place_sarpol_e_zahab_iran a crm:E53_Place ;
     rdfs:label "Sarpol-e Zahab (Iran)" ;
     mbs:sourceString "Sarpol-e Zahab (Iran)" .
-
-kg:place_taq_e_bostan_site_iran a crm:E53_Place ;
-    rdfs:label "Taq-e Bostan Site (Iran)" ;
-    mbs:sourceString "Taq-e Bostan Site (Iran)" .
-
-kg:place_tgn_1000126 a crm:E53_Place ;
-    rdfs:label "Lebanon" ;
-    owl:sameAs tgn:1000126,
-        wd:Q822 ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:1000126,
-        wd:Q822 ;
-    mbs:sourceString "Lebanon" .
-
-kg:place_tgn_7014497 a crm:E53_Place ;
-    rdfs:label "Tehran (Iran)" ;
-    owl:sameAs tgn:7014497,
-        wd:Q3616,
-        <https://id.loc.gov/authorities/names/n79039626> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:7014497,
-        wd:Q3616,
-        <https://id.loc.gov/authorities/names/n79039626> ;
-    mbs:sourceString "Tehran (Iran)" .
 
 kg:place_varamin_iran a crm:E53_Place ;
     rdfs:label "varamin (Iran)" ;
@@ -55073,17 +55043,11 @@ kg:component_ref8036 a crm:E73_Information_Object,
     mbs:hasPhysicalUnit kg:physical_ref8036 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref8036"^^xsd:anyURI .
 
-kg:concept_aat_300127104 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Photographic prints" ;
-    skos:exactMatch aat:300127104 ;
-    mbs:matchConfidence 0.95 ;
-    mbs:sourceString "Photographic prints" .
-
 kg:physical_ref6806 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "Sketchbooks" ;
-    crm:P2_has_type kg:concept_aat_300263552,
+    crm:P2_has_type kg:concept_aat_300027339,
+        kg:concept_aat_300263552,
         kg:concept_achaemenian_inscriptions,
         kg:concept_ancient_near_eastern_art,
         kg:concept_art_of_the_islamic_world,
@@ -55102,14 +55066,13 @@ kg:physical_ref6806 a crm:E22_Human_Made_Object,
         kg:concept_middle_persian_language,
         kg:concept_old_persian_inscriptions,
         kg:concept_sassanids,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             rdfs:label "35 Items" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbooks" ],
+            rdfs:label "various dimensions" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "various dimensions" ] ;
+            rdfs:label "Sketchbooks" ] ;
     crm:P46_is_composed_of kg:physical_ref6808,
         kg:physical_ref7145,
         kg:physical_ref7240,
@@ -55126,8 +55089,8 @@ kg:physical_ref6806 a crm:E22_Human_Made_Object,
         kg:physical_ref8000,
         kg:physical_ref8036 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3d900ac97-bffa-48b3-a0c3-9fcf04fa848a> ;
-    mbs:mediaType kg:concept_drawings,
-        kg:concept_sketchbooks,
+    mbs:mediaType kg:concept_aat_300027339,
+        kg:concept_drawings,
         kg:concept_sketches .
 
 kg:physical_ref6808 a crm:E22_Human_Made_Object,
@@ -55214,6 +55177,7 @@ kg:physical_ref6809 a crm:E22_Human_Made_Object,
     rdfs:label "SK-I Persien" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -55234,15 +55198,14 @@ kg:physical_ref6809 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85112527,
         kg:concept_lcsh_sh85134310,
         kg:concept_sassanids,
-        kg:concept_sketchbooks,
         kg:concept_sketches,
         kg:concept_stucco ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (28 pages)" ],
+            rdfs:label "12.8 cm. x 25.7 cm." ],
         [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "12.8 cm. x 25.7 cm." ] ;
+            rdfs:label "Sketchbook (28 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref6810,
         kg:physical_ref6811,
         kg:physical_ref6813,
@@ -55278,8 +55241,8 @@ kg:physical_ref6809 a crm:E22_Human_Made_Object,
         kg:physical_ref6843 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc35d0b8573-3b64-4b8a-a6cd-4e06b10a4b1b> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref6844 a crm:E22_Human_Made_Object,
@@ -55288,6 +55251,7 @@ kg:physical_ref6844 a crm:E22_Human_Made_Object,
     rdfs:label "SK-II Persien" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -55305,15 +55269,14 @@ kg:physical_ref6844 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85112527,
         kg:concept_sassanids,
         kg:concept_seals_numismatics,
-        kg:concept_sketchbooks,
         kg:concept_sketches,
         kg:concept_stucco ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "12.8 cm. x 25.7 cm." ],
-        [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (29 pages)" ] ;
+            rdfs:label "Sketchbook (29 pages)" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "12.8 cm. x 25.7 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref6845,
         kg:physical_ref6846,
         kg:physical_ref6847,
@@ -55368,8 +55331,8 @@ kg:physical_ref6844 a crm:E22_Human_Made_Object,
         kg:physical_ref6896 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3ab979bda-2c82-4dea-941a-349172eb7c4e> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref6897 a crm:E22_Human_Made_Object,
@@ -55378,6 +55341,7 @@ kg:physical_ref6897 a crm:E22_Human_Made_Object,
     rdfs:label "SK-III Persien" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_architectural_drawing,
         kg:concept_art_of_the_islamic_world,
@@ -55389,15 +55353,14 @@ kg:physical_ref6897 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85005757,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
-        kg:concept_sketchbooks,
         kg:concept_sketches,
         kg:concept_stucco ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (25 pages)" ],
+            rdfs:label "12.8 cm. x 25.7 cm." ],
         [ a crm:E54_Dimension ;
-            rdfs:label "12.8 cm. x 25.7 cm." ] ;
+            rdfs:label "Sketchbook (25 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref6898,
         kg:physical_ref6899,
         kg:physical_ref6900,
@@ -55444,8 +55407,8 @@ kg:physical_ref6897 a crm:E22_Human_Made_Object,
         kg:physical_ref6941 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc370d130a0-ebd5-497d-828a-2c3945e3263d> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref6942 a crm:E22_Human_Made_Object,
@@ -55454,6 +55417,7 @@ kg:physical_ref6942 a crm:E22_Human_Made_Object,
     rdfs:label "SK-IV Persien" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300188750,
         kg:concept_aat_300263552,
         kg:concept_achaemenian_inscriptions,
@@ -55479,14 +55443,13 @@ kg:physical_ref6942 a crm:E22_Human_Made_Object,
         kg:concept_middle_persian_language,
         kg:concept_old_persian_inscriptions,
         kg:concept_sassanids,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
+            rdfs:label "12.8 cm. x 25.7 cm." ],
+        [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (30 pages)" ],
-        [ a crm:E54_Dimension ;
-            rdfs:label "12.8 cm. x 25.7 cm." ] ;
+            rdfs:label "Sketchbook (30 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref6943,
         kg:physical_ref6944,
         kg:physical_ref6945,
@@ -55532,8 +55495,8 @@ kg:physical_ref6942 a crm:E22_Human_Made_Object,
         kg:physical_ref6985 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc326f3ed3e-8979-4343-855a-f553b1fd7a8c> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref6986 a crm:E22_Human_Made_Object,
@@ -55541,6 +55504,7 @@ kg:physical_ref6986 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-V Persien" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300188750,
         kg:concept_aat_300263552,
         kg:concept_achaemenian_inscriptions,
@@ -55559,14 +55523,13 @@ kg:physical_ref6986 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85105729,
         kg:concept_middle_persian_language,
         kg:concept_sassanids,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (30 pages)" ],
+            rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
             rdfs:label "12.8 cm. x 25.7 cm." ],
         [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ] ;
+            rdfs:label "Sketchbook (30 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref6987,
         kg:physical_ref6988,
         kg:physical_ref6989,
@@ -55613,8 +55576,8 @@ kg:physical_ref6986 a crm:E22_Human_Made_Object,
         kg:physical_ref7030 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc325674f63-a136-4ecb-940c-dd2e33025a5e> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7031 a crm:E22_Human_Made_Object,
@@ -55622,6 +55585,7 @@ kg:physical_ref7031 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-VI Persien" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300188750,
         kg:concept_aat_300263552,
         kg:concept_achaemenian_inscriptions,
@@ -55646,14 +55610,13 @@ kg:physical_ref7031 a crm:E22_Human_Made_Object,
         kg:concept_middle_persian_language,
         kg:concept_old_persian_inscriptions,
         kg:concept_sassanids,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "12.8 cm. x 25.7 cm." ],
+            rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
             rdfs:label "Sketchbook (30 pages)" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ] ;
+            rdfs:label "12.8 cm. x 25.7 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref7032,
         kg:physical_ref7033,
         kg:physical_ref7034,
@@ -55697,8 +55660,8 @@ kg:physical_ref7031 a crm:E22_Human_Made_Object,
         kg:physical_ref7072 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3f2c72f6c-bc0c-46b3-af78-a53effec2517> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7073 a crm:E22_Human_Made_Object,
@@ -55707,6 +55670,7 @@ kg:physical_ref7073 a crm:E22_Human_Made_Object,
     rdfs:label "SK-VII Persien" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300188750,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
@@ -55726,14 +55690,13 @@ kg:physical_ref7073 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85134310,
         kg:concept_middle_persian_language,
         kg:concept_sassanids,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "12.8 cm. x 25.7 cm." ],
+            rdfs:label "Sketchbook (30 pages)" ],
         [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (30 pages)" ] ;
+            rdfs:label "12.8 cm. x 25.7 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref7074,
         kg:physical_ref7075,
         kg:physical_ref7076,
@@ -55783,8 +55746,8 @@ kg:physical_ref7073 a crm:E22_Human_Made_Object,
         kg:physical_ref7120 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc30057c8e6-74cd-4d09-8268-517a7dcba9d5> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7121 a crm:E22_Human_Made_Object,
@@ -55792,6 +55755,7 @@ kg:physical_ref7121 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-VIII Persien" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -55804,14 +55768,13 @@ kg:physical_ref7121 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
         kg:concept_lcsh_sh85112527,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "Sketchbook (18 pages)" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "12.8 cm. x 25.7 cm." ] ;
+            rdfs:label "12.8 cm. x 25.7 cm." ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "1 Volume" ] ;
     crm:P46_is_composed_of kg:physical_ref7122,
         kg:physical_ref7123,
         kg:physical_ref7124,
@@ -55837,8 +55800,8 @@ kg:physical_ref7121 a crm:E22_Human_Made_Object,
         kg:physical_ref7144 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc356a155ed-3d3a-4fe1-8ed5-966ec4f81298> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7146 a crm:E22_Human_Made_Object,
@@ -55846,6 +55809,7 @@ kg:physical_ref7146 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-IX Pasargadae I" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -55858,14 +55822,13 @@ kg:physical_ref7146 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
         kg:concept_lcsh_sh85112527,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             rdfs:label "12.8 cm. x 25.7 cm." ],
         [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ],
+            rdfs:label "Sketchbook (24 pages)" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (24 pages)" ] ;
+            rdfs:label "1 Volume" ] ;
     crm:P46_is_composed_of kg:physical_ref7147,
         kg:physical_ref7148,
         kg:physical_ref7149,
@@ -55901,8 +55864,8 @@ kg:physical_ref7146 a crm:E22_Human_Made_Object,
         kg:physical_ref7179 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3488f4b16-9ac6-4019-923f-d52f08a282b3> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7180 a crm:E22_Human_Made_Object,
@@ -55910,6 +55873,7 @@ kg:physical_ref7180 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-X Pasargadae II" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -55922,14 +55886,13 @@ kg:physical_ref7180 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
         kg:concept_lcsh_sh85112527,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (20 pages)" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "12.8 cm. x 25.7 cm." ] ;
+            rdfs:label "12.8 cm. x 25.7 cm." ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "Sketchbook (20 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref7181,
         kg:physical_ref7182,
         kg:physical_ref7183,
@@ -55965,8 +55928,8 @@ kg:physical_ref7180 a crm:E22_Human_Made_Object,
         kg:physical_ref7213 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc355581557-6487-4177-ade8-a46198a77e6f> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7214 a crm:E22_Human_Made_Object,
@@ -55974,6 +55937,7 @@ kg:physical_ref7214 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XI Pasargadae III" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_achaemenian_inscriptions,
         kg:concept_ancient_near_eastern_art,
@@ -55992,14 +55956,13 @@ kg:physical_ref7214 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85105729,
         kg:concept_lcsh_sh85112527,
         kg:concept_old_persian_inscriptions,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (24 pages)" ],
+            rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
             rdfs:label "12.8 cm. x 25.7 cm." ],
         [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ] ;
+            rdfs:label "Sketchbook (24 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref7215,
         kg:physical_ref7216,
         kg:physical_ref7217,
@@ -56027,8 +55990,8 @@ kg:physical_ref7214 a crm:E22_Human_Made_Object,
         kg:physical_ref7239 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3dfd63140-5430-40ed-b1d1-bba2749ac36a> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7241 a crm:E22_Human_Made_Object,
@@ -56037,6 +56000,7 @@ kg:physical_ref7241 a crm:E22_Human_Made_Object,
     rdfs:label "SK-XII Persien-Khurasan" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -56049,15 +56013,14 @@ kg:physical_ref7241 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
         kg:concept_lcsh_sh85105729,
-        kg:concept_sketchbooks,
         kg:concept_sketches,
         kg:concept_stucco ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "12.8 cm. x 25.7 cm." ],
+            rdfs:label "Sketchbook (29 pages)" ],
         [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (29 pages)" ] ;
+            rdfs:label "12.8 cm. x 25.7 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref7242,
         kg:physical_ref7243,
         kg:physical_ref7244,
@@ -56115,8 +56078,8 @@ kg:physical_ref7241 a crm:E22_Human_Made_Object,
         kg:physical_ref7296 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc34c11ba94-468a-41d9-9863-908df1bd6598> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7298 a crm:E22_Human_Made_Object,
@@ -56125,6 +56088,7 @@ kg:physical_ref7298 a crm:E22_Human_Made_Object,
     rdfs:label "SK-XIII Persien, Sīstān--Qūhistan" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -56137,7 +56101,6 @@ kg:physical_ref7298 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
         kg:concept_lcsh_sh85105729,
-        kg:concept_sketchbooks,
         kg:concept_sketches,
         kg:concept_stucco ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
@@ -56180,8 +56143,8 @@ kg:physical_ref7298 a crm:E22_Human_Made_Object,
         kg:physical_ref7330 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc37d115d7a-ee52-43f4-bcf1-a161399beaee> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7332 a crm:E22_Human_Made_Object,
@@ -56190,6 +56153,7 @@ kg:physical_ref7332 a crm:E22_Human_Made_Object,
     rdfs:label "SK-XIV Sīstān -Tehrān, 1929" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_achaemenian_inscriptions,
         kg:concept_ancient_near_eastern_art,
@@ -56204,15 +56168,14 @@ kg:physical_ref7332 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
         kg:concept_old_persian_inscriptions,
-        kg:concept_sketchbooks,
         kg:concept_sketches,
         kg:concept_stucco ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
+            rdfs:label "1 Volume" ],
+        [ a crm:E54_Dimension ;
             rdfs:label "Sketchbook (9 pages)" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "12.8 cm. x 25.7 cm." ],
-        [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ] ;
+            rdfs:label "12.8 cm. x 25.7 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref7333,
         kg:physical_ref7334,
         kg:physical_ref7335,
@@ -56233,8 +56196,8 @@ kg:physical_ref7332 a crm:E22_Human_Made_Object,
         kg:physical_ref7350 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3dda516f2-1b33-48ff-a822-bb73a593eaab> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7352 a crm:E22_Human_Made_Object,
@@ -56243,6 +56206,7 @@ kg:physical_ref7352 a crm:E22_Human_Made_Object,
     rdfs:label "SK-XV Kūh i Khwāja" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -56255,15 +56219,14 @@ kg:physical_ref7352 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
         kg:concept_lcsh_sh85105729,
-        kg:concept_sketchbooks,
         kg:concept_sketches,
         kg:concept_stucco ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (48 pages)" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "12.8 cm. x 25.7 cm." ] ;
+            rdfs:label "12.8 cm. x 25.7 cm." ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "Sketchbook (48 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref7353,
         kg:physical_ref7354,
         kg:physical_ref7355,
@@ -56309,8 +56272,8 @@ kg:physical_ref7352 a crm:E22_Human_Made_Object,
         kg:physical_ref7395 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc30cd3bc91-5765-4931-b4b0-df9446dfcbb8> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7397 a crm:E22_Human_Made_Object,
@@ -56318,6 +56281,7 @@ kg:physical_ref7397 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XVI P.T. (mostly Persepolis)" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -56326,14 +56290,13 @@ kg:physical_ref7397 a crm:E22_Human_Made_Object,
         kg:concept_excavations_archaeology,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
+            rdfs:label "Sketchbook (35 pages)" ],
+        [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "12.6 cm. x 20.8 cm." ],
-        [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (35 pages)" ] ;
+            rdfs:label "12.6 cm. x 20.8 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref7398,
         kg:physical_ref7399,
         kg:physical_ref7400,
@@ -56366,8 +56329,8 @@ kg:physical_ref7397 a crm:E22_Human_Made_Object,
         kg:physical_ref7427 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3d1eb4bb3-ad71-42fc-a2aa-3272fe7491db> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7428 a crm:E22_Human_Made_Object,
@@ -56375,6 +56338,7 @@ kg:physical_ref7428 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XVII Persepolis" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -56383,14 +56347,13 @@ kg:physical_ref7428 a crm:E22_Human_Made_Object,
         kg:concept_excavations_archaeology,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85112527,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             rdfs:label "12.6 cm. x 20.8 cm." ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (51 pages)" ],
+            rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ] ;
+            rdfs:label "Sketchbook (51 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref7429,
         kg:physical_ref7430,
         kg:physical_ref7431,
@@ -56446,8 +56409,8 @@ kg:physical_ref7428 a crm:E22_Human_Made_Object,
         kg:physical_ref7481 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3f74e42b3-67d6-4993-a534-cbfe98a822c2> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7482 a crm:E22_Human_Made_Object,
@@ -56456,6 +56419,7 @@ kg:physical_ref7482 a crm:E22_Human_Made_Object,
     rdfs:label "SK-XVIII Damascus; Persepolis" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -56471,14 +56435,13 @@ kg:physical_ref7482 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85066566,
         kg:concept_lcsh_sh85112527,
         kg:concept_lcsh_sh85134310,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (24 pages)" ],
+            rdfs:label "12.1 cm. x 25.3 cm." ],
         [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "12.1 cm. x 25.3 cm." ] ;
+            rdfs:label "Sketchbook (24 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref7483,
         kg:physical_ref7484,
         kg:physical_ref7485,
@@ -56512,8 +56475,8 @@ kg:physical_ref7482 a crm:E22_Human_Made_Object,
         kg:physical_ref7513 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc392a05ce2-6623-49e1-91d6-263fd086f60a> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7514 a crm:E22_Human_Made_Object,
@@ -56521,6 +56484,7 @@ kg:physical_ref7514 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XIX Persepolis" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -56530,7 +56494,6 @@ kg:physical_ref7514 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
         kg:concept_lcsh_sh85112527,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
@@ -56577,8 +56540,8 @@ kg:physical_ref7514 a crm:E22_Human_Made_Object,
         kg:physical_ref7551 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3ad47878b-8779-495c-9231-fba508b4827f> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7552 a crm:E22_Human_Made_Object,
@@ -56586,6 +56549,7 @@ kg:physical_ref7552 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XX Persepolis II" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -56593,14 +56557,13 @@ kg:physical_ref7552 a crm:E22_Human_Made_Object,
         kg:concept_drawings,
         kg:concept_excavations_archaeology,
         kg:concept_lcsh_sh85006507,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
+            rdfs:label "1 Volume" ],
+        [ a crm:E54_Dimension ;
             rdfs:label "14.7 cm. x 23.5 cm." ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (39 pages)" ],
-        [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ] ;
+            rdfs:label "Sketchbook (39 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref7553,
         kg:physical_ref7554,
         kg:physical_ref7555,
@@ -56649,8 +56612,8 @@ kg:physical_ref7552 a crm:E22_Human_Made_Object,
         kg:physical_ref7598 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc35b854779-55ad-44eb-8b01-f5392e149c35> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7599 a crm:E22_Human_Made_Object,
@@ -56658,6 +56621,7 @@ kg:physical_ref7599 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XXI Persepolis" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -56666,12 +56630,11 @@ kg:physical_ref7599 a crm:E22_Human_Made_Object,
         kg:concept_excavations_archaeology,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85112527,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "14.7 cm. x 23.5 cm." ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
             rdfs:label "Sketchbook (8 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref7600,
@@ -56685,8 +56648,8 @@ kg:physical_ref7599 a crm:E22_Human_Made_Object,
         kg:physical_ref7608 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc36899cc32-a5b4-49ab-8631-57a8f45c06f3> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7609 a crm:E22_Human_Made_Object,
@@ -56694,6 +56657,7 @@ kg:physical_ref7609 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XXII Persepolis" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -56702,7 +56666,6 @@ kg:physical_ref7609 a crm:E22_Human_Made_Object,
         kg:concept_excavations_archaeology,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85112527,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
@@ -56740,8 +56703,8 @@ kg:physical_ref7609 a crm:E22_Human_Made_Object,
         kg:physical_ref7637 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3ba2b3127-11e6-469b-a6f5-ebe338ea32bb> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7639 a crm:E22_Human_Made_Object,
@@ -56749,6 +56712,7 @@ kg:physical_ref7639 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XXIII Spalato" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_architectural_drawing,
@@ -56756,14 +56720,13 @@ kg:physical_ref7639 a crm:E22_Human_Made_Object,
         kg:concept_drawings,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85112527,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "10.6 cm. x 17.7 cm." ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (4 pages)" ] ;
+            rdfs:label "Sketchbook (4 pages)" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "1 Volume" ] ;
     crm:P46_is_composed_of kg:physical_ref7640,
         kg:physical_ref7641,
         kg:physical_ref7642,
@@ -56772,8 +56735,8 @@ kg:physical_ref7639 a crm:E22_Human_Made_Object,
         kg:physical_ref7645 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc38fbf2f05-93e1-4c45-894e-e19aa141da79> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7648 a crm:E22_Human_Made_Object,
@@ -56781,14 +56744,14 @@ kg:physical_ref7648 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XXIV Messungen" ;
     crm:P2_has_type aat:300027182,
-        kg:concept_aat_300263552,
-        kg:concept_sketchbooks ;
+        kg:concept_aat_300027339,
+        kg:concept_aat_300263552 ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (127 pages)" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "10.3 cm. x 19.4 cm." ],
         [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ] ;
+            rdfs:label "1 Volume" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "Sketchbook (127 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref7649,
         kg:physical_ref7650,
         kg:physical_ref7651,
@@ -56799,21 +56762,21 @@ kg:physical_ref7648 a crm:E22_Human_Made_Object,
         kg:physical_ref7656 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc35f8779cc-b13f-47e5-997b-24fc5de8a2d8> ;
     mbs:mediaType aat:300027182,
-        kg:concept_sketchbooks .
+        kg:concept_aat_300027339 .
 
 kg:physical_ref7658 a crm:E22_Human_Made_Object,
         mbs:DocumentaryFile,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XXV Miscellaneous prehistoric objects" ;
     crm:P2_has_type aat:300027182,
-        kg:concept_aat_300263552,
-        kg:concept_sketchbooks ;
+        kg:concept_aat_300027339,
+        kg:concept_aat_300263552 ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "11.2 cm. x 16 cm." ],
-        [ a crm:E54_Dimension ;
             rdfs:label "Sketchbook (36 pages)" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ] ;
+            rdfs:label "1 Volume" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "11.2 cm. x 16 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref7660,
         kg:physical_ref7661,
         kg:physical_ref7662,
@@ -56852,13 +56815,14 @@ kg:physical_ref7658 a crm:E22_Human_Made_Object,
         kg:physical_ref7695 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3036d6cc5-4d13-45c3-b236-8a9cdc9b09ed> ;
     mbs:mediaType aat:300027182,
-        kg:concept_sketchbooks .
+        kg:concept_aat_300027339 .
 
 kg:physical_ref7697 a crm:E22_Human_Made_Object,
         mbs:DocumentaryFile,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XXVI \"Sammlung Hahn, etc.\"" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300127104,
         kg:concept_ancient_near_eastern_art,
         kg:concept_decoration_and_ornament,
@@ -56868,12 +56832,11 @@ kg:physical_ref7697 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85006507,
         kg:concept_numismatics,
         kg:concept_seals_numismatics,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (87 pages)" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "Sketchbook (87 pages)" ],
         [ a crm:E54_Dimension ;
             rdfs:label "10.3 cm. x 20.3 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref7699,
@@ -56966,9 +56929,9 @@ kg:physical_ref7697 a crm:E22_Human_Made_Object,
         kg:physical_ref7786 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc31588f421-3acc-44d4-8732-63cce2399a21> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300127104,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7788 a crm:E22_Human_Made_Object,
@@ -56976,6 +56939,7 @@ kg:physical_ref7788 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XXVII Antiquitäten I" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_ancient_near_eastern_art,
         kg:concept_cuneiform_inscriptions,
@@ -56987,15 +56951,14 @@ kg:physical_ref7788 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85105729,
         kg:concept_numismatics,
         kg:concept_seals_numismatics,
-        kg:concept_sketchbooks,
         kg:concept_sketches,
         kg:concept_stucco ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
+            rdfs:label "12.3 cm. x 25.3 cm." ],
+        [ a crm:E54_Dimension ;
             rdfs:label "Sketchbook (24 pages)" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ],
-        [ a crm:E54_Dimension ;
-            rdfs:label "12.3 cm. x 25.3 cm." ] ;
+            rdfs:label "1 Volume" ] ;
     crm:P46_is_composed_of kg:physical_ref7790,
         kg:physical_ref7791,
         kg:physical_ref7792,
@@ -57044,8 +57007,8 @@ kg:physical_ref7788 a crm:E22_Human_Made_Object,
         kg:physical_ref7835 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3584c152e-abf0-4c1a-84af-0faa6a07082c> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7836 a crm:E22_Human_Made_Object,
@@ -57053,6 +57016,7 @@ kg:physical_ref7836 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XXVIII Antiquitäten II" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_ancient_near_eastern_art,
         kg:concept_cuneiform_inscriptions,
         kg:concept_cuneiform_tablets,
@@ -57066,12 +57030,11 @@ kg:physical_ref7836 a crm:E22_Human_Made_Object,
         kg:concept_numismatics,
         kg:concept_old_persian_inscriptions,
         kg:concept_seals_numismatics,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "Sketchbook (23 pages)" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
             rdfs:label "12.3 cm. x 25.3 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref7838,
@@ -57118,8 +57081,8 @@ kg:physical_ref7836 a crm:E22_Human_Made_Object,
         kg:physical_ref7879 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3d4a48eef-7236-4458-9201-03183ad0bb2e> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7880 a crm:E22_Human_Made_Object,
@@ -57127,6 +57090,7 @@ kg:physical_ref7880 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XXIX Antiquitäten III" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_ancient_near_eastern_art,
         kg:concept_decoration_and_ornament,
         kg:concept_drawings,
@@ -57134,14 +57098,13 @@ kg:physical_ref7880 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85005757,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85105729,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "12.1 cm. x 25.3 cm." ],
-        [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (24 pages)" ] ;
+            rdfs:label "Sketchbook (24 pages)" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "12.1 cm. x 25.3 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref7882,
         kg:physical_ref7883,
         kg:physical_ref7884,
@@ -57169,8 +57132,8 @@ kg:physical_ref7880 a crm:E22_Human_Made_Object,
         kg:physical_ref7906 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc304261476-60fb-47ea-a457-06317201b372> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7907 a crm:E22_Human_Made_Object,
@@ -57178,6 +57141,7 @@ kg:physical_ref7907 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XXX Antiquitäten IV" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_ancient_near_eastern_art,
         kg:concept_decoration_and_ornament,
         kg:concept_drawings,
@@ -57188,14 +57152,13 @@ kg:physical_ref7907 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85105729,
         kg:concept_numismatics,
         kg:concept_seals_numismatics,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "12.1 cm. x 25.1 cm." ],
+            rdfs:label "Sketchbook (24 pages)" ],
         [ a crm:E54_Dimension ;
             rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (24 pages)" ] ;
+            rdfs:label "12.1 cm. x 25.1 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref7909,
         kg:physical_ref7910,
         kg:physical_ref7911,
@@ -57223,8 +57186,8 @@ kg:physical_ref7907 a crm:E22_Human_Made_Object,
         kg:physical_ref7933 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3aa5ab86f-f565-459b-b336-004c5f27cffe> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7934 a crm:E22_Human_Made_Object,
@@ -57232,6 +57195,7 @@ kg:physical_ref7934 a crm:E22_Human_Made_Object,
         mbs:PhysicalComponent ;
     rdfs:label "SK-XXXI Antiquitäten V" ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_ancient_near_eastern_art,
         kg:concept_decoration_and_ornament,
         kg:concept_drawings,
@@ -57242,12 +57206,11 @@ kg:physical_ref7934 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85105729,
         kg:concept_numismatics,
         kg:concept_seals_numismatics,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "12.3 cm. x 25.3 cm." ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
             rdfs:label "Sketchbook (24 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref7935,
@@ -57271,8 +57234,8 @@ kg:physical_ref7934 a crm:E22_Human_Made_Object,
         kg:physical_ref7953 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3d1c0649a-5fb7-4427-bc4f-73613306e43e> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7955 a crm:E22_Human_Made_Object,
@@ -57281,6 +57244,7 @@ kg:physical_ref7955 a crm:E22_Human_Made_Object,
     rdfs:label "SK-XXXII marked \"Damas. I\"" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_architectural_drawing,
         kg:concept_art_of_the_islamic_world,
@@ -57291,14 +57255,13 @@ kg:physical_ref7955 a crm:E22_Human_Made_Object,
         kg:concept_lcsh_sh85005757,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "Sketchbook (18 pages)" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "11.6 cm. x 21 cm." ] ;
+            rdfs:label "11.6 cm. x 21 cm." ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "1 Volume" ] ;
     crm:P46_is_composed_of kg:physical_ref7956,
         kg:physical_ref7957,
         kg:physical_ref7958,
@@ -57326,8 +57289,8 @@ kg:physical_ref7955 a crm:E22_Human_Made_Object,
         kg:physical_ref7980 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc38fba07fe-e4da-46c9-96ff-06cef2ce54ee> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref7981 a crm:E22_Human_Made_Object,
@@ -57336,6 +57299,7 @@ kg:physical_ref7981 a crm:E22_Human_Made_Object,
     rdfs:label "SK-XXXIII marked \"Damas. II\"" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_architectural_drawing,
         kg:concept_art_of_the_islamic_world,
@@ -57344,14 +57308,13 @@ kg:physical_ref7981 a crm:E22_Human_Made_Object,
         kg:concept_inscriptions_greek,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (9 pages)" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "11.1 cm. x 20.6 cm." ],
         [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ] ;
+            rdfs:label "1 Volume" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "Sketchbook (9 pages)" ] ;
     crm:P46_is_composed_of kg:physical_ref7982,
         kg:physical_ref7983,
         kg:physical_ref7984,
@@ -57372,8 +57335,8 @@ kg:physical_ref7981 a crm:E22_Human_Made_Object,
         kg:physical_ref7999 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc334dd5cea-0088-4cfc-a3e8-742e5c73bebe> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref8001 a crm:E22_Human_Made_Object,
@@ -57382,6 +57345,7 @@ kg:physical_ref8001 a crm:E22_Human_Made_Object,
     rdfs:label "SK-XXXIV marked \"3 Haleb\"" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_architectural_drawing,
         kg:concept_art_of_the_islamic_world,
@@ -57391,14 +57355,13 @@ kg:physical_ref8001 a crm:E22_Human_Made_Object,
         kg:concept_inscriptions_greek,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ],
+            rdfs:label "Sketchbook (22 pages)" ],
         [ a crm:E54_Dimension ;
             rdfs:label "11.8 cm. x 25.3 cm." ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Sketchbook (22 pages)" ] ;
+            rdfs:label "1 Volume" ] ;
     crm:P46_is_composed_of kg:physical_ref8002,
         kg:physical_ref8003,
         kg:physical_ref8004,
@@ -57435,8 +57398,8 @@ kg:physical_ref8001 a crm:E22_Human_Made_Object,
         kg:physical_ref8035 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc308f500ba-0936-45b0-b804-3d631a758f72> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:physical_ref8037 a crm:E22_Human_Made_Object,
@@ -57445,6 +57408,7 @@ kg:physical_ref8037 a crm:E22_Human_Made_Object,
     rdfs:label "SK-XXXV marked \"4 Homs\"" ;
     crm:P2_has_type aat:300027182,
         kg:concept_aat_300007391,
+        kg:concept_aat_300027339,
         kg:concept_aat_300263552,
         kg:concept_architectural_drawing,
         kg:concept_art_of_the_islamic_world,
@@ -57453,12 +57417,11 @@ kg:physical_ref8037 a crm:E22_Human_Made_Object,
         kg:concept_inscriptions_arabic,
         kg:concept_lcsh_sh85006507,
         kg:concept_lcsh_sh85066566,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "1 Volume" ],
-        [ a crm:E54_Dimension ;
             rdfs:label "Sketchbook (9 pages)" ],
+        [ a crm:E54_Dimension ;
+            rdfs:label "1 Volume" ],
         [ a crm:E54_Dimension ;
             rdfs:label "11.8 cm. x 25.1 cm." ] ;
     crm:P46_is_composed_of kg:physical_ref8038,
@@ -57480,8 +57443,8 @@ kg:physical_ref8037 a crm:E22_Human_Made_Object,
         kg:physical_ref8054 ;
     owl:sameAs <https://n2t.net/ark:/65665/dc316cc8f53-3bc5-41dd-9c65-c549f9a6ef94> ;
     mbs:mediaType aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches .
 
 kg:place_baghdad_iraq a crm:E53_Place ;
@@ -57519,15 +57482,6 @@ kg:place_maarrat_al_numan_syria a crm:E53_Place ;
 kg:place_shiraz_iran a crm:E53_Place ;
     rdfs:label "Shīrāz (Iran)" ;
     mbs:sourceString "Shīrāz (Iran)" .
-
-kg:place_tgn_1000144 a crm:E53_Place ;
-    rdfs:label "Turkey" ;
-    owl:sameAs tgn:1000144,
-        wd:Q43 ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:1000144,
-        wd:Q43 ;
-    mbs:sourceString "Turkey" .
 
 kg:place_tus_iran a crm:E53_Place ;
     rdfs:label "Ṭūs (Iran)" ;
@@ -57576,15 +57530,6 @@ kg:place_hamah_syria a crm:E53_Place ;
     rdfs:label "Ḥamāh (Syria)" ;
     mbs:sourceString "Ḥamāh (Syria)" .
 
-kg:place_tgn_7001374 a crm:E53_Place ;
-    rdfs:label "Iṣfahān (Iran)" ;
-    owl:sameAs tgn:7001374,
-        wd:Q42053 ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:7001374,
-        wd:Q42053 ;
-    mbs:sourceString "Iṣfahān (Iran)" .
-
 kg:component_ref7787 a crm:E73_Information_Object,
         mbs:ArchivalComponent ;
     rdfs:label "Antiquitäten" ;
@@ -57614,13 +57559,6 @@ kg:component_ref7787 a crm:E73_Information_Object,
     mbs:hasParentComponent kg:component_ref6806 ;
     mbs:hasPhysicalUnit kg:physical_ref7787 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref7787"^^xsd:anyURI .
-
-kg:concept_aat_300188750 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Royalty (Nobility)" ;
-    skos:exactMatch aat:300188750 ;
-    mbs:matchConfidence 0.95 ;
-    mbs:sourceString "Royalty (Nobility)" .
 
 kg:concept_lcsh_sh85059483 a crm:E55_Type,
         skos:Concept ;
@@ -57695,8 +57633,8 @@ kg:component_ref7639 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85112527 ;
     crm:P1_is_identified_by kg:title_ref7639 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Former Title or Title Variations Ernst Herzeld; Skizzenbuch XXIII: Spalato",
@@ -57799,13 +57737,6 @@ kg:concept_cuneiform_inscriptions_akkadian a crm:E55_Type,
     rdfs:label "Cuneiform inscriptions, Akkadian" ;
     mbs:sourceString "Cuneiform inscriptions, Akkadian" .
 
-kg:concept_lcsh_sh2004001811 a crm:E53_Place ;
-    rdfs:label "Pasargadae (Extinct city)" ;
-    owl:sameAs <https://id.loc.gov/authorities/subjects/sh2004001811> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo <https://id.loc.gov/authorities/subjects/sh2004001811> ;
-    mbs:sourceString "Pasargadae (Extinct city)" .
-
 kg:concept_lcsh_sh85134310 a crm:E55_Type,
         skos:Concept ;
     rdfs:label "Textile design" ;
@@ -57817,11 +57748,6 @@ kg:concept_middle_persian_language a crm:E55_Type,
         skos:Concept ;
     rdfs:label "Middle Persian language" ;
     mbs:sourceString "Middle Persian language" .
-
-kg:concept_numismatics a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Numismatics" ;
-    mbs:sourceString "Numismatics" .
 
 kg:place_estakhr_extinct_city a crm:E53_Place ;
     rdfs:label "Estakhr (Extinct city)" ;
@@ -57848,7 +57774,7 @@ kg:component_ref7648 a crm:E73_Information_Object,
     crm:P129_is_about kg:concept_aat_300263552 ;
     crm:P1_is_identified_by kg:title_ref7648 ;
     crm:P2_has_type aat:300027182,
-        kg:concept_sketchbooks ;
+        kg:concept_aat_300027339 ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Former Title or Title Variations Ernst Herzeld; Skizzenbuch XXIV: Messungen",
         "General - Title is provided by Xavier Courouble, FSg Archives cataloger, based on Herzfeld's original sketchbook title and Joseph Upton's Catalogue of the Herzfeld Archive.",
@@ -57866,7 +57792,6 @@ kg:component_ref7648 a crm:E73_Information_Object,
         "Scope and Contents Ernst Herzfeld Papers, Series 2: Sketchbooks; Subseries 2.09: Measurements: Sketchbook 24" ;
     crm:P48_has_preferred_identifier kg:id_ark_ref7648 ;
     crm:P67_refers_to kg:agent_Q62933,
-        kg:concept_lcsh_sh2004001811,
         kg:note_ref7648_arrangement_0,
         kg:note_ref7648_odd_0,
         kg:note_ref7648_odd_1,
@@ -57886,6 +57811,7 @@ kg:component_ref7648 a crm:E73_Information_Object,
         kg:place_tgn_1000004,
         kg:place_tgn_7000231,
         kg:place_tgn_7001657,
+        kg:place_tgn_7001658,
         kg:place_tgn_7002229 ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.06/ref7648> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc35f8779cc-b13f-47e5-997b-24fc5de8a2d8> ;
@@ -57945,8 +57871,8 @@ kg:component_ref7599 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85112527 ;
     crm:P1_is_identified_by kg:title_ref7599 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"The field activities of the Persepolis Expedition were initiated by Professor Ernst Herzfeld in Spring 1931, after the French archaeological monopoly had been replaced by the new Antiquity Law, which opened Iran to archaeological field work by other nations. The expedition ended in fall 1939, after the outbreak of World War II. [...] At the end of 1934, Herzfeld was removed from his position as expedition director. He left Persepolis for the last time toward the end of November 1934 and went to London.\" [Elspeth R. M. Dusinberre, \"Herzfeld in Persepolis\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.137 and P.161]",
@@ -58051,17 +57977,6 @@ kg:concept_seals_numismatics a crm:E55_Type,
     rdfs:label "Seals (Numismatics)" ;
     mbs:sourceString "Seals (Numismatics)" .
 
-kg:place_tgn_1000146 a crm:E53_Place ;
-    rdfs:label "Syria" ;
-    owl:sameAs tgn:1000146,
-        wd:Q858,
-        <https://id.loc.gov/authorities/names/n80061798> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:1000146,
-        wd:Q858,
-        <https://id.loc.gov/authorities/names/n80061798> ;
-    mbs:sourceString "Syria" .
-
 kg:concept_inscriptions_greek a crm:E55_Type,
         skos:Concept ;
     rdfs:label "Inscriptions, Greek" ;
@@ -58079,30 +57994,10 @@ kg:concept_sassanids a crm:E55_Type,
     rdfs:label "Sassanids" ;
     mbs:sourceString "Sassanids" .
 
-kg:place_tgn_7001657 a crm:E53_Place ;
-    rdfs:label "Naqsh-i Rustam (Iran)" ;
-    owl:sameAs tgn:7001657,
-        wd:Q733613 ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:7001657,
-        wd:Q733613 ;
-    mbs:sourceString "Naqsh-i Rustam (Iran)" .
-
 kg:concept_stucco a crm:E55_Type,
         skos:Concept ;
     rdfs:label "Stucco" ;
     mbs:sourceString "Stucco" .
-
-kg:place_tgn_1000118 a crm:E53_Place ;
-    rdfs:label "Iraq" ;
-    owl:sameAs tgn:1000118,
-        wd:Q796,
-        <https://id.loc.gov/authorities/names/n79077342> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:1000118,
-        wd:Q796,
-        <https://id.loc.gov/authorities/names/n79077342> ;
-    mbs:sourceString "Iraq" .
 
 kg:component_ref6806 a crm:E73_Information_Object,
         mbs:ArchivalComponent ;
@@ -58143,8 +58038,8 @@ kg:component_ref6806 a crm:E73_Information_Object,
         kg:concept_old_persian_inscriptions,
         kg:concept_sassanids ;
     crm:P1_is_identified_by kg:title_ref6806 ;
-    crm:P2_has_type kg:concept_drawings,
-        kg:concept_sketchbooks,
+    crm:P2_has_type kg:concept_aat_300027339,
+        kg:concept_drawings,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in five document boxes and stored on shelves, are organized by Joseph Upton into thirteen subdivisions.",
         "Biographical / Historical - \"Ernst Emil Herzfeld (1879-1948) was an orientalist whose many talents led him to explore all phases of Near Eastern culture, from the prehistoric period to Islamic times and from linguistics and religion to art and architecture.\" [Margaret Cool Root, 1976: \"The Herzfeld Archive of the Metropolitan Museum of Art. Metropolitan Museum Journal, Vol. 11, pp. 119-124.\"]",
@@ -58170,7 +58065,6 @@ kg:component_ref6806 a crm:E73_Information_Object,
         "Scope and Contents Ernst Herzfeld Papers, Series 2: Sketchbooks" ;
     crm:P48_has_preferred_identifier kg:id_ark_ref6806 ;
     crm:P67_refers_to kg:agent_Q62933,
-        kg:concept_lcsh_sh2004001811,
         kg:note_ref6806_altformavail_0,
         kg:note_ref6806_arrangement_0,
         kg:note_ref6806_bioghist_0,
@@ -58207,7 +58101,6 @@ kg:component_ref6806 a crm:E73_Information_Object,
         kg:place_khark_island_iran,
         kg:place_maarrat_al_numan_syria,
         kg:place_ray_iran,
-        kg:place_samarra_iraq,
         kg:place_shiraz_iran,
         kg:place_tgn_1000004,
         kg:place_tgn_1000118,
@@ -58216,7 +58109,9 @@ kg:component_ref6806 a crm:E73_Information_Object,
         kg:place_tgn_7000231,
         kg:place_tgn_7001374,
         kg:place_tgn_7001657,
+        kg:place_tgn_7001658,
         kg:place_tgn_7002229,
+        kg:place_tgn_7011132,
         kg:place_tus_iran ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.06/ref6806> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3d900ac97-bffa-48b3-a0c3-9fcf04fa848a> ;
@@ -58298,8 +58193,8 @@ kg:component_ref8037 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85066566 ;
     crm:P1_is_identified_by kg:title_ref8037 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note The monuments and inscriptions of Northern Syria were surveyed and collected between 1908 and 1914 by Moritz Sobernheim and Ernst Herzfeld as part of a broader project, sponsored by the Institut de France, that of Max van Berchem's \"Matériaux pour un Corpus Inscriptionum Arabicarum.\" The drawings are related to this survey as well as additional expeditions to Northern Syria carried out by Ernst Herzfeld as early as 1903 and as later as 1930.",
@@ -58451,8 +58346,8 @@ kg:component_ref7332 a crm:E73_Information_Object,
         kg:concept_stucco ;
     crm:P1_is_identified_by kg:title_ref7332 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Former Title or Title Variations Ernst Herzeld; Skizzenbuch XIV: Persien, Sistan-Tehran, 1929",
@@ -58597,8 +58492,8 @@ kg:component_ref7981 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85066566 ;
     crm:P1_is_identified_by kg:title_ref7981 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note The monuments and inscriptions of Northern Syria were surveyed and collected between 1908 and 1914 by Moritz Sobernheim and Ernst Herzfeld as part of a broader project, sponsored by the Institut de France, that of Max van Berchem's \"Matériaux pour un Corpus Inscriptionum Arabicarum.\" The drawing may be related to this survey as well as to additional expeditions to Damascus (Syria) carried out by Ernst Herzfeld as early as 1903 and as later as 1930.",
@@ -58748,8 +58643,8 @@ kg:component_ref7934 a crm:E73_Information_Object,
         kg:concept_seals_numismatics ;
     crm:P1_is_identified_by kg:title_ref7934 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Former Title or Title Variations Ernst Herzeld; Skizzenbuch XXXI: Antiken V",
@@ -58864,11 +58759,6 @@ kg:component_ref7934 a crm:E73_Information_Object,
     mbs:hasPhysicalUnit kg:physical_ref7934 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref7934"^^xsd:anyURI .
 
-kg:concept_description_and_travel a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Description and Travel" ;
-    mbs:sourceString "Description and Travel" .
-
 kg:concept_cuneiform_inscriptions a crm:E55_Type,
         skos:Concept ;
     rdfs:label "Cuneiform inscriptions" ;
@@ -58916,8 +58806,8 @@ kg:component_ref7121 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85112527 ;
     crm:P1_is_identified_by kg:title_ref7121 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Ernst Herzfeld's years in Iran [Persia] from [February] 1923 to [the end of October] 1925 were made possible by a private company with limited liability called the Gesellschaft zur Förderung von Ausgrabungen und Forschungsreisen GmbH, which was founded in 1923. Its aim was to foster excavations and scientific expeditions in Asia and to publish the results. [...]. [Consequently] Herzfeld was able to travel freely in Iran and survey most major archaeological sites, including Pasargadae, Persepolis, and Kuh-e Khwaja, and develop for future excavations.\" [Jens Kröger, \"Ernst Herzfeld and Friedrich Sarre\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.61 and P.64]",
@@ -59056,13 +58946,6 @@ kg:component_ref7121 a crm:E73_Information_Object,
     mbs:hasPhysicalUnit kg:physical_ref7121 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref7121"^^xsd:anyURI .
 
-kg:concept_lcsh_sh85105729 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Pottery" ;
-    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85105729> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:sourceString "Pottery" .
-
 kg:component_ref7214 a crm:E73_Information_Object,
         mbs:ArchivalComponent,
         mbs:FileUnit ;
@@ -59113,8 +58996,8 @@ kg:component_ref7214 a crm:E73_Information_Object,
         kg:concept_old_persian_inscriptions ;
     crm:P1_is_identified_by kg:title_ref7214 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Herzfeld's long acquaintance with the ruins, the many years that he had apparently spent contemplating their significance, and, not least, his little-advertised preliminary campaign at Pasargadae in mid-November 1923, did much to allow him to provide a succinct but seemingly comprehensive view of a site where his formal excavations only occupied twenty-eight days in April and May 1928.\" [David Stronach, \"Ernst Herzfeld and Pasargadae\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.109]",
@@ -59296,8 +59179,8 @@ kg:component_ref7880 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85105729 ;
     crm:P1_is_identified_by kg:title_ref7880 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Former Title or Title Variations Ernst Herzeld; Skizzenbuch XIX: Antiken III",
@@ -59480,8 +59363,8 @@ kg:component_ref7907 a crm:E73_Information_Object,
         kg:concept_seals_numismatics ;
     crm:P1_is_identified_by kg:title_ref7907 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Former Title or Title Variations Ernst Herzeld; Skizzenbuch XXX: Antiken IV",
@@ -59665,8 +59548,8 @@ kg:component_ref7955 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85066566 ;
     crm:P1_is_identified_by kg:title_ref7955 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note The monuments and inscriptions of Northern Syria were surveyed and collected between 1908 and 1914 by Moritz Sobernheim and Ernst Herzfeld as part of a broader project, sponsored by the Institut de France, that of Max van Berchem's \"Matériaux pour un Corpus Inscriptionum Arabicarum.\" The drawing may be related to this survey as well as to additional expeditions to Damascus (Syria) carried out by Ernst Herzfeld as early as 1903 and as later as 1930.",
@@ -59808,24 +59691,6 @@ kg:component_ref7955 a crm:E73_Information_Object,
     mbs:hasPhysicalUnit kg:physical_ref7955 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref7955"^^xsd:anyURI .
 
-kg:concept_aat_300007391 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Religious buildings" ;
-    skos:exactMatch aat:300007391 ;
-    mbs:matchConfidence 0.95 ;
-    mbs:sourceString "Religious buildings" .
-
-kg:place_tgn_7002229 a crm:E53_Place ;
-    rdfs:label "Persepolis (Iran)" ;
-    owl:sameAs tgn:7002229,
-        wd:Q129072,
-        <https://id.loc.gov/authorities/names/n80063345> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:7002229,
-        wd:Q129072,
-        <https://id.loc.gov/authorities/names/n80063345> ;
-    mbs:sourceString "Persepolis (Iran)" .
-
 kg:component_ref7609 a crm:E73_Information_Object,
         mbs:ArchivalComponent,
         mbs:FileUnit ;
@@ -59869,8 +59734,8 @@ kg:component_ref7609 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85112527 ;
     crm:P1_is_identified_by kg:title_ref7609 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"The field activities of the Persepolis Expedition were initiated by Professor Ernst Herzfeld in Spring 1931, after the French archaeological monopoly had been replaced by the new Antiquity Law, which opened Iran to archaeological field work by other nations. The expedition ended in fall 1939, after the outbreak of World War II. [...] At the end of 1934, Herzfeld was removed from his position as expedition director. He left Persepolis for the last time toward the end of November 1934 and went to London.\" [Elspeth R. M. Dusinberre, \"Herzfeld in Persepolis\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.137 and P.161]",
@@ -60086,8 +59951,8 @@ kg:component_ref7397 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85066566 ;
     crm:P1_is_identified_by kg:title_ref7397 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"The field activities of the Persepolis Expedition were initiated by Professor Ernst Herzfeld in Spring 1931, after the French archaeological monopoly had been replaced by the new Antiquity Law, which opened Iran to archaeological field work by other nations. The expedition ended in fall 1939, after the outbreak of World War II. [...] At the end of 1934, Herzfeld was removed from his position as expedition director. He left Persepolis for the last time toward the end of November 1934 and went to London.\" [Elspeth R. M. Dusinberre, \"Herzfeld in Persepolis\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.137 and P.161]",
@@ -60306,8 +60171,8 @@ kg:component_ref7482 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85134310 ;
     crm:P1_is_identified_by kg:title_ref7482 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"The field activities of the Persepolis Expedition were initiated by Professor Ernst Herzfeld in Spring 1931, after the French archaeological monopoly had been replaced by the new Antiquity Law, which opened Iran to archaeological field work by other nations. The expedition ended in fall 1939, after the outbreak of World War II. [...] At the end of 1934, Herzfeld was removed from his position as expedition director. He left Persepolis for the last time toward the end of November 1934 and went to London.\" [Elspeth R. M. Dusinberre, \"Herzfeld in Persepolis\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.137 and P.161]",
@@ -60485,13 +60350,6 @@ kg:component_ref7482 a crm:E73_Information_Object,
     mbs:hasPhysicalUnit kg:physical_ref7482 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref7482"^^xsd:anyURI .
 
-kg:concept_lcsh_sh85005757 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Antiquities" ;
-    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85005757> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:sourceString "Antiquities" .
-
 kg:component_ref7298 a crm:E73_Information_Object,
         mbs:ArchivalComponent,
         mbs:FileUnit ;
@@ -60545,8 +60403,8 @@ kg:component_ref7298 a crm:E73_Information_Object,
         kg:concept_stucco ;
     crm:P1_is_identified_by kg:title_ref7298 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Ernst Herzfeld's years in Iran [Persia] from [February] 1923 to [the end of October] 1925 were made possible by a private company with limited liability called the Gesellschaft zur Förderung von Ausgrabungen und Forschungsreisen GmbH, which was founded in 1923. Its aim was to foster excavations and scientific expeditions in Asia and to publish the results. [...]. [Consequently] Herzfeld was able to travel freely in Iran and survey most major archaeological sites.\" [Jens Kröger, \"Ernst Herzfeld and Friedrich Sarre\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.61 and P.64]",
@@ -60787,8 +60645,8 @@ kg:component_ref6809 a crm:E73_Information_Object,
         kg:concept_stucco ;
     crm:P1_is_identified_by kg:title_ref6809 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Ernst Herzfeld's years in Iran [Persia] from [February] 1923 to [the end of October] 1925 were made possible by a private company with limited liability called the Gesellschaft zur Förderung von Ausgrabungen und Forschungsreisen GmbH, which was founded in 1923. Its aim was to foster excavations and scientific expeditions in Asia and to publish the results. [...]. [Consequently] Herzfeld was able to travel freely in Iran and survey most major archaeological sites, including Pasargadae, Persepolis, and Kuh-e Khwaja, and develop for future excavations.\" [Jens Kröger, \"Ernst Herzfeld and Friedrich Sarre\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.61 and P.64]",
@@ -61018,8 +60876,8 @@ kg:component_ref7146 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85112527 ;
     crm:P1_is_identified_by kg:title_ref7146 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Herzfeld's long acquaintance with the ruins, the many years that he had apparently spent contemplating their significance, and, not least, his little-advertised preliminary campaign at Pasargadae in mid-November 1923, did much to allow him to provide a succinct but seemingly comprehensive view of a site where his formal excavations only occupied twenty-eight days in April and May 1928.\" [David Stronach, \"Ernst Herzfeld and Pasargadae\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.109]",
@@ -61065,7 +60923,6 @@ kg:component_ref7146 a crm:E73_Information_Object,
         "Scope and Contents Ernst Herzfeld Papers, Series 2: Sketchbooks; Subseries 2.02: Pasargadae, 1928: Sketchbook 09" ;
     crm:P48_has_preferred_identifier kg:id_ark_ref7146 ;
     crm:P67_refers_to kg:agent_Q62933,
-        kg:concept_lcsh_sh2004001811,
         kg:note_ref7146_arrangement_0,
         kg:note_ref7146_odd_0,
         kg:note_ref7146_odd_1,
@@ -61109,7 +60966,8 @@ kg:component_ref7146 a crm:E73_Information_Object,
         kg:note_ref7146_scopecontent_8,
         kg:note_ref7146_scopecontent_9,
         kg:place_tgn_1000004,
-        kg:place_tgn_7000231 ;
+        kg:place_tgn_7000231,
+        kg:place_tgn_7001658 ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.06/ref7146> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3488f4b16-9ac6-4019-923f-d52f08a282b3> ;
     mbs:archivalLevel "file" ;
@@ -61248,8 +61106,8 @@ kg:component_ref7180 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85112527 ;
     crm:P1_is_identified_by kg:title_ref7180 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Herzfeld's long acquaintance with the ruins, the many years that he had apparently spent contemplating their significance, and, not least, his little-advertised preliminary campaign at Pasargadae in mid-November 1923, did much to allow him to provide a succinct but seemingly comprehensive view of a site where his formal excavations only occupied twenty-eight days in April and May 1928.\" [David Stronach, \"Ernst Herzfeld and Pasargadae\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.109]",
@@ -61289,7 +61147,6 @@ kg:component_ref7180 a crm:E73_Information_Object,
         "Scope and Contents Ernst Herzfeld Papers, Series 2: Sketchbooks; Subseries 2.02: Pasargadae, 1928: Sketchbook 10" ;
     crm:P48_has_preferred_identifier kg:id_ark_ref7180 ;
     crm:P67_refers_to kg:agent_Q62933,
-        kg:concept_lcsh_sh2004001811,
         kg:note_ref7180_arrangement_0,
         kg:note_ref7180_odd_0,
         kg:note_ref7180_odd_1,
@@ -61329,6 +61186,7 @@ kg:component_ref7180 a crm:E73_Information_Object,
         kg:place_tgn_1000004,
         kg:place_tgn_7000231,
         kg:place_tgn_7001657,
+        kg:place_tgn_7001658,
         kg:place_tgn_7002229 ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.06/ref7180> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc355581557-6487-4177-ade8-a46198a77e6f> ;
@@ -61461,8 +61319,8 @@ kg:component_ref8001 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85066566 ;
     crm:P1_is_identified_by kg:title_ref8001 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note The monuments and inscriptions of Northern Syria were surveyed and collected between 1908 and 1914 by Moritz Sobernheim and Ernst Herzfeld as part of a broader project, sponsored by the Institut de France, that of Max van Berchem's \"Matériaux pour un Corpus Inscriptionum Arabicarum.\" The drawings are related to this survey as well as additional expeditions to Aleppo (Syria) carried out by Ernst Herzfeld in 1907, 1908, 1910, 1914, 1916, 1917, 1918, and 1930.",
@@ -61687,7 +61545,7 @@ kg:component_ref7658 a crm:E73_Information_Object,
     crm:P129_is_about kg:concept_aat_300263552 ;
     crm:P1_is_identified_by kg:title_ref7658 ;
     crm:P2_has_type aat:300027182,
-        kg:concept_sketchbooks ;
+        kg:concept_aat_300027339 ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Former Title or Title Variations Ernst Herzeld; Skizzenbuch XXV: A",
         "General - Title is provided by Xavier Courouble, FSg Archives cataloger, based on Herzfeld's original sketchbook title and Joseph Upton's Catalogue of the Herzfeld Archive.",
@@ -61925,8 +61783,8 @@ kg:component_ref7514 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85112527 ;
     crm:P1_is_identified_by kg:title_ref7514 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"The field activities of the Persepolis Expedition were initiated by Professor Ernst Herzfeld in Spring 1931, after the French archaeological monopoly had been replaced by the new Antiquity Law, which opened Iran to archaeological field work by other nations. The expedition ended in fall 1939, after the outbreak of World War II. [...] At the end of 1934, Herzfeld was removed from his position as expedition director. He left Persepolis for the last time toward the end of November 1934 and went to London.\" [Elspeth R. M. Dusinberre, \"Herzfeld in Persepolis\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.137 and P.161]",
@@ -62120,20 +61978,10 @@ kg:component_ref7514 a crm:E73_Information_Object,
     mbs:hasPhysicalUnit kg:physical_ref7514 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref7514"^^xsd:anyURI .
 
-kg:concept_excavations_archaeology a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Excavations (Archaeology)" ;
-    mbs:sourceString "Excavations (Archaeology)" .
-
 kg:concept_inscriptions_arabic a crm:E55_Type,
         skos:Concept ;
     rdfs:label "Inscriptions, Arabic" ;
     mbs:sourceString "Inscriptions, Arabic" .
-
-kg:concept_art_of_the_islamic_world a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Art of the Islamic World" ;
-    mbs:sourceString "Art of the Islamic World" .
 
 kg:component_ref7031 a crm:E73_Information_Object,
         mbs:ArchivalComponent,
@@ -62207,8 +62055,8 @@ kg:component_ref7031 a crm:E73_Information_Object,
         kg:concept_sassanids ;
     crm:P1_is_identified_by kg:title_ref7031 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Ernst Herzfeld's years in Iran [Persia] from [February] 1923 to [the end of October] 1925 were made possible by a private company with limited liability called the Gesellschaft zur Förderung von Ausgrabungen und Forschungsreisen GmbH, which was founded in 1923. Its aim was to foster excavations and scientific expeditions in Asia and to publish the results. [...]. [Consequently] Herzfeld was able to travel freely in Iran and survey most major archaeological sites, including Pasargadae, Persepolis, and Kuh-e Khwaja, and develop for future excavations.\" [Jens Kröger, \"Ernst Herzfeld and Friedrich Sarre\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.61 and P.64]",
@@ -62479,8 +62327,8 @@ kg:component_ref7836 a crm:E73_Information_Object,
         kg:concept_seals_numismatics ;
     crm:P1_is_identified_by kg:title_ref7836 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Former Title or Title Variations Ernst Herzeld; Skizzenbuch XXVIII: Antiken II",
@@ -62773,8 +62621,8 @@ kg:component_ref6942 a crm:E73_Information_Object,
         kg:concept_sassanids ;
     crm:P1_is_identified_by kg:title_ref6942 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Ernst Herzfeld's years in Iran [Persia] from [February] 1923 to [the end of October] 1925 were made possible by a private company with limited liability called the Gesellschaft zur Förderung von Ausgrabungen und Forschungsreisen GmbH, which was founded in 1923. Its aim was to foster excavations and scientific expeditions in Asia and to publish the results. [...]. [Consequently] Herzfeld was able to travel freely in Iran and survey most major archaeological sites, including Pasargadae, Persepolis, and Kuh-e Khwaja, and develop for future excavations.\" [Jens Kröger, \"Ernst Herzfeld and Friedrich Sarre\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.61 and P.64]",
@@ -62829,7 +62677,6 @@ kg:component_ref6942 a crm:E73_Information_Object,
         "Scope and Contents Ernst Herzfeld Papers, Series 2: Sketchbooks; Subseries 2.01: Persia, 1923: Sketchbook 04" ;
     crm:P48_has_preferred_identifier kg:id_ark_ref6942 ;
     crm:P67_refers_to kg:agent_Q62933,
-        kg:concept_lcsh_sh2004001811,
         kg:note_ref6942_arrangement_0,
         kg:note_ref6942_odd_0,
         kg:note_ref6942_odd_1,
@@ -62884,6 +62731,7 @@ kg:component_ref6942 a crm:E73_Information_Object,
         kg:place_tgn_1000004,
         kg:place_tgn_7000231,
         kg:place_tgn_7001657,
+        kg:place_tgn_7001658,
         kg:place_tgn_7002229 ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.06/ref6942> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc326f3ed3e-8979-4343-855a-f553b1fd7a8c> ;
@@ -63054,8 +62902,8 @@ kg:component_ref7352 a crm:E73_Information_Object,
         kg:concept_stucco ;
     crm:P1_is_identified_by kg:title_ref7352 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note The sketchbook relates primarly to a campaign of excavation at Kuh-e Khwaja (Iran), carried out by Ernst Herzfeld in February and March 1929.",
@@ -63335,8 +63183,8 @@ kg:component_ref6897 a crm:E73_Information_Object,
         kg:concept_stucco ;
     crm:P1_is_identified_by kg:title_ref6897 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Ernst Herzfeld's years in Iran [Persia] from [February] 1923 to [the end of October] 1925 were made possible by a private company with limited liability called the Gesellschaft zur Förderung von Ausgrabungen und Forschungsreisen GmbH, which was founded in 1923. Its aim was to foster excavations and scientific expeditions in Asia and to publish the results. [...]. [Consequently] Herzfeld was able to travel freely in Iran and survey most major archaeological sites, including Pasargadae, Persepolis, and Kuh-e Khwaja, and develop for future excavations.\" [Jens Kröger, \"Ernst Herzfeld and Friedrich Sarre\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.61 and P.64]",
@@ -63620,8 +63468,8 @@ kg:component_ref6986 a crm:E73_Information_Object,
         kg:concept_sassanids ;
     crm:P1_is_identified_by kg:title_ref6986 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Ernst Herzfeld's years in Iran [Persia] from [February] 1923 to [the end of October] 1925 were made possible by a private company with limited liability called the Gesellschaft zur Förderung von Ausgrabungen und Forschungsreisen GmbH, which was founded in 1923. Its aim was to foster excavations and scientific expeditions in Asia and to publish the results. [...]. [Consequently] Herzfeld was able to travel freely in Iran and survey most major archaeological sites, including Pasargadae, Persepolis, and Kuh-e Khwaja, and develop for future excavations.\" [Jens Kröger, \"Ernst Herzfeld and Friedrich Sarre\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.61 and P.64]",
@@ -63905,8 +63753,8 @@ kg:component_ref7552 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85006507 ;
     crm:P1_is_identified_by kg:title_ref7552 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"The field activities of the Persepolis Expedition were initiated by Professor Ernst Herzfeld in Spring 1931, after the French archaeological monopoly had been replaced by the new Antiquity Law, which opened Iran to archaeological field work by other nations. The expedition ended in fall 1939, after the outbreak of World War II. [...] At the end of 1934, Herzfeld was removed from his position as expedition director. He left Persepolis for the last time toward the end of November 1934 and went to London.\" [Elspeth R. M. Dusinberre, \"Herzfeld in Persepolis\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.137 and P.161]",
@@ -64218,8 +64066,8 @@ kg:component_ref7788 a crm:E73_Information_Object,
         kg:concept_stucco ;
     crm:P1_is_identified_by kg:title_ref7788 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Former Title or Title Variations Ernst Herzeld; Skizzenbuch XXVII: Antiquitäten I (Persien, Teheran, 1926)",
@@ -64519,8 +64367,8 @@ kg:component_ref7073 a crm:E73_Information_Object,
         kg:concept_sassanids ;
     crm:P1_is_identified_by kg:title_ref7073 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Ernst Herzfeld's years in Iran [Persia] from [February] 1923 to [the end of October] 1925 were made possible by a private company with limited liability called the Gesellschaft zur Förderung von Ausgrabungen und Forschungsreisen GmbH, which was founded in 1923. Its aim was to foster excavations and scientific expeditions in Asia and to publish the results. [...]. [Consequently] Herzfeld was able to travel freely in Iran and survey most major archaeological sites, including Pasargadae, Persepolis, and Kuh-e Khwaja, and develop for future excavations.\" [Jens Kröger, \"Ernst Herzfeld and Friedrich Sarre\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.61 and P.64]",
@@ -64753,18 +64601,6 @@ kg:component_ref7073 a crm:E73_Information_Object,
     mbs:hasPhysicalUnit kg:physical_ref7073 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref7073"^^xsd:anyURI .
 
-kg:concept_lcsh_sh85066566 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Inscriptions" ;
-    skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85066566> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:sourceString "Inscriptions" .
-
-kg:concept_architectural_drawing a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Architectural drawing" ;
-    mbs:sourceString "Architectural drawing" .
-
 kg:component_ref6844 a crm:E73_Information_Object,
         mbs:ArchivalComponent,
         mbs:FileUnit ;
@@ -64843,8 +64679,8 @@ kg:component_ref6844 a crm:E73_Information_Object,
         kg:concept_stucco ;
     crm:P1_is_identified_by kg:title_ref6844 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Ernst Herzfeld's years in Iran [Persia] from [February] 1923 to [the end of October] 1925 were made possible by a private company with limited liability called the Gesellschaft zur Förderung von Ausgrabungen und Forschungsreisen GmbH, which was founded in 1923. Its aim was to foster excavations and scientific expeditions in Asia and to publish the results. [...]. [Consequently] Herzfeld was able to travel freely in Iran and survey most major archaeological sites, including Pasargadae, Persepolis, and Kuh-e Khwaja, and develop for future excavations.\" [Jens Kröger, \"Ernst Herzfeld and Friedrich Sarre\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.61 and P.64]",
@@ -65153,8 +64989,8 @@ kg:component_ref7428 a crm:E73_Information_Object,
         kg:concept_lcsh_sh85112527 ;
     crm:P1_is_identified_by kg:title_ref7428 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"The field activities of the Persepolis Expedition were initiated by Professor Ernst Herzfeld in Spring 1931, after the French archaeological monopoly had been replaced by the new Antiquity Law, which opened Iran to archaeological field work by other nations. The expedition ended in fall 1939, after the outbreak of World War II. [...] At the end of 1934, Herzfeld was removed from his position as expedition director. He left Persepolis for the last time toward the end of November 1934 and went to London.\" [Elspeth R. M. Dusinberre, \"Herzfeld in Persepolis\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.137 and P.161]",
@@ -65471,8 +65307,8 @@ kg:component_ref7241 a crm:E73_Information_Object,
         kg:concept_stucco ;
     crm:P1_is_identified_by kg:title_ref7241 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Date/Time and Place of an Event Note \"Ernst Herzfeld's years in Iran [Persia] from [February] 1923 to [the end of October] 1925 were made possible by a private company with limited liability called the Gesellschaft zur Förderung von Ausgrabungen und Forschungsreisen GmbH, which was founded in 1923. Its aim was to foster excavations and scientific expeditions in Asia and to publish the results. [...]. [Consequently] Herzfeld was able to travel freely in Iran and survey most major archaeological sites.\" [Jens Kröger, \"Ernst Herzfeld and Friedrich Sarre\", Ernst Herzfeld and the Development of Near Eastern Studies, 1900-1950. Edited by Ann Gunter and Stefan R. Hauser. Leiden: Brill, 2005. P.61 and P.64]",
@@ -65721,59 +65557,12 @@ kg:component_ref7241 a crm:E73_Information_Object,
     mbs:hasPhysicalUnit kg:physical_ref7241 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref7241"^^xsd:anyURI .
 
-kg:concept_ancient_near_eastern_art a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Ancient Near Eastern Art" ;
-    mbs:sourceString "Ancient Near Eastern Art" .
-
-kg:concept_aat_300263552 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Architecture" ;
-    skos:exactMatch aat:300263552,
-        <https://id.loc.gov/authorities/subjects/sh85006611> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:sourceString "Architecture" .
-
-kg:place_tgn_7000231 a crm:E53_Place ;
-    rdfs:label "Iran" ;
-    owl:sameAs tgn:7000231,
-        wd:Q794,
-        <https://id.loc.gov/authorities/names/n79039880> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:7000231,
-        wd:Q794,
-        <https://id.loc.gov/authorities/names/n79039880> ;
-    mbs:sourceString "Iran" .
-
-kg:concept_decoration_and_ornament a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Decoration and ornament" ;
-    mbs:sourceString "Decoration and ornament" .
-
 kg:concept_lcsh_sh85006507 a crm:E55_Type,
         skos:Concept ;
     rdfs:label "Archaeology" ;
     skos:exactMatch <https://id.loc.gov/authorities/subjects/sh85006507> ;
     mbs:matchConfidence 0.95 ;
     mbs:sourceString "Archaeology" .
-
-kg:place_tgn_1000004 a crm:E53_Place ;
-    rdfs:label "Asia" ;
-    owl:sameAs tgn:1000004,
-        wd:Q48,
-        <https://id.loc.gov/authorities/subjects/sh85008606> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:1000004,
-        wd:Q48,
-        <https://id.loc.gov/authorities/subjects/sh85008606> ;
-    mbs:sourceString "Asia" .
-
-kg:agent_Q62933 a crm:E21_Person ;
-    rdfs:label "Herzfeld, Ernst, 1879-1948" ;
-    owl:sameAs wd:Q62933 ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo wd:Q62933 ;
-    mbs:sourceString "Herzfeld, Ernst, 1879-1948" .
 
 kg:component_ref7697 a crm:E73_Information_Object,
         mbs:ArchivalComponent,
@@ -65878,9 +65667,9 @@ kg:component_ref7697 a crm:E73_Information_Object,
         kg:concept_seals_numismatics ;
     crm:P1_is_identified_by kg:title_ref7697 ;
     crm:P2_has_type aat:300027182,
+        kg:concept_aat_300027339,
         kg:concept_aat_300127104,
         kg:concept_drawings,
-        kg:concept_sketchbooks,
         kg:concept_sketches ;
     crm:P3_has_note "Arrangement Sketchbooks, housed in document boxes and stored on shelves, are organized by Joseph Upton into 13 subject categories.",
         "Former Title or Title Variations Ernst Herzeld; Skizzenbuch XXVI: Sammlung Hahn etc.",
@@ -66273,19 +66062,4 @@ kg:component_ref7697 a crm:E73_Information_Object,
     mbs:hasParentComponent kg:component_ref7696 ;
     mbs:hasPhysicalUnit kg:physical_ref7697 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.06/ref7697"^^xsd:anyURI .
-
-kg:concept_drawings a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Drawings" ;
-    mbs:sourceString "Drawings" .
-
-kg:concept_sketches a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Sketches" ;
-    mbs:sourceString "Sketches" .
-
-kg:concept_sketchbooks a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Sketchbooks" ;
-    mbs:sourceString "Sketchbooks" .
 

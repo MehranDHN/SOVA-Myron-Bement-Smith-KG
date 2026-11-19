@@ -8,9 +8,6 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix tgn: <http://vocab.getty.edu/tgn/> .
-@prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 kg:event_digitization_fsa_a_04_ref6601 a crmdig:D2_Digitization_Process ;
@@ -6662,10 +6659,6 @@ kg:agent_hartley_john_e a crm:E21_Person ;
     rdfs:label "Hartley, John E." ;
     mbs:sourceString "Hartley, John E." .
 
-kg:agent_harvard_university a crm:E74_Group ;
-    rdfs:label "Harvard University" ;
-    mbs:sourceString "Harvard University" .
-
 kg:agent_haselof_dr_arthur a crm:E21_Person ;
     rdfs:label "Haselof, Dr. Arthur" ;
     mbs:sourceString "Haselof, Dr. Arthur" .
@@ -7033,10 +7026,6 @@ kg:agent_lewthwaite_markie a crm:E21_Person ;
 kg:agent_lloyd_nathanial a crm:E21_Person ;
     rdfs:label "Lloyd, Nathanial" ;
     mbs:sourceString "Lloyd, Nathanial" .
-
-kg:agent_lockhart_laurence a crm:E21_Person ;
-    rdfs:label "Lockhart, Laurence" ;
-    mbs:sourceString "Lockhart, Laurence" .
 
 kg:agent_lovegrove_william_a a crm:E21_Person ;
     rdfs:label "Lovegrove, William A." ;
@@ -7877,10 +7866,6 @@ kg:agent_strayer_paul_moore a crm:E21_Person ;
 kg:agent_streeper_robert_p a crm:E21_Person ;
     rdfs:label "Streeper, Robert P." ;
     mbs:sourceString "Streeper, Robert P." .
-
-kg:agent_stuart_college a crm:E74_Group ;
-    rdfs:label "Stuart College" ;
-    mbs:sourceString "Stuart College" .
 
 kg:agent_sulzberger_david a crm:E21_Person ;
     rdfs:label "Sulzberger, David" ;
@@ -12142,46 +12127,6 @@ kg:place_sebenico a crm:E53_Place ;
 kg:place_siena a crm:E53_Place ;
     rdfs:label "Siena" ;
     mbs:sourceString "Siena" .
-
-kg:place_tgn_1000112 a crm:E53_Place ;
-    rdfs:label "Cyprus" ;
-    owl:sameAs tgn:1000112,
-        wd:Q229 ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:1000112,
-        wd:Q229 ;
-    mbs:sourceString "Cyprus" .
-
-kg:place_tgn_7001374 a crm:E53_Place ;
-    rdfs:label "Isfahan" ;
-    owl:sameAs tgn:7001374,
-        wd:Q42053,
-        <https://id.loc.gov/authorities/names/n79061284> ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:7001374,
-        wd:Q42053,
-        <https://id.loc.gov/authorities/names/n79061284> ;
-    mbs:sourceString "Isfahan" .
-
-kg:place_tgn_7002229 a crm:E53_Place ;
-    rdfs:label "Persepolis" ;
-    owl:sameAs tgn:7002229,
-        wd:Q129072,
-        <https://id.loc.gov/authorities/names/n80063345> ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:7002229,
-        wd:Q129072,
-        <https://id.loc.gov/authorities/names/n80063345> ;
-    mbs:sourceString "Persepolis" .
-
-kg:place_tgn_7007567 a crm:E53_Place ;
-    rdfs:label "New York City" ;
-    owl:sameAs tgn:7007567,
-        wd:Q60 ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:7007567,
-        wd:Q60 ;
-    mbs:sourceString "New York City" .
 
 kg:place_torcello a crm:E53_Place ;
     rdfs:label "Torcello" ;
@@ -18764,20 +18709,6 @@ kg:time_ref7425 a crm:E52_Time_Span ;
     crm:P78_is_identified_by "1970" ;
     crm:P82a_begin_of_the_begin "1951" ;
     crm:P82b_end_of_the_end "1970" .
-
-kg:agent_Q15130478 a crm:E21_Person ;
-    rdfs:label "Field, Henry" ;
-    owl:sameAs wd:Q15130478 ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo wd:Q15130478 ;
-    mbs:sourceString "Field, Henry" .
-
-kg:agent_Q216041 a crm:E21_Person ;
-    rdfs:label "Ettinghausen, Richard" ;
-    owl:sameAs wd:Q216041 ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo wd:Q216041 ;
-    mbs:sourceString "Ettinghausen, Richard" .
 
 kg:agent_aga_oglu_dr_mehmet a crm:E21_Person ;
     rdfs:label "Aga-Oglu, Dr.Mehmet" ;
@@ -28812,7 +28743,7 @@ kg:component_ref6708 a crm:E73_Information_Object,
     crm:P1_is_identified_by kg:title_ref6708 ;
     crm:P2_has_type aat:300027182 ;
     crm:P48_has_preferred_identifier kg:id_ark_ref6708 ;
-    crm:P67_refers_to kg:agent_lockhart_laurence ;
+    crm:P67_refers_to kg:agent_Q5701361 ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.04/ref6708> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3572c733a-3600-4b10-aabb-b9539ae1e111> ;
     mbs:archivalLevel "file" ;
@@ -34009,7 +33940,7 @@ kg:component_ref6985 a crm:E73_Information_Object,
     crm:P102_has_title kg:title_ref6985 ;
     crm:P1_is_identified_by kg:title_ref6985 ;
     crm:P48_has_preferred_identifier kg:id_ark_ref6985 ;
-    crm:P67_refers_to kg:agent_smith_myron_bement ;
+    crm:P67_refers_to kg:agent_Q98396885 ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.04/ref6985> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc381e4c4cc-49b0-4bd4-b4e1-53fb3eb9de8d> ;
     mbs:archivalLevel "item" ;
@@ -34284,7 +34215,7 @@ kg:component_ref7001 a crm:E73_Information_Object,
     crm:P102_has_title kg:title_ref7001 ;
     crm:P1_is_identified_by kg:title_ref7001 ;
     crm:P48_has_preferred_identifier kg:id_ark_ref7001 ;
-    crm:P67_refers_to kg:agent_smith_myron_bement ;
+    crm:P67_refers_to kg:agent_Q98396885 ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.04/ref7001> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3350d4fc9-b865-407f-9950-728e107c1523> ;
     mbs:archivalLevel "item" ;
@@ -47463,15 +47394,6 @@ kg:place_rochester_n_y a crm:E53_Place ;
     rdfs:label "Rochester, N.Y." ;
     mbs:sourceString "Rochester, N.Y." .
 
-kg:place_tgn_1000070 a crm:E53_Place ;
-    rdfs:label "France" ;
-    owl:sameAs tgn:1000070,
-        wd:Q142 ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:1000070,
-        wd:Q142 ;
-    mbs:sourceString "France" .
-
 kg:title_ref10612 a crm:E33_Linguistic_Object,
         crm:E35_Title ;
     rdfs:label "Letter to Merrick, Mrs. Richard T., from Myron Bement Smith Collection; Series 1: Papers;Subseries 1.8: Katharine Dennis Smith Papers and Correspondence" ;
@@ -53720,13 +53642,6 @@ kg:title_ref7425 a crm:E33_Linguistic_Object,
     rdfs:label "Smith Annual Newsletter" ;
     rdf:value "Smith Annual Newsletter" .
 
-kg:agent_Q382319 a crm:E21_Person ;
-    rdfs:label "Sevruguin, Antoin, 1851-1933" ;
-    owl:sameAs wd:Q382319 ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo wd:Q382319 ;
-    mbs:sourceString "Sevruguin, Antoin, 1851-1933" .
-
 kg:agent_galitzi_christine a crm:E21_Person ;
     rdfs:label "Galitzi, Christine" ;
     mbs:sourceString "Galitzi, Christine" .
@@ -53970,11 +53885,11 @@ kg:physical_ref10612 a crm:E22_Human_Made_Object,
     crm:P2_has_type aat:300026877,
         kg:concept_aat_300026877 ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
+            rdfs:label "21.7 cm. x 28 cm and smaller" ],
+        [ a crm:E54_Dimension ;
             rdfs:label "1 Item" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Correspondence (3 leaves)" ],
-        [ a crm:E54_Dimension ;
-            rdfs:label "21.7 cm. x 28 cm and smaller" ] ;
+            rdfs:label "Correspondence (3 leaves)" ] ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3b5220b73-7def-4d56-98a9-a83e3043a685> ;
     mbs:mediaType aat:300026877,
         kg:concept_aat_300026877 .
@@ -53986,11 +53901,11 @@ kg:physical_ref10613 a crm:E22_Human_Made_Object,
     crm:P2_has_type aat:300026877,
         kg:concept_aat_300026877 ;
     crm:P43_has_dimension [ a crm:E54_Dimension ;
-            rdfs:label "1 Item" ],
+            rdfs:label "14.4 cm. x 17.5 cm" ],
         [ a crm:E54_Dimension ;
             rdfs:label "Correspondence (2 leaves)" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "14.4 cm. x 17.5 cm" ] ;
+            rdfs:label "1 Item" ] ;
     owl:sameAs <https://n2t.net/ark:/65665/dc38d82a860-19f8-426b-896e-f9a2b5a967c6> ;
     mbs:mediaType aat:300026877,
         kg:concept_aat_300026877 .
@@ -54004,9 +53919,9 @@ kg:physical_ref10614 a crm:E22_Human_Made_Object,
     crm:P43_has_dimension [ a crm:E54_Dimension ;
             rdfs:label "1 Item" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "14.4 cm. x 17.5 cm" ],
+            rdfs:label "Correspondence (1 leaf)" ],
         [ a crm:E54_Dimension ;
-            rdfs:label "Correspondence (1 leaf)" ] ;
+            rdfs:label "14.4 cm. x 17.5 cm" ] ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3e3298c54-c503-42e4-977f-f93ef07c4d4d> ;
     mbs:mediaType aat:300026877,
         kg:concept_aat_300026877 .
@@ -54254,10 +54169,6 @@ kg:place_united_states a crm:E53_Place ;
     rdfs:label "United States" ;
     mbs:sourceString "United States" .
 
-kg:agent_american_council_of_learned_societies a crm:E74_Group ;
-    rdfs:label "American Council of Learned Societies" ;
-    mbs:sourceString "American Council of Learned Societies" .
-
 kg:agent_dogan_kuban a crm:E21_Person ;
     rdfs:label "Dogan Kuban" ;
     mbs:sourceString "Dogan Kuban" .
@@ -54277,10 +54188,6 @@ kg:agent_pratt_institute a crm:E74_Group ;
 kg:agent_yale a crm:E74_Group ;
     rdfs:label "Yale" ;
     mbs:sourceString "Yale" .
-
-kg:agent_yale_university a crm:E74_Group ;
-    rdfs:label "Yale University" ;
-    mbs:sourceString "Yale University" .
 
 kg:box_41 a mbs:Box ;
     rdfs:label "Box 41" ;
@@ -55757,10 +55664,6 @@ kg:physical_ref7173 a crm:E22_Human_Made_Object,
     owl:sameAs <https://n2t.net/ark:/65665/dc3217f3434-1e2a-4e79-9611-5c65d17b3ed3> ;
     mbs:housedIn kg:box_55,
         kg:folder_55_17 .
-
-kg:agent_american_institute_for_persian_art_and_archaeology a crm:E74_Group ;
-    rdfs:label "American Institute for Persian Art and Archaeology" ;
-    mbs:sourceString "American Institute for Persian Art and Archaeology" .
 
 kg:agent_pfeiffer_matilde a crm:E21_Person ;
     rdfs:label "Pfeiffer, Matilde" ;
@@ -66399,20 +66302,9 @@ kg:physical_ref7425 a crm:E22_Human_Made_Object,
         kg:folder_58_16 ;
     mbs:mediaType aat:300026877 .
 
-kg:agent_Q98396885 a crm:E21_Person ;
-    rdfs:label "Smith, Myron Bement, 1897-1970" ;
-    owl:sameAs wd:Q98396885 ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo wd:Q98396885 ;
-    mbs:sourceString "Smith, Myron Bement, 1897-1970" .
-
 kg:agent_bidwell_cornelia_g a crm:E21_Person ;
     rdfs:label "Bidwell, Cornelia G." ;
     mbs:sourceString "Bidwell, Cornelia G." .
-
-kg:agent_library_of_congress a crm:E74_Group ;
-    rdfs:label "Library of Congress" ;
-    mbs:sourceString "Library of Congress" .
 
 kg:folder_20_13 a mbs:Folder ;
     rdfs:label "Folder 13" ;
@@ -66824,28 +66716,6 @@ kg:physical_ref6601 a crm:E22_Human_Made_Object,
         kg:folder_27_5 ;
     mbs:mediaType aat:300027182 .
 
-kg:place_tgn_1000004 a crm:E53_Place ;
-    rdfs:label "Asia" ;
-    owl:sameAs tgn:1000004,
-        wd:Q48,
-        <https://id.loc.gov/authorities/subjects/sh85008606> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:1000004,
-        wd:Q48,
-        <https://id.loc.gov/authorities/subjects/sh85008606> ;
-    mbs:sourceString "Asia" .
-
-kg:place_tgn_1000118 a crm:E53_Place ;
-    rdfs:label "Iraq" ;
-    owl:sameAs tgn:1000118,
-        wd:Q796,
-        <https://id.loc.gov/authorities/names/n79077342> ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo tgn:1000118,
-        wd:Q796,
-        <https://id.loc.gov/authorities/names/n79077342> ;
-    mbs:sourceString "Iraq" .
-
 kg:agent_blake_dr_marion_e a crm:E21_Person ;
     rdfs:label "Blake, Dr. Marion E." ;
     mbs:sourceString "Blake, Dr. Marion E." .
@@ -66925,15 +66795,6 @@ kg:box_14 a mbs:Box ;
         kg:physical_ref6343 ;
     mbs:boxNumber "14" .
 
-kg:place_tgn_1000080 a crm:E53_Place ;
-    rdfs:label "Italy" ;
-    owl:sameAs tgn:1000080,
-        wd:Q38 ;
-    mbs:matchConfidence 0.9 ;
-    mbs:reconciledTo tgn:1000080,
-        wd:Q38 ;
-    mbs:sourceString "Italy" .
-
 kg:agent_katharine_dennis_smith a crm:E21_Person ;
     rdfs:label "Katharine Dennis Smith" ;
     mbs:sourceString "Katharine Dennis Smith" .
@@ -66941,22 +66802,6 @@ kg:agent_katharine_dennis_smith a crm:E21_Person ;
 kg:agent_university_of_utah a crm:E74_Group ;
     rdfs:label "University of Utah" ;
     mbs:sourceString "University of Utah" .
-
-kg:concept_aat_300026877 a crm:E55_Type,
-        skos:Concept ;
-    rdfs:label "Correspondence" ;
-    owl:sameAs aat:300026877 ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo aat:300026877 ;
-    mbs:sourceString "Correspondence" .
-
-kg:agent_columbia_university a crm:E74_Group ;
-    rdfs:label "Columbia University" ;
-    mbs:sourceString "Columbia University" .
-
-kg:agent_smith_myron_bement a crm:E21_Person ;
-    rdfs:label "Myron Bement Smith" ;
-    mbs:sourceString "Myron Bement Smith" .
 
 kg:box_13 a mbs:Box ;
     rdfs:label "Box 13" ;
@@ -66988,7 +66833,7 @@ kg:component_ref6171 a crm:E73_Information_Object,
     crm:P1_is_identified_by kg:title_ref6171 ;
     crm:P3_has_note "Scope and Contents The papers of Myron Bement Smith (MBS) contain some materials about his family, military service and early employment as an architect, but better document his subsequent scholarly career as an expert on Iran and Islamic architecture [Subseries 1.1 and 1.2]. MBS kept notebooks, journals and personal diaries irregularly from his youth until his death in 1970 [Subseries 1.3]. He corresponded extensively with friends, colleagues and many others whom he met in the course of his professional and private life. The early correspondence comprises mainly letters he received, but in the 1930s and especially while in Iran he kept copies of his outgoing letters as well [Subseries 1.4]. MBS published several articles on Italian and Islamic architecture based on his field research in Italy in the 1920s and Iran in the 1930s but little else [Subseries 1.5]. Most of his scholarship resulted in lectures and photographic exhibits. MBS planned to revise his doctoral dissertation on the vault in Persian architecture for publication but had not completed it when he died in 1970. The collection includes some materials from his undergraduate research project in Italy [Subseries 1.6] and more extrensive information on logistics, staffing issues and daily life during his fieldwork in Isfahan, Iran, in the 1930s [Subseries 1.7]. The papers of Katharine Dennis Smith, consisting mostly of her correspondence from the 1930s and later, are included with those of her husband [Subseries 1.8]." ;
     crm:P48_has_preferred_identifier kg:id_ark_ref6171 ;
-    crm:P67_refers_to kg:agent_smith_myron_bement,
+    crm:P67_refers_to kg:agent_Q98396885,
         kg:note_ref6171_scopecontent_0 ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.04/ref6171> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3588130af-dd98-4931-9923-ec3f7952a0de> ;
@@ -67008,13 +66853,6 @@ kg:component_ref6171 a crm:E73_Information_Object,
     mbs:hasParentComponent kg:component_FSA_A_04 ;
     mbs:hasPhysicalUnit kg:physical_ref6171 ;
     mbs:sovaUrl "https://sova.si.edu/record/fsa.a.04/ref6171"^^xsd:anyURI .
-
-kg:agent_Q94652926 a crm:E21_Person ;
-    rdfs:label "Moe, Henry Allen" ;
-    owl:sameAs wd:Q94652926 ;
-    mbs:matchConfidence 0.95 ;
-    mbs:reconciledTo wd:Q94652926 ;
-    mbs:sourceString "Moe, Henry Allen" .
 
 kg:box_15 a mbs:Box ;
     rdfs:label "Box 15" ;
@@ -67356,9 +67194,9 @@ kg:component_ref7052 a crm:E73_Information_Object,
     crm:P1_is_identified_by kg:title_ref7052 ;
     crm:P3_has_note "Scope and Contents note Myron Bement Smith (MBS) received a John Simon Guggenheim Memorial Foundation fellowship to study Italian brickwork and stone work. He travelled extensively in northern Italy and along the Dalmatian Coast photographing architectural features of local buildings. Information about his fellowship, the logistics of his field work, his photograph albums and architectural sketches were retained with his other papers after his death. The negatives from his Italian photographs were donated to the Fogg Art Museum, Harvard University." ;
     crm:P48_has_preferred_identifier kg:id_ark_ref7052 ;
-    crm:P67_refers_to kg:agent_fogg_art_museum_harvard_university,
+    crm:P67_refers_to kg:agent_Q98396885,
+        kg:agent_fogg_art_museum_harvard_university,
         kg:agent_john_simon_guggenheim_memorial_foundation,
-        kg:agent_smith_myron_bement,
         kg:note_ref7052_scopecontent_0,
         kg:place_dalmatian_coast ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.04/ref7052> ;
@@ -67476,20 +67314,6 @@ kg:box_5 a mbs:Box ;
         kg:physical_ref6259,
         kg:physical_ref6260 ;
     mbs:boxNumber "5" .
-
-kg:place_tgn_7000231 a crm:E53_Place ;
-    rdfs:label "Iran",
-        "Persia" ;
-    owl:sameAs tgn:7000231,
-        wd:Q794,
-        <https://id.loc.gov/authorities/names/n79039880> ;
-    mbs:matchConfidence 0.9,
-        0.95 ;
-    mbs:reconciledTo tgn:7000231,
-        wd:Q794,
-        <https://id.loc.gov/authorities/names/n79039880> ;
-    mbs:sourceString "Iran",
-        "Persia" .
 
 kg:box_44 a mbs:Box ;
     rdfs:label "Box 44" ;
@@ -68830,7 +68654,7 @@ kg:component_ref6319 a crm:E73_Information_Object,
     crm:P1_is_identified_by kg:title_ref6319 ;
     crm:P3_has_note "Scope and Contents note Myron Bement Smith (MBS) kept a journal sporadically as a young man. As an adult he bought some type of journal or diary each year but entries are episodic and for some years only a few days have any notations. His early journals, 1909 to 1918, include sketches, lists and daily thoughts. During his student years his occasional entries include expenses, appointments, addresses and miscellaneous notes. The journals covering his Iran field research, 1933 to 1937, contain more entries and include purchases, expenses, sketches, travel itineraries and photography notes. They also include notes about people he worked with or met during his time in Iran. Upon return to the United States, his journals once again become episodic, generally recording appointments and the occasional note." ;
     crm:P48_has_preferred_identifier kg:id_ark_ref6319 ;
-    crm:P67_refers_to kg:agent_smith_myron_bement,
+    crm:P67_refers_to kg:agent_Q98396885,
         kg:note_ref6319_scopecontent_0 ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.04/ref6319> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc3b834f0c6-da98-4547-b0d2-0336aaf54b53> ;
@@ -68962,9 +68786,9 @@ kg:component_ref6261 a crm:E73_Information_Object,
     crm:P1_is_identified_by kg:title_ref6261 ;
     crm:P3_has_note "Scope and Contents note Myron Bement Smith's (MBS) papers contain only limited information on his career as an architect before and after his time at Yale. His activities as Executive Secretary of the newly created American Institute for Persian Art and Archaeology (1930-1933) are documented to some extent as is his period as chief of the Iranian section at the Library of Congress (1943-1944). Before and after he was employed by the Library of Congress, he served there as an Honorary Consultant for Islamic art and archaeology. In the 1960s he had a contract with the Office of Education that resulted in a published study on the value of photodocumentation in teaching and research, the philosphy that underlay development of the Islamic Archives.[For published report see Subseries 1.5] The paperwork and administrative oversight procedures by the Pratt Institute are well documented. In the late 1960s MBS received a grant from the National Endowment for the Humanities (NEH) to fund revising his Ph. D. thesis on the vault in Iranian architecture for publication. Documents and correspondence with NEH and potential sponsoring institutions cover MBS' effort to produce a manuscript and Katharine's (KDS) attempt to complete the project after his death." ;
     crm:P48_has_preferred_identifier kg:id_ark_ref6261 ;
-    crm:P67_refers_to kg:agent_american_institute_for_persian_art_and_archaeology,
+    crm:P67_refers_to kg:agent_Q98396885,
+        kg:agent_american_institute_for_persian_art_and_archaeology,
         kg:agent_library_of_congress,
-        kg:agent_smith_myron_bement,
         kg:note_ref6261_scopecontent_0 ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.04/ref6261> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc38062b2fe-ce6b-4e30-84d5-4a305d191021> ;
@@ -69180,9 +69004,9 @@ kg:component_ref6980 a crm:E73_Information_Object,
     crm:P1_is_identified_by kg:title_ref6980 ;
     crm:P3_has_note "Scope and Contents note Myron Bement Smith (MBS) published very little material based on his 1920s field research on Italian stone and brick work or his 1930s field research on Islamic architecture in Iran. His Italian research, undertaken as a John Simon Guggenheim Memorial Foundation fellow before and after graduation from Yale University, resulted in several journal articles. The results of his Iran research, while a fellow of the American Council of Learned Societies (ACLS), appeared as a series of journal articles from 1935 to 1940. At the time of his death, MBS was reworking his 1947 Ph. D. thesis on the vault in Iranian architecture in anticipation of publishing it as a book. During his field research in Iran, MBS photographed and made architectural sketches of many Islamic buildings and monuments. Much of his subsequent scholarly work resulted in photographic exhibits and illustrated lectures. He lectured at academic venues in the United States and abroad, the latter hosted by the United States Information Service (USIS)." ;
     crm:P48_has_preferred_identifier kg:id_ark_ref6980 ;
-    crm:P67_refers_to kg:agent_american_council_of_learned_societies,
+    crm:P67_refers_to kg:agent_Q98396885,
+        kg:agent_american_council_of_learned_societies,
         kg:agent_john_simon_guggenheim_memorial_foundation,
-        kg:agent_smith_myron_bement,
         kg:agent_united_states_information_service,
         kg:agent_yale_university,
         kg:note_ref6980_scopecontent_0 ;
@@ -69437,11 +69261,11 @@ kg:component_ref7075 a crm:E73_Information_Object,
     crm:P1_is_identified_by kg:title_ref7075 ;
     crm:P3_has_note "Scope and Contents note Myron Bement Smith (MBS) received a grant from the American Council of Learned Societies to study Islamic architecture in Iran. His wife Katharine accompanied him and managed their household, which included both servants and research staff. Papers and documents include information about equipment taken or bought subsequently and dealing with Iranian customs regulations and travel requirements. Some information on MBS' proposed research methodology is included. Information on housekeeping requirements for what MBS referred to variously as the Expedition House or Staff House, a faculty residence rented from Stuart College in Isfahan, is included both here and in the correspondence of Katharine Dennis Smith [Subseries 1.8]. Several folders deal with the serious motor accident the Smiths suffered en route to Iran in 1933 and Katharine's lengthy rehabilitation from a broken back. Information about MBS' research assistants in Isfahan varies in detail; there is a lot of information about the suicide of Karl Bergner, who came to work for MBS in 1936 after working for Ernst Herzfeld at Persepolis. Also of interest are the occasional newsletters describing life in Iran witten by Katharine and circulated widely to friends back home." ;
     crm:P48_has_preferred_identifier kg:id_ark_ref7075 ;
-    crm:P67_refers_to kg:agent_american_council_of_learned_societies,
+    crm:P67_refers_to kg:agent_Q98396885,
+        kg:agent_american_council_of_learned_societies,
         kg:agent_ernst_herzfeld,
         kg:agent_karl_bergner,
         kg:agent_katharine_dennis_smith,
-        kg:agent_smith_myron_bement,
         kg:agent_stuart_college,
         kg:note_ref7075_scopecontent_0,
         kg:place_tgn_7000231,
@@ -69630,7 +69454,7 @@ kg:component_ref6173 a crm:E73_Information_Object,
     crm:P1_is_identified_by kg:title_ref6173 ;
     crm:P3_has_note "Scope and Contents note These materials include an eclectic mix of Myron Bement Smith's (MBS) personal and family materials. Curricum vitae, biographic sketches, newspaper clippings and documents provide information on his professional career, military service and medical history. There are some academic records and notes, and a limited amount of geneological information on MBS' family. Condolence letters to his widow offer insight into his circle of acquaintances at his death. Information on the disposition of his estate, his library and those research materials not part of the Islamic Archives is included in this sub-series. Photographs of Myron and Katharine Smith taken in Iran in the 1930s give a glimpse of expatriate life in Isfahan. A collection of drawings and sketches made by MBS as a young man in France and Rochester, N.Y. attest to his early interest in architecture. His university architectural exercises and miscellaneous designs and blueprints document his continued development." ;
     crm:P48_has_preferred_identifier kg:id_ark_ref6173 ;
-    crm:P67_refers_to kg:agent_smith_myron_bement,
+    crm:P67_refers_to kg:agent_Q98396885,
         kg:note_ref6173_scopecontent_0 ;
     rdfs:seeAlso <https://sova.si.edu/record/fsa.a.04/ref6173> ;
     owl:sameAs <https://n2t.net/ark:/65665/dc371e7ec0e-45e1-4bc7-a9b2-4a194c520843> ;
@@ -71253,10 +71077,10 @@ kg:component_ref6376 a crm:E73_Information_Object,
     crm:P1_is_identified_by kg:title_ref6376 ;
     crm:P3_has_note "Scope and Contents note Myron Bement Smith (MBS) had an extensive list of friends and colleagues with whom he corresponded over the years. Correspondence from the 1920s provides a view into the cultural and social world of a \"young man about town\" in Rochester, N.Y., New Haven, Conn. and New York City. The voluminous correspondence from his mother, Ida Sargeant Capella, provides its own unique perspective on Rochester during the 1920s and 1930s. After 1930, when he joined the American Institute for Persian Art and Archaeology, MBS acquired many new friends and contacts within the world of Islamic and Near Eastern studies and among those associated with academic foundations and funding organizations. Extensive correspondence by both MBS and his wife Katharine Dennis Smith during their stay in Iran from 1933 to 1937 describes life in the expatriate community in Isfahan; contacts with foreign scholars and travellers; and interactions with Iranians. The earliest correspondence includes only letters written to MBS, but beginning in the 1930s, he and his wife kept copies of their outgoing letters as well. MBS' correspondence with his wife during their times apart contains more information about what he is doing and life around him than is included in his letters to others. Letters become fewer in the 1940s as MBS and his wife begin conducting more business and social interchange by telephone. The correspondence of Katharine Dennis Smith [Subseries 1.8] complements that of MBS. They corresponded with many of the same people and she often answered letters written to him. She frequently handled secretarial duties for the Islamic Archives and sometimes discusses its activities in her letters. The correspondence is arranged alphabetically by correspondent and years for which letters exist is noted. Both business and personal letters are included." ;
     crm:P48_has_preferred_identifier kg:id_ark_ref6376 ;
-    crm:P67_refers_to kg:agent_american_institute_for_persian_art_and_archaeology,
+    crm:P67_refers_to kg:agent_Q98396885,
+        kg:agent_american_institute_for_persian_art_and_archaeology,
         kg:agent_ida_sargeant_capella,
         kg:agent_katharine_dennis_smith,
-        kg:agent_smith_myron_bement,
         kg:note_ref6376_scopecontent_0,
         kg:place_new_haven_conn,
         kg:place_rochester_n_y,
