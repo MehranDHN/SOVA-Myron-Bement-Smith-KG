@@ -5,10 +5,15 @@ Standalone::
     python -m pipeline.analyze
     python -m pipeline.analyze --ead srcdata/FSA.A.06-ead.xml
     python -m pipeline.analyze --live-ead
+    python -m pipeline.analyze --sync-ead
 
-The run is idempotent: it only writes ``data/reports/analyze/`` (and a
-remote-EAD cache when ``--live-ead`` is set). It never mutates ``srcdata/``,
-``data/rdf/``, or ``vocab/seed.yml``.
+``--live-ead`` is compare-and-report only: it fetches published SOVA XML into
+``vocab/cache/ead-remote/`` and writes ``data/reports/analyze/``. It does not
+change ``srcdata/`` or RDF.
+
+``--sync-ead`` downloads the publisher XML, copies it onto ``srcdata/`` when
+the bytes differ (previous file kept under ``vocab/cache/ead-local-backup/``),
+and remaps that collection's RDF shards.
 """
 
 from __future__ import annotations
@@ -28,6 +33,7 @@ from pipeline.inventory import from_parsed, write_report
 from pipeline.namespaces import collection_slug, kg_name
 from pipeline.paths import (
     ANALYZE_DIR,
+    CACHE_DIR,
     DEFAULT_EADID,
     EAD_SOURCES,
     REMOTE_EAD_CACHE,
@@ -64,28 +70,105 @@ def _norm_label(text: str | None) -> str:
     return re.sub(r"\s+", " ", text).strip().lower()
 
 
-def load_sources() -> dict:
-    cfg = {"user_agent": USER_AGENT, "collections": []}
-    if EAD_SOURCES.exists():
+def _rel(path: Path) -> str:
+    path = Path(path)
+    try:
+        return str(path.resolve().relative_to(ROOT)).replace("\\", "/")
+    except ValueError:
+        return str(path).replace("\\", "/")
+
+
+def source_stem(value: str) -> tuple[str, str]:
+    """``FSA.A.04-ead`` → (``FSA.A.04``, ``FSA.A.04-ead``)."""
+    name = (value or "").strip().replace("\\", "/").split("/")[-1]
+    if name.lower().endswith(".xml"):
+        name = name[:-4]
+    if name.endswith("-ead"):
+        return name[: -len("-ead")], name
+    return name, f"{name}-ead"
+
+
+def normalize_source_entry(entry) -> dict | None:
+    extra = {}
+    if isinstance(entry, str):
+        raw_stem = entry.strip()
+        if not raw_stem:
+            return None
+    elif isinstance(entry, dict):
+        extra = dict(entry)
+        raw_stem = (
+            extra.get("stem")
+            or extra.get("local")
+            or extra.get("eadid")
+            or extra.get("id")
+            or ""
+        ).strip()
+        if not raw_stem:
+            return None
+    else:
+        return None
+    eadid, stem = source_stem(raw_stem)
+    eadid = extra.get("eadid") or eadid
+    stem = extra.get("stem") or stem
+    if isinstance(stem, str) and stem.lower().endswith(".xml"):
+        stem = stem[:-4]
+        _, stem = source_stem(stem)
+    local = extra.get("local") or f"srcdata/{stem}.xml"
+    local = str(local).replace("\\", "/")
+    path = Path(local)
+    if not path.is_absolute():
+        path = ROOT / local
+    row = {
+        "eadid": eadid,
+        "stem": stem,
+        "local": local,
+        "path": path,
+        "xml_urls": list(extra.get("xml_urls") or default_xml_urls(eadid)),
+        "sova": extra.get("sova") or f"https://sova.si.edu/record/{eadid.lower()}",
+    }
+    for key in ("label", "ark"):
+        if extra.get(key):
+            row[key] = extra[key]
+    return row
+
+
+def load_sources(path: Path | None = None) -> dict:
+    """Read ``data/ead-sources.yml`` (a list of stems such as ``FSA.A.04-ead``)."""
+    cfg = {"user_agent": USER_AGENT, "collections": [], "sources_file": None}
+    src_path = Path(path) if path else EAD_SOURCES
+    raw = {}
+    if src_path.exists():
         import yaml
 
-        raw = yaml.safe_load(EAD_SOURCES.read_text(encoding="utf-8")) or {}
-        cfg["user_agent"] = raw.get("user_agent") or USER_AGENT
-        cfg["collections"] = list(raw.get("collections") or [])
-    by_id = {row["eadid"]: row for row in cfg["collections"] if row.get("eadid")}
-    for path in list_local_eads():
-        eadid = path.name.replace("-ead.xml", "")
-        if eadid not in by_id:
-            by_id[eadid] = {
-                "eadid": eadid,
-                "local": str(path.relative_to(ROOT)).replace("\\", "/"),
-                "xml_urls": default_xml_urls(eadid),
-            }
-            cfg["collections"].append(by_id[eadid])
-        row = by_id[eadid]
-        row.setdefault("local", str(path.relative_to(ROOT)).replace("\\", "/"))
-        row.setdefault("xml_urls", default_xml_urls(eadid))
-        row["path"] = path
+        raw = yaml.safe_load(src_path.read_text(encoding="utf-8")) or {}
+        cfg["sources_file"] = _rel(src_path)
+        cfg["user_agent"] = (raw.get("user_agent") if isinstance(raw, dict) else None) or USER_AGENT
+    if isinstance(raw, list):
+        entries = raw
+    elif isinstance(raw, dict):
+        entries = list(raw.get("sources") or raw.get("collections") or [])
+    else:
+        entries = []
+    listed = bool(entries)
+    by_id = {}
+    for entry in entries:
+        row = normalize_source_entry(entry)
+        if not row:
+            continue
+        by_id[row["eadid"]] = row
+        cfg["collections"].append(row)
+    if not listed:
+        for ead_file in list_local_eads():
+            eadid, stem = source_stem(ead_file.name)
+            if eadid in by_id:
+                continue
+            row = normalize_source_entry(stem)
+            if row:
+                by_id[eadid] = row
+                cfg["collections"].append(row)
+    else:
+        for row in cfg["collections"]:
+            row.setdefault("xml_urls", default_xml_urls(row["eadid"]))
     cfg["by_id"] = by_id
     return cfg
 
@@ -473,8 +556,97 @@ def fetch_remote_ead(
     return {"status": "unavailable", "path": None, "attempts": errors}
 
 
+LOCAL_EAD_BACKUP = CACHE_DIR / "ead-local-backup"
+
+
 def file_digest(path: Path) -> str:
     return _sha256(path.read_bytes())
+
+
+def publisher_has_changes(cmp: dict | None) -> bool:
+    if not cmp:
+        return False
+    keys = (
+        "added_components",
+        "removed_components",
+        "changed_components",
+        "new_dao_hrefs",
+        "removed_dao_hrefs",
+    )
+    if any((cmp.get(k) or {}).get("count") for k in keys):
+        return True
+    return bool(cmp.get("creation_changed"))
+
+
+def install_published_ead(local: Path, remote_path: Path) -> dict:
+    """Copy publisher XML onto ``srcdata/``. Keep one previous copy in cache."""
+    local = Path(local)
+    remote_path = Path(remote_path)
+    result = {
+        "status": "unchanged",
+        "srcdata": _rel(local),
+        "backup": None,
+        "copied": False,
+        "same_bytes": True,
+    }
+    if not remote_path.exists():
+        result["status"] = "no_remote"
+        result["same_bytes"] = False
+        return result
+    same = local.exists() and file_digest(local) == file_digest(remote_path)
+    result["same_bytes"] = same
+    if same:
+        return result
+    LOCAL_EAD_BACKUP.mkdir(parents=True, exist_ok=True)
+    backup = LOCAL_EAD_BACKUP / local.name
+    if local.exists():
+        backup.write_bytes(local.read_bytes())
+        result["backup"] = _rel(backup)
+    local.parent.mkdir(parents=True, exist_ok=True)
+    local.write_bytes(remote_path.read_bytes())
+    result["copied"] = True
+    result["status"] = "installed"
+    return result
+
+
+def remap_collection_rdf(ead_path: Path) -> dict:
+    """Rewrite one collection's Turtle shards from the (updated) local EAD."""
+    from pipeline.map_crm import run as map_crm
+
+    ead_path = Path(ead_path)
+    result = map_crm(path=ead_path)
+    eadid = result.get("eadid")
+    out_dir = rdf_dir_for(eadid)
+    keep = {
+        f"{name}.ttl"
+        for name in (result.get("graphs") or {})
+        if name != "vocabulary"
+    }
+    removed = []
+    if out_dir.exists():
+        for shard in out_dir.glob("*.ttl"):
+            if shard.name not in keep:
+                shard.unlink()
+                removed.append(shard.name)
+    result["removed_shards"] = removed
+    result["dir"] = str(out_dir.relative_to(ROOT)).replace("\\", "/")
+    return result
+
+
+def apply_sync(eadid: str, local: Path, remote: dict) -> dict:
+    """Install publisher EAD and remap RDF when the remote file is available."""
+    if not remote.get("path"):
+        return {
+            "status": "unavailable",
+            "reason": remote.get("status"),
+            "attempts": remote.get("attempts"),
+        }
+    sync = install_published_ead(local, Path(remote["path"]))
+    sync["eadid"] = eadid
+    if sync.get("copied"):
+        sync["rdf"] = remap_collection_rdf(local)
+        sync["status"] = "synced"
+    return sync
 
 
 def analyze_collection(
@@ -482,7 +654,11 @@ def analyze_collection(
     sources: dict,
     live_ead: bool = False,
     refresh: bool = False,
+    sync_ead: bool = False,
 ) -> dict:
+    if sync_ead:
+        live_ead = True
+        refresh = True
     local = local_path_for(eadid, sources)
     data = parse_ead(local)
     snap = ead_snapshot(data)
@@ -492,9 +668,15 @@ def analyze_collection(
     vocab = vocabulary_gaps(snap)
     remote = {"status": "skipped", "live": False}
     remote_cmp = None
+    sync = {"status": "skipped"}
     if live_ead:
         remote = fetch_remote_ead(eadid, sources, refresh=refresh)
         remote["live"] = True
+        if sync_ead and not remote.get("path"):
+            cached = fetch_remote_ead(eadid, sources, refresh=False)
+            if cached.get("path"):
+                remote = cached
+                remote["live"] = True
         if remote.get("path"):
             rdata = parse_ead(remote["path"])
             rsnap = ead_snapshot(rdata)
@@ -505,14 +687,24 @@ def analyze_collection(
             remote["digitized_components"] = rsnap["inventory"]["digitized_components"]
             remote["local_sha256"] = file_digest(local)
             remote["same_bytes"] = remote.get("sha256") == remote["local_sha256"]
+        if sync_ead:
+            sync = apply_sync(eadid, local, remote)
+            if sync.get("copied"):
+                data = parse_ead(local)
+                snap = ead_snapshot(data)
+                write_report(snap["inventory"])
+                rdf = scan_rdf_dir(eadid)
+                rdf_cmp = compare_ead_rdf(snap, rdf)
+                vocab = vocabulary_gaps(snap)
     row = (sources.get("by_id") or {}).get(eadid) or {}
     return {
         "eadid": eadid,
+        "stem": row.get("stem"),
         "title": snap.get("title"),
         "label": row.get("label"),
         "sova": row.get("sova"),
         "ark": row.get("ark") or (snap.get("header") or {}).get("eadid_url"),
-        "local": str(local.relative_to(ROOT)).replace("\\", "/"),
+        "local": _rel(local),
         "local_sha256": file_digest(local),
         "header": snap.get("header"),
         "inventory": {
@@ -534,6 +726,7 @@ def analyze_collection(
         "vocabulary": vocab,
         "remote": remote,
         "compare_remote": remote_cmp,
+        "sync": sync,
     }
 
 
@@ -543,7 +736,9 @@ def render_markdown(summary: dict) -> str:
         "",
         f"Generated `{summary.get('generated')}`.",
         "",
-        "Offline by default. `--live-ead` fetches published SOVA XML and diffs it against `srcdata/`.",
+        "Sources: `data/ead-sources.yml` (stems such as `FSA.A.04-ead`).",
+        "Offline by default. `--live-ead` compares publisher XML to `srcdata/` and reports only.",
+        "`--sync-ead` downloads publisher XML, updates `srcdata/`, and remaps RDF.",
         "Reports are rewritten in full each run (idempotent: same inputs → same counts).",
         "",
     ]
@@ -571,6 +766,7 @@ def render_markdown(summary: dict) -> str:
             f"- Named mentions with URI / without: {vocab.get('named_with_uri')} / {vocab.get('named_without_uri')}",
             f"- Unseeded label types (candidates for `vocab/seed.yml`): **{vocab.get('unseeded_label_types')}**",
             f"- Live XML: `{remote.get('status')}`",
+            f"- Sync: `{(coll.get('sync') or {}).get('status')}`",
             "",
         ]
         series = inv.get("series") or []
@@ -595,13 +791,20 @@ def render_markdown(summary: dict) -> str:
         rcmp = coll.get("compare_remote")
         if rcmp:
             lines += [
-                "Live XML vs local:",
+                "Publisher XML vs local:",
                 "",
                 f"- Added components: {rcmp['added_components']['count']}",
                 f"- Removed components: {rcmp['removed_components']['count']}",
                 f"- Changed components: {rcmp['changed_components']['count']}",
                 f"- New DAO hrefs: {rcmp['new_dao_hrefs']['count']}",
                 f"- Finding-aid creation date changed: {rcmp.get('creation_changed')}",
+                "",
+            ]
+        sync = coll.get("sync") or {}
+        if sync.get("status") and sync.get("status") != "skipped":
+            lines += [
+                f"- Sync status: `{sync.get('status')}`"
+                + (f" (backup `{sync.get('backup')}`)" if sync.get("backup") else ""),
                 "",
             ]
     return "\n".join(lines) + "\n"
@@ -611,19 +814,22 @@ def run(
     path=None,
     live_ead: bool = False,
     refresh: bool = False,
+    sync_ead: bool = False,
 ) -> dict:
+    if sync_ead:
+        live_ead = True
+        refresh = True
     sources = load_sources()
     if path:
         data = parse_ead(path)
-        eadids = [data["header"].get("eadid") or Path(path).name.replace("-ead.xml", "")]
-        if eadids[0] not in (sources.get("by_id") or {}):
-            sources.setdefault("by_id", {})[eadids[0]] = {
-                "eadid": eadids[0],
-                "path": Path(path),
-                "xml_urls": default_xml_urls(eadids[0]),
-            }
-        else:
-            sources["by_id"][eadids[0]]["path"] = Path(path)
+        eadids = [data["header"].get("eadid") or source_stem(Path(path).name)[0]]
+        row = normalize_source_entry(str(path)) or {
+            "eadid": eadids[0],
+            "path": Path(path),
+            "xml_urls": default_xml_urls(eadids[0]),
+        }
+        row["path"] = Path(path)
+        sources.setdefault("by_id", {})[eadids[0]] = row
     else:
         eadids = [row["eadid"] for row in sources.get("collections") or []]
         if not eadids:
@@ -631,11 +837,19 @@ def run(
     collections = []
     for eadid in eadids:
         collections.append(
-            analyze_collection(eadid, sources, live_ead=live_ead, refresh=refresh)
+            analyze_collection(
+                eadid,
+                sources,
+                live_ead=live_ead,
+                refresh=refresh,
+                sync_ead=sync_ead,
+            )
         )
     summary = {
         "generated": _now(),
         "live_ead": live_ead,
+        "sync_ead": sync_ead,
+        "sources_file": sources.get("sources_file"),
         "collections": collections,
         "totals": {
             "collections": len(collections),
@@ -676,13 +890,18 @@ def _jsonable(obj):
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(
-        description="Analyze local/live EAD XML against harvested RDF (idempotent reports)."
+        description="Change tracker: compare local EAD/RDF with publisher finding aids."
     )
     parser.add_argument("--ead", default=None, help="Limit to one finding aid XML path")
     parser.add_argument(
         "--live-ead",
         action="store_true",
-        help="Fetch published SOVA EAD XML and diff against srcdata/",
+        help="Compare publisher SOVA XML to srcdata/ and report only (no overwrite)",
+    )
+    parser.add_argument(
+        "--sync-ead",
+        action="store_true",
+        help="Download publisher EAD into srcdata/ and remap RDF when it changed",
     )
     parser.add_argument(
         "--refresh-ead",
@@ -690,17 +909,33 @@ def main(argv=None) -> int:
         help="Re-download cached remote EAD even if a copy exists",
     )
     args = parser.parse_args(argv)
-    summary = run(path=args.ead, live_ead=args.live_ead, refresh=args.refresh_ead)
+    summary = run(
+        path=args.ead,
+        live_ead=args.live_ead,
+        refresh=args.refresh_ead,
+        sync_ead=args.sync_ead,
+    )
     print(json.dumps(summary.get("written"), indent=2))
     print(f"collections: {summary['totals']['collections']}")
     for coll in summary["collections"]:
         inv = coll["inventory"]
         cmp = coll["compare_rdf"]
+        rcmp = coll.get("compare_remote") or {}
+        sync = coll.get("sync") or {}
+        extra = ""
+        if rcmp:
+            extra = (
+                f" publisher_added={rcmp['added_components']['count']}"
+                f" changed={rcmp['changed_components']['count']}"
+            )
+        if sync.get("status") and sync.get("status") != "skipped":
+            extra += f" sync={sync.get('status')}"
         print(
             f"  {coll['eadid']}: components={inv['components']} "
             f"digitized={inv['digitized_components']} "
             f"mapped={coll['rdf']['mapped']} "
             f"missing_from_rdf={cmp['components_in_ead_missing_from_rdf']['count']}"
+            f"{extra}"
         )
     return 0
 

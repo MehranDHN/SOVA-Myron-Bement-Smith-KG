@@ -24851,7 +24851,7 @@
                 </dao>
               </did>
             </c>
-            <c level="item" id="ref8270">
+            <c level="file" id="ref8270">
               <did id="refIDd1e54951">
                 <unittitle><persname>Dr. Laurence Lockhart</persname> Photographs, 105 C, <geogname>Iran</geogname>, <geogname>Kashan</geogname> part 1</unittitle>
                 <unitid type="ark">
@@ -24859,9 +24859,14 @@
                 </unitid>
                 <container id="aspace_bfefcf1dff5f4b0c296651afc7120294" type="Box" label="Mixed Materials">139</container>
                 <container parent="aspace_bfefcf1dff5f4b0c296651afc7120294" type="Folder">4</container>
+                <dao xlink:actuate="onRequest" xlink:href="https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref8270" xlink:role="image-service" xlink:show="new" xlink:title="Dr. Laurence Lockhart Photographs, 105 C, Iran, Kashan part 1" xlink:type="simple">
+                  <daodesc>
+                    <p>Dr. Laurence Lockhart Photographs, 105 C, Iran, Kashan part 1</p>
+                  </daodesc>
+                </dao>
               </did>
             </c>
-            <c level="item" id="ref8271">
+            <c level="file" id="ref8271">
               <did id="refIDd1e54977">
                 <unittitle><persname>Dr. Laurence Lockhart</persname> Photographs, 105 C, <geogname>Iran</geogname>, <geogname>Kashan</geogname> part 2</unittitle>
                 <unitid type="ark">
@@ -24869,9 +24874,14 @@
                 </unitid>
                 <container id="aspace_84393dc3538a432c4bb248f69cfc9373" type="Box" label="Mixed Materials">139</container>
                 <container parent="aspace_84393dc3538a432c4bb248f69cfc9373" type="Folder">5</container>
+                <dao xlink:actuate="onRequest" xlink:href="https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref8271" xlink:role="image-service" xlink:show="new" xlink:title="Dr. Laurence Lockhart Photographs, 105 C, Iran, Kashan part 2" xlink:type="simple">
+                  <daodesc>
+                    <p>Dr. Laurence Lockhart Photographs, 105 C, Iran, Kashan part 2</p>
+                  </daodesc>
+                </dao>
               </did>
             </c>
-            <c level="item" id="ref8272">
+            <c level="file" id="ref8272">
               <did id="refIDd1e55003">
                 <unittitle><persname>Dr. Laurence Lockhart</persname> Photographs, 105 C, <geogname>Iran</geogname>, <geogname>Khorasan</geogname> part 1</unittitle>
                 <unitid type="ark">
@@ -24879,9 +24889,14 @@
                 </unitid>
                 <container id="aspace_dd97b3595beeafc2922a5894ced556f8" type="Box" label="Mixed Materials">139</container>
                 <container parent="aspace_dd97b3595beeafc2922a5894ced556f8" type="Folder">6</container>
+                <dao xlink:actuate="onRequest" xlink:href="https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref8272" xlink:role="image-service" xlink:show="new" xlink:title="Dr. Laurence Lockhart Photographs, 105 C, Iran, Khorasan part 1" xlink:type="simple">
+                  <daodesc>
+                    <p>Dr. Laurence Lockhart Photographs, 105 C, Iran, Khorasan part 1</p>
+                  </daodesc>
+                </dao>
               </did>
             </c>
-            <c level="item" id="ref8273">
+            <c level="file" id="ref8273">
               <did id="refIDd1e55030">
                 <unittitle><persname>Dr. Laurence Lockhart</persname> Photographs, 105 C, <geogname>Iran</geogname>, <geogname>Khorasan</geogname> part 2</unittitle>
                 <unitid type="ark">
@@ -24889,9 +24904,14 @@
                 </unitid>
                 <container id="aspace_1659d57d92f7f9f53911328803166cb8" type="Box" label="Mixed Materials">139</container>
                 <container parent="aspace_1659d57d92f7f9f53911328803166cb8" type="Folder">7</container>
+                <dao xlink:actuate="onRequest" xlink:href="https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref8273" xlink:role="image-service" xlink:show="new" xlink:title="Dr. Laurence Lockhart Photographs, 105 C, Iran, Khorasan part 2" xlink:type="simple">
+                  <daodesc>
+                    <p>Dr. Laurence Lockhart Photographs, 105 C, Iran, Khorasan part 2</p>
+                  </daodesc>
+                </dao>
               </did>
             </c>
-            <c level="item" id="ref8274">
+            <c level="file" id="ref8274">
               <did id="refIDd1e55056">
                 <unittitle><persname>Dr. Laurence Lockhart</persname> Photographs, 105 C, <geogname>Iran, </geogname>
                            <geogname>Khuzestan</geogname>
@@ -24901,9 +24921,14 @@
                 </unitid>
                 <container id="aspace_08b30c8890e4b7cbc55f724915a4ba2f" type="Box" label="Mixed Materials">139</container>
                 <container parent="aspace_08b30c8890e4b7cbc55f724915a4ba2f" type="Folder">8</container>
+                <dao xlink:actuate="onRequest" xlink:href="https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref8274" xlink:role="image-service" xlink:show="new" xlink:title="Dr. Laurence Lockhart Photographs, 105 C, Iran, Khuzestan" xlink:type="simple">
+                  <daodesc>
+                    <p>Dr. Laurence Lockhart Photographs, 105 C, Iran, Khuzestan</p>
+                  </daodesc>
+                </dao>
               </did>
             </c>
-            <c level="item" id="ref8275">
+            <c level="file" id="ref8275">
               <did id="refIDd1e55082">
                 <unittitle>Dr. Laurence Lockhart Photographs, 105 C, Iran, Kirman [Qum]</unittitle>
                 <unitid type="ark">
@@ -24911,13 +24936,18 @@
                 </unitid>
                 <container id="aspace_df4007449097a7de9859304adca099b2" type="Box" label="Mixed Materials">139</container>
                 <container parent="aspace_df4007449097a7de9859304adca099b2" type="Folder">9</container>
+                <dao xlink:actuate="onRequest" xlink:href="https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref8275" xlink:role="image-service" xlink:show="new" xlink:title="Dr. Laurence Lockhart Photographs, 105 C, Iran, Kirman [Qum]" xlink:type="simple">
+                  <daodesc>
+                    <p>Dr. Laurence Lockhart Photographs, 105 C, Iran, Kirman [Qum]</p>
+                  </daodesc>
+                </dao>
               </did>
               <scopecontent id="aspace_c521ce195b209bca7e8321886bcc5f24">
                 <head>Scope and Contents</head>
                 <p>Photographs are labeled on their reverse as located in Kirman, but depict sites in Qum.</p>
               </scopecontent>
             </c>
-            <c level="item" id="ref8276">
+            <c level="file" id="ref8276">
               <did id="refIDd1e55109">
                 <unittitle><persname>Dr. Laurence Lockhart</persname> Photographs, 105 C, <geogname>Iran, </geogname>
                            <geogname>Mazandaran</geogname>
@@ -24927,9 +24957,14 @@
                 </unitid>
                 <container id="aspace_3400637a60d035199e8808a62770d3c9" type="Box" label="Mixed Materials">139</container>
                 <container parent="aspace_3400637a60d035199e8808a62770d3c9" type="Folder">10</container>
+                <dao xlink:actuate="onRequest" xlink:href="https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref8276" xlink:role="image-service" xlink:show="new" xlink:title="Dr. Laurence Lockhart Photographs, 105 C, Iran, Mazandaran" xlink:type="simple">
+                  <daodesc>
+                    <p>Dr. Laurence Lockhart Photographs, 105 C, Iran, Mazandaran</p>
+                  </daodesc>
+                </dao>
               </did>
             </c>
-            <c level="item" id="ref8277">
+            <c level="file" id="ref8277">
               <did id="refIDd1e55135">
                 <unittitle><persname>Dr. Laurence Lockhart</persname> Photographs, 105 C, <geogname>Iran</geogname>, <geogname>Qazvin</geogname> part 1</unittitle>
                 <unitid type="ark">
@@ -24937,9 +24972,14 @@
                 </unitid>
                 <container id="aspace_9ab057cbd8de6f91f3b20be3996e4f3e" type="Box" label="Mixed Materials">139</container>
                 <container parent="aspace_9ab057cbd8de6f91f3b20be3996e4f3e" type="Folder">11</container>
+                <dao xlink:actuate="onRequest" xlink:href="https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref8277" xlink:role="image-service" xlink:show="new" xlink:title="Dr. Laurence Lockhart Photographs, 105 C, Iran, Qazvin part 1" xlink:type="simple">
+                  <daodesc>
+                    <p>Dr. Laurence Lockhart Photographs, 105 C, Iran, Qazvin part 1</p>
+                  </daodesc>
+                </dao>
               </did>
             </c>
-            <c level="item" id="ref8278">
+            <c level="file" id="ref8278">
               <did id="refIDd1e55161">
                 <unittitle><persname>Dr. Laurence Lockhart</persname> Photographs, 105 C, <geogname>Iran</geogname>, <geogname>Qazvin</geogname> part 2</unittitle>
                 <unitid type="ark">
@@ -24947,9 +24987,14 @@
                 </unitid>
                 <container id="aspace_c659aec941fd58d4b4717987ae53947e" type="Box" label="Mixed Materials">139</container>
                 <container parent="aspace_c659aec941fd58d4b4717987ae53947e" type="Folder">12</container>
+                <dao xlink:actuate="onRequest" xlink:href="https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref8278" xlink:role="image-service" xlink:show="new" xlink:title="Dr. Laurence Lockhart Photographs, 105 C, Iran, Qazvin part 2" xlink:type="simple">
+                  <daodesc>
+                    <p>Dr. Laurence Lockhart Photographs, 105 C, Iran, Qazvin part 2</p>
+                  </daodesc>
+                </dao>
               </did>
             </c>
-            <c level="item" id="ref8279">
+            <c level="file" id="ref8279">
               <did id="refIDd1e55188">
                 <unittitle><persname>Dr. Laurence Lockhart</persname> Photographs, 105 C, <geogname>Iran, </geogname>
                            <geogname>Tehran</geogname>
@@ -24959,9 +25004,14 @@
                 </unitid>
                 <container id="aspace_80638c9290fa3ed6c3dd491bac936fed" type="Box" label="Mixed Materials">139</container>
                 <container parent="aspace_80638c9290fa3ed6c3dd491bac936fed" type="Folder">13</container>
+                <dao xlink:actuate="onRequest" xlink:href="https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref8279" xlink:role="image-service" xlink:show="new" xlink:title="Dr. Laurence Lockhart Photographs, 105 C, Iran, Tehran" xlink:type="simple">
+                  <daodesc>
+                    <p>Dr. Laurence Lockhart Photographs, 105 C, Iran, Tehran</p>
+                  </daodesc>
+                </dao>
               </did>
             </c>
-            <c level="item" id="ref8280">
+            <c level="file" id="ref8280">
               <did id="refIDd1e55214">
                 <unittitle><persname>Dr. Laurence Lockhart</persname> Photographs, 105 C, <geogname>Iran, </geogname>
                            <geogname>Tehran city</geogname>
@@ -24971,6 +25021,11 @@
                 </unitid>
                 <container id="aspace_c30e2b45c1adf7af15e4b6ed5b77e38d" type="Box" label="Mixed Materials">139</container>
                 <container parent="aspace_c30e2b45c1adf7af15e4b6ed5b77e38d" type="Folder">14</container>
+                <dao xlink:actuate="onRequest" xlink:href="https://edan.si.edu/slideshow/viewer/?eadrefid=FSA.A.04_ref8280" xlink:role="image-service" xlink:show="new" xlink:title="Dr. Laurence Lockhart Photographs, 105 C, Iran, Tehran city" xlink:type="simple">
+                  <daodesc>
+                    <p>Dr. Laurence Lockhart Photographs, 105 C, Iran, Tehran city</p>
+                  </daodesc>
+                </dao>
               </did>
             </c>
           </c>

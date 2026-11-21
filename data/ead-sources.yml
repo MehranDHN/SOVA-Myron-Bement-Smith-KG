@@ -1,26 +1,13 @@
-# Public finding-aid XML locations for Islamic Archives sub-collections.
-# The analyzer fetches these only with --live-ead; local srcdata stays the
-# harvest source of truth. Adding a collection here is idempotent: the same
-# eadid always maps to the same local path, RDF shard, and report file.
+# Finding aids the change tracker watches.
+# Each stem is srcdata/<stem>.xml. The eadid is the stem without "-ead"
+# (FSA.A.04-ead → FSA.A.04). Publisher XML URLs are derived unless you
+# add a mapping with xml_urls.
+#
+#   python -m pipeline.analyze --live-ead   # compare and report only
+#   python -m pipeline.analyze --sync-ead   # download EAD and remap RDF
 
 user_agent: "SOVA-Myron-Bement-Smith-KG/0.1 (research KG; +https://w3id.org/sova/fsa_a_04)"
 
-collections:
-  - eadid: FSA.A.04
-    label: Myron Bement Smith Collection
-    local: srcdata/FSA.A.04-ead.xml
-    sova: https://sova.si.edu/record/fsa.a.04
-    ark: https://n2t.net/ark:/65665/dc3c8c950fe-250b-40df-b8c7-bcf788073968
-    xml_urls:
-      - https://sova.si.edu/record/FSA.A.04.xml
-      - https://sova.si.edu/record/fsa.a.04.xml
-      - https://sova.si.edu/record/fsa-a-04.xml
-  - eadid: FSA.A.06
-    label: Ernst Herzfeld Papers
-    local: srcdata/FSA.A.06-ead.xml
-    sova: https://sova.si.edu/record/fsa.a.06
-    ark: https://n2t.net/ark:/65665/dc3d8456fbe-98f6-4159-bd2f-c485379b84a7
-    xml_urls:
-      - https://sova.si.edu/record/FSA.A.06.xml
-      - https://sova.si.edu/record/fsa.a.06.xml
-      - https://sova.si.edu/record/fsa-a-06.xml
+sources:
+  - FSA.A.04-ead
+  - FSA.A.06-ead

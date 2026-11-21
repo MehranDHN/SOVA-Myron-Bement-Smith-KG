@@ -167,6 +167,10 @@ def _merge_entry(dst: dict, src: dict) -> dict:
         dst["id"] = src["id"]
     if src.get("kind") and dst.get("kind") in {None, "concept"}:
         dst["kind"] = src["kind"]
+    if src.get("agent_type"):
+        if dst.get("agent_type") and dst["agent_type"] != src["agent_type"]:
+            raise ValueError(f"Conflicting agent types for seed entry {dst['prefLabel']!r}")
+        dst["agent_type"] = src["agent_type"]
     for lab in src.get("labels") or []:
         if lab not in dst["labels"]:
             dst["labels"].append(lab)
@@ -253,9 +257,13 @@ def _new_entry(kind: str, row: dict) -> dict:
     ident = row.get("id") or None
     if ident:
         ident = kg_name(str(ident))
+    agent_type = row.get("kind") if kind == "agent" else None
+    if agent_type not in {"person", "group"}:
+        agent_type = None
     return {
         "id": ident,
         "kind": kind,
+        "agent_type": agent_type,
         "prefLabel": pref,
         "labels": labels,
         "note": row.get("note") or row.get("definition"),
@@ -350,7 +358,34 @@ def parse_seed(path=None) -> dict:
                 resolved[rel] = uris
         entry["intra_uris"] = resolved
 
-    return {"scheme": scheme, "entries": order, "by_id": by_id, "by_label": by_label}
+    return {
+        "scheme": scheme,
+        "entries": order,
+        "by_id": by_id,
+        "by_label": by_label,
+        "uri_set": frozenset(entry["uri"] for entry in order),
+    }
+
+
+def seed_uri_for_record(vocab: dict, kind: str, rec: dict) -> URIRef | None:
+    """Resolve a record to its canonical seeded URI using its id or label."""
+    singular = {
+        "agents": "agent",
+        "places": "place",
+        "genres": "genre",
+        "subjects": "subject",
+        "monuments": "monument",
+        "concepts": "concept",
+    }.get(kind, kind)
+    seed_id = rec.get("seed_id")
+    entry = vocab["by_id"].get(str(seed_id)) if seed_id else None
+    if entry and entry["kind"] == singular:
+        return entry["uri"]
+    label = rec.get("text") or rec.get("label") or ""
+    entry = vocab["by_label"].get(_norm(label))
+    if entry and entry["kind"] == singular:
+        return entry["uri"]
+    return None
 
 
 def mint_uri(entry: dict) -> URIRef:
@@ -388,6 +423,9 @@ def mint_uri(entry: dict) -> URIRef:
         tid = first("tgn")
         if tid:
             return kg_uri("place", "tgn", tid)
+        lid = first("lcsh")
+        if lid:
+            return kg_uri("concept", "lcsh", lid)
         return kg_uri("place", entry.get("id") or slugify(entry.get("prefLabel") or "place"))
     if kind == "monument":
         qid = first("wikidata")
@@ -561,12 +599,16 @@ def emit_vocabulary(g: Graph, vocab=None) -> dict:
         kind = entry["kind"]
         label = entry.get("prefLabel") or entry["id"]
         if kind == "agent":
-            g.add((uri, RDF.type, CRM["E21_Person"]))
+            agent_class = CRM["E74_Group"] if entry.get("agent_type") == "group" else CRM["E21_Person"]
+            g.add((uri, RDF.type, agent_class))
         elif kind == "place":
             g.add((uri, RDF.type, CRM["E53_Place"]))
         elif kind == "monument":
             g.add((uri, RDF.type, CRM["E22_Human-Made_Object"]))
             g.add((uri, RDF.type, SKOS.Concept))
+            g.add((uri, SKOS.inScheme, sch))
+            for parent in (entry.get("intra_uris") or {}).get("broader") or []:
+                g.add((uri, CRM["P2_has_type"], parent))
         else:
             g.add((uri, RDF.type, CRM["E55_Type"]))
             g.add((uri, RDF.type, SKOS.Concept))
@@ -592,6 +634,10 @@ def emit_vocabulary(g: Graph, vocab=None) -> dict:
             exact = (entry.get("mapping") or {}).get("exactMatch") or []
             if exact:
                 g.add((uri, MBS.reconciledTo, URIRef(exact[0])))
+            if kind == "monument":
+                for iri in exact:
+                    if "wikidata.org/entity/" in iri:
+                        g.add((uri, OWL.sameAs, URIRef(iri)))
         counts["entries"] += 1
     counts["triples"] = len(g) - counts.pop("triples_before")
     return counts

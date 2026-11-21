@@ -186,24 +186,62 @@ Digitization appears as:
 
 ```mermaid
 flowchart LR
+  SRC["data/ead-sources.yml"]
   EAD["srcdata/FSA.A.04-ead.xml<br/>srcdata/FSA.A.06-ead.xml"]
+  SOVA["SOVA publisher XML"]
   SEED["vocab/seed.yml"]
   INV["inventory"]
-  AN["analyze"]
+  AN["analyze / change tracker"]
   EX["extract"]
   REC["reconcile"]
   MAP["map"]
   RDF["data/rdf/fsa_a_04/*.ttl<br/>data/rdf/fsa_a_06/*.ttl"]
   REP["data/reports/analyze/"]
+  SRC --> AN
   EAD --> INV
   EAD --> AN
   RDF --> AN
+  SOVA -->|--live-ead report only| AN
+  SOVA -->|--sync-ead| EAD
   EAD --> EX --> REC
   SEED --> REC
   SEED --> MAP
   REC --> MAP --> RDF
   AN --> REP
 ```
+
+### Change tracker
+
+The change tracker compares local harvest data with the EAD XML the original publisher currently serves. Collections to watch are listed as filename stems in [`data/ead-sources.yml`](data/ead-sources.yml):
+
+```yaml
+sources:
+  - FSA.A.04-ead
+  - FSA.A.06-ead
+```
+
+Each stem is `srcdata/<stem>.xml`. The ArchivesSpace id is the stem without `-ead` (`FSA.A.04-ead` → FSA.A.04). Publisher URLs default to `https://sova.si.edu/record/<eadid>.xml`. Add another sibling by appending one stem.
+
+**1. Compare and report only** — fetch SOVA XML into `vocab/cache/ead-remote/`, diff it against `srcdata/`, and write `data/reports/analyze/`. Local EAD and RDF stay unchanged.
+
+```powershell
+python -m pipeline.analyze --live-ead
+python -m pipeline.cli analyze --live-ead
+python -m pipeline.analyze --live-ead --ead srcdata/FSA.A.06-ead.xml
+python -m pipeline.analyze --live-ead --refresh-ead
+```
+
+**2. Download the updated EAD and sync RDF** — re-fetch publisher XML, copy it onto `srcdata/` when the bytes differ (previous file kept under `vocab/cache/ead-local-backup/`), and remap that collection’s Turtle shards. `--sync-ead` implies `--live-ead` and `--refresh-ead`.
+
+```powershell
+python -m pipeline.analyze --sync-ead
+python -m pipeline.cli analyze --sync-ead
+python -m pipeline.analyze --sync-ead --ead srcdata/FSA.A.04-ead.xml
+```
+
+Reports: [`data/reports/analyze/report.md`](data/reports/analyze/report.md), `summary.json`, and per-collection `FSA_A_04.json` / `FSA_A_06.json`. `compare_remote` is the publisher-vs-local diff (added/removed/changed components, DAO hrefs, finding-aid creation date). `compare_rdf` is local EAD vs harvested RDF. Offline `python -m pipeline.analyze` (no flags) is the RDF integrity check only.
+
+`--sync-ead` remaps from the updated XML using the existing reconciliation cache. If the publisher added names that need seed matches, run `extract`, `reconcile`, and `map` afterwards. New EDAN slideshows still need `python -m pipeline.cli slideshow`.
 
 ## Repository layout
 
@@ -221,7 +259,7 @@ data/rdf/vocabulary.ttl      Shared SKOS scheme
 data/rdf/fsa_a_04/*.ttl      FSA.A.04 CRM graph (generated)
 data/rdf/fsa_a_06/*.ttl      FSA.A.06 CRM graph (generated)
 data/reports/                Inventory, analyze, and SHACL reports
-data/ead-sources.yml         Local + live SOVA XML locations
+data/ead-sources.yml         Change-tracker source list (FSA.A.04-ead, FSA.A.06-ead)
 shapes/mbs.shacl.ttl         SHACL
 queries/*.rq                 SPARQL catalog (22 hierarchy queries)
 tests/test_parser.py         Parser / IIIF / analyze smoke tests
@@ -251,7 +289,7 @@ Stages (any one can be run alone):
 | Shared vocabulary | `python -m pipeline.cli vocab` | `data/rdf/vocabulary.ttl` |
 | Map to CRM | `python -m pipeline.cli map` | `data/rdf/fsa_a_04/*.ttl` (use `--ead` for A.06) |
 | Slideshow pages | `python -m pipeline.cli slideshow` | `vocab/cache/slideshow-pages.json` |
-| Analyze EAD vs RDF | `python -m pipeline.cli analyze` or `python -m pipeline.analyze` | `data/reports/analyze/` |
+| Change tracker | `python -m pipeline.analyze` / `--live-ead` / `--sync-ead` | `data/reports/analyze/` |
 | SHACL | `python -m pipeline.cli validate` | `data/reports/shacl-report.txt` |
 
 Optional flags:
@@ -261,8 +299,9 @@ Optional flags:
 - `--fetch-slideshow` — harvest per-page IDS ids from EDAN slideshow HTML
 - `--limit N` — map only the first N components (useful while developing)
 - `--ead path` — finding aid XML (default `srcdata/FSA.A.04-ead.xml` → `data/rdf/fsa_a_04/`; FSA.A.06 → `data/rdf/fsa_a_06/`)
-- `--live-ead` — with `analyze`, fetch published SOVA XML and diff it against `srcdata/` (cached under `vocab/cache/ead-remote/`; does not overwrite source EAD or RDF)
-- `--refresh-ead` — re-download cached remote EAD XML
+- `--live-ead` — change tracker mode 1: fetch published SOVA XML and report diffs against `srcdata/` (cache `vocab/cache/ead-remote/`; does not overwrite EAD or RDF). Sources: [`data/ead-sources.yml`](data/ead-sources.yml)
+- `--sync-ead` — change tracker mode 2: download publisher EAD into `srcdata/` when it changed and remap that collection’s RDF
+- `--refresh-ead` — re-download cached remote EAD XML (implied by `--sync-ead`)
 
 Smoke tests:
 
@@ -627,7 +666,7 @@ In scope:
 - Shared vocabulary [`vocab/seed.yml`](vocab/seed.yml) → [`data/rdf/vocabulary.ttl`](data/rdf/vocabulary.ttl)
 - Physical housing: Box/Folder (Smith) and Volume/Page/Item (Herzfeld)
 - `crmdig:D1_Digital_Object` for IDS JPEGs, EDAN `eadrefid` slideshows, and EDAN `damspath` slideshows, with IIIF Manifests
-- Idempotent EAD-vs-RDF analyzer (`python -m pipeline.analyze`)
+- Change tracker (`python -m pipeline.analyze --live-ead` report-only; `--sync-ead` download and remap)
 - SPARQL catalog for the intellectual `P106` tree, housing, and D1 surrogates
 - Layout ready for further NMAA Islamic Archives siblings (`data/rdf/<eadid-slug>/`)
 

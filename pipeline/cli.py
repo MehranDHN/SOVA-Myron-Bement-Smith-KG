@@ -47,7 +47,12 @@ def main(argv=None) -> int:
     parser.add_argument(
         "--live-ead",
         action="store_true",
-        help="Analyze: fetch published SOVA EAD XML and diff against srcdata/",
+        help="Analyze: compare publisher SOVA XML to srcdata/ and report only",
+    )
+    parser.add_argument(
+        "--sync-ead",
+        action="store_true",
+        help="Analyze: download publisher EAD into srcdata/ and remap RDF",
     )
     parser.add_argument(
         "--refresh-ead",
@@ -101,7 +106,12 @@ def main(argv=None) -> int:
     if args.stage == "analyze":
         from pipeline.analyze import run as analyze
 
-        result = analyze(path=ead_path, live_ead=args.live_ead, refresh=args.refresh_ead)
+        result = analyze(
+            path=ead_path,
+            live_ead=args.live_ead,
+            refresh=args.refresh_ead,
+            sync_ead=args.sync_ead,
+        )
         print(json.dumps(result.get("written"), indent=2))
         print(json.dumps(result.get("totals"), indent=2))
         for coll in result.get("collections") or []:

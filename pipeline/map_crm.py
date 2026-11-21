@@ -24,6 +24,7 @@ from pipeline.namespaces import (
     sova_record_key,
 )
 from pipeline.paths import CACHE_DIR, RDF_DIR, SRCDATA, rdf_dir_for
+from pipeline.seed import seed_uri_for_record
 from pipeline.reconcile import run as reconcile
 from pipeline.util import slugify, split_normal_date
 
@@ -238,10 +239,22 @@ def emit_islamic_archives(
     return uri
 
 
-def emit_agent(g: Graph, rec: dict) -> URIRef:
+def _shared_seed_uri(rec: dict, kind: str, seed_vocab: dict | None) -> URIRef | None:
+    if not seed_vocab:
+        return None
+    uri = entity_uri(kind, rec)
+    if uri in seed_vocab["uri_set"]:
+        return uri
+    return seed_uri_for_record(seed_vocab, kind, rec)
+
+
+def emit_agent(g: Graph, rec: dict, seed_vocab: dict | None = None) -> URIRef:
     text = rec.get("text") or ""
     if is_islamic_archives(text):
         return emit_islamic_archives(g, rec)
+    shared = _shared_seed_uri(rec, "agent", seed_vocab)
+    if shared:
+        return shared
     uri = entity_uri("agent", rec)
     classes = CRM["E21_Person"]
     if rec.get("element") == "corpname" or "Institute" in text or "University" in text:
@@ -252,7 +265,10 @@ def emit_agent(g: Graph, rec: dict) -> URIRef:
     return uri
 
 
-def emit_place(g: Graph, rec: dict) -> URIRef:
+def emit_place(g: Graph, rec: dict, seed_vocab: dict | None = None) -> URIRef:
+    shared = _shared_seed_uri(rec, "place", seed_vocab)
+    if shared:
+        return shared
     uri = entity_uri("place", rec)
     g.add((uri, RDF.type, CRM["E53_Place"]))
     g.add((uri, RDFS.label, Literal(rec.get("text") or "")))
@@ -260,7 +276,12 @@ def emit_place(g: Graph, rec: dict) -> URIRef:
     return uri
 
 
-def emit_concept(g: Graph, rec: dict, kind: str) -> URIRef:
+def emit_concept(
+    g: Graph, rec: dict, kind: str, seed_vocab: dict | None = None
+) -> URIRef:
+    shared = _shared_seed_uri(rec, kind, seed_vocab)
+    if shared:
+        return shared
     uri = entity_uri(kind, rec)
     g.add((uri, RDF.type, CRM["E55_Type"]))
     g.add((uri, RDF.type, SKOS.Concept))
@@ -530,6 +551,7 @@ def emit_component(
     probe_iiif: bool,
     pages=None,
     collection_id: str | None = None,
+    seed_vocab: dict | None = None,
 ):
     eid = node["id"]
     did = node.get("did") or {}
@@ -611,7 +633,7 @@ def emit_component(
         for orig in originations:
             for rec in orig.get("agents") or []:
                 agent_rec = idx.get(("agents", (rec.get("text") or "").strip().lower()), rec)
-                agent = emit_agent(g, agent_rec)
+                agent = emit_agent(g, agent_rec, seed_vocab)
                 g.add((prod, CRM["P14_carried_out_by"], agent))
                 role = (rec.get("role") or orig.get("label") or "").lower()
                 if "pht" in role or "photograph" in role:
@@ -623,26 +645,40 @@ def emit_component(
                     g.add((acq, CRM["P30_transferred_custody_of"], phys))
 
     for rec in did.get("title_entities") or []:
-        _attach_named(g, intel, rec, idx, "unittitle")
+        _attach_named(g, intel, rec, idx, "unittitle", seed_vocab)
 
     ca = node.get("controlaccess") or {}
     for rec in ca.get("agents") or []:
-        agent = emit_agent(g, idx.get(("agents", (rec.get("text") or "").strip().lower()), rec))
+        agent = emit_agent(
+            g,
+            idx.get(("agents", (rec.get("text") or "").strip().lower()), rec),
+            seed_vocab,
+        )
         g.add((intel, CRM["P67_refers_to"], agent))
     for rec in ca.get("places") or []:
-        place = emit_place(g, idx.get(("places", (rec.get("text") or "").strip().lower()), rec))
+        place = emit_place(
+            g,
+            idx.get(("places", (rec.get("text") or "").strip().lower()), rec),
+            seed_vocab,
+        )
         g.add((intel, CRM["P67_refers_to"], place))
         if prod:
             g.add((prod, CRM["P7_took_place_at"], place))
     for rec in ca.get("subjects") or []:
         concept = emit_concept(
-            g, idx.get(("subjects", (rec.get("text") or "").strip().lower()), rec), "subjects"
+            g,
+            idx.get(("subjects", (rec.get("text") or "").strip().lower()), rec),
+            "subjects",
+            seed_vocab,
         )
         g.add((intel, CRM["P129_is_about"], concept))
         g.add((phys, CRM["P2_has_type"], concept))
     for rec in ca.get("genres") or []:
         concept = emit_concept(
-            g, idx.get(("genres", (rec.get("text") or "").strip().lower()), rec), "genres"
+            g,
+            idx.get(("genres", (rec.get("text") or "").strip().lower()), rec),
+            "genres",
+            seed_vocab,
         )
         g.add((phys, CRM["P2_has_type"], concept))
         g.add((intel, CRM["P2_has_type"], concept))
@@ -658,7 +694,7 @@ def emit_component(
         for i, block in enumerate(blocks):
             emit_linguistic(g, intel, eid, tag, block, i, languages=did.get("languages") or [])
             for rec in block.get("entities") or []:
-                _attach_named(g, intel, rec, idx, tag)
+                _attach_named(g, intel, rec, idx, tag, seed_vocab)
 
     daos = enrich_daos(node.get("daos") or [], do_probe=probe_iiif, pages=pages)
     if daos:
@@ -682,25 +718,27 @@ def _extents(did: dict) -> list[str]:
     return out
 
 
-def _attach_named(g, intel, rec, idx, field):
+def _attach_named(g, intel, rec, idx, field, seed_vocab=None):
     el = rec.get("element")
     key = (rec.get("text") or "").strip().lower()
     if el == "geogname":
-        place = emit_place(g, idx.get(("places", key), rec))
+        place = emit_place(g, idx.get(("places", key), rec), seed_vocab)
         g.add((intel, CRM["P67_refers_to"], place))
         mon = idx.get(("places", key), rec)
         if mon.get("monument") or (mon.get("matches") or {}).get("wikidata"):
             if "mosque" in key or "masjid" in key:
-                built = kg_uri("built", slugify(rec.get("text") or "monument"))
-                g.add((built, RDF.type, CRM["E22_Human-Made_Object"]))
-                g.add((built, RDFS.label, Literal(rec.get("text"))))
-                g.add((built, CRM["P2_has_type"], AAT["300007691"]))
-                if (mon.get("matches") or {}).get("wikidata"):
-                    g.add((built, OWL.sameAs, URIRef(mon["matches"]["wikidata"])))
+                built = seed_uri_for_record(seed_vocab, "monument", mon) if seed_vocab else None
+                built = built or kg_uri("built", slugify(rec.get("text") or "monument"))
+                if not seed_vocab or built not in seed_vocab["uri_set"]:
+                    g.add((built, RDF.type, CRM["E22_Human-Made_Object"]))
+                    g.add((built, RDFS.label, Literal(rec.get("text"))))
+                    g.add((built, CRM["P2_has_type"], AAT["300007691"]))
+                    if (mon.get("matches") or {}).get("wikidata"):
+                        g.add((built, OWL.sameAs, URIRef(mon["matches"]["wikidata"])))
                 g.add((intel, CRM["P67_refers_to"], built))
                 g.add((intel, CRM["P138_represents"], built))
     elif el in {"persname", "corpname", "famname"}:
-        agent = emit_agent(g, idx.get(("agents", key), rec))
+        agent = emit_agent(g, idx.get(("agents", key), rec), seed_vocab)
         g.add((intel, CRM["P67_refers_to"], agent))
 
 
@@ -741,10 +779,11 @@ def run(path=None, probe_iiif: bool = False, limit: int | None = None) -> dict:
         ead_file.name,
     )
     emit_islamic_archives(graphs["collection"], mapped_eadid=collection_id)
-    from pipeline.seed import emit_vocabulary
+    from pipeline.seed import emit_vocabulary, parse_seed
 
+    seed_vocab = parse_seed()
     vocab_graph = bind(Graph())
-    emit_vocabulary(vocab_graph)
+    emit_vocabulary(vocab_graph, seed_vocab)
     RDF_DIR.mkdir(parents=True, exist_ok=True)
     vocab_dest = RDF_DIR / "vocabulary.ttl"
     vocab_graph.serialize(vocab_dest, format="turtle")
@@ -772,6 +811,7 @@ def run(path=None, probe_iiif: bool = False, limit: int | None = None) -> dict:
             probe_iiif,
             pages=pages,
             collection_id=collection_id,
+            seed_vocab=seed_vocab,
         )
         count += 1
         if limit and count >= limit:
