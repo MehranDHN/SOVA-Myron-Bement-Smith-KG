@@ -353,6 +353,80 @@ Then try [`queries/01-holding-subcollections.rq`](queries/01-holding-subcollecti
 
 Load `ontology/mbs.ttl`, `data/rdf/vocabulary.ttl`, and `data/rdf/fsa_a_04/*.ttl` plus `data/rdf/fsa_a_06/*.ttl`. Prefixed CRM names use underscores (`crm:P106_is_composed_of`). The catalog is [`queries/`](queries/README.md) (22 numbered files). This diagram is the same tree those queries traverse.
 
+### Collection Level
+```sparql
+PREFIX kg:   <https://w3id.org/sova/fsa_a_04#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT distinct ?coll ?type WHERE {
+
+  ?coll mbs:archivalLevel "collection" ;
+      a ?type.
+}
+```
+### Hierarchy of Containers
+```sparql
+PREFIX mbs:    <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
+PREFIX kg:   <https://w3id.org/sova/fsa_a_04#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?level (COUNT(?c) AS ?n) WHERE {
+  kg:component_FSA_A_06 crm:P106_is_composed_of+ ?c .
+  ?c mbs:archivalLevel ?level .
+}
+GROUP BY ?level
+```
+
+### Deep Walking
+```sparql
+PREFIX mbs:    <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
+PREFIX kg:   <https://w3id.org/sova/fsa_a_04#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?c ?level ?title ?d1 ?storage ?storageType WHERE {
+  kg:component_FSA_A_04 crm:P106_is_composed_of+ ?c .
+  ?c mbs:archivalLevel ?level ; rdfs:label ?title .
+  OPTIONAL {
+    ?c mbs:hasDigitalObject ?d1 .
+    ?d1 a crmdig:D1_Digital_Object .
+  }
+  OPTIONAL {
+    ?c mbs:hasPhysicalUnit ?phys .
+    ?phys mbs:housedIn+ ?storage .
+    ?storage a ?storageType .
+  }
+}
+
+Limit 100
+```
+
+### Reverse Navigation
+```sparql
+PREFIX mbs:    <https://w3id.org/sova/fsa_a_04/ontology#>
+PREFIX crmdig: <http://www.ics.forth.gr/isl/CRMdig/>
+PREFIX kg:   <https://w3id.org/sova/fsa_a_04#>
+PREFIX crm:  <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?coll ?c ?phys ?folder ?box WHERE {
+  BIND(kg:digital_fs_fsa_a_4_2_12_gn_07_05 AS ?d1)
+  ?d1 (crm:P70i_is_documented_in | ^mbs:hasPage / crm:P70i_is_documented_in) ?c .
+  ?coll a mbs:ArchivalComponent ;
+        mbs:archivalLevel "collection" ;
+        crm:P106_is_composed_of* ?c .
+  OPTIONAL {
+    ?c mbs:hasPhysicalUnit ?phys .
+    OPTIONAL { ?phys mbs:housedIn ?folder . ?folder a mbs:Folder }
+    OPTIONAL { ?phys mbs:housedIn+ ?box . ?box a mbs:Box }
+  }
+}
+```
+
 ```mermaid
 flowchart TB
   subgraph Q01["Q01 holding"]
