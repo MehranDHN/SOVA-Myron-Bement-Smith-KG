@@ -270,6 +270,35 @@ Smoke tests:
 python tests/test_parser.py
 ```
 
+## Run GraphDB with Docker
+
+With Docker Desktop running, start GraphDB from the repository root. The named volume keeps the database when the container is stopped or replaced.
+
+```powershell
+docker run -d --name graphdb `
+  -p 7200:7200 `
+  -v graphdb-data:/opt/graphdb/home `
+  ontotext/graphdb:latest
+```
+
+Open [http://localhost:7200](http://localhost:7200) and create a repository in GraphDB Workbench (for example, `islamic_archives`). For a straightforward load without inferred statements, choose the `None` ruleset.
+
+In Workbench, open **Import → RDF** and upload these Turtle files to that repository:
+
+1. `ontology/mbs.ttl`
+2. `data/rdf/vocabulary.ttl`
+3. Every `*.ttl` file in `data/rdf/fsa_a_04/` and `data/rdf/fsa_a_06/`
+
+Import the files into the default graph (leave the named graph unset). Importing the ontology and shared vocabulary alongside both fonds makes the application classes and referenced concepts available to queries. The checked-in RDF can be loaded as-is; run the pipeline first only if you want to regenerate it from the EAD sources.
+
+To confirm the load, run this in the Workbench SPARQL editor:
+
+```sparql
+SELECT (COUNT(*) AS ?triples) WHERE { ?s ?p ?o }
+```
+
+Then try [`queries/01-holding-subcollections.rq`](queries/01-holding-subcollections.rq). Stop and restart the container without losing its repository data with `docker stop graphdb` and `docker start graphdb`.
+
 ## Reconciliation
 
 1. Keep every `@authfilenumber` already in the EAD (Wikidata Q-ids, `id.loc.gov`, `vocab.getty.edu/aat`).

@@ -312851,6 +312851,7 @@ kg:component_ref10001 a crm:E73_Information_Object,
     crm:P48_has_preferred_identifier kg:id_ark_ref10001 ;
     crm:P67_refers_to kg:agent_Q382319,
         kg:agent_Q98396885,
+        kg:agent_Q5080060,
         kg:collection_islamic_archives,
         kg:note_ref10001_arrangement_0,
         kg:note_ref10001_bioghist_0,

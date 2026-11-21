@@ -54,6 +54,14 @@ kg:agent_Q216041 a crm:E21_Person ;
     mbs:reconciledTo wd:Q216041 ;
     mbs:seedId "Ettinghausen_Richard" .
 
+kg:agent_Q2831190 a crm:E21_Person ;
+    rdfs:label "Albert Gabriel" ;
+    owl:sameAs wd:Q2831190 ;
+    skos:exactMatch wd:Q2831190 ;
+    skos:prefLabel "Albert Gabriel"@en ;
+    mbs:reconciledTo wd:Q2831190 ;
+    mbs:seedId "Albert_Gabriel" .
+
 kg:agent_Q2915801 a crm:E21_Person ;
     rdfs:label "Bonfils, Félix, 1831-1885" ;
     owl:sameAs wd:Q2915801 ;
@@ -79,6 +87,14 @@ kg:agent_Q4751824 a crm:E21_Person ;
     skos:prefLabel "Anistās Mārī, al-Karmilī, ab, 1866-1947"@en ;
     mbs:reconciledTo wd:Q4751824 ;
     mbs:seedId "Anist_s_M_r_al_Karmil_ab_1866_1947" .
+
+kg:agent_Q5080060 a crm:E21_Person ;
+    rdfs:label "Charles Lang Freer" ;
+    owl:sameAs wd:Q5080060 ;
+    skos:exactMatch wd:Q5080060 ;
+    skos:prefLabel "Charles Lang Freer"@en ;
+    mbs:reconciledTo wd:Q5080060 ;
+    mbs:seedId "Charles_Lang_Freer" .
 
 kg:agent_Q5303861 a crm:E21_Person ;
     rdfs:label "Kuban, Dogan" ;
@@ -114,6 +130,15 @@ kg:agent_Q6765187 a crm:E21_Person ;
     skos:prefLabel "Blake, Marion Elizabeth"@en ;
     mbs:reconciledTo wd:Q6765187 ;
     mbs:seedId "Blake_Marion_Elizabeth" .
+
+kg:agent_Q71601 a crm:E21_Person ;
+    rdfs:label "Erich F Schmidt" ;
+    owl:sameAs wd:Q71601 ;
+    skos:altLabel "Schmidt, Erich"@en ;
+    skos:exactMatch wd:Q71601 ;
+    skos:prefLabel "Erich F Schmidt"@en ;
+    mbs:reconciledTo wd:Q71601 ;
+    mbs:seedId "Erich_F_Schmidt" .
 
 kg:agent_Q84873 a crm:E21_Person ;
     rdfs:label "Sarre, Friedrich Paul Theodor, 1865-1945" ;

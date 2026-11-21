@@ -49,8 +49,19 @@ agents:
       - "Myron Bement Smith"
     wikidata: Q98396885
     kind: person
+  - label: "Erich F Schmidt"
+    altLabels:
+      - "Schmidt, Erich "
+    wikidata: Q71601
+    kind: person   
   - label: "Sevruguin, Antoin, 1851-1933"
     wikidata: Q382319
+    kind: person  
+  - label: "Albert Gabriel"
+    wikidata: Q2831190
+    kind: person          
+  - label: "Charles Lang Freer"
+    wikidata: Q5080060
     kind: person
   - label: "Blake, Marion Elizabeth"
     wikidata: Q6765187
